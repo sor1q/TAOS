@@ -1312,35 +1312,21 @@ scripts = [
 
 
 	  #Now give towns to great lords
-	  ##diplomacy+ notes added, otherwise unchanged
-      (call_script, "script_give_center_to_lord", "p_town_1",  "trp_kingdom_4_lord", 0),# Sargoth - King Ragnar
-      (call_script, "script_give_center_to_lord", "p_town_2",  "trp_knight_4_1", 0),#Tihr - Jarl Aedin
-      (call_script, "script_give_center_to_lord", "p_town_3",  "trp_knight_5_1", 0),#Veluca - Count Matheas
-      (call_script, "script_give_center_to_lord", "p_town_4",  "trp_knight_1_1", 0),#Suno - Count Klargus
-      (call_script, "script_give_center_to_lord", "p_town_5",  "trp_kingdom_5_lord", 0),# Jelkala - King Graveth
-      (call_script, "script_give_center_to_lord", "p_town_6",  "trp_kingdom_1_lord", 0),# Praven - King Harlaus
-      (call_script, "script_give_center_to_lord", "p_town_7",  "trp_knight_1_2", 0),#Uxkhal - Count Delinard
-
-      (call_script, "script_give_center_to_lord", "p_town_8",  "trp_kingdom_2_lord", 0),# Reyvadin - King Yaroglek
-      (call_script, "script_give_center_to_lord", "p_town_9",  "trp_knight_2_1", 0),#Khudan -Boyar Vuldrat
-      (call_script, "script_give_center_to_lord", "p_town_10", "trp_kingdom_3_lord", 0),# Tulga - Sanjar Khan
-      (call_script, "script_give_center_to_lord", "p_town_11", "trp_knight_2_2", 0),#Curaw - Boyar Naldera
-      (call_script, "script_give_center_to_lord", "p_town_12", "trp_knight_4_2", 0),#Wercheg - Jarl Irya
-      (call_script, "script_give_center_to_lord", "p_town_13", "trp_knight_2_3", 0),#Rivacheg - Boyar Meriga
-      (call_script, "script_give_center_to_lord", "p_town_14", "trp_knight_3_1", 0),#Halmar -Alagur Noyan
-
-      (call_script, "script_give_center_to_lord", "p_town_15", "trp_knight_5_2", 0),#Yalen -Count Gutlans
-      (call_script, "script_give_center_to_lord", "p_town_16", "trp_knight_1_4", 0),#Dhirim - Count Clais #changed from 1_3 (Count Harringoth)
-      (call_script, "script_give_center_to_lord", "p_town_17", "trp_knight_3_2", 0),#Ichamur - Tonju Noyan
-      (call_script, "script_give_center_to_lord", "p_town_18", "trp_knight_3_3", 0),#Narra - Belir Noyan
-
-      (call_script, "script_give_center_to_lord", "p_town_19", "trp_kingdom_6_lord", 0),#Shariz - Sultan Hakim
-      (call_script, "script_give_center_to_lord", "p_town_20", "trp_knight_6_1", 0),#Durquba - Emir Uqais
-      (call_script, "script_give_center_to_lord", "p_town_21", "trp_knight_6_2", 0),#Ahmerrad - Emir Hamezan
-      (call_script, "script_give_center_to_lord", "p_town_22", "trp_knight_6_3", 0),#Bariyye - Emir Atis
+      (call_script, "script_give_center_to_lord", "p_town_1",  "trp_kingdom_1_lord", 0),
       
+      (call_script, "script_give_center_to_lord", "p_town_6",  "trp_kingdom_2_lord", 0),
       
-      (call_script, "script_give_center_to_lord", "p_castle_48", "trp_kingdom_7_lord", 0),
+      (call_script, "script_give_center_to_lord", "p_town_11",  "trp_kingdom_3_lord", 0),
+      
+      (call_script, "script_give_center_to_lord", "p_town_14",  "trp_kingdom_4_lord", 0),
+      
+      (call_script, "script_give_center_to_lord", "p_town_19",  "trp_kingdom_5_lord", 0),
+      
+      (call_script, "script_give_center_to_lord", "p_town_23",  "trp_kingdom_6_lord", 0),
+      
+      (call_script, "script_give_center_to_lord", "p_town_27",  "trp_kingdom_7_lord", 0),
+
+      
    ##diplomacy end+
 
       # Give family castles to certain nobles.
@@ -1632,6 +1618,9 @@ scripts = [
 	  (try_for_range, ":unused", 0, 5000),
 		(call_script, "script_cf_random_political_event"),
 	  (try_end),
+   
+
+   
 	  (assign, "$total_random_quarrel_changes", 0),
 	  (assign, "$total_relation_adds", 0),
 	  (assign, "$total_relation_subs", 0),

@@ -120,6 +120,7 @@ parties = [
 ("town_30", "Argenthold", icon_town|pf_town, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(-104.68, 75.99),[]),                          
 ("town_31", "Saltcliffe", icon_town|pf_town, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(89.70, -92.93),[]),
 
+#----------------------------------
 #North Castles
 ("castle_1", "The_Twins", icon_castle_b|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-63.59, 42.52),[]),
 ("castle_2", "Torrhen's_Square", icon_castle_a|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(131.03, 84.03),[]),
@@ -129,6 +130,7 @@ parties = [
 ("castle_6", "Moat_Cailin", icon_castle_c|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(85.34, 57.05),[]),
 ("castle_7", "Hammerhorn", icon_castle_b|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(57.80, -105.25),[]),
 
+#Ost-Gart castles
 ("castle_8", "Starfall", icon_castle_a|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-25.55, -81.26),[]),
 ("castle_9", "Casterly_Rock", icon_castle_c|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(160.16, 25.27),[]),
 ("castle_10", "Riverrun", icon_castle_b|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-115.95, 23.55),[]),                      #[swycartographr] prev. coords: (-114.72, 19.85)
@@ -137,6 +139,7 @@ parties = [
 ("castle_13", "Atranta", icon_castle_b|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-130.16, 36.54),[]),
 ("castle_14", "Godsgrace", icon_castle_a|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-99.31, -72.18),[]),                   
 
+#Kara-Thar castles
 ("castle_15", "Pyke", icon_castle_c|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-93.86, 22.17),[]),
 ("castle_16", "Sandstone", icon_castle_b|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(2.80, -88.43),[]),                       
 ("castle_17", "Cider_Hall", icon_castle_a|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-43.56, -56.74),[]),
@@ -144,6 +147,8 @@ parties = [
 ("castle_19", "Runestone", icon_castle_b|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(64.74, -26.27),[]),
 ("castle_20", "Evenfall_Hall", icon_castle_a|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(19.28, 23.68),[]),
 ("castle_21", "Deep_Den", icon_castle_c|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(146.33, -6.18),[]),
+
+#Ashkar castles
 ("castle_22", "Coldwater_Burn", icon_castle_b|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(0.82, -32.17),[]),
 ("castle_23", "Crakehell", icon_castle_a|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(174.31, -18.66),[]),
 ("castle_24", "Tarth_Keep", icon_castle_c|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-25.23, 59.17),[]),
@@ -151,6 +156,8 @@ parties = [
 ("castle_26", "Harrenhal", icon_castle_a|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-2.12, 118.99),[]),
 ("castle_27", "Antlers", icon_castle_c|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(42.40, 40.37),[]),
 ("castle_28", "Kayce_Keep", icon_castle_b|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(89.94, -42.28),[]),
+
+#Solmark castles
 ("castle_29", "Yronwood", icon_castle_a|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(23.47, -57.90),[]),
 ("castle_30", "Strongsong", icon_castle_c|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(46.35, -46.43),[]),                     #[swycartographr] prev. coords: (48.36, -46.99)
 ("castle_31", "Rain_House", icon_castle_b|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-41.58, 55.26),[]),
@@ -158,6 +165,8 @@ parties = [
 ("castle_33", "Sea_Dragon_Cove", icon_castle_c|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-142.07, 16.25),[]),
 ("castle_34", "Dragonstone", icon_castle_b|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-21.81, 121.54),[]),
 ("castle_35", "Stonehelm", icon_castle_a|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-38.78, -3.18),[]),
+
+#Eirven castles
 ("castle_36", "Trident_Ford", icon_castle_c|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-73.14, -47.43),[]),
 ("castle_37", "Stormlands_Watch", icon_castle_b|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-7.12, 44.98),[]),
 ("castle_38", "Harlaw_Hall", icon_castle_a|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(135.19, -106.03),[]),
@@ -165,6 +174,8 @@ parties = [
 ("castle_40", "The_Eyrie", icon_castle_b|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(105.7, -22.12),[]),                      #[swycartographr] prev. coords: (77.98, -13.36)
 ("castle_41", "Grey_Garden", icon_castle_a|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(88.28, -68.73),[]),
 ("castle_42", "Ironoaks", icon_castle_c|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(69.77, -48.99),[]),                       #[swycartographr] prev. coords: (65.75, -43.36)
+
+#Vallor castles
 ("castle_43", "Longbow_Hall", icon_castle_b|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(40.20, -9.11),[]),                    #[swycartographr] prev. coords: (40.2, 8.02)
 ("castle_44", "Redfort", icon_castle_a|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(19.11, -8.93),[]),
 ("castle_45", "Long_Lake_Fort", icon_castle_c|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-98.18, -0.44),[]),
@@ -173,6 +184,7 @@ parties = [
 ("castle_48", "Hornwood", icon_castle_c|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(49.81, 83.92),[]),
 ("castle_49", "Bear_Island_Keep", icon_castle_b|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(35.22, 90.73),[]),
 ("castle_50", "Rook's_Rest", icon_castle_a|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(26.17, 93.74),[]),
+
 
 ("village_1", "Tumbleton", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-62.29, -49.94),[]),
 ("village_2", "Brindlewood", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-37.34, 68.26),[]),
