@@ -272,10 +272,10 @@ game_menus = [
          (troop_raise_skill, "trp_player", skl_leadership, 7),
          (troop_raise_skill, "trp_player", skl_prisoner_management, 5),
          (troop_raise_skill, "trp_player", skl_inventory_management, 10),
-         (party_add_members, "p_main_party", "trp_swadian_knight", 10),
+         (party_add_members, "p_main_party", "trp_northern_phalanx", 10),
          (party_add_members, "p_main_party", "trp_vaegir_knight", 10),
          (party_add_members, "p_main_party", "trp_vaegir_archer", 10),
-         (party_add_members, "p_main_party", "trp_swadian_sharpshooter", 10),
+         (party_add_members, "p_main_party", "trp_northern_sharpshooter", 10),
          (troop_add_item, "trp_player","itm_scale_armor",0),
          (troop_add_item, "trp_player","itm_full_helm",0),
 

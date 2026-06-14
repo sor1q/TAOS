@@ -1565,7 +1565,7 @@ ransom_brokers_end   = tavern_travelers_begin
 mercenary_troops_begin = "trp_watchman"
 mercenary_troops_end = "trp_mercenaries_end"
 
-multiplayer_troops_begin = "trp_swadian_crossbowman_multiplayer"
+multiplayer_troops_begin = "trp_northern_marksman_multiplayer"
 multiplayer_troops_end = "trp_multiplayer_end"
 
 #INVASION MODE start
@@ -1584,7 +1584,7 @@ ccoop_bandit_sounds_end = "snd_ccoop_sea_raider_taunt_0"
 ccoop_sea_raider_sounds_start = "snd_ccoop_sea_raider_taunt_0"
 ccoop_sea_raider_sounds_end = "snd_sounds_end"
 
-multiplayer_coop_class_templates_begin = "trp_swadian_crossbowman_multiplayer_coop_tier_1"
+multiplayer_coop_class_templates_begin = "trp_northern_marksman_multiplayer_coop_tier_1"
 multiplayer_coop_class_templates_end = "trp_coop_faction_troop_templates_end"
 
 multiplayer_coop_companion_equipment_sets_begin = "trp_npc1_1"
@@ -1593,14 +1593,14 @@ multiplayer_coop_companion_equipment_sets_end = "trp_coop_companion_equipment_se
 
 multiplayer_coop_companion_description_strings_begin = "str_npc1_1"
 #INVASION MODE end
-multiplayer_ai_troops_begin = "trp_swadian_crossbowman_multiplayer_ai"
+multiplayer_ai_troops_begin = "trp_northern_marksman_multiplayer_ai"
 multiplayer_ai_troops_end = multiplayer_troops_begin
 
 #INVASION MODE START
 captain_multiplayer_troops_begin = "trp_farmer"
-captain_multiplayer_troops_end = "trp_swadian_crossbowman"
+captain_multiplayer_troops_end = "trp_northern_marksman"
 
-captain_multiplayer_new_troops_begin = "trp_swadian_crossbowman"
+captain_multiplayer_new_troops_begin = "trp_northern_marksman"
 captain_multiplayer_new_troops_end = "trp_khergit_lancer"
 
 captain_multiplayer_coop_new_troops_begin = "trp_khergit_lancer"
@@ -2364,9 +2364,9 @@ DPLMC_FACTION_STANDING_UNAFFILIATED = 0
 ##INVASION/CAPTAIN COOP
 
 captain_multiplayer_troops_begin = "trp_farmer"
-captain_multiplayer_troops_end = "trp_swadian_crossbowman"
+captain_multiplayer_troops_end = "trp_northern_marksman"
 
-captain_multiplayer_new_troops_begin = "trp_swadian_crossbowman"
+captain_multiplayer_new_troops_begin = "trp_northern_marksman"
 captain_multiplayer_new_troops_end = "trp_khergit_lancer"
 
 captain_multiplayer_coop_new_troops_begin = "trp_khergit_lancer"

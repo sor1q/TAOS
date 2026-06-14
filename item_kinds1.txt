@@ -1,5 +1,5 @@
 itemsfile version 3
-611
+620
  itm_no_item INVALID_ITEM INVALID_ITEM 1  invalid_item 0  12582914 9223388529554358287 3 0 1.500000 100 0 0 0 0 0 103 0 90 0 522 528
  0
 0
@@ -1492,6 +1492,10 @@ itemsfile version 3
  0
 0
 
+ itm_nordic_sword Nordic_Sword Nordic_Sword 2  viking_sword 0  scab_vikingsw 3458764513820540928  4259842 9223388564182532111 142 24596 1.500000 100 0 0 0 0 0 99 0 98 0 275 27
+ 0
+0
+
  itm_falchion Falchion Falchion 1  falchion_new 0  4259842 9223388529822793742 105 24596 2.500000 100 0 0 0 8 0 98 0 73 0 256 30
  0
 0
@@ -2459,6 +2463,38 @@ itemsfile version 3
 0
 
  itm_ccoop_new_items_end Items_End Items_End 1  shield_round_a 0  0 0 1 0 0.000000 100 0 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_sword_north_p Northern_Steel Northern_Steel 2  norman_sword 0  scab_norman_sword 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_wardens_plate Warden's_Plate Warden's_Plate 1  plate_bur41 0  16842765 0 13500 704643236 25.000000 100 3 68 32 12 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor_infantry_north_4 Snow-Stalwart_Surcoat Snow-Stalwart_Surcoat 1  norman_hauberk_a 0  16842765 0 7600 704643236 23.000000 100 1 60 24 10 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor_infantry_north_3 Frozen_Sqire's_Gambeson Frozen_Sqire's_Gambeson 1  outlaw_mix 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wardens_helmet Warden's_Helmet Warden's_Helmet 1  sorry_im_berserk_helm_inventory 0  65548 0 3200 123731968 2.000000 100 62 2 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helmet_infantry_north_4 Snow-Stalwart_Helmet Snow-Stalwart_Helmet 1  ghuls 0  65548 0 2100 123731968 2.000000 100 55 2 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helmet_infantry_north_3 Frozen_Sqire's_Helmet Frozen_Sqire's_Helmet 1  skull_cap 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_shield_north_p Northern_Ironwood_Shield Northern_Ironwood_Shield 1  normkite 0  65543 5100273664 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
  0
 0
 

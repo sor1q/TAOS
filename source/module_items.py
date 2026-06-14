@@ -57,6 +57,63 @@ imodbits_good   = imodbit_sturdy | imodbit_thick | imodbit_hardened | imodbit_re
 imodbits_bad    = imodbit_rusty | imodbit_chipped | imodbit_tattered | imodbit_ragged | imodbit_cracked | imodbit_bent
 # Replace winged mace/spiked mace with: Flanged mace / Knobbed mace?
 # Fauchard (majowski glaive)
+
+#Custom items list
+custom_items = [
+#Swords 
+
+["sword_north_p", "Northern Steel", [("norman_sword",0),("scab_norman_sword", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
+
+#Test Swords
+
+
+#Test Swords end
+
+#Armor 
+
+["wardens_plate", "Warden's Plate", [("plate_bur41",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 13500 , weight(25)|abundance(100)|head_armor(3)|body_armor(68)|leg_armor(32)|difficulty(12) ,imodbits_armor ],
+
+["armor_infantry_north_4", "Snow-Stalwart Surcoat", [("norman_hauberk_a",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 7600 , weight(23)|abundance(100)|head_armor(1)|body_armor(60)|leg_armor(24)|difficulty(10) ,imodbits_armor ],
+
+["armor_infantry_north_3", "Frozen Sqire's Gambeson", [("outlaw_mix",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+
+
+#Test Armor
+
+
+#Test Armor end
+
+#Helmets 
+
+["wardens_helmet", "Warden's Helmet", [("sorry_im_berserk_helm_inventory",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 3200 , weight(2)|abundance(100)|head_armor(62)|body_armor(2)|leg_armor(0) ,imodbits_cloth ],
+
+["helmet_infantry_north_4", "Snow-Stalwart Helmet", [("ghuls",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 2100 , weight(2)|abundance(100)|head_armor(55)|body_armor(2)|leg_armor(0) ,imodbits_cloth ],
+
+["helmet_infantry_north_3", "Frozen Sqire's Helmet", [("skull_cap",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+
+#Test Helmets
+
+
+#Test Helmets end
+
+#Shields 
+
+["shield_north_p", "Northern Ironwood Shield", [("normkite",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+#Test Shields
+
+
+#Test Shields end
+]
+
 items = [
 # item_name, mesh_name, item_properties, item_capabilities, slot_no, cost, bonus_flags, weapon_flags, scale, view_dir, pos_offset
  ["no_item","INVALID ITEM", [("invalid_item",0)], itp_type_one_handed_wpn|itp_primary|itp_secondary, itc_longsword, 3,weight(1.5)|spd_rtng(103)|weapon_length(90)|swing_damage(16,blunt)|thrust_damage(10,blunt),imodbits_none],
@@ -687,7 +744,7 @@ items = [
 #SB : actually use imodbits good
 ["dagger",         "Dagger", [("dagger_b",0),("dagger_b_scabbard",ixmesh_carry),("dagger",imodbits_good),("scab_dagger",ixmesh_carry|imodbits_good)], itp_type_one_handed_wpn|itp_merchandise|itp_primary|itp_secondary|itp_no_parry, itc_dagger|itcf_carry_dagger_front_left|itcf_show_holster_when_drawn,
 37 , weight(0.75)|difficulty(0)|spd_rtng(109) | weapon_length(47)|swing_damage(22 , cut) | thrust_damage(19 ,  pierce),imodbits_sword_high ],
-#["nordic_sword", "Nordic Sword", [("viking_sword",0),("scab_vikingsw", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 142 , weight(1.5)|difficulty(0)|spd_rtng(99) | weapon_length(98)|swing_damage(27 , cut) | thrust_damage(19 ,  pierce),imodbits_sword ],
+["nordic_sword", "Nordic Sword", [("viking_sword",0),("scab_vikingsw", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 142 , weight(1.5)|difficulty(0)|spd_rtng(99) | weapon_length(98)|swing_damage(27 , cut) | thrust_damage(19 ,  pierce),imodbits_sword ],
 #["arming_sword", "Arming Sword", [("b_long_sword",0),("scab_longsw_b", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 156 , weight(1.5)|difficulty(0)|spd_rtng(101) | weapon_length(100)|swing_damage(25 , cut) | thrust_damage(22 ,  pierce),imodbits_sword ],
 #["sword",         "Sword", [("long_sword",0),("scab_longsw_a", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 148 , weight(1.5)|difficulty(0)|spd_rtng(100) | weapon_length(102)|swing_damage(26 , cut) | thrust_damage(23 ,  pierce),imodbits_sword ],
 ["falchion",         "Falchion", [("falchion_new",0)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_scimitar|itcf_carry_sword_left_hip,
@@ -1285,7 +1342,9 @@ items = [
 #0,weight(2.25)|abundance(90)|weapon_length(63)|thrust_damage(1,pierce)|max_ammo(4),imodbits_missile],
 ["ccoop_new_items_end", "Items End", [("shield_round_a",0)], 0, 0, 1, 0, 0],
 #INVASION MODE END
-]
+] + custom_items
+#Items end
+
 # modmerger_start version=201 type=2
 try:
     component_name = "items"

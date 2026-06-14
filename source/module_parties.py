@@ -32,7 +32,7 @@ pf_town = pf_is_static|pf_always_visible|pf_show_faction|pf_label_large
 pf_castle = pf_is_static|pf_always_visible|pf_show_faction|pf_label_medium
 pf_village = pf_is_static|pf_always_visible|pf_hide_defenders|pf_label_small
 
-#sample_party = [(trp_swadian_knight,1,0), (trp_swadian_peasant,10,0), (trp_swadian_crossbowman,1,0), (trp_swadian_man_at_arms, 1, 0), (trp_swadian_footman, 1, 0), (trp_swadian_militia,1,0)]
+#sample_party = [(trp_northern_phalanx,1,0), (trp_swadian_peasant,10,0), (trp_northern_marksman,1,0), (trp_northern_guard, 1, 0), (trp_northern_footman, 1, 0), (trp_northern_spearman,1,0)]
 
 # NEW TOWNS:
 # NORMANDY: Rouen, Caen, Bayeux, Coutances, Evreux, Avranches
