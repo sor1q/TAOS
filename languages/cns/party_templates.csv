@@ -1,0 +1,75 @@
+﻿
+pt_none|无 
+pt_rescued_prisoners|获 救 的 俘 虏 
+pt_enemy|敌 人 
+pt_hero_party|英 雄 部 队 
+pt_village_defenders|村 庄 卫 队 
+pt_cattle_herd|牛 群 
+pt_looters|劫 匪 
+pt_manhunters|赏 金 猎 人 
+pt_steppe_bandits|草 原 强 盗 
+pt_taiga_bandits|雪 原 强 盗 
+pt_desert_bandits|沙 漠 强 盗 
+pt_forest_bandits|绿 林 强 盗 
+pt_mountain_bandits|山 贼 
+pt_sea_raiders|海 寇 
+pt_deserters|逃 兵 
+pt_merchant_caravan|商 队 
+pt_troublesome_bandits|难 对 付 的 强 盗 
+pt_bandits_awaiting_ransom|等 待 赎 金 的 强 盗 
+pt_kidnapped_girl|被 绑 架 的 女 孩 
+pt_village_farmers|村 民 
+pt_spy_partners|不 起 眼 的 旅 行 者 
+pt_runaway_serfs|逃 跑 的 农 奴 
+pt_spy|普 通 的 市 民 
+pt_sacrificed_messenger|被 出 卖 的 信 使
+pt_forager_party|征 粮 队 
+pt_scout_party|侦 察 队 
+pt_patrol_party|巡 逻 队 
+pt_messenger_party|信 使 
+pt_raider_party|劫 掠 队
+pt_raider_captives|劫 掠 队 俘 虏
+pt_kingdom_caravan_party|商 队 
+pt_prisoner_train_party|俘 虏 押 运 队
+pt_default_prisoners|逃 跑 的 俘 虏
+pt_routed_warriors|溃 军
+pt_center_reinforcements|增 援 部 队
+pt_kingdom_hero_party|作 战 部 队
+pt_kingdom_1_reinforcements_a|{!}王 国 1 增 援 a
+pt_kingdom_1_reinforcements_b|{!}王 国 1 增 援 b
+pt_kingdom_1_reinforcements_c|{!}王 国 1 增 援 c
+pt_kingdom_2_reinforcements_a|{!}王 国 2 增 援 a
+pt_kingdom_2_reinforcements_b|{!}王 国 2 增 援 b
+pt_kingdom_2_reinforcements_c|{!}王 国 2 增 援 c
+pt_kingdom_3_reinforcements_a|{!}王 国 3 增 援 a
+pt_kingdom_3_reinforcements_b|{!}王 国 3 增 援 b
+pt_kingdom_3_reinforcements_c|{!}王 国 3 增 援 c
+pt_kingdom_4_reinforcements_a|{!}王 国 4 增 援 a
+pt_kingdom_4_reinforcements_b|{!}王 国 4 增 援 b
+pt_kingdom_4_reinforcements_c|{!}王 国 4 增 援 c
+pt_kingdom_5_reinforcements_a|{!}王 国 5 增 援 a
+pt_kingdom_5_reinforcements_b|{!}王 国 5 增 援 b
+pt_kingdom_5_reinforcements_c|{!}王 国 5 增 援 c
+pt_kingdom_6_reinforcements_a|{!}王 国 6 增 援 a
+pt_kingdom_6_reinforcements_b|{!}王 国 6 增 援 b
+pt_kingdom_6_reinforcements_c|{!}王 国 6 增 援 c
+pt_steppe_bandit_lair|草 原 强 盗 营 地 
+pt_taiga_bandit_lair|雪 原 强 盗 营 地 
+pt_desert_bandit_lair|沙 漠 强 盗 营 地
+pt_forest_bandit_lair|绿 林 强 盗 营 地 
+pt_mountain_bandit_lair|山 贼 据 点
+pt_sea_raider_lair|海 寇 据 点
+pt_looter_lair|绑 匪 据 点 
+pt_bandit_lair_templates_end|{!}强 盗 营 地 模 板 结 束 
+pt_leaded_looters|盗 贼 团 
+pt_dplmc_spouse|你 的 配 偶 
+pt_dplmc_gift_caravan|你 的 商 队 
+pt_dplmc_recruiter|募 兵 官
+pt_black_khergit_raiders|黑 旗 库 吉 特 骑 兵
+pt_dark_hunters|黑 暗 猎 手
+pt_refugees|难 民
+pt_women|农 妇
+pt_sarranid_women|农 妇
+pt_khergit_women|农 妇
+pt_khergit_farmers|农 民
+pt_sarranid_farmers|农 民
