@@ -1,4 +1,4 @@
-1698
+1702
 qstr_Next_Page Next_Page
 qstr_Mod_Options Mod_Options
 qstr_Full_PBOD^Features Full_PBOD^Features
@@ -1697,3 +1697,7 @@ qstr_Current Current
 qstr_Court_Guard Court_Guard
 qstr_Prison_Guard Prison_Guard
 qstr_Castle_Guard Castle_Guard
+qstr_View_strength View_strength
+qstr_Party_strength:_{reg Party_strength:_{reg0}
+qstr_10_Wardens_of_the_No 10_Wardens_of_the_North_were_added_to_your_party.
+qstr_10_Khergit_Veteran_H 10_Khergit_Veteran_Horse_Archers_were_added_to_your_party.

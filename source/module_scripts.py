@@ -16045,7 +16045,7 @@ scripts = [
        (neq, ":party_no", "p_main_party"),
        (context_menu_add_item, "@Move here", cmenu_move),
      (try_end),
-
+     (context_menu_add_item, "@View strength", 3),
      (try_begin),
        (is_between, ":party_no", centers_begin, centers_end),
        (context_menu_add_item, "@View notes", cmenu_notes),
@@ -16229,6 +16229,12 @@ scripts = [
       # (else_try),
         # (call_script, "script_party_heal_all_members_aux", ":party_no"),
       # (try_end),
+    (else_try),
+      (eq, ":button_value", 3),
+      (call_script, "script_dplmc_party_calculate_strength_in_terrain", ":party_no", 0, 0, 1),
+      (party_get_slot, ":strength", ":party_no", slot_party_cached_strength),
+      (assign, reg0, ":strength"),
+      (display_message, "@Party strength: {reg0}"),
     (try_end),
   ]),
 

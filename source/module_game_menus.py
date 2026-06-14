@@ -60,7 +60,31 @@ custom_menus = [
       (try_end),
     ],
     []
-),
+  ),
+  ("cheat_troops", 0,
+  "Choose troop type:",
+  "none",
+  [],
+  [
+    ("cheat_add_troop_warden_north", [], "Add 10 Wardens of the North",
+        [
+          (display_message, "@10 Wardens of the North were added to your party."),
+          (party_add_members, "p_main_party", "trp_northern_warden", 10), 
+        ]
+      ),
+    ("cheat_add_troop_khergit_horse_archer", [], "Add 10 Khergit Horse Archers",
+        [
+          (display_message, "@10 Khergit Veteran Horse Archers were added to your party."),
+          (party_add_members, "p_main_party", "trp_khergit_veteran_horse_archer", 10), 
+        ]
+      ),
+    ("back_to_camp_menu",[],"{!}Back to camp menu.",
+      [
+        (jump_to_menu, "mnu_camp"),
+      ]
+    ),
+  ]
+  ),
 ]
 
 game_menus = [
@@ -3431,6 +3455,12 @@ TOTAL:  {reg5}"),
           (try_end),
         ]
        ),
+      
+      ("camp_cheat_9",[],"{!}Add troops.",
+        [
+           (jump_to_menu, "mnu_cheat_troops"),
+        ]
+      ),
 
       ("camp_cheat_3",[],"{!}Update political notes.",
        [
