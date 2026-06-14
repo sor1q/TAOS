@@ -57,7 +57,7 @@ def write_items(variable_list,variable_uses,tag_uses,quick_strings):
 
   ofile.close()
 
-print "Exporting item data..."
+print("Exporting item data...")
 save_python_header()
 
 from module_info import *

@@ -581,3 +581,6 @@ mesh_flag6 = 579
 mesh_flag7 = 580
 mesh_flag8 = 581
 mesh_flag9 = 582
+mesh_tpe_golden_coins = 583
+mesh_tournament_design_panel = 584
+mesh_tournament_menu = 585

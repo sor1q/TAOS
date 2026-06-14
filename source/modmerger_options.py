@@ -29,6 +29,8 @@ mods_active = [
 	"formAI",       # motomataru's formations v4beta AI extension.
 	"native_bugfix",
 	"wse",          # K700's Warband Script Enhancer 2 extra scripts (v1.0.8.4)
+    "tournament",      # Tournament Play Enhancements (1.5)
+    "gpu",                  # General Presentation Utilities (1.0)
 ]
 
 

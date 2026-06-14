@@ -21512,77 +21512,7 @@ goods, and books will never be sold. ^^You can change some settings here freely.
       ]),
     ]
   ),
-  
 
-  # (
-    # "debug_registers", 0,
-    # "{s1}",
-    # "none",
-    # [
-    # (str_clear, s1),
-    # ]+
-    # [
-    # (str_store_string, s1, "@index"+str(x)+":{reg"+str(x)+"}^"),
-    # ]
-    # for x in range (0, 64),
-    # [
-      # ("back",
-      # [],
-      # "Never mind...",
-      # [ 
-        # (change_screen_return),
-      # ]),
-    # ]
-  # ),
-  
-  # (
-    # "debug_preg", 0,
-    # "{s1}",
-    # "none",
-    # [
-    # (str_clear, s1),
-    # ]+
-    # [
-    # (position_get_x, reg1, x),
-    # (position_get_y, reg2, x),
-    # (position_get_z, reg3, x),
-    # (str_store_string, s1, "@{s1}^index"+str(x)+":({reg1},{reg2},{reg3})"),
-    
-    # ]
-    # for x in range (0, pos_belfry_begin),
-    # [
-      # ("back",
-      # [],
-      # "Never mind...",
-      # [ 
-        # (change_screen_return),
-      # ]),
-    # ]
-  # ),
-  
-
-  # (
-    # "debug_sreg", 0,
-    # "{s67}",
-    # "none",
-    # # [
-    # # #need to be careful or string will be built too long
-    # # # (str_clear, s67), #use last string
-    # # ]+
-    # [
-    # (str_store_string, s67, "@index"+str(x)+":({reg1},{reg2},{reg3})"),
-    
-    # ]
-    # for x in range (s0, s67),
-    # [
-      # ("back",
-      # [],
-      # "Never mind...",
-      # [ 
-        # (change_screen_return),
-      # ]),
-    # ]
-  # ),
  ] + custom_menus
 # modmerger_start version=201 type=2
 try:
