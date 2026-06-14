@@ -1,5 +1,5 @@
 stringsfile version 1
-4584
+4585
 str_no_string NO_STRING!
 str_empty_string _
 str_yes Yes.
@@ -2098,12 +2098,13 @@ str_about_a_week_ago about_a_week_ago
 str_about_two_weeks_ago about_two_weeks_ago
 str_several_weeks_ago several_weeks_ago
 str_unknown_assailants unknown_assailants
-str_swadians Swadians
-str_vaegirs Vaegirs
-str_khergits Khergits
-str_nords Nords
-str_rhodoks Rhodoks
-str_sarranids Sarranids
+str_north The_North
+str_syndicate The_Ost-Gart_Syndicate
+str_kara_thar Empire_of_Kara-Thar
+str_ashkar Ashkar_Confederation
+str_solmark Solmark_Inquisition
+str_eirven Union_of_Eirven
+str_vallor Kingdom_of_Vallor
 str_bandits bandits
 str_deserters deserters
 str_your_followers your_followers

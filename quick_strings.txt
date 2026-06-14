@@ -1,4 +1,4 @@
-1702
+1723
 qstr_Next_Page Next_Page
 qstr_Mod_Options Mod_Options
 qstr_Full_PBOD^Features Full_PBOD^Features
@@ -1701,3 +1701,24 @@ qstr_View_strength View_strength
 qstr_Party_strength:_{reg Party_strength:_{reg0}
 qstr_10_Wardens_of_the_No 10_Wardens_of_the_North_were_added_to_your_party.
 qstr_10_Khergit_Veteran_H 10_Khergit_Veteran_Horse_Archers_were_added_to_your_party.
+qstr__Switch_page_ _Switch_page_
+qstr_Loyal Loyal
+qstr_Devoted Devoted
+qstr_Fond Fond
+qstr_Gracious Gracious
+qstr_Friendly Friendly
+qstr_Supportive Supportive
+qstr_Favorable Favorable
+qstr_Cooperative Cooperative
+qstr_Accepting Accepting
+qstr_Indifferent Indifferent
+qstr_Suspicious Suspicious
+qstr_Grumbling Grumbling
+qstr_Hostile Hostile
+qstr_Resentful Resentful
+qstr_Angry Angry
+qstr_Hateful Hateful
+qstr_Revengeful Revengeful
+qstr_Vengeful Vengeful
+qstr_{s3} {s3}
+qstr_We_are_in_return_men We_are_in_return_menu_logic

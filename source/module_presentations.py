@@ -15678,7 +15678,7 @@ presentations = [
     ]),
   ]),
 
-  # Jrider +
+   # Jrider +
   # REPORTS PRESENTATIONS 1.2 :
   # Factions relations presentation report
   ("jrider_faction_relations_report", 0,
@@ -15716,24 +15716,51 @@ presentations = [
         (position_set_y, pos1, 1500),
     (overlay_set_size, reg1, pos1),
 
-    # Back to menu - graphical button
-    (create_game_button_overlay, reg1, "@_Return to menu_"),
-    (position_set_x, pos1, 500),
-        (position_set_y, pos1, 23),
-        (overlay_set_position, reg1, pos1),
-        (assign, "$g_jrider_faction_report_return_to_menu", reg1),
+      # Switch page - graphical button
+      (create_game_button_overlay, reg2, "@_Switch page_"),
+      (position_set_x, pos1, 700),
+      (position_set_y, pos1, 23),
+      (overlay_set_position, reg2, pos1),
+      (assign, "$g_jrider_faction_report_switch_page", reg2),
+          
+
+      # Back to menu - graphical button
+      (create_game_button_overlay, reg1, "@_Return to menu_"),
+      (position_set_x, pos1, 400),
+      (position_set_y, pos1, 23),
+      (overlay_set_position, reg1, pos1),
+      (assign, "$g_jrider_faction_report_Return_to_menu", reg1),
 
     # Set Headlines
 #set column title
           (assign, ":x_poshl", 250),
           (assign, ":y_pos", 620),
           (position_set_y, pos1, ":y_pos"),
-    (try_for_range, ":faction", kingdoms_begin, kingdoms_end),
+
+# Soriq additional page for faction report
+     (try_begin),
+      (eq, "$g_presentation_page", 0),
+      (assign, "$border_start", kingdoms_begin),
+      (assign, "$border_end", kingdoms_end),
+      (val_add, "$border_end", "$border_start"),
+      (val_div, "$border_end", 2),
+      (val_add, "$border_end", 1),
+     (else_try),
+      (eq, "$g_presentation_page", 1),
+      (assign, "$border_start", "$border_end"),
+      (val_add, "$border_start", 1),
+      (assign, "$border_end", kingdoms_end),
+     (try_end),
+# Soriq additional page for faction report end
+
+           (try_for_range, ":faction", "$border_start", "$border_end"),
+              (assign, reg7, ':faction'),
             (faction_slot_eq, ":faction", slot_faction_state, sfs_active), # continue if active
             (try_begin),
               (is_between, ":faction", npc_kingdoms_begin, npc_kingdoms_end),
               (store_sub, ":offset", ":faction", "fac_kingdom_1"),
-              (val_add, ":offset", "str_swadians"),
+              (val_add, ":offset", "str_north"),
+              (assign, reg6, ':offset'),
               (str_store_string, s1, ":offset"),
             (else_try),
               (str_store_string, s1, "@Your kingdom"),
@@ -15750,8 +15777,8 @@ presentations = [
 
             (position_set_x, pos1, ":x_poshl"),
             (overlay_set_position, reg10, pos1),
-            (val_add, ":x_poshl", 90),
-    (try_end),
+            (val_add, ":x_poshl", 150),
+           (try_end),
 
 
     (assign, ":x_poshl", 215),
@@ -15781,7 +15808,7 @@ presentations = [
           (position_set_x, pos2, ":line_x"),
           (position_set_y, pos2, ":y_pos2"),
           (overlay_set_position, reg1, pos2),
-          (val_add, ":x_poshl", 90),
+          (val_add, ":x_poshl", 150),
 
           (try_begin),
             (eq, "$cheat_mode", 1),
@@ -15820,10 +15847,10 @@ presentations = [
             (faction_slot_eq, ":faction_line", slot_faction_state, sfs_active), # continue if active
 
             # Base position for subheaders
-            (assign, ":x_posfhl", 220),
+            (assign, ":x_posfhl", 265),
 
             # Loop other factions (columns)
-            (try_for_range, ":faction_column", kingdoms_begin, kingdoms_end),
+            (try_for_range, ":faction_column", "$border_start", "$border_end"),
                 (faction_slot_eq, ":faction_column", slot_faction_state, sfs_active), # continue if active
 
                 (try_begin), # not same faction
@@ -15917,7 +15944,7 @@ presentations = [
                 (try_end),
 
                 # increase column x position
-                (val_add, ":x_posfhl", 90), # valid values 220, 385, 550, 715
+                (val_add, ":x_posfhl", 150), # valid values 220, 385, 550, 715
             (try_end), # end of column faction loop
 
             # Faction line information, this is a 4 line block
@@ -15959,70 +15986,66 @@ presentations = [
             (position_set_y, ":line_size", 800),
 
             ## Player relation (first column)
-            (store_relation, ":cur_relation", "fac_player_supporters_faction", ":faction_line"),
+            (store_relation, reg1, "fac_player_supporters_faction", ":faction_line"),
 
-            #SB : relationship scale
-            #SB : fix relationship scale
-            (call_script, "script_describe_relation_to_s63", ":cur_relation"),
             # no clean strings existing, doing it the same way it's done in game_menu
-            # (try_begin),
-                # (ge, reg1, 90),
-                # (str_store_string, s3, "@Loyal"),
-            # (else_try),
-                # (ge, reg1, 80),
-                # (str_store_string, s3, "@Devoted"),
-            # (else_try),
-                # (ge, reg1, 70),
-                # (str_store_string, s3, "@Fond"),
-            # (else_try),
-                # (ge, reg1, 60),
-                # (str_store_string, s3, "@Gracious"),
-            # (else_try),
-                # (ge, reg1, 50),
-                # (str_store_string, s3, "@Friendly"),
-            # (else_try),
-                # (ge, reg1, 40),
-                # (str_store_string, s3, "@Supportive"),
-            # (else_try),
-                # (ge, reg1, 30),
-                # (str_store_string, s3, "@Favorable"),
-            # (else_try),
-                # (ge, reg1, 20),
-                # (str_store_string, s3, "@Cooperative"),
-            # (else_try),
-                # (ge, reg1, 10),
-                # (str_store_string, s3, "@Accepting"),
-            # (else_try),
-                # (ge, reg1, 0),
-                # (str_store_string, s3, "@Indifferent"),
-            # (else_try),
-                # (ge, reg1, -10),
-                # (str_store_string, s3, "@Suspicious"),
-            # (else_try),
-                # (ge, reg1, -20),
-                # (str_store_string, s3, "@Grumbling"),
-            # (else_try),
-                # (ge, reg1, -30),
-                # (str_store_string, s3, "@Hostile"),
-            # (else_try),
-                # (ge, reg1, -40),
-                # (str_store_string, s3, "@Resentful"),
-            # (else_try),
-                # (ge, reg1, -50),
-                # (str_store_string, s3, "@Angry"),
-            # (else_try),
-                # (ge, reg1, -60),
-                # (str_store_string, s3, "@Hateful"),
-            # (else_try),
-                # (ge, reg1, -70),
-                # (str_store_string, s3, "@Revengeful"),
-            # (else_try),
-                # (str_store_string, s3, "@Vengeful"),
-            # (try_end),
+            (try_begin),
+                (ge, reg1, 90),
+                (str_store_string, s3, "@Loyal"),
+            (else_try),
+                (ge, reg1, 80),
+                (str_store_string, s3, "@Devoted"),
+            (else_try),
+                (ge, reg1, 70),
+                (str_store_string, s3, "@Fond"),
+            (else_try),
+                (ge, reg1, 60),
+                (str_store_string, s3, "@Gracious"),
+            (else_try),
+                (ge, reg1, 50),
+                (str_store_string, s3, "@Friendly"),
+            (else_try),
+                (ge, reg1, 40),
+                (str_store_string, s3, "@Supportive"),
+            (else_try),
+                (ge, reg1, 30),
+                (str_store_string, s3, "@Favorable"),
+            (else_try),
+                (ge, reg1, 20),
+                (str_store_string, s3, "@Cooperative"),
+            (else_try),
+                (ge, reg1, 10),
+                (str_store_string, s3, "@Accepting"),
+            (else_try),
+                (ge, reg1, 0),
+                (str_store_string, s3, "@Indifferent"),
+            (else_try),
+                (ge, reg1, -10),
+                (str_store_string, s3, "@Suspicious"),
+            (else_try),
+                (ge, reg1, -20),
+                (str_store_string, s3, "@Grumbling"),
+            (else_try),
+                (ge, reg1, -30),
+                (str_store_string, s3, "@Hostile"),
+            (else_try),
+                (ge, reg1, -40),
+                (str_store_string, s3, "@Resentful"),
+            (else_try),
+                (ge, reg1, -50),
+                (str_store_string, s3, "@Angry"),
+            (else_try),
+                (ge, reg1, -60),
+                (str_store_string, s3, "@Hateful"),
+            (else_try),
+                (ge, reg1, -70),
+                (str_store_string, s3, "@Revengeful"),
+            (else_try),
+                (str_store_string, s3, "@Vengeful"),
+            (try_end),
 
             # Set relation to player numerical value (same line)
-            (assign, reg1, ":cur_relation"),
-            (create_text_overlay, reg10, "str_reg1", tf_right_align), #SB: reg1
+            (create_text_overlay, reg10, "@{reg1}", tf_right_align),
             (overlay_set_size, reg10, ":line_size"),
             (store_add, ":line_x", ":x_poshl", 20),
             (position_set_x, pos1, ":line_x"),
@@ -16031,7 +16054,7 @@ presentations = [
             (overlay_set_color, reg10, ":line_color"),
 
             # Set relation to player string value (second line)
-            (create_text_overlay, reg10, s63, tf_right_align), #SB : s63
+            (create_text_overlay, reg10, "@{s3}", tf_right_align),
             (overlay_set_size, reg10, ":line_size"),
             (position_set_x, pos1, ":line_x"),
             (store_sub, ":line_y", ":y_pos", 20),
@@ -16042,7 +16065,7 @@ presentations = [
             # Set Faction Coat of Arm for standard faction (left of relation string)
             (try_begin),
                 (neq, ":faction_line", "fac_player_supporters_faction"),
-                (store_sub, ":mesh_index", ":faction_line", kingdoms_begin),
+                (store_sub, ":mesh_index", ":faction_line", "$border_start"),
                 (val_add, ":mesh_index", "mesh_pic_recruits"),
                 (create_mesh_overlay, reg10, ":mesh_index"),
                 (position_set_x, pos1, 75),
@@ -16133,11 +16156,27 @@ presentations = [
    ## Check for buttonpress
    (ti_on_presentation_event_state_change,
     [
-    (store_trigger_param_1, ":button_pressed_id"),
-    (try_begin),
-         (eq, ":button_pressed_id", "$g_jrider_faction_report_return_to_menu"), # pressed  (Return to menu)
-        (presentation_set_duration, 0),
-    (try_end),
+        (store_trigger_param_1, ":button_pressed_id"),
+        (try_begin),
+             (eq, ":button_pressed_id", "$g_jrider_faction_report_Return_to_menu"), # pressed  (Return to menu)
+             (assign, "$g_presentation_page", 0),
+             (display_message, "@We are in return menu logic"),
+            (presentation_set_duration, 0),
+        (else_try),
+          (eq, ":button_pressed_id", "$g_jrider_faction_report_switch_page"),
+          (try_begin),
+            (eq, "$g_presentation_page", 0),
+            (assign, "$g_presentation_page", 1),
+          (else_try),
+            (eq, "$g_presentation_page", 1),
+            (assign, "$g_presentation_page", 0),
+          (try_end),
+          
+          (presentation_set_duration, 0),
+          (start_presentation, "prsnt_jrider_faction_relations_report"),
+          (presentation_set_duration, 9999),
+        (try_end),
+        
     ]),
    ## END presentation event state change trigger
 
@@ -16145,10 +16184,10 @@ presentations = [
    (ti_on_presentation_run,
     [
         (try_begin),
-          (this_or_next|key_clicked, key_escape),
-          (key_clicked, key_right_mouse_button),
-          (presentation_set_duration, 0),
-          (jump_to_menu, "mnu_reports"),
+      (this_or_next|key_clicked, key_escape),
+      (key_clicked, key_right_mouse_button),
+      (presentation_set_duration, 0),
+      (jump_to_menu, "mnu_reports"),
         (try_end),
 
         ]),
