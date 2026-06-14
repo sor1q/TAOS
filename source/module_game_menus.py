@@ -41,6 +41,11 @@ from module_constants import *
 # Note: The first Menu is the initial character creation menu.
 ####################################################################################################################
 
+# HEADING
+# 001 - Main menus
+# 002 - Custom menus
+
+# 002 - Custom menus
 custom_menus = [
   ("troop_tree",0,
     "Hello",
@@ -87,6 +92,7 @@ custom_menus = [
   ),
 ]
 
+# 001 - Main menus
 game_menus = [
   ("start_game_0",menu_text_color(0xFF000000)|mnf_disable_all_keys,
   ##diplomacy begin
@@ -110,7 +116,8 @@ game_menus = [
           (store_random_in_range, "$background_answer_4", cb4_revenge, cb4_greed + 1),
           (str_store_string, s13, "@Perhaps you have forgotten the face of your father."),
           (assign, "$cheat_mode", 1),
-          (jump_to_menu, "mnu_choose_skill"),
+          # (jump_to_menu, "mnu_choose_skill"),
+          (change_screen_map),
         (else_try),
           (jump_to_menu, "mnu_start_game_1"),
         (try_end),

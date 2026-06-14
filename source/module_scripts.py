@@ -23,38 +23,6 @@ from header_presentations import *
   #### Autoloot improved by rubik begin
 from module_items import *
 
-## deprecated due to 1.165 operations
-# ibf_item_type_mask = 0x000000ff
-
-# def set_item_difficulty():
-  # item_difficulty = []
-  # for i_item in xrange(len(items)):
-    # item_difficulty.append((item_set_slot, i_item, dplmc_slot_item_difficulty, get_difficulty(items[i_item][6])))
-  # return item_difficulty[:]
-
-# def set_item_base_score():
-  # item_base_score = []
-  # for i_item in xrange(len(items)):
-    # if items[i_item][3] & ibf_item_type_mask == itp_type_two_handed_wpn and items[i_item][3] & itp_two_handed == 0:
-      # item_base_score.append((item_set_slot, i_item, dplmc_slot_two_handed_one_handed, 1))
-    # type = items[i_item][3] & ibf_item_type_mask
-    # if type >= itp_type_head_armor and type <= itp_type_hand_armor:
-      # item_base_score.append((item_set_slot, i_item, dplmc_slot_item_head_armor, get_head_armor(items[i_item][6])))
-      # item_base_score.append((item_set_slot, i_item, dplmc_slot_item_body_armor, get_body_armor(items[i_item][6])))
-      # item_base_score.append((item_set_slot, i_item, dplmc_slot_item_leg_armor, get_leg_armor(items[i_item][6])))
-    # elif type >= itp_type_one_handed_wpn and type <= itp_type_thrown and type != itp_type_shield:
-      # item_base_score.append((item_set_slot, i_item, dplmc_slot_item_thrust_damage, get_thrust_damage(items[i_item][6])))
-      # item_base_score.append((item_set_slot, i_item, dplmc_slot_item_swing_damage, get_swing_damage(items[i_item][6])))
-    # elif type == itp_type_horse:
-      # item_base_score.append((item_set_slot, i_item, dplmc_slot_item_horse_speed, get_missile_speed(items[i_item][6])))
-      # item_base_score.append((item_set_slot, i_item, dplmc_slot_item_horse_armor, get_body_armor(items[i_item][6])))
-    # elif type == itp_type_shield:
-      # item_base_score.append((item_set_slot, i_item, dplmc_slot_item_shield_size, get_weapon_length(items[i_item][6])))
-      # item_base_score.append((item_set_slot, i_item, dplmc_slot_item_shield_armor, get_body_armor(items[i_item][6])))
-  # return item_base_score[:]
-  # #### Autoloot improved by rubik end
-
-##diplomacy end
 
 ####################################################################################################################
 # scripts is a list of script records.
@@ -1619,6 +1587,7 @@ scripts = [
 		(call_script, "script_cf_random_political_event"),
 	  (try_end),
    
+  
 
    
 	  (assign, "$total_random_quarrel_changes", 0),
@@ -15867,23 +15836,37 @@ scripts = [
   ]),
 
 
-  #script_game_get_party_prisoner_limit:
-  # This script is called from the game engine when the prisoner limit is needed for a party.
-  # INPUT: arg1 = party_no
-  # OUTPUT: reg0 = prisoner_limit
+#   #script_game_get_party_prisoner_limit:
+#   # This script is called from the game engine when the prisoner limit is needed for a party.
+#   # INPUT: arg1 = party_no
+#   # OUTPUT: reg0 = prisoner_limit
+#   ("game_get_party_prisoner_limit",
+#     [
+# #      (store_script_param_1, ":party_no"),
+#       (assign, ":troop_no", "trp_player"),
+
+#       (assign, ":limit", 0),
+#       (store_skill_level, ":skill", "skl_prisoner_management", ":troop_no"),
+#       (store_mul, ":limit", ":skill", 5),
+#       (try_begin), #SB : override with diplomacy_var2
+#         (eq, "$diplomacy_var", DPLMC_CURRENT_VERSION_CODE),
+#         (assign, ":limit", "$diplomacy_var2"),
+#       (try_end),
+#       (assign, reg0, ":limit"),
+#       (set_trigger_result, reg0),
+#   ]),
+
+#Code by RedMythos, no credits needed ^^
+#Thanks to everyone in the Warband modding community!
+#This script uses the Party Size as the base for calculating your Prisoner Limit.
+#Every point in Prisoner Management (PARTY SKILL) adds 20% to your Prisoner Limit, again, based on your current Party Size.
   ("game_get_party_prisoner_limit",
     [
-#      (store_script_param_1, ":party_no"),
-      (assign, ":troop_no", "trp_player"),
-
-      (assign, ":limit", 0),
-      (store_skill_level, ":skill", "skl_prisoner_management", ":troop_no"),
-      (store_mul, ":limit", ":skill", 5),
-      (try_begin), #SB : override with diplomacy_var2
-        (eq, "$diplomacy_var", DPLMC_CURRENT_VERSION_CODE),
-        (assign, ":limit", "$diplomacy_var2"),
-      (try_end),
-      (assign, reg0, ":limit"),
+      (party_get_skill_level, ":skill", "p_main_party", "skl_prisoner_management"),
+      (party_get_num_companions, ":p_size", "p_main_party"),
+      (store_mul, ":pm_mod", ":p_size", ":skill"),
+      (store_div, ":pm_final", ":pm_mod", 5),
+      (assign, reg0, ":pm_final"),
       (set_trigger_result, reg0),
   ]),
 
