@@ -1411,3 +1411,11 @@ key_special_crouch
 next_cavalry_place
 next_archer_place
 next_infantry_place
+party_window_selected_troop
+inventory_array_details_shown_for_overlay
+prsnt_troop_tree_button
+troop_tree_root_troop
+troop_tree_troop_details_container
+prsnt_troop_tree_close
+choose_faction_box
+is_troop_tree_report_launch

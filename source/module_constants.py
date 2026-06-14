@@ -10,6 +10,44 @@ from ID_factions import *
 # that it will be easy to change it if you need to.
 ##############################################################
 
+#MOD constants
+all_troops_begin = 0
+all_troops_end = "trp_follower_woman"
+#TARGET SCREEN RATIO (or specify resolution, for example resolution 1920x1080 has ratio of 16:9, while Warband renders UI at 4x3, then stretches it to screen resolution)
+target_ratio_x = 16
+target_ratio_y = 9
+#UI mesh size multipliers
+mult_x = (4.0*target_ratio_y)/(3.0*target_ratio_x) #to keep y size unchanged, multiply x size by mult_x; to avoid rounding errors you can multiply by 100*mult_x and later divide by 100; if compiler complains about data type, you may need to cast initial result to int(result)
+mult_y = (3.0*target_ratio_x)/(4.0*target_ratio_y) #to keep x size unchanged, multiply y size by mult_y; to avoid rounding errors you can multiply by 100*mult_y and later divide by 100; if compiler complains about data type, you may need to cast initial result to int(result)
+
+#MOD BEGIN - troop tree
+equipment_slots_begin = 0
+inventory_slots_end = 106
+attributes_begin = 0
+attributes_end = 4
+skills_begin = 0
+skills_end = 42 #some of them may be disabled, but this number will not change
+weapon_proficiencies_begin = 0
+weapon_proficiencies_end = 7#!#change this to 6 if your mod doesn't have firearms!
+troop_tree_screen_edge_u = 200.0
+troop_tree_screen_edge_d = 200.0
+troop_tree_screen_edge_l = 200.0*mult_x
+troop_tree_screen_edge_r = 200.0*mult_x
+troop_tree_gap_to_details = 150.0*mult_x
+troop_tree_close_button_hght = 600.0
+troop_tree_inv_slots_realign = 50.0
+troop_tree_troop_details_wdth = 1550.0
+troop_tree_troop_details_hght = 7500.0-troop_tree_screen_edge_u-troop_tree_screen_edge_d-troop_tree_close_button_hght
+troop_tree_draw_area_wdth = 10000.0-troop_tree_screen_edge_l-troop_tree_screen_edge_r-troop_tree_troop_details_wdth-troop_tree_gap_to_details
+troop_tree_draw_area_hght = 7500.0-troop_tree_screen_edge_u-troop_tree_screen_edge_d
+troop_tree_line_wdth = 50.0
+troop_tree_name_color_upgrades = 0x80FF80
+troop_tree_line_color_upgrades = 0x002000
+troop_tree_name_color_downgrades = 0xFF8080
+troop_tree_line_color_downgrades = 0x200000
+#MOD END - troop tree
+
+
 ########################################################
 ##  ITEM SLOTS             #############################
 ########################################################

@@ -2,7 +2,6 @@
 from header_common import *
 from header_operations import *
 from module_constants import *
-from module_constants import *
 from header_parties import *
 from header_skills import *
 from header_mission_templates import *
@@ -20,7 +19,7 @@ from ID_info_pages import *
 
 ##diplomacy begin
 ##jrider reports
-from header_presentations import tf_left_align
+from header_presentations import *
   #### Autoloot improved by rubik begin
 from module_items import *
 
@@ -71,6 +70,678 @@ def keys_array():
     keys_list.append((troop_set_slot, "trp_temp_array_b", key_no, str_key_0+key_no))
   return keys_list[:]
 
+# HEADING
+# 001 - Main scripts
+# 002 - Math scripts
+# 003 - Script attachment place
+# 004 - Inventory as presentation
+# 005 - Troop tree scripts
+
+# 005 - Troop tree scripts
+troop_tree_scripts = [
+  #MOD BEGIN - troop tree
+    ("cf_troop_tree_upgrade_troop_check", #checks the specified upgrade path, returns to reg0 the troop id that this upgrade path points to, and fails if this isn't a valid upgrade
+        #input: param1 = root troop, param2 = upgrade path (0 or 1)
+        #output: reg0 = upgrade troop id (fails if specified upgrade path isn't pointing at a valid troop)
+        [
+            (store_script_param,":troop",1),
+            (store_script_param,":upgrade_path",2),
+            (troop_get_upgrade_troop,reg0,":troop",":upgrade_path"), #get upgrade troop
+            (gt,reg0,0), #upgrade exists
+        ]
+    ),
+    ("cf_troop_tree_downgrade_troop_check", #checks if specified troop in param2 can be upgraded to troop in param1, and fails if it can't (also writes param2 to reg0 for consistence with script_cf_troop_tree_upgrade_troop_check)
+        #input: param1 = root troop, param2 = downgrade troop
+        #output: reg0 = downgrade troop id (fails if param2 can't upgrade to param1)
+        [
+            (store_script_param,":troop",1),
+            (store_script_param,reg0,2),
+            (neg|troop_is_hero,reg0), #optimization
+            (troop_get_upgrade_troop,":upgrade_troop_1",reg0,0), #get 1st upgrade troop
+            (troop_get_upgrade_troop,":upgrade_troop_2",reg0,1), #get 2nd upgrade troop
+            (this_or_next|eq,":upgrade_troop_1",":troop"), #upgrades to this troop
+            (             eq,":upgrade_troop_2",":troop"), #upgrades to this troop
+        ]
+    ),
+    ("troop_tree_draw_troop", #helper script that draws troop's picture together with the name, inherits fixed_point_multiplier from parent code
+        #input: param1 = troop to draw, param2 = x position coordinate, param3 = y position coordinate, param4 = width, param5 = height, param6 = color without alpha (with alpha would look bad anyway; pass -1 to make the name invisible)
+        #output: trp_temp_array_b[0] = increases counter, trp_temp_array_b = troop pic overlay id, trp_temp_array_c = corresponding troop id
+        [
+            (store_script_param,":cur_troop",1),
+            (store_script_param,":cur_x",2),
+            (store_script_param,":cur_y",3),
+            (store_script_param,":pic_wdth",4),
+            (store_script_param,":pic_hght",5),
+            (store_script_param,":color",6), #-1 = FFFFFFFF, normal colors (0x00000000~0x00FFFFFF) are in range 0~16777215, negative range is 0x80000000~0xFFFFFFFF
+            #troop picture
+            (create_image_button_overlay_with_tableau_material,":troop_pic_overlay",-1,"tableau_rndl_troop_tree_pic",":cur_troop"),
+            (position_set_x,pos0,":pic_wdth"),
+            (position_set_y,pos0,":pic_hght"),
+            (overlay_set_size,":troop_pic_overlay",pos0),
+            (position_set_x,pos0,":cur_x"),
+            (position_set_y,pos0,":cur_y"),
+            (overlay_set_position,":troop_pic_overlay",pos0),
+            #troop name (must be created after troop pic, otherwise for 1st pic created the text shows under the picture, and for other pics on top)
+            (str_store_troop_name,s0,":cur_troop"),
+            (create_text_overlay,":troop_name_overlay_bg",s0,tf_center_justify|tf_vertical_align_center|tf_scrollable), #do not add alpha to it - possibly due to picture underneath being complicated for the engine, alpha on this overlay will cause a crash
+            (create_text_overlay,":troop_name_overlay_fg",s0,tf_center_justify|tf_vertical_align_center|tf_scrollable), #must be created second, so it appears on top of the shadow instead of behind it
+            (overlay_set_color,":troop_name_overlay_fg",":color"),
+            (overlay_set_color,":troop_name_overlay_bg",0x000000),
+            (try_begin),
+                (eq,":color",-1),
+                (overlay_set_display,":troop_name_overlay_fg",0),
+                (overlay_set_display,":troop_name_overlay_bg",0),
+            (try_end),
+            (store_mul,":overlay_x",":pic_wdth",65), #font size 650% proportional to pic size, e.g. if pic size is 10% of the screen, then font size is 65%
+            (store_mul,":overlay_y",":pic_wdth",65), #font size 650% proportional to pic size, e.g. if pic size is 10% of the screen, then font size is 65%
+            (val_div,":overlay_x",10),
+            (val_div,":overlay_y",10),
+            (position_set_x,pos0,":overlay_x"),
+            (position_set_y,pos0,":overlay_y"),
+            (overlay_set_size,":troop_name_overlay_fg",pos0), #this is font size
+            (overlay_set_size,":troop_name_overlay_bg",pos0), #this is font size
+            (store_mul,":overlay_x",":pic_wdth",8), #about 80% of pic width, so 10% margin on each side of the pic
+            (store_mul,":overlay_y",":pic_hght",5), #top of 1st line at about 40% of pic height, but overlay area size reaches 10% below the bottom of the pic, so 4+1=5
+            (val_div,":overlay_x",10),
+            (val_div,":overlay_y",10),
+            (position_set_x,pos0,":overlay_x"),
+            (position_set_y,pos0,":overlay_y"),
+            (overlay_set_area_size,":troop_name_overlay_fg",pos0), #this is overlay size
+            (overlay_set_area_size,":troop_name_overlay_bg",pos0), #this is overlay size
+            (store_mul,":overlay_x",":pic_wdth",35), #35% of pic_wdth (50% because center is at half, and 10% margin from edge)
+            (val_div,":overlay_x",100),
+            (store_sub,":overlay_x",":cur_x",":overlay_x"), #move left from center of pic by this much
+            (val_sub,":overlay_x",50), #for some reason overlay won't be perfectly centered, so compensate
+            (store_mul,":overlay_y",":pic_hght",6), #60% from pic's vertical middle
+            (val_div,":overlay_y",10),
+            (store_sub,":overlay_y",":cur_y",":overlay_y"), #move down from center of pic by this much
+            (position_set_x,pos0,":overlay_x"),
+            (position_set_y,pos0,":overlay_y"),
+            (overlay_set_position,":troop_name_overlay_fg",pos0),
+            (position_get_x,":overlay_x",pos0),
+            (position_get_y,":overlay_y",pos0),
+            (store_mul,":shift_x",":pic_wdth",3), #shift right
+            (store_mul,":shift_y",":pic_hght",3), #shift down
+            (val_div,":shift_x",1000), #at pic size of 1000 shift by 3, at other sizes proportionally different shift
+            (val_div,":shift_y",1000), #at pic size of 1000 shift by 3, at other sizes proportionally different shift
+            (val_max,":shift_x",5), #no less than 5
+            (val_max,":shift_y",int(round(5*mult_y))), #no less than 5
+            (val_add,":overlay_x",":shift_x"), #apply shift
+            (val_sub,":overlay_y",":shift_y"), #apply shift
+            (position_set_x,pos0,":overlay_x"),
+            (position_set_y,pos0,":overlay_y"),
+            (overlay_set_position,":troop_name_overlay_bg",pos0),
+            #save overlay data to arrays
+            (troop_get_slot,":filled_slots_end","trp_temp_array_b",0),
+            (troop_set_slot,"trp_temp_array_b",":filled_slots_end",":troop_pic_overlay"), #holds troop pic overlay ids so we can detect clicks on it
+            (troop_set_slot,"trp_temp_array_c",":filled_slots_end",":cur_troop"), #holds troop ids
+            (val_add,":filled_slots_end",1),
+            (troop_set_slot,"trp_temp_array_b",0,":filled_slots_end"),
+        ]
+    ),
+    ("troop_tree_draw_line", #helper script that in specified coordinates draws a straight line (actually a rectangle) with given size and color, inherits fixed_point_multiplier from parent code
+        #input: param1 = x coord of line's left edge, param2 = y coord of line's bottom edge, param3 = line's horizontal size, param4 = line's vertical size, line's color
+        #output: reg0 = line's overlay id, pos0 = line's position (anchor is bottom left corner)
+        [
+            (store_script_param,":pos_x",1),
+            (store_script_param,":pos_y",2),
+            (store_script_param,":size_x",3),
+            (store_script_param,":size_y",4),
+            (store_script_param,":color",5),
+            (create_mesh_overlay,reg0,"mesh_white_plane"),
+            (val_mul,":size_x",50), #mesh_white_plane is tiny, gotta multiply by 50
+            (val_mul,":size_y",50), #mesh_white_plane is tiny, gotta multiply by 50
+            (position_set_x,pos0,":size_x"),
+            (position_set_y,pos0,":size_y"),
+            (overlay_set_size,reg0,pos0),
+            (position_set_x,pos0,":pos_x"),
+            (position_set_y,pos0,":pos_y"),
+            (overlay_set_position,reg0,pos0),
+            (overlay_set_color,reg0,":color"),
+        ]
+    ),
+    ("troop_tree_analyze_child_nodes", #analyzes upgrades or downgrades of given troop as a tree structure and returns data necessary to align the tree on the screen
+        #input: param1 = root troop, param2 = traversing direction, param3 = current y (number of extra branches so far, only relevant for passing data in recursive calls, for initial call use 0)
+        #output: reg0 = number of tiers (where root is tier 0), reg1 = number of extra branches (beyond the initial one), reg2/reg3 = y position of root troop as numerator/denominator where unit is troop pic height (useful to determine relative position of the root within upgrade/downgrade subtrees to align them)
+        [
+            #store params and initialize variables
+            (store_script_param,":cur_troop",1), #root troop from which to start processing the branches
+            (store_script_param,":traversing_direction",2), #1 means traversing right through upgrades, -1 means traversing left through downgrades
+            (store_script_param,":cur_y",3), #number of extra branches beyond the starting one, meant to carry this data to leaves of the tree for analyzing current height of the branch
+            #initialize
+            (assign,":last_child_node",-1), #having this at -1 marks that there are no child nodes (we want it set early in case we find a looping branch that forces us to skip child nodes)
+            #anti-loop failsafe
+            (troop_get_slot,":range_end","trp_temp_troop",0),
+            (try_for_range,":loop_var",1,":range_end"),
+                (troop_slot_eq,"trp_temp_troop",":loop_var",":cur_troop"),
+                (assign,":range_end",-1), #break
+            (try_end),
+            (try_begin), #no loop detected, process branches
+                (neq,":range_end",-1), #there was no break in the loop, our tree has no looping branches
+                #add current troop to duplicate detection array
+                (troop_set_slot,"trp_temp_troop",":range_end",":cur_troop"), #store him at the end of the array
+                (val_add,":range_end",1), #increment end of array
+                (troop_set_slot,"trp_temp_troop",0,":range_end"), #save for later use
+                #set variables that differ between downgrades/upgrades
+                (try_begin), #traversing upgrades
+                    (gt,":traversing_direction",0),
+                    (assign,":initial_range_begin",0),
+                    (assign,":initial_range_end",2),
+                    (assign,":script_cf_troop_check","script_cf_troop_tree_upgrade_troop_check"),
+                (else_try), #traversing downgrades
+                    (assign,":initial_range_begin",all_troops_begin),
+                    (assign,":initial_range_end",all_troops_end),
+                    (assign,":script_cf_troop_check","script_cf_troop_tree_downgrade_troop_check"),
+                (try_end),
+                #count child nodes & determine actual range of troops to search (this is an optimization specifically for downgrades, for upgrades it's pretty simple and optimized already)
+                (try_for_range_backwards,":loop_var",":initial_range_begin",":initial_range_end"), #we build the tree from the bottom, so let's count upgrades from the bottom too, for consistency
+                    (call_script,":script_cf_troop_check",":cur_troop",":loop_var"),
+                    (assign,":range_begin",":loop_var"),
+                    (eq,":last_child_node",-1),
+                    (assign,":last_child_node",":loop_var"),
+                (try_end),
+                #process child nodes
+                (try_begin), #has child nodes
+                    (gt,":last_child_node",-1),
+                    #initial calculations
+                    (store_add,":range_end",":last_child_node",1),
+                    (assign,":next_y",":cur_y"),
+                    (assign,":subtree_wdth",0), #initially none detected
+                    #loop over child nodes
+                    (try_for_range_backwards,":loop_var",":range_begin",":range_end"), #we are building from lower y coordinates to higher
+                        #process child node
+                        (call_script,":script_cf_troop_check",":cur_troop",":loop_var"),
+                        (assign,":child_node",reg0),
+                        (call_script,"script_troop_tree_analyze_child_nodes",":child_node",":traversing_direction",":next_y"),
+                        #collect outputs
+                        (val_max,":subtree_wdth",reg0),
+                        (assign,":next_y",reg1),
+                        (try_begin), #top child node (same node could be both top and bottom)
+                            (eq,":loop_var",":range_begin"),
+                            (assign,":top_child_node_y_numerator",reg2),
+                            (assign,":top_child_node_y_denominator",reg3),
+                        (try_end),
+                        (try_begin), #bottom child node (same node could be both top and bottom)
+                            (eq,":loop_var",":last_child_node"),
+                            (assign,":bottom_child_node_y_numerator",reg2),
+                            (assign,":bottom_child_node_y_denominator",reg3),
+                        (try_end),
+                        #draw child node's pic and connecting line
+                        (val_add,":next_y",1),
+                    (try_end),
+                (try_end),
+            (try_end),
+            #return output
+            (try_begin), #no child nodes
+                (eq,":last_child_node",-1), #this means we found no child nodes for current troop (or skipped the whole block because of a detected loop in a branch)
+                (assign,reg2,":cur_y"), #root_y_numerator - no child nodes so root=leaf
+                (assign,reg3,1), #root_y_denominator - no child nodes to cause branching and fractions, denominator can only be 1
+                (assign,reg0,0), #subtree width - no subtrees, so no width
+                (assign,reg1,":cur_y"),
+            (else_try), #has child nodes
+                (call_script,"script_common_fractions_add",":top_child_node_y_numerator",":top_child_node_y_denominator",":bottom_child_node_y_numerator",":bottom_child_node_y_denominator"),
+                (val_lshift,reg1,1), #cut fraction by half by doubling the denominator
+                (assign,reg2,reg0), #get root y numerator
+                (assign,reg3,reg1), #get root y denominator
+                (store_add,reg0,":subtree_wdth",1), #width of subtrees returned by child nodes + 1 for child nodes themselves
+                (store_sub,reg1,":next_y",1), #1 should be added *between* branches, but we were doing it *after* every branch, so once too many, so -1 to correct it
+            (try_end),
+        ]
+    ),
+    ("troop_tree_draw_child_nodes", #draws upgrades or downgrades of given troop as a tree structure starting at given coordinates x indicating the center of the root troop, and y indicating preliminary y coordinate (subject to change if child nodes push it up due to branching, in which case this will be the y coordinate of the lowest branch)
+        #input: param1 = root troop, param2 = traversing direction (1=upgrades, -1=downgrades), param3 = horizontal picture spacing, param4 = pic width, param5 = pic height, param6,param7 = current x,y coordinates, param4 = current y (number of extra branches so far), param5 = draw tree (1 is draw, 0 is just analyze), further params only for drawing mode: param6 = pic x coordinate, param7 = preliminary pic y coordinate (subject to change if child nodes push it up due to branching), param8 = horizontal spacing (if tree is very tall but not wide, it makes sense to increase pic spacing), param9,param10 pic width,height
+        #output: reg0 = final y coordinate of the root troop where its pic should be drawn, reg1 = y coordinate for next recursive call (internal variable of the recursion, irrelevant after the tree is drawn)
+        [
+            #store params and initialize variables
+            (store_script_param,":cur_troop",1), #root troop from which to start processing the branches
+            (store_script_param,":traversing_direction",2), #1 means traversing right through upgrades, -1 means traversing left through downgrades
+            (store_script_param,":pic_spacing_x",3), #if there aren't many troop horizontally, this may be bigger than pic_wdth to make better use of available space
+            (store_script_param,":pic_wdth",4),
+            (store_script_param,":pic_hght",5),
+            (store_script_param,":pic_cur_x",6), #x coordinate of current troop
+            (store_script_param,":pic_cur_y",7), #preliminary y coordinate of current troop, meant to carry this data to leaves of the tree (and then value returns back to root as each branching positions its root halfway between top branch and bottom branch)
+            #initialize
+            (assign,":last_child_node",-1), #having this at -1 marks that there are no child nodes (we want it set early in case we find a looping branch that forces us to skip child nodes)
+            #anti-loop failsafe
+            (troop_get_slot,":range_end","trp_temp_troop",0),
+            (try_for_range,":loop_var",1,":range_end"),
+                (troop_slot_eq,"trp_temp_troop",":loop_var",":cur_troop"),
+                (assign,":range_end",-1), #break
+            (try_end),
+            (try_begin), #no loop detected, process branches
+                (neq,":range_end",-1), #there was no break in the loop, our tree has no looping branches
+                #add current troop to duplicate detection array
+                (troop_set_slot,"trp_temp_troop",":range_end",":cur_troop"), #store him at the end of the array
+                (val_add,":range_end",1), #increment end of array
+                (troop_set_slot,"trp_temp_troop",0,":range_end"), #save for later use
+                #set variables that differ between downgrades/upgrades
+                (try_begin), #traversing upgrades
+                    (gt,":traversing_direction",0),
+                    (assign,":initial_range_begin",0),
+                    (assign,":initial_range_end",2),
+                    (assign,":script_cf_troop_check","script_cf_troop_tree_upgrade_troop_check"),
+                    (assign,":name_color",troop_tree_name_color_upgrades),
+                    (assign,":line_color",troop_tree_line_color_upgrades),
+                (else_try), #traversing downgrades
+                    (assign,":initial_range_begin",all_troops_begin),
+                    (assign,":initial_range_end",all_troops_end),
+                    (assign,":script_cf_troop_check","script_cf_troop_tree_downgrade_troop_check"),
+                    (assign,":name_color",troop_tree_name_color_downgrades),
+                    (assign,":line_color",troop_tree_line_color_downgrades),
+                (try_end),
+                #count child nodes & determine actual range of troops to search (this is an optimization specifically for downgrades, for upgrades it's pretty simple and optimized already)
+                (try_for_range_backwards,":loop_var",":initial_range_begin",":initial_range_end"), #we build the tree from the bottom, so let's count upgrades from the bottom too, for consistency
+                    (call_script,":script_cf_troop_check",":cur_troop",":loop_var"),
+                    (assign,":range_begin",":loop_var"),
+                    (eq,":last_child_node",-1),
+                    (assign,":last_child_node",":loop_var"),
+                (try_end),
+                #process child nodes
+                (try_begin), #has child nodes
+                    (gt,":last_child_node",-1),
+                    #initial calculations
+                    (store_add,":range_end",":last_child_node",1),
+                    (store_div,":half_of_pic_spacing_x",":pic_spacing_x",2),
+                    (store_add,":pic_middle_x",":pic_cur_x",":half_of_pic_spacing_x"),
+                    (store_add,":pic_next_x",":pic_cur_x",":pic_spacing_x"),
+                    (assign,":pic_next_y",":pic_cur_y"),
+                    #loop over child nodes
+                    (try_for_range_backwards,":loop_var",":range_begin",":range_end"), #we are building from lower y coordinates to higher
+                        #process child node
+                        (call_script,":script_cf_troop_check",":cur_troop",":loop_var"),
+                        (assign,":child_node",reg0),
+                        (call_script,"script_troop_tree_draw_child_nodes",":child_node",":traversing_direction",":pic_spacing_x",":pic_wdth",":pic_hght",":pic_next_x",":pic_next_y"),
+                        #collect outputs
+                        (try_begin), #top child node (same node could be both top and bottom)
+                            (eq,":loop_var",":range_begin"),
+                            (assign,":child_node_troop_pic_y_top",reg0), #final position of child node (often different from pic_next_y - that's just input value)
+                        (try_end),
+                        (try_begin), #bottom child node (same node could be both top and bottom)
+                            (eq,":loop_var",":last_child_node"),
+                            (assign,":child_node_troop_pic_y_bot",reg0), #final position of child node (often different from pic_next_y - that's just input value)
+                        (try_end),
+                        (assign,":pic_next_y",reg1),
+                        (store_sub,":overlay_y",reg0,troop_tree_line_wdth/2),
+                        #draw child node's pic and connecting line
+                        (call_script,"script_troop_tree_draw_troop",":child_node",":pic_next_x",reg0,":pic_wdth",":pic_hght",":name_color"),
+                        (call_script,"script_troop_tree_draw_line",":pic_middle_x",":overlay_y",":half_of_pic_spacing_x",troop_tree_line_wdth,":line_color"), #horizontal line from center point to branch
+                        (val_add,":pic_next_y",":pic_hght"),
+                    (try_end),
+                    #final calculations, connect child nodes to root
+                    (store_add,":pic_cur_y",":child_node_troop_pic_y_bot",":child_node_troop_pic_y_top"),
+                    (store_add,":pic_cur_y",":child_node_troop_pic_y_bot",":child_node_troop_pic_y_top"),
+                    (val_div,":pic_cur_y",2), #this will be needed to position the pic of root troop later!
+                    (store_sub,":overlay_y",":pic_cur_y",troop_tree_line_wdth/2),
+                    (call_script,"script_troop_tree_draw_line",":pic_cur_x",":overlay_y",":half_of_pic_spacing_x",troop_tree_line_wdth,":line_color"), #horizontal line from root to center point
+                    (store_sub,":size_y",":child_node_troop_pic_y_top",":child_node_troop_pic_y_bot"),
+                    (val_add,":size_y",troop_tree_line_wdth),
+                    (store_sub,":overlay_x",":pic_middle_x",int(round(troop_tree_line_wdth/2*mult_x))),
+                    (store_sub,":overlay_y",":child_node_troop_pic_y_bot",troop_tree_line_wdth/2),
+                    (call_script,"script_troop_tree_draw_line",":overlay_x",":overlay_y",int(round(troop_tree_line_wdth*mult_x)),":size_y",":line_color"), #vertical connector for root line and branch lines (draw it even if there is no branching - will cover any accidental gap that resulted from integer rounding)
+                (try_end),
+            (try_end),
+            #return output
+            (try_begin), #no child nodes
+                (eq,":last_child_node",-1), #this means we found no child nodes for current troop (or skipped the whole block because of a detected loop in a branch)
+                (assign,reg0,":pic_cur_y"), #y position of current troop pic
+                (assign,reg1,":pic_cur_y"), #max y position achieved by branches drawn so far
+            (else_try), #has child nodes
+                (assign,reg0,":pic_cur_y"),
+                (store_sub,reg1,":pic_next_y",":pic_hght"), #pic_hght should be added between branches, but we were doing it after every branch - minus pic_hght to correct it
+            (try_end),
+        ]
+    ),
+    #MOD END - troop tree
+]
+
+# 004 - Inventory as presentation
+inventory_in_presentation_scripts = [
+  ("inventory_array_measure", #helper script that draws items in inventory-like view (3 items in each row)
+        #input: param1 = troop whose inventory to draw, param2 = desired inventory width, param3 = inventory position (bottom left corner)
+        #output: reg0 = y coordinate of inventory array's upper edge
+        [
+            (store_script_param,":item_source_troop",1), #from this troop's inventory we will read the items
+            (store_script_param,":inventory_width",2),
+            #calculate spacing between inventory frames (same value will be used multiple times, both for x and y)
+            (store_mul,reg0,":inventory_width",int(round((1-0.005/0.13)*0.13/0.38*1000))), #x1000 for better accuracy
+            (call_script,"script_div_math",reg0,1000), #undo x1000
+            (assign,":inv_slot_spacing",reg0),
+            #count items to draw (overlaps on inventory slots look much better when they are drawn top to bottom); also as optimization limit the range of slots to parse for next loop
+            (assign,":num_array_slots",0),
+            (try_for_range,":inv_slot",equipment_slots_begin,inventory_slots_end), #count items in equipment slots, because regular troops can have items equipped for reason that only engine knows
+                (troop_get_inventory_slot,":item",":item_source_troop",":inv_slot"),
+                (ge,":item",0),
+                (val_add,":num_array_slots",1),
+            (try_end),
+            (store_add,reg0,":num_array_slots",1),
+            (call_script,"script_div_up",":num_array_slots",3), #divides rounding up and returns to reg0
+            (store_mul,reg0,":inv_slot_spacing",reg0),
+        ]
+    ),
+    ("inventory_array_draw", #helper script that draws items in inventory-like view (3 items in each row)
+        #input: param1 = troop whose inventory to draw, param2 = desired inventory width, param3,param4 = inventory position (bottom left corner), param5,param6 = array troops in which to store the item overlays and corresponding slots in troop's inventory from which the items originate (pass -1 instead of both params to skip writing to arrays)
+        #output: reg0 = y coordinate of inventory array's upper edge
+        [
+            (store_script_param,":item_source_troop",1), #from this troop's inventory we will read the items
+            (store_script_param,":inventory_width",2),
+            (store_script_param,":initial_x",3), #left
+            (store_script_param,":initial_y",4), #bottom
+            (store_script_param,":item_overlay_array",5), #array's indexes 1+ hold ids of item overlays, index 0 will hold number of overlays created,
+            (store_script_param,":item_inv_slot_array",6), #array's indexes 1+ hold indexes of inventory slots of the item_source_troop corresponding to overlays stored in item_overlay_array
+            #calculate spacing between inventory frames (same value will be used multiple times, both for x and y)
+            (store_mul,reg0,":inventory_width",int(round((1-0.005/0.13)*0.13/0.38*1000))), #x1000 for better accuracy
+            (call_script,"script_div_math",reg0,1000), #undo x1000
+            (assign,":inv_slot_spacing",reg0),
+            #calculate offset for item's position within inventory frame (same value will be used multiple times, both for x and y)
+            (store_mul,reg0,":inventory_width",int(round(0.13/0.38/0.1/20*1000))), #x1000 for better accuracy; /20 to shift item's position slightly towards the center of the inventory frame
+            (call_script,"script_div_math",reg0,1000), #undo x1000
+            (assign,":item_pos_offset",reg0),
+            #set size for inventory frame
+            (store_mul,reg0,":inventory_width",int(round(0.13/0.38/0.13*1000))), #x1000 for better accuracy; objects overlap and their combined length is 0.38/0.13 of the width of 1 object, so we should divide by that (multiply by 0.13/0.38), and the final /0.13 is to scale the mesh to screen units (because the mesh size is 0.13)
+            (call_script,"script_div_math",reg0,1000), #undo x1000
+            (position_set_x,pos1,reg0),
+            (position_set_y,pos1,reg0), #same height as width to make it "square" from engine's perspective (we can't apply de-stretching to items in inventory, so let's not apply it here either for consistent look)
+            #set size for inventory background & item
+            (store_mul,reg0,":inventory_width",int(round(0.13/0.38/0.1*1000))), #x1000 for better accuracy; same size as the frames, this one seems to be drawn under the frame; /0.1 because the size of the mesh is 0.1
+            (call_script,"script_div_math",reg0,1000), #undo x1000
+            (position_set_x,pos2,reg0),
+            (position_set_y,pos2,reg0), #same height as width to make it "square" from engine's perspective (we can't apply de-stretching to items in inventory, so let's not apply it here either for consistent look)
+            #count items to draw (overlaps on inventory slots look much better when they are drawn top to bottom); also as optimization limit the range of slots to parse for next loop
+            (assign,":num_array_slots",0),
+            (assign,":range_begin",inventory_slots_end),
+            (assign,":range_end",-1),
+            (try_for_range,":inv_slot",equipment_slots_begin,inventory_slots_end), #count items in equipment slots, because regular troops can have items equipped for reason that only engine knows
+                (troop_get_inventory_slot,":item",":item_source_troop",":inv_slot"),
+                (ge,":item",0),
+                (val_add,":num_array_slots",1),
+                (assign,":range_end",":inv_slot"),
+                (eq,":range_begin",inventory_slots_end),
+                (assign,":range_begin",":inv_slot"),
+            (try_end),
+            (val_add,":range_end",1),
+            (store_add,reg0,":num_array_slots",1),
+            (try_begin),
+                (gt,":item_overlay_array",-1),
+                (troop_set_slot,":item_overlay_array",0,reg0), #store item count
+            (try_end),
+            #determine initial coordinates for inventory array
+            (assign,":inv_slot_x",":initial_x"),
+            (call_script,"script_div_up",":num_array_slots",3), #divides rounding up and returns to reg0
+            (store_mul,":overlay_y",":inv_slot_spacing",reg0), #size of the inventory array
+            (val_add,":overlay_y",":initial_y"), #position of the inventory array's upper edge
+            (store_sub,":inv_slot_y",":overlay_y",":inv_slot_spacing"), #we need to start drawing from the bottom of the 1st row (and overlay_y is top)
+            #draw inventory array
+            (assign,":num_array_slots",1), #reset and count from 1
+            (try_for_range,":inv_slot",":range_begin",":range_end"), #must search equipment slots too!
+                (troop_get_inventory_slot,":item",":item_source_troop",":inv_slot"),
+                (ge,":item",0),
+                (create_mesh_overlay,reg0,"mesh_mp_inventory_choose"), #inventory slot frame; mesh size is 0.13, without the frame it's 0.12 and frame is 0.005 on each side, so if we let frames overlap, that's 3*0.13-2*0.005=0.38
+                (overlay_set_size,reg0,pos1),
+                (position_set_x,pos0,":inv_slot_x"),
+                (position_set_y,pos0,":inv_slot_y"),
+                (overlay_set_position,reg0,pos0),
+                (create_mesh_overlay,reg0,"mesh_inv_slot"), #inventory slot background
+                (overlay_set_size,reg0,pos2),
+                (position_set_x,pos0,":inv_slot_x"),
+                (position_set_y,pos0,":inv_slot_y"),
+                (overlay_set_position,reg0,pos0),
+                (create_mesh_overlay_with_item_id,reg0,":item"), #the item itself
+                (try_begin),
+                    (gt,":item_overlay_array",-1),
+                    (troop_set_slot,":item_overlay_array",":num_array_slots",reg0),
+                    (troop_set_slot,":item_inv_slot_array",":num_array_slots",":inv_slot"), #storing inventory slot is better than storing item id + item modifier, because it's just 1 value instead of 2
+                (try_end),
+                (overlay_set_size,reg0,pos2),
+                (store_add,":item_x",":inv_slot_x",":item_pos_offset"),
+                (store_add,":item_y",":inv_slot_y",":item_pos_offset"),
+                (position_set_x,pos0,":item_x"),
+                (position_set_y,pos0,":item_y"),
+                (overlay_set_position,reg0,pos0),
+                (store_mod,reg0,":num_array_slots",3), #after modulo, columns have indexes 1,2,0, because we are starting with 1 (and holding the count of entries in 0)
+                (try_begin), #full row, move down
+                    (eq,reg0,0),
+                    (assign,":inv_slot_x",":initial_x"),
+                    (val_sub,":inv_slot_y",":inv_slot_spacing"),
+                (else_try),
+                    (val_add,":inv_slot_x",":inv_slot_spacing"),
+                (try_end),
+                (val_add,":num_array_slots",1),
+            (try_end),
+            #add empty slots at the end (num_array_slots now points at first blank we should draw)
+            (store_sub,":range_end",inventory_slots_end,":num_array_slots"), #num_array_slots can't possibly exceed inventory_slots_end, so this value will never be negative (we don't want negative, because on negatives engine gets stupid about modulo and returns wrong results)
+            (val_mod,":range_end",3), #this is how many empty slots we should draw
+            (try_for_range,":unused",0,":range_end"),
+                (create_mesh_overlay,reg0,"mesh_mp_inventory_choose"), #inventory slot frame; mesh size is 0.13, without the frame it's 0.12 and frame is 0.005 on each side, so if we let frames overlap, that's 3*0.13-2*0.005=0.38
+                (overlay_set_size,reg0,pos1),
+                (position_set_x,pos0,":inv_slot_x"),
+                (position_set_y,pos0,":inv_slot_y"),
+                (overlay_set_position,reg0,pos0),
+                (create_mesh_overlay,reg0,"mesh_inv_slot"), #inventory slot background
+                (overlay_set_size,reg0,pos2),
+                (position_set_x,pos0,":inv_slot_x"),
+                (position_set_y,pos0,":inv_slot_y"),
+                (overlay_set_position,reg0,pos0),
+                (val_add,":inv_slot_x",":inv_slot_spacing"),
+            (try_end),
+            (assign,reg0,":overlay_y"),
+        ]
+    ),
+    ("inventory_array_show_details", #helper script to put in ti_on_presentation_mouse_enter_leave that shows item details; remember to add (close_item_details), before every line of code that could end your presentation, like (start_presentation,"prsnt_something_else"), or (presentation_set_duration,0), even if it's not called within the presentation!
+        #input: param1 = overlay id, param2 = 1 if mouse is leaving overlay and 0 if it's entering, param3 = troop whose inventory was drawn, param4,param5 = array troops in which item overlay ids and corresponding inventory slots of inventory source troop are stored
+        #output: none
+        [
+            #only use this script after ruling out other overlays that do something on mouse enter/leave!
+            (store_script_param,":overlay",1), #equals trigger param 1
+            (store_script_param,":is_leaving",2), #equals trigger param 2
+            (store_script_param,":item_source_troop",3), #from this troop's inventory we will read the items
+            (store_script_param,":item_overlay_array",4), #array's indexes 1+ hold ids of item overlays, index 0 will hold number of overlays created,
+            (store_script_param,":item_inv_slot_array",5), #array's indexes 1+ hold indexes of inventory slots of the item_source_troop corresponding to overlays stored in item_overlay_array
+            (troop_get_slot,":range_end",":item_overlay_array",0),
+            (try_for_range,":slot",1,":range_end"),
+                (troop_slot_eq,":item_overlay_array",":slot",":overlay"), #corresponding item overlay found
+                (try_begin), #mouse is leaving
+                    (eq,":is_leaving",1),
+                    (eq,"$inventory_array_details_shown_for_overlay",":overlay"),
+                    (close_item_details), #overlay off
+                (else_try), #mouse is entering
+                    (troop_get_slot,":inv_slot",":item_inv_slot_array",":slot"),
+                    (troop_get_inventory_slot,":item",":item_source_troop",":inv_slot"),
+                    (troop_get_inventory_slot_modifier,":modifier",":item_source_troop",":inv_slot"),
+                    (call_script,"script_game_get_item_buy_price_factor",":item"),
+                    (overlay_get_position,pos0,":overlay"),
+                    (assign,"$inventory_array_details_shown_for_overlay",":overlay"),
+                    (show_item_details_with_modifier,":item",":modifier",pos0,reg0), #overlay on
+                (try_end),
+                (assign,":range_end",-1),
+            (try_end),
+        ]
+    ),
+]
+
+# 002 - Math scripts
+math_scripts = [
+  ("gcd", #calculates greatest common divisor of two given numbers which can be used e.g. for reducing common fractions; for multiple numbers make use of the equivalence gcd(a,b,c) = gcd(a,gcd(b,c))
+        #input: param1 = a non-negative integer to operate on, param2 = another non-negative integer to operate on
+        #output: reg0 = greatest common divisor of params
+        [
+            #this algorithm takes advantage of how binary operations are faster on computers than other standard math operations to improve operation time (explanation of what each line does is provided, but proof why it works is not - it can be looked up online)
+            (store_script_param,":a",1),
+            (store_script_param,":b",2),
+            (try_begin),
+                (gt,":a",":b"),
+                (call_script,"script_gcd",":b",":a"), #we want the parameters sorted from lesser to greater - this makes it easier to check for zeroes, and allows calculating the difference between input params without checking again which one is greater
+            (else_try),
+                (eq,":a",0),
+                (assign,reg0,":b"), #at this point we resolved a situation where either of the parameters is 0 by returning the non-zero one (also, it is common practice to return 0 when there is no gcd because both params are 0, so here we're doing the same)
+            (else_try),
+                (store_and,":a_is_odd",":a",0x1), #if smallest bit is 1, then it's an odd number, and even number if it's 0
+                (store_and,":b_is_odd",":b",0x1), #if smallest bit is 1, then it's an odd number, and even number if it's 0
+                (try_begin), #a is even
+                    (neq,":a_is_odd",1),
+                    (val_rshift,":a",1), #if a is even, then it can be divided by 2 (best done by shifting right by 1 bit)
+                    (try_begin), #both are even
+                        (neq,":b_is_odd",1),
+                        (val_rshift,":b",1), #if b is even, then it can be divided by 2 (best done by shifting right by 1 bit)
+                        (call_script,"script_gcd",":a",":b"), #gcd(a/2,b/2)
+                        (val_mul,reg0,2), #return 2*gcd(a/2,b/2)
+                    (else_try), #only a is even
+                        (call_script,"script_gcd",":a",":b"), #returns gcd(a/2,b)
+                    (try_end),
+                (else_try), #a is odd
+                    (try_begin), #only b is even
+                        (neq,":b_is_odd",1),
+                        (val_rshift,":b",1), #if b is even, then it can be divided by 2 (best done by shifting right by 1 bit)
+                        (call_script,"script_gcd",":a",":b"), #returns gcd(a,b/2)
+                    (else_try), #neither is even
+                        (val_sub,":b",":a"), #since both a and b are odd, b-a must be even
+                        (val_rshift,":b",1), #and even number can be divided by 2 (best done by shifting right by 1 bit)
+                        (call_script,"script_gcd",":a",":b"), #returns gcd(a,(b-a)/2)
+                    (try_end),
+                (try_end),
+            (try_end),
+        ]
+    ),
+    ("lcm", #calculates least common multiple (smallest common multiple) of two given numbers which can be used e.g. for finding a common denominator of common fractions; for multiple numbers make use of the equivalence lcm(a,b,c) = lcm(a,lcm(b,c))
+        #input: param1 = a non-negative integer to operate on, param2 = another non-negative integer to operate on
+        #output: reg0 = least common multiple of params
+        [
+            #this script makes use of the equivalence lcm(a,b) = a/gcd(a,b)*b (which is true for all non-negative integers as long as gcd(0,0) returns 0) and its computational complexity relies solely on how efficient the gcd algorithm is
+            (store_script_param,":a",1),
+            (store_script_param,":b",2),
+            (call_script,"script_gcd",":a",":b"), #returns gcd(a,b) to reg0
+            (try_begin),
+                (neq,reg0,0), #if gcd(a,b)=0, then both params were 0 and just return the 0 already stored in reg0
+                (val_div,":a",reg0), #otherwise we can safely divide by reg0 to get a/gcd(a,b) - a is always divisible by gcd(a,b), because by definition greatest common divisor of a and other number is a divisor of a
+                (store_mul,reg0,":a",":b"), #return a*b/gcd(a,b)
+            (try_end),
+        ]
+    ),
+    ("common_fraction_reduce", #params can't be negative!
+        #input: param1/param2 = a common fraction
+        #output: reg0/reg1 = input fraction reduced
+        [
+            (store_script_param,":numerator",1),
+            (store_script_param,":denominator",2),
+            #calculate
+            (call_script,"script_gcd",":numerator",":denominator"), #return greatest common divisor
+            (store_div,reg1,":denominator",reg0),
+            (store_div,reg0,":numerator",reg0),
+        ]
+    ),
+    ("common_fractions_to_common_denominator", #params can't be negative! doesn't reduce the fractions so could return e.g. 3/6 if input fractions were not reduced
+        #input: param1/param2 = fraction A, param3/param4 = fraction B
+        #output: reg0/reg2 = converted fraction A, reg1/reg2 = converted fraction B
+        [
+            (store_script_param,":a_numerator",1),
+            (store_script_param,":a_denominator",2),
+            (store_script_param,":b_numerator",3),
+            (store_script_param,":b_denominator",4),
+            #calculate
+            (call_script,"script_lcm",":a_denominator",":b_denominator"), #return smallest common denominator to reg0
+            (assign,reg2,reg0), #common denominator
+            (store_div,reg0,reg2,":a_denominator"),
+            (val_mul,reg0,":a_numerator"), #final increased numerator of fraction b
+            (store_div,reg1,reg2,":b_denominator"),
+            (val_mul,reg1,":b_numerator"), #final increased numerator of fraction a
+        ]
+    ),
+    ("common_fractions_add", #params can't be negative! doesn't reduce the fraction so could return e.g. 3/6
+        #input: param1/param2 = fraction A, param3/param4 = fraction B
+        #output: reg0/reg1 = sum of param fractions
+        [
+            (store_script_param,":a_numerator",1),
+            (store_script_param,":a_denominator",2),
+            (store_script_param,":b_numerator",3),
+            (store_script_param,":b_denominator",4),
+            #calculate
+            (try_begin),
+                (eq,":a_denominator",":b_denominator"),
+                (store_add,reg0,":a_numerator",":b_numerator"),
+                (assign,reg1,":a_denominator"),
+            (else_try),
+                (call_script,"script_common_fractions_to_common_denominator",":a_numerator",":a_denominator",":b_numerator",":b_denominator"), #return converted fractions to reg0/reg2 and reg1/reg2
+                (val_add,reg0,reg1), #return sum of converted numerators
+                (assign,reg1,reg2), #return new denominator
+            (try_end),
+        ]
+    ),
+    ("div_math", #performs division param1/param2 forcing mathematically correct rounding up or down (regular div always rounds towards zero, like ROUNDDOWN in MS Excel)
+        #input: param1= dividend, param2=divisor
+        #output: reg0 = division result rounded mathematically
+        [
+            #note: when the value being rounded is exactly 1/2 (=0.5), there is no "correct" way to decide rounding up or down
+            #however, because in most cases there is usually something after that 5, it seems logical to round up (it could be 50, 51, 52... 59)
+            #for negative values however applying the same logic means rounding down on 5
+            #this symmetrical approach seems the most common and this script uses it too, but it's not the only approach out there: https://en.wikipedia.org/wiki/Rounding
+            #when doing math with this script, keep in mind how it works
+            #on positive numbers it will follow intuition, for example, 5/2 + 10 = 12.5 step by step will give us:
+            #5/2 is 3
+            #3 + 10 = 13 (which is an expected rounding of 12.5)
+            #intuition may fail however, if rounded division produces a value on the opposite side of zero than the final result, due to rounding direction
+            #for example, doing -5/2 + 10 = 7.5 step by step will give us:
+            #-5/2 is -3
+            #-3 + 10 = 7 even though we'd expect 7.5 to be rounded to 8
+            #luckily this only happens in 10% of cases, on digit=5, and not on the other 9 of them
+            #as a workaround, modify your formula in such a way that division only happens once and is the last step
+            #if the above is not an option, then double the value you're dividing, divide, bring your calculations to conclusion, then as the last step use this script to divide the final result by 2
+            (store_script_param,":dividend",1),
+            (store_script_param,":divisor",2),
+            #formula is: (dividend ♦ divisor / 2) / divisor
+            #where operator (♦) is the same sign as the division result (- if negative, + if positive, if 0 then doesn't matter)
+            (store_div,":half_of_divisor",":divisor",2),
+            (try_begin), #dividend negative
+                (lt,":dividend",0),
+                (try_begin), #divisor also negative
+                    (lt,":divisor",0),
+                    (store_add,reg0,":dividend",":half_of_divisor"), #so ♦ is positive
+                (else_try), #but divisor not negative
+                    (store_sub,reg0,":dividend",":half_of_divisor"), #so ♦ is negative
+                (try_end),
+            (else_try), #dividend not negative
+                (try_begin), #divisor also not negative
+                    (ge,":divisor",0),
+                    (store_add,reg0,":dividend",":half_of_divisor"), #so ♦ is positive
+                (else_try), #but divisor negative
+                    (store_sub,reg0,":dividend",":half_of_divisor"), #so ♦ is negative
+                (try_end),
+            (try_end),
+            (val_div,reg0,":divisor"),
+        ]
+    ),
+    ("div_up", #performs division param1/param2 forcing rounding away from 0 like ROUNDUP in MS Excel (which is the opposite of regular div that rounds towards zero, like ROUNDDOWN in MS Excel)
+        #input: param1= dividend, param2=divisor
+        #output: reg0 = division result rounded up
+        [
+            (store_script_param,":dividend",1),
+            (store_script_param,":divisor",2),
+            #formula is: (dividend ♦ divisor ♣ 1) / divisor
+            #where:
+            #operator_1 (♦) is the same sign as the division result (- if negative, + if positive, if 0 then doesn't matter)
+            #operator_2 (♣) is the opposite to sign of dividend (so - if dividend positive, + if negative, if 0 then doesn't matter)
+            (try_begin), #dividend negative
+                (lt,":dividend",0),
+                (store_add,reg0,":divisor",1), #so ♣ is positive
+                (try_begin), #divisor also negative
+                    (lt,":divisor",0),
+                    (store_add,reg0,":dividend",reg0), #so ♦ is positive
+                (else_try), #but divisor not negative
+                    (store_sub,reg0,":dividend",reg0), #so ♦ is negative
+                (try_end),
+            (else_try), #dividend not negative
+                (store_sub,reg0,":divisor",1), #so ♣ is negative
+                (try_begin), #divisor also not negative
+                    (ge,":divisor",0),
+                    (store_add,reg0,":dividend",reg0), #so ♦ is positive
+                (else_try), #but divisor negative
+                    (store_sub,reg0,":dividend",reg0), #so ♦ is negative
+                (try_end),
+            (try_end),
+            (val_div,reg0,":divisor"),
+        ]
+    ),
+]
+
+# 001 - Main scripts
 scripts = [
 
 
@@ -73697,7 +74368,8 @@ Born at {s43}^Contact in {s44} of the {s45}.^\
 		(try_end),
 	]),	
 
-]
+] + math_scripts + inventory_in_presentation_scripts + troop_tree_scripts
+# 003 - Script attachment place
 # modmerger_start version=201 type=2
 try:
     component_name = "scripts"

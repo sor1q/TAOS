@@ -24,6 +24,44 @@ from module_constants import *
 
 #banner height = 200, width = 85 with wood, 75 without wood
 
+troop_tree_tableaus= [
+   #MOD BEGIN - troop tree
+    ("rndl_troop_tree_pic",0,"tableau_with_transparency",1024,1024,-500,-500,500,500, #size 100% (1000x1000) with the anchor in the middle
+        [
+            (store_script_param,":troop",1),
+            (cur_tableau_set_ambient_light,10,11,15),
+            (set_fixed_point_multiplier,100),
+            (cur_tableau_set_camera_parameters,0,40,40,0,100000),
+            (init_position,pos0),
+            (position_set_x,pos0,-20),
+            (position_set_y,pos0,-20),
+            (position_set_z,pos0,100),
+            (val_mul,":troop",2), #picture without the hide_weapons_flag (see script_add_troop_to_cur_tableau_for_party for reference)
+            (cur_tableau_add_tableau_mesh,"tableau_rndl_troop_tree_pic_color",":troop",pos0),
+            (position_set_z,pos0,200),
+            (cur_tableau_add_tableau_mesh,"tableau_rndl_troop_tree_pic_alpha_mask",":troop",pos0),
+        ]
+    ),
+    ("rndl_troop_tree_pic_color",0,"mat_troop_portrait_color",1024,1024,0,0,400,400, #can't reuse troop_party_color because changing root troop in the tree would make the wrong picture show in party window too
+        [
+            (store_script_param,":input_data",1), #this value is troop*2 + hide_weapons_flag (flag being 0 or 1)
+            (cur_tableau_set_background_color,0xFFBE9C72),
+            (cur_tableau_set_ambient_light,10,11,15),
+            (call_script,"script_add_troop_to_cur_tableau_for_party",":input_data"),
+        ]
+    ),
+    ("rndl_troop_tree_pic_alpha_mask",0,"mat_troop_portrait_mask",1024,1024,0,0,400,400, #can't reuse troop_party_alpha_mask because changing root troop in the tree would make the wrong picture show in party window too
+        [
+            (store_script_param,":input_data",1), #this value is troop*2 + hide_weapons_flag (flag being 0 or 1)
+            (cur_tableau_set_background_color,0x00808080),
+            (cur_tableau_set_ambient_light,10,11,15),
+            (cur_tableau_render_as_alpha_mask),
+            (call_script,"script_add_troop_to_cur_tableau_for_party",":input_data"),
+        ]
+    ),
+    #MOD END - troop tree
+]
+
 tableaus = [
   ("game_character_sheet", 0, "tableau_with_transparency", 1024, 1024, 0, 0, 266, 532,
    [
@@ -102,13 +140,34 @@ tableaus = [
        (position_set_z, pos1, 200),
        (cur_tableau_add_tableau_mesh, "tableau_troop_party_alpha_mask", ":troop_no", pos1, 0, 0),
        (position_set_z, pos1, 300),
+       
+       #MOD BEGIN - troop tree
+            (store_div,"$party_window_selected_troop",":troop_no",2), #discard hide_weapons_flag data
+            (try_begin),
+                (neg|is_presentation_active,"prsnt_rndl_troop_tree"), #troop tree is off
+                (presentation_set_duration,0), #turn off any currently running presentations - we want to turn off just prsnt_rndl_troop_tree_button, but all presentations running in party window should be controlled from here anyway, so it's not like we're breaking anything unexpected
+                (neg|troop_is_hero,"$party_window_selected_troop"), #hero troops don't upgrade like regulars do, they gain exp like player and don't get upgrade buttons even if upgrade is specified in module.troops
+                (troop_get_upgrade_troop,":has_tree","$party_window_selected_troop",0), #get 1st upgrade path (checking 2nd one is unnecessary, because there is a bug if 1st upgrade is 0 but the 2nd upgrade exists (bug makes the troop unupgrade'able despite a button for 2nd upgrade showing)
+                (try_for_range,":downgrade_troop",all_troops_begin,all_troops_end), #check all troops, just in case
+                    (eq,":has_tree",0), #upgrade=0 means that party_window_selected_troop has no upgrades
+                    (troop_get_upgrade_troop,":upgrade_1",":downgrade_troop",0), #get 1st upgrade path
+                    (troop_get_upgrade_troop,":upgrade_2",":downgrade_troop",1), #get 2nd upgrade path
+                    (this_or_next|eq,":upgrade_1","$party_window_selected_troop"), #found downgrade of our troop
+                    (             eq,":upgrade_2","$party_window_selected_troop"), #found downgrade of our troop
+                    (assign,":has_tree",1), #reuse variable to simplify code
+                (try_end),
+                (neq,":has_tree",0), #found upgrade (before loop) or downgrade (in loop) for our troop
+                (start_presentation,"prsnt_rndl_troop_tree_button"),
+            (try_end),
+            #MOD END - troop tree
        ]),
 
   ("game_troop_label_banner", 0, "tableau_with_transparency", 256, 256, -128, 0, 128, 256,
    [
        (store_script_param, ":banner_mesh", 1),
 
-       (cur_tableau_set_background_color, 0xFF888888),
+       (troop_get_slot,":background_color","trp_banner_background_color_array",":banner_mesh"),
+       (cur_tableau_set_background_color,":background_color"),
        (set_fixed_point_multiplier, 100),
        (cur_tableau_set_camera_parameters, 0, 100, 100, 0, 100000),
 
@@ -1062,7 +1121,8 @@ tableaus = [
     ]),
 
   
-]
+] + troop_tree_tableaus
+
 # modmerger_start version=201 type=4
 try:
     component_name = "tableau_materials"

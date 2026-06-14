@@ -263,3 +263,4 @@ mnu_display_party_slots = 261
 mnu_party_cheat = 262
 mnu_display_troop_slots = 263
 mnu_dplmc_choose_disguise = 264
+mnu_troop_tree = 265

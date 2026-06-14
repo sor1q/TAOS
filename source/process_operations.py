@@ -289,7 +289,7 @@ def get_variable(variable_string,variables_list,variable_uses):
       break
   if not found:
     if (variable_string[0] == '$'):
-      variables_list.append(variable_string)
+      variables_list.append(variable_string[1:])
       variable_uses.append(0)
       result = len(variables_list) - 1
       print "WARNING: Usage of unassigned global variable: " + variable_string

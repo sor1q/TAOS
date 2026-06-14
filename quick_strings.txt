@@ -1,4 +1,4 @@
-1437
+1446
 qstr_Next_Page Next_Page
 qstr_Mod_Options Mod_Options
 qstr_Full_PBOD^Features Full_PBOD^Features
@@ -1436,3 +1436,12 @@ qstr_Current Current
 qstr_Court_Guard Court_Guard
 qstr_Prison_Guard Prison_Guard
 qstr_Castle_Guard Castle_Guard
+qstr_Troop_tree Troop_tree
+qstr_{!} {!}
+qstr_Equipment_pool: Equipment_pool:
+qstr_{s0}^{reg0} {s0}^{reg0}
+qstr_Level:_{reg0} Level:_{reg0}
+qstr_Health:_{reg0} Health:_{reg0}
+qstr_Close Close
+qstr_Closing_troop_tree Closing_troop_tree
+qstr_No_report_launch No_report_launch

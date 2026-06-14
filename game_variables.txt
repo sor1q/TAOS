@@ -807,7 +807,7 @@ party_i_character_size_x = 0.3
 party_i_character_size_y = 0.3
 
 party_t_selected_troop_name_position_x = 0.0
-party_t_selected_troop_name_position_y = 0.56
+party_t_selected_troop_name_position_y = 0.61
 party_t_selected_troop_name_size_x = 0.3
 party_t_selected_troop_name_size_y = 0.02
 party_t_selected_troop_name_text_size_x = 0.02
@@ -843,7 +843,7 @@ party_bo_member2_y = 0.106
 party_info_warn_x = 0.05
 party_info_warn_y = 0.18
 
-party_b_group_position_x = 0.525
+party_b_group_position_x = 0.530
 party_b_group_position_y = 0.415
 party_b_group_h = 0.03
 
@@ -869,7 +869,7 @@ party_b_morale_text_text_color = 0xFF111000
 
 
 party_b_group_header_position_x = 0.516
-party_b_group_header_position_y = 0.458
+party_b_group_header_position_y = 0.454
 party_b_group_header_size_x = 0.20
 party_b_group_header_size_y = 0.04
 party_b_group_header_text_size_x = 0.02

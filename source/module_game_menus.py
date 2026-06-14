@@ -41,6 +41,28 @@ from module_constants import *
 # Note: The first Menu is the initial character creation menu.
 ####################################################################################################################
 
+custom_menus = [
+  ("troop_tree",0,
+    "Hello",
+    "none",
+    [
+      (store_trigger_param,":overlay",1),
+      (assign, "$is_troop_tree_report_launch", 1),
+        
+      (try_begin),
+        (neg|is_presentation_active,"prsnt_rndl_troop_tree"),
+        (try_begin),
+          (lt, "$troop_tree_root_troop", 1), 
+          (assign, "$troop_tree_root_troop", "trp_northern_recruit"),
+      (try_end),
+        (close_item_details), #close whatever might be open
+        (start_presentation,"prsnt_rndl_troop_tree"), #starting new presentation closes this one, so the troop tree button will disappear
+      (try_end),
+    ],
+    []
+),
+]
+
 game_menus = [
   ("start_game_0",menu_text_color(0xFF000000)|mnf_disable_all_keys,
   ##diplomacy begin
@@ -697,6 +719,10 @@ game_menus = [
     ##diplomacy end
    ],
     [
+      ("view_troop_tree",[],"View troop tree.",
+        [(jump_to_menu, "mnu_troop_tree"),
+        ]
+      ),
       ("cheat_faction_orders",[(ge,"$cheat_mode",1)],"{!}Cheat: Faction orders.",
        [(jump_to_menu, "mnu_faction_orders"),
         ]
@@ -3236,14 +3262,6 @@ TOTAL:  {reg5}"),
         (display_message, "@{!}DEBUG: Internal update code for current saved game is {reg0}. Update code for the current release is "+str(DPLMC_CURRENT_VERSION_CODE)+"."),
     (try_end),
     ##diplomacy end+
-
-#Wuan    
-#    ##SB : enable presentation to be launched again
-#    (try_begin),
-#      (eq, "$g_presentation_next_presentation", "prsnt_redefine_keys"),
-#      (start_presentation, "$g_presentation_next_presentation"),
-#    (try_end),
-#Wuan  
     ],
     [
       ("camp_action_1",[(eq,"$cheat_mode",1)],"{!}Cheat: Walk around.",
@@ -21565,7 +21583,7 @@ goods, and books will never be sold. ^^You can change some settings here freely.
       # ]),
     # ]
   # ),
- ]
+ ] + custom_menus
 # modmerger_start version=201 type=2
 try:
     component_name = "game_menus"

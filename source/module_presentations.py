@@ -25,6 +25,539 @@ from module_factions import *
 #  4) Triggers: Simple triggers that are associated with the presentation
 ####################################################################################################################
 
+#HEADING
+# 001 - Main presentations
+# 002 - Troop tree pres
+
+
+# 002 - Troop tree pres
+troop_tree_presentations = [
+    #MOD BEGIN - troop tree
+    ("rndl_troop_tree_button",0,0,
+        [
+            (ti_on_presentation_load,
+                [
+                    (presentation_set_duration,0x7FFFFFFF),
+                    (set_fixed_point_multiplier,1000),
+                    (try_begin), #show troop tree button
+                        (gt,"$party_window_selected_troop",0), #0 is player, so we wouldn't ever get such a value
+                        (create_game_button_overlay,"$prsnt_troop_tree_button","@Troop tree",tf_center_justify),
+                        (position_set_x,pos0,120), #roughly the same size as other buttons
+                        (position_set_y,pos0,32),
+                        (overlay_set_size,"$prsnt_troop_tree_button",pos0),
+                        (position_set_x,pos0,582), #aligned to the right edge, same as other buttons
+                        (position_set_y,pos0,500), #aligned between stack up/down buttons and division selector
+                        (overlay_set_position,"$prsnt_troop_tree_button",pos0),
+                        (try_begin), #hide button if the tree is on
+                            (is_presentation_active,"prsnt_rndl_troop_tree"),
+                            (overlay_set_display,"$prsnt_troop_tree_button",0),
+                        (try_end),
+                    (try_end),
+                ]
+            ),
+            (ti_on_presentation_event_state_change,
+                [
+                    (store_trigger_param,":overlay",1),
+                    #(store_trigger_param,":value",2), #irrelevant
+                    (try_begin),
+                        (eq,":overlay","$prsnt_troop_tree_button"),
+                        (neg|is_presentation_active,"prsnt_rndl_troop_tree"),
+                        (assign,"$troop_tree_root_troop","$party_window_selected_troop"),
+                        (close_item_details), #close whatever might be open
+                        (start_presentation,"prsnt_rndl_troop_tree"), #starting new presentation closes this one, so the troop tree button will disappear
+                    (try_end),
+                ]
+            ),
+        ]
+    ),
+    #MOD END - troop tree
+    #MOD BEGIN - troop tree
+    ("rndl_troop_tree",0,0, #can't specify background mesh here, because it won't disappear when presentation is closed (party window UI will stay hidden underneath); loosely based on code by Rubik, with some ideas from VC
+        [
+            (ti_on_presentation_load,
+                [
+                    #quick note on usage of arrays:
+                    #trp_temp_troop is initially used for controlling troop duplicates in case the troop tree has a looping branch (slot 0 holds number of slots filled, where 1st filled slot is 1), but after the tree is drawn we can overwrite it
+                    #trp_temp_array_b stores overlay ids of drawn troops (slot 0 holds number of slots filled, where 1st filled slot is 1)
+                    #trp_temp_array_c stores ids of corresponding troops
+                    #trp_temp_troop stores overlay ids of drawn items (slot 0 holds number of slots filled, where 1st filled slot is 1)
+                    #trp_temp_array_a stores indexes of equipment/inventory slots from which those items come (from there we can read the item id, its modifier, amount too if need be, but probably won't be)
+                    (presentation_set_duration,0x7FFFFFFF),
+                    (set_fixed_point_multiplier,10000),
+                    (try_begin), #background
+                        (create_image_button_overlay,reg0,"mesh_load_window","mesh_load_window"), #it must be a button, otherwise buttons of the party window will be clickable through it!
+                        #with these coordinates vanilla background is bigger than screen, so the border disappears and we get just paper
+                        (position_set_x,pos0,10000+2*500),
+                        (position_set_y,pos0,10000+2*500),
+                        (overlay_set_size,reg0,pos0),
+                        (position_set_x,pos0,-500),
+                        (position_set_y,pos0,-500*3/4),
+                        (overlay_set_position,reg0,pos0),
+                    (try_end),
+                    (try_begin), #troop tree itself
+                        #examine tree dimensions
+                        (assign,":root_pic_mult_numerator",7), #root troop pic size 175% of other pics' size (don't go over 200% not just for esthetic purposes, but also because it would require changes to height checking algorithm)
+                        (assign,":root_pic_mult_denominator",4),
+                        (troop_set_slot,"trp_temp_troop",0,1), #array for detecting duplicated troop ids that indicate a loop on a tree branch; slot 0 holds last filled slot (filled_slots_end basically, where we fill slots starting from 1)
+                        (call_script,"script_troop_tree_analyze_child_nodes","$troop_tree_root_troop",1,0), #analyze upgrades
+                        (assign,":wdth_upgrades",reg0),
+                        (assign,":hght_upgrades",reg1),
+                        (call_script,"script_common_fraction_reduce",reg2,reg3),
+                        (assign,":root_numerator_upgrades",reg0),
+                        (assign,":root_denominator_upgrades",reg1),
+                        (troop_set_slot,"trp_temp_troop",0,1), #upgrades and downgrades are separate trees, so reset duplicate detection array
+                        (call_script,"script_troop_tree_analyze_child_nodes","$troop_tree_root_troop",-1,0), #analyze downgrades
+                        (assign,":wdth_downgrades",reg0),
+                        (assign,":hght_downgrades",reg1),
+                        #raise subtree where root is located lower so it's the same height for both subtrees
+                        (call_script,"script_common_fraction_reduce",reg2,reg3),
+                        (assign,":root_numerator_downgrades",reg0),
+                        (assign,":root_denominator_downgrades",reg1),
+                        (call_script,"script_common_fractions_to_common_denominator",":root_numerator_upgrades",":root_denominator_upgrades",":root_numerator_downgrades",":root_denominator_downgrades"),
+                        (store_sub,":hght_diff",reg0,reg1), #positive value if upgrades raise root troop higher, negative if downgrades raise root troop higher
+                        (assign,":root_numerator_upgrades",reg0),
+                        (assign,":root_numerator_downgrades",reg1),
+                        (assign,":tree_hght_denominator",reg2),
+                        (val_mul,":hght_upgrades",":tree_hght_denominator"),
+                        (val_mul,":hght_downgrades",":tree_hght_denominator"),
+                        (try_begin), #upgrades subtree is taller
+                            (gt,":root_numerator_upgrades",":root_numerator_downgrades"),
+                            (val_add,":hght_downgrades",":hght_diff"), #raise downgrades
+                        (else_try), #downgrades subtree is taller
+                            (gt,":root_numerator_downgrades",":root_numerator_upgrades"),
+                            (val_mul,":hght_diff",-1), #we want this positive for easier math later
+                            (val_add,":hght_upgrades",":hght_diff"), #raise upgrades
+                        (try_end),
+                        (assign,":tree_hght_numerator",":hght_upgrades"), #get max of hght_upgrades and hght_downgrades to tree_hght_numerator
+                        (val_max,":tree_hght_numerator",":hght_downgrades"),
+                        (val_add,":tree_hght_numerator",":tree_hght_denominator"), #add 1 to height (we were counting extra branches until now, not total branches)
+                        (store_add,":tree_wdth_numerator",":wdth_downgrades",":wdth_upgrades"), #width of just subtrees, ignoring width of root
+                        (val_mul,":tree_wdth_numerator",":root_pic_mult_denominator"), #convert to common denominator
+                        (val_add,":tree_wdth_numerator",":root_pic_mult_numerator"), #add root troop
+                        #determine pic dimensions; pic is supposed to be square, so pic width = pic height*mult_x = pic height/mult_y, or (to remedy integer division rounding) pic width = (100*pic height*mult_x)/100
+                        #indicated by tree height, formulas are: pic height=area height/(tree height numerator/tree height denominator)=area height*tree height denominator/tree height numerator, pic width=pic height*mult_x
+                        (store_mul,":troop_pic_hght",troop_tree_draw_area_hght,":tree_hght_denominator"), #we are going by assumption that root troop pic isn't exceeding 200% the normal size - otherwise we'd have to account for trees where root troop is the tallest element of the tree
+                        (val_div,":troop_pic_hght",":tree_hght_numerator"),
+                        #indicated by tree width, formulas are: pic width=area width/tree width, pic height=pic width*mult_y)
+                        (store_mul,":troop_pic_wdth",troop_tree_draw_area_wdth,":root_pic_mult_denominator"), #troop_pic_wdth (use register to save on variable count)
+                        (val_div,":troop_pic_wdth",":tree_wdth_numerator"), #troop_pic_wdth (use register to save on variable count)
+                        (store_mul,reg0,int(round(troop_tree_draw_area_wdth*mult_y)),":root_pic_mult_denominator"), #troop_pic_hght (use register to save on variable count)
+                        (val_div,reg0,":tree_wdth_numerator"),
+                        #choose smaller value
+                        (try_begin), #tree height indicates smaller picture - calculate based on height
+                            (le,":troop_pic_hght",reg0),
+                            (store_mul,":troop_pic_wdth",int(round(troop_tree_draw_area_hght*mult_x)),":tree_hght_denominator"), #we haven't calculated width yet
+                            (val_div,":troop_pic_wdth",":tree_hght_numerator"),
+                        (else_try), #tree width indicates smaller picture - calculate based on width
+                            (assign,":troop_pic_hght",reg0), #store from register to intended variable
+                        (try_end),
+                        #limit pic size to ensure that root troop pic's height doesn't exceed draw area
+                        (store_mul,reg0,troop_tree_draw_area_hght,":root_pic_mult_denominator"),
+                        (val_div,reg0,":root_pic_mult_numerator"),
+                        (store_mul,reg1,reg0,int(round(100*mult_x))),
+                        (val_div,reg1,100),
+                        (val_min,":troop_pic_hght",reg0),
+                        (val_min,":troop_pic_wdth",reg1),
+                        #limit pic size for esthetic purposes
+                        (val_min,":troop_pic_wdth",int(round(3000*mult_x))),
+                        (val_min,":troop_pic_hght",3000),
+                        #calculate other sizes based on that
+                        (store_div,":half_of_troop_pic_wdth",":troop_pic_wdth",2),
+                        (store_div,":half_of_troop_pic_hght",":troop_pic_hght",2),
+                        (store_mul,":root_troop_pic_wdth",":troop_pic_wdth",":root_pic_mult_numerator"),
+                        (store_mul,":root_troop_pic_hght",":troop_pic_hght",":root_pic_mult_numerator"),
+                        (val_div,":root_troop_pic_wdth",":root_pic_mult_denominator"),
+                        (val_div,":root_troop_pic_hght",":root_pic_mult_denominator"),
+                        #increase horizontal gaps between pics to better use available space
+                        (store_add,reg0,":wdth_upgrades",":wdth_downgrades"), #reg0 = number of gaps; there is a gap between each tier of upgrade/downgrade and the previous tier, for root there are 2 gaps, but both upgrades and downgrades account for 1 on their respective side
+                        (store_sub,":pic_spacing_x",troop_tree_draw_area_wdth,":root_troop_pic_wdth"), #area to fill is between root and child nodes, so area taken by root should not be taken into consideration
+                        (val_div,":pic_spacing_x",reg0),
+                        (store_mul,reg0,":troop_pic_wdth",2), #reg0 = double the troop pic width (use register to save on variable count)
+                        (val_min,":pic_spacing_x",reg0), #pic_spacing_x too big - reduce to double the troop pic width
+                        #determine initial x for downgrades
+                        (store_mul,":initial_x_downgrades",":wdth_downgrades",":pic_spacing_x"),
+                        (val_add,":initial_x_downgrades",":half_of_troop_pic_wdth"),
+                        (val_add,":initial_x_downgrades",troop_tree_screen_edge_l),
+                        (store_sub,reg0,":root_troop_pic_wdth",":troop_pic_wdth"),
+                        #determine initial x for upgrades
+                        (store_add,":initial_x_upgrades",":initial_x_downgrades",reg0),
+                        #then center it horizontally within available space
+                        (store_add,reg0,":wdth_upgrades",":wdth_downgrades"), #tree width in screen units = (wdth_upgrades+wdth_downgrades)*pic_spacing_x+root_troop_pic_wdth
+                        (val_mul,reg0,":pic_spacing_x"),
+                        (val_add,reg0,":root_troop_pic_wdth"),
+                        (store_sub,reg0,troop_tree_draw_area_wdth,reg0), #width of unused space if we leave the tree where it is (and it is left-aligned currently)
+                        (val_div,reg0,2), #half of that space
+                        (val_add,":initial_x_upgrades",reg0), #move the upgrades subtree right by this much
+                        (val_add,":initial_x_downgrades",reg0), #move the downgrades subtree right by this much
+                        #determine initial y for subtrees
+                        (store_add,":initial_y_upgrades",":half_of_troop_pic_hght",troop_tree_screen_edge_d),
+                        (assign,":initial_y_downgrades",":initial_y_upgrades"),
+                        (try_begin), #upgrades subtree is taller, initial height at bottom edge for upgrades, raised initial height for downgrades
+                            (gt,":root_numerator_upgrades",":root_numerator_downgrades"),
+                            (store_mul,":initial_y_downgrades",":hght_diff",":troop_pic_hght"),
+                            (val_div,":initial_y_downgrades",":tree_hght_denominator"),
+                            (val_add,":initial_y_downgrades",":initial_y_upgrades"),
+                        (else_try), #downgrades subtree is taller, initial height at bottom edge for downgrades, raised initial height for upgrades
+                            (gt,":root_numerator_downgrades",":root_numerator_upgrades"),
+                            (store_mul,":initial_y_upgrades",":hght_diff",":troop_pic_hght"),
+                            (val_div,":initial_y_upgrades",":tree_hght_denominator"),
+                            (val_add,":initial_y_upgrades",":initial_y_downgrades"),
+                        (try_end),
+                        #then center it vertically within available space
+                        (store_mul,reg0,":troop_pic_hght",":tree_hght_numerator"), #we are going by assumption that root troop pic isn't exceeding 200% the normal size - otherwise we'd have to account for trees where root troop is the tallest element of the tree
+                        (val_div,reg0,":tree_hght_denominator"), #tree height in screen units with scale as calculated above
+                        (store_sub,reg0,troop_tree_draw_area_hght,reg0), #unused space if we leave the tree where it is (and it is left-aligned currently)
+                        (val_div,reg0,2), #half of that space
+                        (val_add,":initial_y_upgrades",reg0), #move the tree up by this much
+                        (val_add,":initial_y_downgrades",reg0), #move the tree up by this much
+                        #draw
+                        (store_add,":root_x",":initial_x_upgrades",":initial_x_downgrades"),
+                        (val_div,":root_x",2), #avg between them
+                        (troop_set_slot,"trp_temp_troop",0,1), #array for detecting duplicated troop ids that indicate a loop on a tree branch; slot 0 holds last filled slot (filled_slots_end basically, where we fill slots starting from 1)
+                        (troop_set_slot,"trp_temp_array_b",0,1), #array for storing overlay ids of troop pics, so we can react to clicks on them; slot 0 holds last filled slot (filled_slots_end basically, where we fill slots starting from 1)
+                        (call_script,"script_troop_tree_draw_child_nodes","$troop_tree_root_troop",1,":pic_spacing_x",":troop_pic_wdth",":troop_pic_hght",":initial_x_upgrades",":initial_y_upgrades"), #draw upgrades
+                        (assign,":root_y",reg0),
+                        (try_begin),
+                            (gt,":wdth_upgrades",0),
+                            (store_sub,":line_y",reg0,troop_tree_line_wdth/2), #for line y points to bottom, not middle, so go down by half of line width
+                            (store_div,":half_of_pic_spacing_x",":pic_spacing_x",2),
+                            (call_script,"script_troop_tree_draw_line",":root_x",":line_y",":half_of_pic_spacing_x",troop_tree_line_wdth,troop_tree_line_color_upgrades), #extend line from root troop to upgrades (being bigger, root pic needs a longer line)
+                        (try_end),
+                        (troop_set_slot,"trp_temp_troop",0,1), #upgrades and downgrades are separate trees, so reset duplicate detection array (but don't reset array of overlays)
+                        (val_mul,":pic_spacing_x",-1),
+                        (call_script,"script_troop_tree_draw_child_nodes","$troop_tree_root_troop",-1,":pic_spacing_x",":troop_pic_wdth",":troop_pic_hght",":initial_x_downgrades",":initial_y_downgrades"), #draw downgrades
+                        (val_add,":root_y",reg0), #add height of downgrades
+                        (try_begin),
+                            (gt,":wdth_downgrades",0),
+                            (store_sub,":line_y",reg0,troop_tree_line_wdth/2), #for line y points to bottom, not middle, so go down by half of line width
+                            (store_div,":half_of_pic_spacing_x",":pic_spacing_x",2),
+                            (call_script,"script_troop_tree_draw_line",":root_x",":line_y",":half_of_pic_spacing_x",troop_tree_line_wdth,troop_tree_line_color_downgrades), #extend line from root troop to downgrades (being bigger, root pic needs a longer line)
+                        (try_end),
+                        (val_div,":root_y",2), #avg between them
+                        (call_script,"script_troop_tree_draw_troop","$troop_tree_root_troop",":root_x",":root_y",":root_troop_pic_wdth",":root_troop_pic_hght",0xFFFFFF), #upgrades nor downgrades don't draw root troop, draw it at the avg of values determined by upgrades and downgrades
+                    (try_end),
+                    (try_begin), #root troop details (we're drawing them from the bottom up, because scrollable overlays need to be built from y=0 up for the slider to work correctly)
+                        (try_begin), #container overlay - create
+                            (create_text_overlay,"$troop_tree_troop_details_container","@{!}",tf_scrollable),
+                            (set_container_overlay,"$troop_tree_troop_details_container"),
+                        (try_end),
+                        (try_begin), #equipment
+                            #draw inventory array
+                            (call_script,"script_inventory_array_draw","$troop_tree_root_troop",troop_tree_troop_details_wdth-troop_tree_inv_slots_realign,troop_tree_inv_slots_realign,10,"trp_temp_troop","trp_temp_array_a"),
+                            (store_add,":overlay_y",reg0,50), #top of the overlay; +50 for a little bit of extra space between inventory slots and the text above
+                            #set size for inventory frame
+                            (position_set_x,pos1,int(round((troop_tree_troop_details_wdth-troop_tree_inv_slots_realign)*0.13/0.38/0.13))), #objects overlap and their combined length is 0.38/0.13 of the width of 1 object, so we should divide by that (multiply by 0.13/0.38), and the final /0.13 is to scale the mesh to screen units (because the mesh size is 0.13)
+                            (position_set_y,pos1,int(round((troop_tree_troop_details_wdth-troop_tree_inv_slots_realign)*0.13/0.38/0.13))), #same height as width to make it "square" from engine's perspective (we can't apply de-stretching to items in inventory, so let's not apply it here either for consistent look)
+                            #set size for inventory background & item
+                            (position_set_x,pos2,int(round((troop_tree_troop_details_wdth-troop_tree_inv_slots_realign)*0.13/0.38/0.1))), #same size as the frames, this one seems to be drawn under the frame; /0.1 because the size of the mesh is 0.1
+                            (position_set_y,pos2,int(round((troop_tree_troop_details_wdth-troop_tree_inv_slots_realign)*0.13/0.38/0.1))), #same height as width to make it "square" from engine's perspective (we can't apply de-stretching to items in inventory, so let's not apply it here either for consistent look)
+                            #count items to draw (overlaps on inventory slots look much better when they are drawn top to bottom); also as optimization limit the range of slots to parse for next loop
+                            (assign,":num_array_slots",0),
+                            (assign,":range_begin",inventory_slots_end),
+                            (assign,":range_end",-1),
+                            (try_for_range,":inv_slot",equipment_slots_begin,inventory_slots_end), #count items in equipment slots, because regular troops can have items equipped for reason that only engine knows
+                                (troop_get_inventory_slot,":item","$troop_tree_root_troop",":inv_slot"),
+                                (ge,":item",0),
+                                (val_add,":num_array_slots",1),
+                                (assign,":range_end",":inv_slot"),
+                                (eq,":range_begin",inventory_slots_end),
+                                (assign,":range_begin",":inv_slot"),
+                            (try_end),
+                            (val_add,":range_end",1),
+                            (store_add,reg0,":num_array_slots",1),
+                            (troop_set_slot,"trp_temp_troop",0,reg0), #store item count
+                            #determine initial coordinates for inventory array
+                            (assign,":inv_slot_x",troop_tree_inv_slots_realign),
+                            (call_script,"script_div_up",":num_array_slots",3), #divides rounding up and returns to reg0
+                            (val_sub,reg0,1), #1st row is at y=0, raise only for extra rows beyond 1
+                            (assign,":inv_slot_y",0),
+                            (try_for_range,":unused",0,reg0), #add in loop to produce the same rounding errors as going row by row later when we actually build the inventory array
+                                (val_add,":inv_slot_y",int(round((1-0.005/0.13)*(troop_tree_troop_details_wdth-troop_tree_inv_slots_realign)*0.13/0.38))),
+                            (try_end),
+                            (store_add,":overlay_y",":inv_slot_y",int(round((1-0.005/0.13)*(troop_tree_troop_details_wdth-troop_tree_inv_slots_realign)*0.13/0.38+50))), #+50 for a little bit of extra space between inventory slots and the text above
+                            #draw inventory array
+                            (assign,":num_array_slots",1), #reset and count from 1
+                            (try_for_range,":inv_slot",":range_begin",":range_end"), #must search equipment slots too!
+                                (troop_get_inventory_slot,":item","$troop_tree_root_troop",":inv_slot"),
+                                (ge,":item",0),
+                                (create_mesh_overlay,reg0,"mesh_mp_inventory_choose"), #inventory slot frame; mesh size is 0.13, without the frame it's 0.12 and frame is 0.005 on each side, so if we let frames overlap, that's 3*0.13-2*0.005=0.38
+                                (overlay_set_size,reg0,pos1),
+                                (position_set_x,pos0,":inv_slot_x"),
+                                (position_set_y,pos0,":inv_slot_y"),
+                                (overlay_set_position,reg0,pos0),
+                                (create_mesh_overlay,reg0,"mesh_inv_slot"), #inventory slot background
+                                (overlay_set_size,reg0,pos2),
+                                (position_set_x,pos0,":inv_slot_x"),
+                                (position_set_y,pos0,":inv_slot_y"),
+                                (overlay_set_position,reg0,pos0),
+                                (create_mesh_overlay_with_item_id,reg0,":item"), #the item itself
+                                (troop_set_slot,"trp_temp_troop",":num_array_slots",reg0),
+                                (troop_set_slot,"trp_temp_array_a",":num_array_slots",":inv_slot"), #storing inventory slot is better than storing item id + item modifier, because it's just 1 value instead of 2
+                                (overlay_set_size,reg0,pos2),
+                                (store_add,":item_x",":inv_slot_x",int(round((troop_tree_troop_details_wdth-troop_tree_inv_slots_realign)*0.13/0.38/0.1*200/4000))),
+                                (store_add,":item_y",":inv_slot_y",int(round((troop_tree_troop_details_wdth-troop_tree_inv_slots_realign)*0.13/0.38/0.1*200/4000))),
+                                (position_set_x,pos0,":item_x"),
+                                (position_set_y,pos0,":item_y"),
+                                (overlay_set_position,reg0,pos0),
+                                (store_mod,reg0,":num_array_slots",3), #after modulo, columns have indexes 1,2,0, because we are starting with 1 (and holding the count of entries in 0)
+                                (try_begin), #full row, move down
+                                    (eq,reg0,0),
+                                    (assign,":inv_slot_x",troop_tree_inv_slots_realign),
+                                    (val_sub,":inv_slot_y",int(round((1-0.005/0.13)*(troop_tree_troop_details_wdth-troop_tree_inv_slots_realign)*0.13/0.38))),
+                                (else_try),
+                                    (val_add,":inv_slot_x",int(round((1-0.005/0.13)*(troop_tree_troop_details_wdth-troop_tree_inv_slots_realign)*0.13/0.38))),
+                                (try_end),
+                                (val_add,":num_array_slots",1),
+                            (try_end),
+                            #add empty slots at the end (num_array_slots now points at first blank we should draw)
+                            (store_sub,":range_end",inventory_slots_end,":num_array_slots"), #num_array_slots can't possibly exceed 106, so this value will never be negative (we don't want negative, because on negatives engine gets stupid about modulo and returns wrong results)
+                            (val_mod,":range_end",3), #this is how many empty slots we should draw
+                            (try_for_range,":unused",0,":range_end"),
+                                (create_mesh_overlay,reg0,"mesh_mp_inventory_choose"), #inventory slot frame; mesh size is 0.13, without the frame it's 0.12 and frame is 0.005 on each side, so if we let frames overlap, that's 3*0.13-2*0.005=0.38
+                                (overlay_set_size,reg0,pos1),
+                                (position_set_x,pos0,":inv_slot_x"),
+                                (position_set_y,pos0,":inv_slot_y"),
+                                (overlay_set_position,reg0,pos0),
+                                (create_mesh_overlay,reg0,"mesh_inv_slot"), #inventory slot background
+                                (overlay_set_size,reg0,pos2),
+                                (position_set_x,pos0,":inv_slot_x"),
+                                (position_set_y,pos0,":inv_slot_y"),
+                                (overlay_set_position,reg0,pos0),
+                                (val_add,":inv_slot_x",int(round((1-0.005/0.13)*(troop_tree_troop_details_wdth-troop_tree_inv_slots_realign)*0.13/0.38))),
+                            (try_end),
+                            #header
+                            (create_text_overlay,reg0,"@Equipment pool:",tf_center_justify),
+                            (position_set_x,pos1,7500), #font size, to be used by further text too
+                            (position_set_y,pos1,7500), #font size, to be used by further text too
+                            (overlay_set_size,reg0,pos1),
+                            (position_set_x,pos0,troop_tree_troop_details_wdth/2),
+                            (position_set_y,pos0,":overlay_y"),
+                            (overlay_set_position,reg0,pos0),
+                        (try_end),
+                        (position_set_x,pos2,0), #left-aligned text coordinate
+                        (position_set_x,pos3,troop_tree_troop_details_wdth), #right-aligned text coordinate
+                        (val_add,":overlay_y",200),
+                        (try_for_range_backwards,":proficiency",weapon_proficiencies_begin,weapon_proficiencies_end), #proficiencies
+                            (val_add,":overlay_y",150),
+                            (position_set_y,pos2,":overlay_y"),
+                            (position_set_y,pos3,":overlay_y"),
+                            #proficiency name
+                            (store_add,":name_string","str_ui_one_handed_weapons",":proficiency"),
+                            (create_text_overlay,reg0,":name_string",tf_left_align),
+                            (overlay_set_color,reg0,0x330000),
+                            (overlay_set_size,reg0,pos1),
+                            (overlay_set_position,reg0,pos2),
+                            #proficiency value
+                            (store_proficiency_level,reg0,":proficiency","$troop_tree_root_troop"),
+                            (create_text_overlay,reg0,"@{reg0}",tf_right_align),
+                            (overlay_set_color,reg0,0x330000),
+                            (overlay_set_size,reg0,pos1),
+                            (overlay_set_position,reg0,pos3),
+                        (try_end),
+                        (val_add,":overlay_y",150),
+                        (try_for_range_backwards,":skill",skills_begin,skills_end), #skills
+                            #only do for skills relevant for non-hero troops#!#you could have made changes to skills in your module system where some other skills could have become relevant for non-hero troops - double check this!
+                            (this_or_next|eq,":skill","skl_ironflesh"),
+                            (this_or_next|eq,":skill","skl_power_strike"),
+                            (this_or_next|eq,":skill","skl_power_throw"),
+                            (this_or_next|eq,":skill","skl_power_draw"),
+                            (this_or_next|eq,":skill","skl_shield"),
+                            (this_or_next|eq,":skill","skl_athletics"),
+                            (this_or_next|eq,":skill","skl_riding"),
+                            (             eq,":skill","skl_horse_archery"),
+                            (val_add,":overlay_y",150),
+                            (position_set_y,pos2,":overlay_y"),
+                            (position_set_y,pos3,":overlay_y"),
+                            #skill name
+                            (store_add,":name_string",":skill","str_skl_trade_name"),
+                            (create_text_overlay,reg0,":name_string",tf_left_align),
+                            (overlay_set_color,reg0,0x003300),
+                            (overlay_set_size,reg0,pos1),
+                            (overlay_set_position,reg0,pos2),
+                            #skill value
+                            (store_skill_level,reg0,":skill","$troop_tree_root_troop"),
+                            (create_text_overlay,reg0,"@{reg0}",tf_right_align),
+                            (overlay_set_color,reg0,0x003300),
+                            (overlay_set_size,reg0,pos1),
+                            (overlay_set_position,reg0,pos3),
+                        (try_end),
+                        (val_add,":overlay_y",300),
+                        (try_begin), #attributes
+                            (position_set_y,pos0,":overlay_y"),
+                            (assign,":overlay_x",troop_tree_troop_details_wdth/8), #4 attributes, middle of attribute is half of that
+                            (try_for_range,":attribute",attributes_begin,attributes_end),
+                                (store_add,":name_string",":attribute","str_ui_str"),
+                                (str_store_string,s0,":name_string"),
+                                (store_attribute_level,reg0,"$troop_tree_root_troop",":attribute"),
+                                (create_text_overlay,reg0,"@{s0}^{reg0}",tf_center_justify),
+                                (overlay_set_color,reg0,0x000040),
+                                (position_set_x,pos0,":overlay_x"),
+                                (overlay_set_position,reg0,pos0),
+                                (overlay_set_size,reg0,pos1),
+                                (val_add,":overlay_x",troop_tree_troop_details_wdth/4), #4 attributes
+                            (try_end),
+                        (try_end),
+                        (val_add,":overlay_y",450),
+                        (try_begin), #level, health
+                            (store_character_level,reg0,"$troop_tree_root_troop"),
+                            (create_text_overlay,reg0,"@Level: {reg0}",tf_left_align),
+                            (overlay_set_size,reg0,pos1),
+                            (position_set_y,pos2,":overlay_y"),
+                            (overlay_set_position,reg0,pos2),
+                            (store_troop_health,reg0,"$troop_tree_root_troop",1), #1 means absolute value (not percentage)
+                            (create_text_overlay,reg0,"@Health: {reg0}",tf_right_align),
+                            (overlay_set_size,reg0,pos1),
+                            (position_set_y,pos3,":overlay_y"),
+                            (overlay_set_position,reg0,pos3),
+                        (try_end),
+                        (set_container_overlay,-1),
+                        (try_begin), #container overlay - set size & position
+                            (val_add,":overlay_y",150), #height of the top line (y coordinate is pointing to its bottom, not top, so to get the actual height of the contents we must increase it a bit)
+                            (position_set_x,pos1,troop_tree_troop_details_wdth), #common for both situations
+                            (position_set_x,pos2,troop_tree_screen_edge_l+troop_tree_draw_area_wdth+troop_tree_gap_to_details), #common for both situations
+                            (ge,":overlay_y",troop_tree_troop_details_hght), #size of contents exceeds the intended area, so we will show it with scrollbar (or fits exactly, in which case same values should be set, but scrollbar won't be visible)
+                            (position_set_y,pos1,troop_tree_troop_details_hght),
+                            (overlay_set_area_size,"$troop_tree_troop_details_container",pos1), #set area size to max intended area
+                            (position_set_y,pos2,troop_tree_screen_edge_d+troop_tree_close_button_hght),
+                            (overlay_set_position,"$troop_tree_troop_details_container",pos2),
+                        (else_try), #size of contents is smaller than the intended area
+                            (position_set_y,pos1,":overlay_y"),
+                            (overlay_set_area_size,"$troop_tree_troop_details_container",pos1), #set area size to actual height of contents
+                            (store_sub,":overlay_y",troop_tree_troop_details_hght,":overlay_y"), #unused height
+                            (val_div,":overlay_y",2), #half of unused height
+                            (val_add,":overlay_y",troop_tree_screen_edge_d+troop_tree_close_button_hght), #half of unused height + originally intended position
+                            (position_set_y,pos2,":overlay_y"),
+                            (overlay_set_position,"$troop_tree_troop_details_container",pos2),
+                        (try_end),
+                        (try_begin), ## Choose faction button Soriq
+                        (set_container_overlay,-1),
+                            (position_set_x, pos1, 1400),
+                            (position_set_y, pos1, 6700),
+                            (create_combo_button_overlay, reg1),
+                            (assign, "$choose_faction_box", reg1),
+                            (overlay_set_position, "$choose_faction_box", pos1),
+                            (try_for_range, ":faction", kingdoms_begin, kingdoms_end),
+                              (try_begin),
+                                (eq, ":faction", kingdoms_begin),
+                                (continue_loop),
+                              (try_end),
+                              (str_store_faction_name, s1, ":faction"),
+                              (overlay_add_item, "$choose_faction_box", s1),
+                            (try_end),
+                        (try_end),
+                    (try_end),
+                    (try_begin), #close button
+                        (create_game_button_overlay,"$prsnt_troop_tree_close","@Close"),
+                        (position_set_x,pos0,troop_tree_screen_edge_l+troop_tree_draw_area_wdth+troop_tree_gap_to_details+troop_tree_troop_details_wdth/2+troop_tree_inv_slots_realign/2), #centered to inventory slots (which is why troop_tree_inv_slots_realign is added)
+                        (val_add,":overlay_y",troop_tree_screen_edge_d+troop_tree_close_button_hght), #half of unused height + originally intended position
+                        (position_set_y,pos0,troop_tree_screen_edge_d),
+                        (overlay_set_position,"$prsnt_troop_tree_close",pos0),
+                    (try_end),
+                ]
+            ),
+            (ti_on_presentation_event_state_change,
+                [
+                    (store_trigger_param_1,":overlay"),
+                    (store_trigger_param_2, ":selected_index"),
+                    (try_begin),
+                      (eq, ":overlay", "$choose_faction_box"),
+                      (assign, reg0, ":selected_index"),
+                        
+                        (try_begin),
+                          (eq, reg0, 0), 
+                          (assign,"$troop_tree_root_troop", "trp_northern_recruit"), 
+                        (else_try),
+                          (eq, reg0, 1), 
+                          (assign,"$troop_tree_root_troop", "trp_vaegir_recruit"),
+                        (else_try),
+                          (eq, reg0, 2), 
+                          (assign,"$troop_tree_root_troop", "trp_nord_recruit"),
+                        (else_try),
+                          (eq, reg0, 3), 
+                          (assign,"$troop_tree_root_troop", "trp_rhodok_tribesman"),
+                        (else_try),
+                          (eq, reg0, 4), 
+                          (assign,"$troop_tree_root_troop", "trp_sarranid_recruit"),
+                        (else_try),
+                          (eq, reg0, 5), 
+                          (assign,"$troop_tree_root_troop", "trp_khergit_tribesman"),
+                        (else_try),
+                          (eq, reg0, 6), 
+                          (assign,"$troop_tree_root_troop", "trp_farmer"),
+                        (else_try),
+                          (eq, reg0, 7), 
+                          (assign,"$troop_tree_root_troop", "trp_sarranid_messenger"),
+                        (else_try),
+                          (eq, reg0, 8), 
+                          (assign,"$troop_tree_root_troop", "trp_looter"),
+                        (else_try),
+                          (eq, reg0, 9), 
+                          (assign,"$troop_tree_root_troop", "trp_manhunter"),
+                        (else_try),
+                          (eq, reg0, 10), 
+                          (assign,"$troop_tree_root_troop", "trp_manhunter"),
+                        (else_try),
+                          (eq, reg0, 11), 
+                          (assign,"$troop_tree_root_troop", "trp_manhunter"),
+                        (else_try),
+                          (eq, reg0, 12), 
+                          (assign,"$troop_tree_root_troop", "trp_manhunter"),
+                        (else_try),
+                          (eq, reg0, 13), 
+                          (assign,"$troop_tree_root_troop", "trp_looter"),
+                        (else_try),
+                          (eq, reg0, 14), 
+                          (assign,"$troop_tree_root_troop", "trp_northern_recruit"),
+                        (else_try),
+                          (assign, "$troop_tree_root_troop", "trp_khergit_tribesman"), 
+                        (try_end),
+
+                      (close_item_details),
+                      (presentation_set_duration, 0),
+                      (start_presentation,"prsnt_rndl_troop_tree"), 
+                    
+         
+
+                    (else_try), #close button
+                        (eq,":overlay","$prsnt_troop_tree_close"),
+                        (display_message, "@Closing troop tree"),
+                        (try_begin),
+                          (eq, "$is_troop_tree_report_launch", 1),
+                          (set_container_overlay, -1),
+                          (close_item_details),
+                          (presentation_set_duration, 0),
+                          (jump_to_menu, "mnu_reports"),
+                        (else_try),
+                        (display_message, "@No report launch"),
+                          (close_item_details), #close whatever might be open (although in this case it's highly unlikely anything would be open)
+                          (start_presentation,"prsnt_rndl_troop_tree_button"), #show troop tree button
+                        (try_end),
+                    (else_try), #troop pic buttons (make sure this is the last else)
+                        (troop_get_slot,":slots_end","trp_temp_array_b",0),
+                        (try_for_range,":slot",1,":slots_end"),
+                            (troop_slot_eq,"trp_temp_array_b",":slot",":overlay"),
+                            (assign,":slots_end",-1), #break
+                            (neg|troop_slot_eq,"trp_temp_array_c",":slot","$troop_tree_root_troop"), #don't reload tree if it's the same troop
+                            (troop_get_slot,"$troop_tree_root_troop","trp_temp_array_c",":slot"),
+                            (close_item_details), #close whatever might be open
+                            (start_presentation,"prsnt_rndl_troop_tree"),
+                        (try_end),
+                    (try_end),
+                ]
+            ),
+            (ti_on_presentation_mouse_enter_leave,
+                [
+                    (store_trigger_param,":overlay",1),
+                    (store_trigger_param,":is_leaving",2),
+                    (call_script,"script_inventory_array_show_details",":overlay",":is_leaving","$troop_tree_root_troop","trp_temp_troop","trp_temp_array_a"), #no other overlays than the inventory react to mouse hover, so we can call this safely
+                ]
+            ),
+        ]
+    ),
+    #MOD END - troop tree
+]
+
+# 001 - Main presentations
 presentations = [
   ("game_credits",prsntf_read_only,mesh_load_window,[
       (ti_on_presentation_load,
@@ -18937,7 +19470,7 @@ presentations = [
 			 ),
 		]
 	 ),
-  ]
+  ] + troop_tree_presentations
 # modmerger_start version=201 type=2
 try:
     component_name = "presentations"
