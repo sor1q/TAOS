@@ -76,49 +76,49 @@ parties = [
   ("zendar","Zendar",pf_disabled|icon_town|pf_is_static|pf_always_visible|pf_hide_defenders, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(18,60),[]),
 
 #North towns
-("town_1", "Winterhold", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-67.68, 88.43),[]),
-("town_2", "Icehaven", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-14.71, 78.63),[]),
-("town_3", "Helgard", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-37.86, 113.8),[]),
-("town_4", "Northwatch", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(53.32, 110.38),[]),
-("town_5", "Frostpeak", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(2.21, -2.46),[]),
+("town_1", "Winterhold", icon_town|pf_town, no_menu, pt_none, kingdom_1,0,ai_bhvr_hold,0,(-67.68, 88.43),[]),
+("town_2", "Icehaven", icon_town|pf_town, no_menu, pt_none, kingdom_1,0,ai_bhvr_hold,0,(-14.71, 78.63),[]),
+("town_3", "Helgard", icon_town|pf_town, no_menu, pt_none, kingdom_1,0,ai_bhvr_hold,0,(-37.86, 113.8),[]),
+("town_4", "Northwatch", icon_town|pf_town, no_menu, pt_none, kingdom_1,0,ai_bhvr_hold,0,(53.32, 110.38),[]),
+("town_5", "Frostpeak", icon_town|pf_town, no_menu, pt_none, kingdom_1,0,ai_bhvr_hold,0,(2.21, -2.46),[]),
 
 #Ost-Gart Syndicate towns
-("town_6", "Merchant's_Bay", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(138.55, 34.17),[]),
-("town_7", "Goldbee", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(138.86, -36.34),[]),
-("town_8", "Caravanserai", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-89.16, 56.72),[]),
-("town_9", "Welsburg", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(37.85, -76.46),[]),
-("town_10", "Coinstead", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-76.93, -2.33),[]),
+("town_6", "Merchant's_Bay", icon_town|pf_town, no_menu, pt_none, kingdom_2,0,ai_bhvr_hold,0,(138.55, 34.17),[]),
+("town_7", "Goldbee", icon_town|pf_town, no_menu, pt_none, kingdom_2,0,ai_bhvr_hold,0,(138.86, -36.34),[]),
+("town_8", "Caravanserai", icon_town|pf_town, no_menu, pt_none, kingdom_2,0,ai_bhvr_hold,0,(-89.16, 56.72),[]),
+("town_9", "Welsburg", icon_town|pf_town, no_menu, pt_none, kingdom_2,0,ai_bhvr_hold,0,(37.85, -76.46),[]),
+("town_10", "Coinstead", icon_town|pf_town, no_menu, pt_none, kingdom_2,0,ai_bhvr_hold,0,(-76.93, -2.33),[]),
 
 #Kara-Thar towns 
-("town_11", "Obsidian_Citadel", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(81.76, 43.82),[]),
-("town_12", "Shadow_Cage", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(9.27, -106.06),[]),
-("town_13", "Voidspire", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-49.11, 14.48),[]),                        
+("town_11", "Obsidian_Citadel", icon_town|pf_town, no_menu, pt_none, kingdom_3,0,ai_bhvr_hold,0,(81.76, 43.82),[]),
+("town_12", "Shadow_Cage", icon_town|pf_town, no_menu, pt_none, kingdom_3,0,ai_bhvr_hold,0,(9.27, -106.06),[]),
+("town_13", "Voidspire", icon_town|pf_town, no_menu, pt_none, kingdom_3,0,ai_bhvr_hold,0,(-49.11, 14.48),[]),                        
 
 #Ashkar towns
-("town_14", "Jafar-Abad", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(13.35, 107.38),[]),
-("town_15", "Mirage", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-20.14, 34.51),[]),
-("town_16", "Whispersands", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(115.50, 13.56),[]),
-("town_17", "Sahar-Dun", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(43.24, -27.55),[]),
-("town_18", "Ashkai", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(128.23, -76.09),[]),
+("town_14", "Jafar-Abad", icon_town|pf_town, no_menu, pt_none, kingdom_4,0,ai_bhvr_hold,0,(13.35, 107.38),[]),
+("town_15", "Mirage", icon_town|pf_town, no_menu, pt_none, kingdom_4,0,ai_bhvr_hold,0,(-20.14, 34.51),[]),
+("town_16", "Whispersands", icon_town|pf_town, no_menu, pt_none, kingdom_4,0,ai_bhvr_hold,0,(115.50, 13.56),[]),
+("town_17", "Sahar-Dun", icon_town|pf_town, no_menu, pt_none, kingdom_4,0,ai_bhvr_hold,0,(43.24, -27.55),[]),
+("town_18", "Ashkai", icon_town|pf_town, no_menu, pt_none, kingdom_4,0,ai_bhvr_hold,0,(128.23, -76.09),[]),
 
 #Solmark Inquisition towns
-("town_19", "Sanctum", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-62.50, -65.18),[]),
-("town_20", "Oldtown", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-29.53, -32.38),[]),
-("town_21", "Moonport", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(88.72, 12.73),[]),
-("town_22", "Bronzegate", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-117.31, -108.74),[]),
+("town_19", "Sanctum", icon_town|pf_town, no_menu, pt_none, kingdom_5,0,ai_bhvr_hold,0,(-62.50, -65.18),[]),
+("town_20", "Oldtown", icon_town|pf_town, no_menu, pt_none, kingdom_5,0,ai_bhvr_hold,0,(-29.53, -32.38),[]),
+("town_21", "Moonport", icon_town|pf_town, no_menu, pt_none, kingdom_5,0,ai_bhvr_hold,0,(88.72, 12.73),[]),
+("town_22", "Bronzegate", icon_town|pf_town, no_menu, pt_none, kingdom_5,0,ai_bhvr_hold,0,(-117.31, -108.74),[]),
 
 #Union of Eirven towns
-("town_23", "Eir-Glen", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(167.81, -96.32),[]),
-("town_24", "Mosscliff", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-78.54, -85.42),[]),                           
-("town_25", "Eldergrove", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-132.56, 7.10),[]),
-("town_26", "Highmist", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(33.36, -109.21),[]),
+("town_23", "Eir-Glen", icon_town|pf_town, no_menu, pt_none, kingdom_6,0,ai_bhvr_hold,0,(167.81, -96.32),[]),
+("town_24", "Mosscliff", icon_town|pf_town, no_menu, pt_none, kingdom_6,0,ai_bhvr_hold,0,(-78.54, -85.42),[]),                           
+("town_25", "Eldergrove", icon_town|pf_town, no_menu, pt_none, kingdom_6,0,ai_bhvr_hold,0,(-132.56, 7.10),[]),
+("town_26", "Highmist", icon_town|pf_town, no_menu, pt_none, kingdom_6,0,ai_bhvr_hold,0,(33.36, -109.21),[]),
 
 #Kingdom of Vallor towns
-("town_27", "Asteria", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-92.58, -60.81),[]),
-("town_28", "Sunreach", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(100.67, -119.18),[]),
-("town_29", "Silverpeak", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(112.57, 105.10),[]),
-("town_30", "Argenthold", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-104.68, 75.99),[]),                          
-("town_31", "Saltcliffe", icon_town|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(89.70, -92.93),[]),
+("town_27", "Asteria", icon_town|pf_town, no_menu, pt_none, kingdom_7,0,ai_bhvr_hold,0,(-92.58, -60.81),[]),
+("town_28", "Sunreach", icon_town|pf_town, no_menu, pt_none, kingdom_7,0,ai_bhvr_hold,0,(100.67, -119.18),[]),
+("town_29", "Silverpeak", icon_town|pf_town, no_menu, pt_none, kingdom_7,0,ai_bhvr_hold,0,(112.57, 105.10),[]),
+("town_30", "Argenthold", icon_town|pf_town, no_menu, pt_none, kingdom_7,0,ai_bhvr_hold,0,(-104.68, 75.99),[]),                          
+("town_31", "Saltcliffe", icon_town|pf_town, no_menu, pt_none, kingdom_7,0,ai_bhvr_hold,0,(89.70, -92.93),[]),
 
 #North Castles
 ("castle_1", "The_Twins", icon_castle_b|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-63.59, 42.52),[]),
