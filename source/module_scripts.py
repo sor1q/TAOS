@@ -1298,11 +1298,11 @@ scripts = [
    ##diplomacy end+
 
       # Give family castles to certain nobles.
-      (call_script, "script_give_center_to_lord", "p_castle_29", "trp_knight_2_10", 0), #Nelag_Castle
-      (call_script, "script_give_center_to_lord", "p_castle_30", "trp_knight_3_4", 0), #Asugan_Castle
-      (call_script, "script_give_center_to_lord", "p_castle_35", "trp_knight_1_3", 0), #Haringoth_Castle
+      # (call_script, "script_give_center_to_lord", "p_castle_29", "trp_knight_2_10", 0), #Nelag_Castle
+      # (call_script, "script_give_center_to_lord", "p_castle_30", "trp_knight_3_4", 0), #Asugan_Castle
+      # (call_script, "script_give_center_to_lord", "p_castle_35", "trp_knight_1_3", 0), #Haringoth_Castle
       ##diplomacy start+
-      (call_script, "script_give_center_to_lord", "p_castle_33", "trp_knight_5_11", 0), #Etrosq Castle -- why wasn't this being done already?
+      # (call_script, "script_give_center_to_lord", "p_castle_33", "trp_knight_5_11", 0), #Etrosq Castle -- why wasn't this being done already?
 	  #Add home centers for claimants
 	  (troop_set_slot, "trp_kingdom_1_pretender", slot_troop_home, "p_town_4"),#Lady Isolle - Suno
 	  (troop_set_slot, "trp_kingdom_2_pretender", slot_troop_home, "p_town_11"),#Prince Valdym - Curaw
