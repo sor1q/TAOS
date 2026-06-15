@@ -1,5 +1,5 @@
 itemsfile version 3
-674
+787
  itm_no_item INVALID_ITEM INVALID_ITEM 1  invalid_item 0  12582914 9223388529554358287 3 0 1.500000 100 0 0 0 0 0 103 0 90 0 522 528
  0
 0
@@ -2393,6 +2393,490 @@ itemsfile version 3
  17 16
 0
 
+ itm_sword_north_p Northern_Steel Northern_Steel 2  norman_sword 0  scab_norman_sword 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_2scimitar_black2 2scimitar_black2 2scimitar_black2 2  2scimitar_black2 0  2scimitar_black2_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_2scimitar_bluesilver 2scimitar_bluesilver 2scimitar_bluesilver 2  2scimitar_bluesilver 0  2scimitar_black2_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_2scimitar_bluesilver 2scimitar_bluesilver 2scimitar_bluesilver 2  2scimitar_bluesilver 0  2scimitar_bluesilver_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_2scimitar_darkwood 2scimitar_darkwood 2scimitar_darkwood 2  2scimitar_darkwood 0  2scimitar_darkwood_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_2scimitar_green 2scimitar_green 2scimitar_green 2  2scimitar_green 0  2scimitar_green_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_courtblades_black courtblades_black courtblades_black 2  courtblades_black 0  courtblades_black_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_courtblades_cloud courtblades_cloud courtblades_cloud 2  courtblades_cloud 0  courtblades_cloud_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_courtblades_ebony courtblades_ebony courtblades_ebony 2  courtblades_ebony 0  courtblades_ebony_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_courtblades_elmwood courtblades_elmwood courtblades_elmwood 2  courtblades_elmwood 0  courtblades_elmwood_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_courtblades_ivory courtblades_ivory courtblades_ivory 2  courtblades_ivory 0  courtblades_ivory_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_courtblades_whiteleather courtblades_whiteleather courtblades_whiteleather 2  courtblades_whiteleather 0  courtblades_whiteleather_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_gwilith_1h gwilith_1h gwilith_1h 2  gwilith_1h 0  gwilith_1h_sheath 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_sabre_2h_blacksilver sabre_2h_blacksilver sabre_2h_blacksilver 2  sabre_2h_blacksilver 0  sabre_2h_blacksilver_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_sabre_2h_blacksilver2 sabre_2h_blacksilver2 sabre_2h_blacksilver2 2  sabre_2h_blacksilver2 0  sabre_2h_blacksilver2_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_scimitar_black scimitar_black scimitar_black 2  scimitar_black 0  scimitar_black_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_scimitar_black scimitar_black scimitar_black 2  scimitar_black 0  scimitar_black_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_scimitar_brightwood scimitar_brightwood scimitar_brightwood 2  scimitar_brightwood 0  scimitar_brightwood_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_scimitar_cloud scimitar_cloud scimitar_cloud 2  scimitar_cloud 0  scimitar_cloud_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_scimitar_elmwood scimitar_elmwood scimitar_elmwood 2  scimitar_elmwood 0  scimitar_elmwood_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_scimitar_royal scimitar_royal scimitar_royal 2  scimitar_royal 0  scimitar_royal_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_scimitar_whiteleather scimitar_whiteleather scimitar_whiteleather 2  scimitar_whiteleather 0  scimitar_whiteleather_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_warblade_black01 warblade_black01 warblade_black01 2  warblade_black01 0  warblade_black01_sheath 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_warblade_black02 warblade_black02 warblade_black02 2  warblade_black02 0  warblade_black02_sheath 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_warblade_bluesilver warblade_bluesilver warblade_bluesilver 2  warblade_bluesilver 0  warblade_bluesilver_sheath 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_warblade_darkwoodgold warblade_darkwoodgold warblade_darkwoodgold 2  warblade_darkwoodgold 0  warblade_darkwoodgold_sheath 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_warblade_greensilver warblade_greensilver warblade_greensilver 2  warblade_greensilver 0  warblade_greensilver_sheath 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_warblade_ivorygold warblade_ivorygold warblade_ivorygold 2  warblade_ivorygold 0  warblade_ivorygold_sheath 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_saxon_sword saxon_sword saxon_sword 2  saxon_sword 0  scab_stamford_sword 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_langsax langsax langsax 2  langsax 0  langsax_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_new_axe new_axe new_axe 2  new_axe 0  new_axe 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_first_axe first_axe first_axe 2  first_axe 0  first_axe 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_wardens_plate Warden's_Plate Warden's_Plate 1  plate_bur41 0  16842765 0 13500 704643236 25.000000 100 3 68 32 12 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor_infantry_north_4 Snow-Stalwart_Surcoat Snow-Stalwart_Surcoat 1  norman_hauberk_a 0  16842765 0 7600 704643236 23.000000 100 1 60 24 10 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor_infantry_north_3 Frozen_Sqire's_Gambeson Frozen_Sqire's_Gambeson 1  outlaw_mix 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_Female_Armor_Hospitallers Female_Armor_Hospitallers Female_Armor_Hospitallers 1  Female_Armor_Hospitallers 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_Female_Armor_Templars Female_Armor_Templars Female_Armor_Templars 1  Female_Armor_Templars 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_kuwras kuwras kuwras 1  kuwras 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_kuwra kuwra kuwra 1  kuwra 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_mailrusss mailrusss mailrusss 1  mailrusss 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_mailnormans mailnormans mailnormans 1  mailnormans 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_brig_plate_black brig_plate_black brig_plate_black 1  brig_plate_black 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_brig_plate_heraldic brig_plate_heraldic brig_plate_heraldic 1  brig_plate_heraldic 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_cuirass_on_black cuirass_on_black cuirass_on_black 1  cuirass_on_black 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_cuirass_on_blue cuirass_on_blue cuirass_on_blue 1  cuirass_on_blue 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_cuirass_on_empire cuirass_on_empire cuirass_on_empire 1  cuirass_on_empire 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_cuirass_on_white cuirass_on_white cuirass_on_white 1  cuirass_on_white 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_heraldic plate_heraldic plate_heraldic 1  plate_heraldic 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_platemail_harness_01 platemail_harness_01 platemail_harness_01 1  platemail_harness_01 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_platemail_harness_05 platemail_harness_05 platemail_harness_05 1  platemail_harness_05 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_platemail_heraldic_03 platemail_heraldic_03 platemail_heraldic_03 1  platemail_heraldic_03 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_imp_armor3 imp_armor3 imp_armor3 1  imp_armor3 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_imp_armor1 imp_armor1 imp_armor1 1  imp_armor1 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ishtari_armour_a1 ishtari_armour_a1 ishtari_armour_a1 1  ishtari_armour_a 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ishtari_armour_a_11 ishtari_armour_a_11 ishtari_armour_a_11 1  ishtari_armour_a_1 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_common_cape2 common_cape2(Whisper) common_cape2(Whisper) 1  common_cape2 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_hadrim hadrim hadrim 1  hadrim 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_leather_rein_ss leather_rein_ss leather_rein_ss 1  leather_rein_ss 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_armor1 plate_armor1 plate_armor1 1  plate_armor1 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_armor2 plate_armor2 plate_armor2 1  plate_armor2 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_armor3 plate_armor3 plate_armor3 1  plate_armor3 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_bur_051 plate_bur_051 plate_bur_051 1  plate_bur_051 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_bur_054 plate_bur_054 plate_bur_054 1  plate_bur_054 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_bur_064 plate_bur_064 plate_bur_064 1  plate_bur_064 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_bur_1351 plate_bur_1351 plate_bur_1351 1  plate_bur_1351 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_bur_1354 plate_bur_1354 plate_bur_1354 1  plate_bur_1354 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_bur_1371 plate_bur_1371 plate_bur_1371 1  plate_bur_1371 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_bur_1374 plate_bur_1374 plate_bur_1374 1  plate_bur_1374 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_bur231 plate_bur231 plate_bur231 1  plate_bur231 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_bur251 plate_bur251 plate_bur251 1  plate_bur251 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_etched plate_etched plate_etched 1  plate_etched 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_lion_maw plate_lion_maw plate_lion_maw 1  plate_lion_maw 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_maw plate_maw plate_maw 1  plate_maw 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_ornate_gold_ba plate_ornate_gold_ba plate_ornate_gold_ba 1  plate_ornate_gold_ba 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_silver plate_silver plate_silver 1  plate_silver 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_ssm_10014 plate_ssm_10014 plate_ssm_10014 1  plate_ssm_10014 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_ssm_10024 plate_ssm_10024 plate_ssm_10024 1  plate_ssm_10024 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_ssm_10034 plate_ssm_10034 plate_ssm_10034 1  plate_ssm_10034 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_ssm_10044 plate_ssm_10044 plate_ssm_10044 1  plate_ssm_10044 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_plate_ssm_1031 plate_ssm_1031 plate_ssm_1031 1  plate_ssm_1031 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wardens_helmet Warden's_Helmet Warden's_Helmet 1  sorry_im_berserk_helm_inventory 0  65548 0 3200 123731968 2.000000 100 62 2 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helmet_infantry_north_4 Snow-Stalwart_Helmet Snow-Stalwart_Helmet 1  ghuls 0  65548 0 2100 123731968 2.000000 100 55 2 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helmet_infantry_north_3 Frozen_Sqire's_Helmet Frozen_Sqire's_Helmet 1  skull_cap 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_facemasck facemasck facemasck 1  facemasck 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_normanfaceplate normanfaceplate normanfaceplate 1  normanfaceplate 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_conical conical conical 1  conical 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_saracena saracena saracena 1  saracena 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_sarazinhelmme sarazinhelmme sarazinhelmme 1  sarazinhelmme 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_arabhelmbs arabhelmbs arabhelmbs 1  arabhelmbs 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_topfhelm topfhelm topfhelm 1  topfhelm 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_topfhelm2 topfhelm2 topfhelm2 1  topfhelm2 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_topfhelm3 topfhelm3 topfhelm3 1  topfhelm3 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_topfhelm4 topfhelm4 topfhelm4 1  topfhelm4 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_topfhelm5 topfhelm5 topfhelm5 1  topfhelm5 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_topfhelm6 topfhelm6 topfhelm6 1  topfhelm6 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_topfhelm7 topfhelm7 topfhelm7 1  topfhelm7 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_topfhelm8 topfhelm8 topfhelm8 1  topfhelm8 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_teutonichelm_d teutonichelm_d teutonichelm_d 1  teutonichelm_d 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_teutonichelm_e teutonichelm_e teutonichelm_e 1  teutonichelm_e 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_teutonichelm_g teutonichelm_g teutonichelm_g 1  teutonichelm_g 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_teutonichelm_h teutonichelm_h teutonichelm_h 1  teutonichelm_h 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_teutonichelm_i teutonichelm_i teutonichelm_i 1  teutonichelm_i 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_teutonichelm_m teutonichelm_m teutonichelm_m 1  teutonichelm_m 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_Norman_faceplate Norman_faceplate Norman_faceplate 1  Norman_faceplate 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_great_helmet1 great_helmet1 great_helmet1 1  great_helmet1 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_byzantion byzantion byzantion 1  byzantion 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_sugarloaf sugarloaf sugarloaf 1  sugarloaf 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_corinthian_helmet corinthian_helmet corinthian_helmet 1  corinthian_helmet 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_coolus_c coolus_c coolus_c 1  coolus_c 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_gallic_a gallic_a gallic_a 1  gallic_a 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_monterfertino_e monterfertino_e monterfertino_e 1  monterfertino_e 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_byzantine byzantine byzantine 1  byzantine 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_cataphract cataphract cataphract 1  cataphract 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_fantasy_helmet fantasy_helmet fantasy_helmet 1  fantasy_helmet 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_crusader_great_helmet2 crusader_great_helmet2 crusader_great_helmet2 1  crusader_great_helmet2 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armet_w_neck_protector armet_w_neck_protector armet_w_neck_protector 1  armet_w_neck_protector 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_early_great_helm_v2 early_great_helm_v2 early_great_helm_v2 1  early_great_helm_v2 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_fantasy_helmet fantasy_helmet fantasy_helmet 1  fantasy_helmet 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_fantasy_helmet fantasy_helmet fantasy_helmet 1  fantasy_helmet 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_fantasy_helmet fantasy_helmet fantasy_helmet 1  fantasy_helmet 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_shield_north_p Northern_Ironwood_Shield Northern_Ironwood_Shield 1  normkite 0  65543 5100273664 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
+ 0
+0
+
  itm_dplmc_coat_of_plates_red_constable Constable_Coat_of_Plates Constable_Coat_of_Plates 1  coat_of_plates_red 0  553652237 0 3828 704643236 25.000000 100 0 52 16 0 0 0 0 0 0 0 0
  0
 0
@@ -2459,42 +2943,6 @@ itemsfile version 3
 0
 
  itm_javelin_bow_ammo Shooting_Javelins Shooting_Javelins 2  javelin_bow_ammo 0  javelins_quiver_new 3458764513820540928  32773 2147483648 0 0 4.000000 100 0 0 0 0 0 0 0 75 15 290 0
- 0
-0
-
- itm_ccoop_new_items_end Items_End Items_End 1  shield_round_a 0  0 0 1 0 0.000000 100 0 0 0 0 0 0 0 0 0 0 0
- 0
-0
-
- itm_sword_north_p Northern_Steel Northern_Steel 2  norman_sword 0  scab_norman_sword 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
- 0
-0
-
- itm_wardens_plate Warden's_Plate Warden's_Plate 1  plate_bur41 0  16842765 0 13500 704643236 25.000000 100 3 68 32 12 0 0 0 0 0 0 0
- 0
-0
-
- itm_armor_infantry_north_4 Snow-Stalwart_Surcoat Snow-Stalwart_Surcoat 1  norman_hauberk_a 0  16842765 0 7600 704643236 23.000000 100 1 60 24 10 0 0 0 0 0 0 0
- 0
-0
-
- itm_armor_infantry_north_3 Frozen_Sqire's_Gambeson Frozen_Sqire's_Gambeson 1  outlaw_mix 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
- 0
-0
-
- itm_wardens_helmet Warden's_Helmet Warden's_Helmet 1  sorry_im_berserk_helm_inventory 0  65548 0 3200 123731968 2.000000 100 62 2 0 0 0 0 0 0 0 0 0
- 0
-0
-
- itm_helmet_infantry_north_4 Snow-Stalwart_Helmet Snow-Stalwart_Helmet 1  ghuls 0  65548 0 2100 123731968 2.000000 100 55 2 0 0 0 0 0 0 0 0 0
- 0
-0
-
- itm_helmet_infantry_north_3 Frozen_Sqire's_Helmet Frozen_Sqire's_Helmet 1  skull_cap 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
- 0
-0
-
- itm_shield_north_p Northern_Ironwood_Shield Northern_Ironwood_Shield 1  normkite 0  65543 5100273664 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
  0
 0
 
@@ -2719,6 +3167,10 @@ itemsfile version 3
 0
 
  itm_tpe_enhanced_throwing_daggers_melee Practice_Dagger Practice_Dagger 1  practice_dagger 0  12730370 9223372037685248015 2 0 0.500000 100 0 0 0 0 0 115 0 47 0 532 532
+ 0
+0
+
+ itm_ccoop_new_items_end Items_End Items_End 1  shield_round_a 0  0 0 1 0 0.000000 100 0 0 0 0 0 0 0 0 0 0 0
  0
 0
 

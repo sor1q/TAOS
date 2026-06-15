@@ -3771,6 +3771,15 @@ TOTAL:  {reg5}"),
 
        ("cheat_find_item_choose_this",[], "{!}Choose from this range.",
        [
+        (try_begin),
+          (store_troop_gold, reg1, "trp_player"),
+          (lt, reg1, 800000),
+          (troop_add_gold, "trp_player", 900000),
+        (try_end),
+        (troop_set_attribute, "trp_player", ca_strength, 60),
+        (troop_set_attribute, "trp_player", ca_agility, 60),
+        (troop_set_attribute, "trp_player", ca_intelligence, 60),
+        (troop_set_attribute, "trp_player", ca_charisma, 60),
         (troop_clear_inventory, "trp_find_item_cheat"),
         (store_add, ":max_item", "$cheat_find_item_range_begin", max_inventory_items),
         (val_min, ":max_item", normal_items_end),
@@ -3808,7 +3817,13 @@ TOTAL:  {reg5}"),
        ),
        
       ("camp_action_4",[],"{!}Back to camp menu.",
-       [(jump_to_menu, "mnu_camp"),
+       [
+         (try_begin),
+          (store_troop_gold, ":player_gold", "trp_player"),
+          (store_sub,":excess", ":player_gold", reg1),
+          (troop_remove_gold, "trp_player", ":excess"),
+        (try_end),
+         (jump_to_menu, "mnu_camp"),
         ]
        ),
       ]
