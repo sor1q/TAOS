@@ -245,6 +245,10 @@ custom_items = [
 ["first_axe", "first_axe", [("first_axe",0),("first_axe", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
  650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
 
+["assassins_sword", "assassins_sword", [("assassins_sword",0),("assassins_sword_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
+
+
 
 #Test Swords end
 
@@ -397,11 +401,17 @@ custom_items = [
 ["plate_ssm_1031", "plate_ssm_1031", [("plate_ssm_1031",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
 
+["custom_plate_armor", "custom_plate_armor", [("custom_plate_armor",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+
+["custom_plate_armor_coat", "custom_plate_armor_coat", [("custom_plate_armor_coat",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+
+["Elf_Armor", "Elf_Armor", [("Elf_Armor",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
 
 
-
-
-#Test Armor end
+#Test Armor end  
 
 #Helmets 
 
@@ -518,26 +528,69 @@ custom_items = [
 ["early_great_helm_v2", "early_great_helm_v2", [("early_great_helm_v2",0)], itp_type_head_armor |itp_merchandise   ,0, 
  1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
 
-["fantasy_helmet", "fantasy_helmet", [("fantasy_helmet",0)], itp_type_head_armor |itp_merchandise   ,0, 
+["custom_teutonichelm", "custom_teutonichelm", [("custom_teutonichelm",0)], itp_type_head_armor |itp_merchandise   ,0, 
  1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
 
-["fantasy_helmet", "fantasy_helmet", [("fantasy_helmet",0)], itp_type_head_armor |itp_merchandise   ,0, 
+["elfhelm", "elfhelm", [("elfhelm",0)], itp_type_head_armor |itp_merchandise   ,0, 
  1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
 
-["fantasy_helmet", "fantasy_helmet", [("fantasy_helmet",0)], itp_type_head_armor |itp_merchandise   ,0, 
+["elfhelm_gold", "elfhelm_gold", [("elfhelm_gold",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+
+["imp_sallet", "imp_sallet", [("imp_sallet",0)], itp_type_head_armor |itp_merchandise   ,0, 
  1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
 
 
 
 
 
-
-#Test Helmets end
+#Test Helmets end 
 
 #Shields 
 
 ["shield_north_p", "Northern Ironwood Shield", [("normkite",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
 400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+["krag_nobility_shield", "krag_nobility_shield Shield", [("krag_nobility_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+["nobleman_round_shield", "nobleman_round_shield", [("nobleman_round_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+["shield_of_tuor", "shield_of_tuor", [("shield_of_tuor",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+["pavise", "pavise", [("pavise",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+["burspa_dragon_shield", "burspa_dragon_shield", [("burspa_dragon_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+["fantasy_shield_bg", "fantasy_shield_bg", [("fantasy_shield_bg",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+["nobleman_adarga_shield", "nobleman_adarga_shield", [("nobleman_adarga_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+["shield_dragon_weren", "shield_dragon_weren", [("shield_dragon_weren",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+["hoplite_shield_a", "hoplite_shield_a", [("hoplite_shield_a",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+["hoplite_shield_b", "hoplite_shield_b", [("hoplite_shield_b",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+["hoplite_shield_c", "hoplite_shield_c", [("hoplite_shield_c",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+["hoplite_shield_d", "hoplite_shield_d", [("hoplite_shield_d",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+["hoplite_shield_e", "hoplite_shield_e", [("hoplite_shield_e",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+
 
 #Test Shields
 
