@@ -1067,7 +1067,8 @@ tpe_tournament_triggers = [
       # (56, mtef_visitor_source|mtef_team_0, af_override_all, aif_start_alarmed, 1, [itm_practice_sword, itm_practice_shield, itm_ar_rho_t3_aketon_a, itm_he_swa_t3_helmet_a]),
       # (57, mtef_visitor_source|mtef_team_0, af_override_all, aif_start_alarmed, 1, [itm_practice_sword, itm_practice_shield, itm_ar_rho_t3_aketon_a, itm_he_swa_t3_helmet_a]),
 	],
-    tpe_standard_triggers + custom_camera_triggers # (dependency) PBOD
+    tpe_standard_triggers + custom_camera_triggers 
+    # (dependency) PBOD
   ),
 
 ]

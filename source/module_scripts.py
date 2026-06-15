@@ -1279,21 +1279,82 @@ scripts = [
     #   (call_script, "script_give_center_to_faction_aux", "p_castle_48", "fac_kingdom_7"),
 
 
-	  #Now give towns to great lords
-      (call_script, "script_give_center_to_lord", "p_town_1",  "trp_kingdom_1_lord", 0),
-      
+	    #Give towns to great lords
+      (call_script, "script_give_center_to_lord", "p_town_1",  "trp_kingdom_1_lord", 0), 
       (call_script, "script_give_center_to_lord", "p_town_6",  "trp_kingdom_2_lord", 0),
-      
       (call_script, "script_give_center_to_lord", "p_town_11",  "trp_kingdom_3_lord", 0),
-      
-      (call_script, "script_give_center_to_lord", "p_town_14",  "trp_kingdom_4_lord", 0),
-      
+      (call_script, "script_give_center_to_lord", "p_town_14",  "trp_kingdom_4_lord", 0),  
       (call_script, "script_give_center_to_lord", "p_town_19",  "trp_kingdom_5_lord", 0),
-      
       (call_script, "script_give_center_to_lord", "p_town_23",  "trp_kingdom_6_lord", 0),
-      
       (call_script, "script_give_center_to_lord", "p_town_27",  "trp_kingdom_7_lord", 0),
+      
+      #Give towns to lords
+      
+      
+      #Give castles to lords
+      #North
+      (call_script, "script_give_center_to_lord", "p_castle_1",  "trp_knight_1_1", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_2",  "trp_knight_1_2", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_3",  "trp_knight_1_3", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_4",  "trp_knight_1_4", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_5",  "trp_knight_1_5", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_6",  "trp_knight_1_6", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_7",  "trp_knight_1_7", 0),
 
+      #Ost-Gart
+      (call_script, "script_give_center_to_lord", "p_castle_8",  "trp_knight_2_1", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_9",  "trp_knight_2_2", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_10",  "trp_knight_2_3", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_11",  "trp_knight_2_4", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_12",  "trp_knight_2_5", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_13",  "trp_knight_2_6", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_14",  "trp_knight_2_7", 0),
+      
+      #Kara-Thar
+      (call_script, "script_give_center_to_lord", "p_castle_15",  "trp_knight_3_1", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_16",  "trp_knight_3_2", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_17",  "trp_knight_3_3", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_18",  "trp_knight_3_4", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_19",  "trp_knight_3_5", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_20",  "trp_knight_3_6", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_21",  "trp_knight_3_7", 0),
+      
+      #Ashkar
+      (call_script, "script_give_center_to_lord", "p_castle_22",  "trp_knight_4_1", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_23",  "trp_knight_4_2", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_24",  "trp_knight_4_3", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_25",  "trp_knight_4_4", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_26",  "trp_knight_4_5", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_27",  "trp_knight_4_6", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_28",  "trp_knight_4_7", 0),
+      
+      #Solmark
+      (call_script, "script_give_center_to_lord", "p_castle_29",  "trp_knight_5_1", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_30",  "trp_knight_5_2", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_31",  "trp_knight_5_3", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_32",  "trp_knight_5_4", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_33",  "trp_knight_5_5", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_34",  "trp_knight_5_6", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_35",  "trp_knight_5_7", 0),
+      
+      #Eirven
+      (call_script, "script_give_center_to_lord", "p_castle_36",  "trp_knight_6_1", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_37",  "trp_knight_6_2", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_38",  "trp_knight_6_3", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_39",  "trp_knight_6_4", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_40",  "trp_knight_6_5", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_41",  "trp_knight_6_6", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_42",  "trp_knight_6_7", 0),
+      
+      #Vallor
+      (call_script, "script_give_center_to_lord", "p_castle_43",  "trp_knight_7_1", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_44",  "trp_knight_7_2", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_45",  "trp_knight_7_3", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_46",  "trp_knight_7_4", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_47",  "trp_knight_7_5", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_48",  "trp_knight_7_6", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_49",  "trp_knight_7_7", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_50",  "trp_knight_7_7", 0),
       
    ##diplomacy end+
 
@@ -8632,6 +8693,13 @@ scripts = [
       (party_set_slot,"p_town_22", slot_town_arena_melee_2_team_size,   4),
       (party_set_slot,"p_town_22", slot_town_arena_melee_3_num_teams,   2),
       (party_set_slot,"p_town_22", slot_town_arena_melee_3_team_size,   6),
+      
+      (party_set_slot,"p_town_23", slot_town_arena_melee_1_num_teams,   4),
+      (party_set_slot,"p_town_23", slot_town_arena_melee_1_team_size,   3),
+      (party_set_slot,"p_town_23", slot_town_arena_melee_2_num_teams,   3),
+      (party_set_slot,"p_town_23", slot_town_arena_melee_2_team_size,   4),
+      (party_set_slot,"p_town_23", slot_town_arena_melee_3_num_teams,   2),
+      (party_set_slot,"p_town_23", slot_town_arena_melee_3_team_size,   6),
 	]),
 
 	("initialize_banner_info",
@@ -8935,6 +9003,11 @@ scripts = [
 	(party_set_slot, "p_town_22", slot_center_wine_presses, 0), 	#no alcohol (wine) in arabic region
 	(party_set_slot, "p_town_22", slot_center_pottery_kilns, 12),
 	(party_set_slot, "p_town_22", slot_center_salt_pans, 2),
+ 
+ 	(party_set_slot, "p_town_23", slot_center_breweries, 0), 	    #no alcohol (ale) in arabic region
+	(party_set_slot, "p_town_23", slot_center_wine_presses, 0), 	#no alcohol (wine) in arabic region
+	(party_set_slot, "p_town_23", slot_center_pottery_kilns, 12),
+	(party_set_slot, "p_town_23", slot_center_salt_pans, 2),
 	#also produces 50 spice
 
     (try_for_range, ":village_no", villages_begin, villages_end),
