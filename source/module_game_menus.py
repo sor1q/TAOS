@@ -5067,14 +5067,27 @@ TOTAL:  {reg5}"),
     [
       (set_background_mesh, "mesh_pic_charge"),
 
-      (call_script, "script_party_calculate_strength", "p_main_party", 1), #exclude player
+      # (call_script, "script_party_calculate_strength", "p_main_party", 1), #exclude player
+      # (assign, ":player_party_strength", reg0),
+
+      # (call_script, "script_party_calculate_strength", "p_collective_enemy", 0),
+      # (assign, ":enemy_party_strength", reg0),
+      
+      (call_script, "script_dplmc_get_terrain_code_for_battle", "p_main_party", "p_collective_enemy"),
+      (assign, ":terrain_code", reg0),
+      
+      (call_script, "script_dplmc_party_calculate_strength_in_terrain", "p_main_party", ":terrain_code", 1, 1),
       (assign, ":player_party_strength", reg0),
 
-      (call_script, "script_party_calculate_strength", "p_collective_enemy", 0),
+      (call_script, "script_dplmc_party_calculate_strength_in_terrain", "p_collective_enemy", ":terrain_code", 0, 1),
       (assign, ":enemy_party_strength", reg0),
 
       (party_collect_attachments_to_party, "p_main_party", "p_collective_ally"),
-      (call_script, "script_party_calculate_strength", "p_collective_ally", 1), #exclude player
+      
+      # (call_script, "script_party_calculate_strength", "p_collective_ally", 1), #exclude player
+      # (assign, ":total_player_and_followers_strength", reg0),
+      
+      (call_script, "script_dplmc_party_calculate_strength_in_terrain", "p_collective_ally", ":terrain_code", 0, 1),
       (assign, ":total_player_and_followers_strength", reg0),
 
       (try_begin),

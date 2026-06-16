@@ -4083,6 +4083,89 @@ scripts = [
        (assign,"$auto_enter_town",0),
        (assign,"$auto_besiege_town",0),
       ]),
+  
+  
+  #Soriq calculate North bonus
+  ("unique_north_bonus_calculate",
+    [
+        (store_script_param, ":attacker", 1),
+        (store_script_param, ":attacker_strength", 2),
+        (store_script_param, ":defender", 3),
+        (store_script_param, ":defender_strength", 4),
+
+        (store_faction_of_party, ":attacker_faction", ":attacker"),
+        (store_faction_of_party, ":defender_faction", ":defender"),
+
+        (try_begin),
+            (eq, ":attacker_faction", "fac_kingdom_1"),
+
+            (assign, ":cavalry_bonus", 0),
+
+            (party_get_num_companion_stacks, ":num_stacks", ":defender"),
+            (try_for_range, ":stack", 0, ":num_stacks"),
+
+                (party_stack_get_troop_id, ":troop", ":defender", ":stack"),
+                (troop_is_guarantee_horse, ":troop"),
+
+                (store_character_level, ":strength", ":troop"),
+                (val_add, ":strength", 4),
+                (val_mul, ":strength", ":strength"),
+                (val_mul, ":strength", 2),
+                (val_div, ":strength", 100),
+                (val_max, ":strength", 1),
+
+                (party_stack_get_size, ":size", ":defender", ":stack"),
+                (party_stack_get_num_wounded, ":wounded", ":defender", ":stack"),
+                (val_sub, ":size", ":wounded"),
+
+                (val_mul, ":strength", ":size"),
+
+                (store_mul, ":bonus", ":strength", 20),
+                (val_div, ":bonus", 100),
+
+                (val_add, ":cavalry_bonus", ":bonus"),
+            (try_end),
+            (assign, reg7, ":cavalry_bonus"),
+            (display_message, "@Cavalry bonus: {reg7} was cancelled"),
+            (val_sub, ":defender_strength", ":cavalry_bonus"),
+        (try_end),
+        (try_begin),
+            (eq, ":defender_faction", "fac_kingdom_1"),
+
+            (assign, ":cavalry_bonus", 0),
+
+            (party_get_num_companion_stacks, ":num_stacks", ":attacker"),
+            (try_for_range, ":stack", 0, ":num_stacks"),
+
+                (party_stack_get_troop_id, ":troop", ":attacker", ":stack"),
+                (troop_is_guarantee_horse, ":troop"),
+
+                (store_character_level, ":strength", ":troop"),
+                (val_add, ":strength", 4),
+                (val_mul, ":strength", ":strength"),
+                (val_mul, ":strength", 2),
+                (val_div, ":strength", 100),
+                (val_max, ":strength", 1),
+
+                (party_stack_get_size, ":size", ":attacker", ":stack"),
+                (party_stack_get_num_wounded, ":wounded", ":attacker", ":stack"),
+                (val_sub, ":size", ":wounded"),
+
+                (val_mul, ":strength", ":size"),
+
+                (store_mul, ":bonus", ":strength", 20),
+                (val_div, ":bonus", 100),
+
+                (val_add, ":cavalry_bonus", ":bonus"),
+            (try_end),
+            (assign, reg7, ":cavalry_bonus"),
+            (display_message, "@Cavalry bonus: {reg7} was cancelled"),
+            (val_sub, ":attacker_strength", ":cavalry_bonus"),
+        (try_end),
+
+        (assign, reg0, ":attacker_strength"),
+        (assign, reg1, ":defender_strength"),
+    ]),
 
   #script_game_event_simulate_battle:
   # This script is called whenever the game simulates the battle between two parties on the map.
@@ -4145,17 +4228,31 @@ scripts = [
  		  (assign, ":terrain_code", dplmc_terrain_code_none),#defined in header_terrain.py
           (try_begin),
               (eq, "$g_dplmc_terrain_advantage", DPLMC_TERRAIN_ADVANTAGE_ENABLE),
-			  (call_script, "script_dplmc_get_terrain_code_for_battle", ":root_attacker_party", ":root_defender_party"),
-			  (assign, ":terrain_code", reg0),
-			  #
+              (call_script, "script_dplmc_get_terrain_code_for_battle", ":root_attacker_party", ":root_defender_party"),
+              (assign, ":terrain_code", reg0),
+
+
+              
               (call_script, "script_dplmc_party_calculate_strength_in_terrain", "p_collective_ally", ":terrain_code", 0, 1),
               (assign, ":defender_strength", reg0),
+
               (call_script, "script_dplmc_party_calculate_strength_in_terrain", "p_collective_enemy", ":terrain_code", 0, 1),
               (assign, ":attacker_strength", reg0),
+              
+              
+              (call_script, "script_unique_north_bonus_calculate",
+                ":root_attacker_party",
+                ":attacker_strength",
+                ":root_defender_party",
+                ":defender_strength"),
+
+              (assign, ":attacker_strength", reg0),
+              (assign, ":defender_strength", reg1),
+              
           (else_try),
               (call_script, "script_party_calculate_strength", "p_collective_ally", 0),
               (assign, ":defender_strength", reg0),
-          #(call_script, "script_party_count_fit_for_battle", "p_collective_enemy"),
+              
               (call_script, "script_party_calculate_strength", "p_collective_enemy", 0),
               (assign, ":attacker_strength", reg0),
           (try_end),
@@ -4211,10 +4308,12 @@ scripts = [
           (val_mul, ":attacker_strength", ":attacker_percent"),
           (val_div, ":attacker_strength", 100),
           ##diplomacy end
-
+          
           (call_script, "script_party_count_fit_for_battle", "p_collective_ally", 0),
           (assign, ":old_defender_strength", reg0),
-
+          
+          
+          
           (try_begin),
             (neg|is_currently_night), #Don't fight at night
             (inflict_casualties_to_party_group, ":root_attacker_party", ":defender_strength", "p_temp_casualties"),
@@ -17548,6 +17647,7 @@ scripts = [
     [
       (store_script_param_1, ":party"), #Party_id
       (store_script_param_2, ":exclude_leader"), #Party_id
+      
 
       (assign, reg0,0),
       (party_get_num_companion_stacks, ":num_stacks", ":party"),
@@ -17570,6 +17670,7 @@ scripts = [
           (party_stack_get_num_wounded, ":num_wounded",":party",":i_stack"),
           (val_sub, ":stack_size", ":num_wounded"),
           (val_mul, ":stack_strength", ":stack_size"),
+        
         (else_try),
           (troop_is_wounded, ":stack_troop"), #hero & wounded
           (assign, ":stack_strength", 0),
@@ -63655,6 +63756,10 @@ scripts = [
          (party_get_current_terrain, reg0, ":attacker_party"),#terrain under attacker
       (try_end),
    ]),
+  
+  
+
+
 
   #script_dplmc_party_calculate_strength_in_terrain
   # INPUT: arg1 = party_id
@@ -63669,10 +63774,13 @@ scripts = [
       (store_script_param, ":terrain_type", 2),#a value from header_terrain_types.py
       (store_script_param, ":exclude_leader", 3),#(0 for do-not-exclude, 1 for exclude)
       (store_script_param, ":cache_policy", 4),#1 is use terrain, 2 is use non-terrain, 0 is do not use)
-
+      
       (assign, ":total_strength_terrain", 0),
       (assign, ":total_strength_no_terrain", 0),
 
+
+  
+      
       (party_get_num_companion_stacks, ":num_stacks", ":party"),
       (assign, ":first_stack", 0),
       (try_begin),
@@ -63732,58 +63840,57 @@ scripts = [
         (val_add, ":stack_strength", 4), #new was 12 (patch 1.125)
         (val_mul, ":stack_strength", ":stack_strength"),
         (val_mul, ":stack_strength", 2), #new (patch 1.125)
-      
         
-        
+     
         #move the next two lines to after terrain advantage
         #(val_div, ":stack_strength", 100),
         #(val_max, ":stack_strength", 1), #new (patch 1.125)
         (assign, ":terrain_free_strength", ":stack_strength"),
         ##use Arch3r's terrain advantage code (bug-fix changes 2011-04-13; other changes 2011-04-25)
         (try_begin),
-           ##AotE terrain advantages
-           (assign, ":hero_horse", 0),#added for heroes (any positive number = has a horse)
-           (try_begin),
-		      (this_or_next|eq, "trp_player", ":stack_troop"),
-				(troop_is_hero, ":stack_troop"),
-		      (gt, ":guaranteed_horse_percent", ":hero_percent"),#don't bother if we wouldn't use the result
-              (neg|troop_is_guarantee_horse, ":stack_troop"),#don't bother if we already know the troop has a horse
-			  (store_skill_level, reg0, "skl_riding", ":stack_troop"),
-			  (ge, reg0, 2),#don't bother if the troop has no/minimal riding skill
-			  #Just checking ek_horse may not work for non-companions, so check the inventory
-			  (troop_get_inventory_capacity, ":inv_cap", ":stack_troop"),
-			  (ge, ":inv_cap", 1),
-			  (val_min, ":inv_cap", dplmc_ek_alt_items_begin + 8),#Don't check too much of the inventory
-			  (try_for_range, ":inv_slot", 0, ":inv_cap"),
-				(troop_inventory_slot_get_item_amount, reg1, ":stack_troop", ":inv_slot"),
-				(ge, reg1, 1),#quantity must be greater than zero
-				(troop_get_inventory_slot, reg0, ":stack_troop", ":inv_slot"),
-				(ge, reg0, 1),#must be a valid item
-				(item_get_type, reg1, reg0),#check if the item is a horse
-				(eq, reg1, itp_type_horse),
-				(assign, ":inv_cap", ":inv_slot"),#break loop
-			  (try_end),
-			  #If no horse found, set to zero
-              (neg|is_between, ":hero_horse", horses_begin, horses_end),
-              (assign, ":hero_horse", 0),
-           (try_end),
-		   (assign, ":stack_strength_multiplier", 100),#<-- percent multiplier
-           (try_begin),#Mounted troops
-			  (this_or_next|ge, ":hero_horse", 1),
-              (troop_is_guarantee_horse, ":stack_troop"),
-              (assign, ":stack_strength_multiplier", ":guaranteed_horse_percent"),
-		   (else_try),#Ranged troops
-              (troop_is_guarantee_ranged, ":stack_troop"),
-              (assign, ":stack_strength_multiplier", ":guaranteed_ranged_percent"),
-           (else_try),#Infantry
-              (assign, ":stack_strength_multiplier", ":guaranteed_neither_percent"),
-           (try_end),
+            ##AotE terrain advantages
+            (assign, ":hero_horse", 0),#added for heroes (any positive number = has a horse)
+            (try_begin),
+            (this_or_next|eq, "trp_player", ":stack_troop"),
+          (troop_is_hero, ":stack_troop"),
+            (gt, ":guaranteed_horse_percent", ":hero_percent"),#don't bother if we wouldn't use the result
+                (neg|troop_is_guarantee_horse, ":stack_troop"),#don't bother if we already know the troop has a horse
+          (store_skill_level, reg0, "skl_riding", ":stack_troop"),
+          (ge, reg0, 2),#don't bother if the troop has no/minimal riding skill
+          #Just checking ek_horse may not work for non-companions, so check the inventory
+          (troop_get_inventory_capacity, ":inv_cap", ":stack_troop"),
+          (ge, ":inv_cap", 1),
+          (val_min, ":inv_cap", dplmc_ek_alt_items_begin + 8),#Don't check too much of the inventory
+          (try_for_range, ":inv_slot", 0, ":inv_cap"),
+            (troop_inventory_slot_get_item_amount, reg1, ":stack_troop", ":inv_slot"),
+            (ge, reg1, 1),#quantity must be greater than zero
+            (troop_get_inventory_slot, reg0, ":stack_troop", ":inv_slot"),
+            (ge, reg0, 1),#must be a valid item
+            (item_get_type, reg1, reg0),#check if the item is a horse
+            (eq, reg1, itp_type_horse),
+            (assign, ":inv_cap", ":inv_slot"),#break loop
+          (try_end),
+          #If no horse found, set to zero
+          (neg|is_between, ":hero_horse", horses_begin, horses_end),
+          (assign, ":hero_horse", 0),
+          (try_end),
+          (assign, ":stack_strength_multiplier", 100),#<-- percent multiplier
+          (try_begin),#Mounted troops
+            (this_or_next|ge, ":hero_horse", 1),
+            (troop_is_guarantee_horse, ":stack_troop"),
+            (assign, ":stack_strength_multiplier", ":guaranteed_horse_percent"),
+          (else_try),#Ranged troops
+            (troop_is_guarantee_ranged, ":stack_troop"),
+            (assign, ":stack_strength_multiplier", ":guaranteed_ranged_percent"),
+          (else_try),#Infantry
+            (assign, ":stack_strength_multiplier", ":guaranteed_neither_percent"),
+        (try_end),
 
 		   #Use hero/player modifiers if a better one didn't apply
 		   (try_begin),
 		      (this_or_next|eq, ":stack_troop", "trp_player"),
-			     (troop_is_hero, ":stack_troop"),
-			  (val_max, ":stack_strength_multiplier", ":hero_percent"),#hero bonus
+			    (troop_is_hero, ":stack_troop"),
+			    (val_max, ":stack_strength_multiplier", ":hero_percent"),#hero bonus
 		   (try_end),
 
 		   (val_mul, ":stack_strength", ":stack_strength_multiplier"),
@@ -63797,9 +63904,6 @@ scripts = [
         (val_div, ":terrain_free_strength", 100),
         (val_max, ":terrain_free_strength", 1),
         
-        (assign, reg6, ":stack_troop"),
-        (assign, reg7, ":stack_strength"),
-        (display_message, "@Troop: {reg6}, str: {reg7}"),
         (try_begin),
           (neg|troop_is_hero, ":stack_troop"),
           (party_stack_get_size, ":stack_size",":party",":i_stack"),

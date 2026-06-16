@@ -46,6 +46,88 @@ bard_disguise = [itm_leather_boots,itm_lyre,itm_linen_tunic,itm_winged_mace]
 
 af_castle_lord = af_override_horse | af_override_weapons| af_require_civilian
 
+# HEADING
+# 001 - Main mission templates
+# 002 - Unique lords abilites
+
+
+# 002 - Unique lords abilites
+unique_lords_abilities = [
+  
+  #ABILITY - Northern Lords slow enemy's mounts
+  (1, 0, ti_once, [],
+  [
+
+      (get_player_agent_no, ":player"),
+      (agent_get_team, "$player_team", ":player"),
+
+      (try_for_agents, ":agent"),
+          (agent_is_alive, ":agent"),
+
+          (agent_get_troop_id, ":troop", ":agent"),
+          (troop_is_hero, ":troop"),
+
+          (store_troop_faction, ":faction", ":troop"),
+          (eq, ":faction", "fac_kingdom_1"),
+
+          (agent_get_team, "$nord_team", ":agent"),
+          
+          (assign, reg1, "$nord_team"),
+      (try_end),
+      
+
+      (try_for_agents, ":agent"),
+          (agent_is_alive, ":agent"),
+
+          (agent_get_horse, ":horse", ":agent"),
+          (ge, ":horse", 0),
+
+          (agent_get_team, ":team", ":agent"),
+
+          (try_begin),
+              (agent_get_team, ":team", ":agent"),
+              (teams_are_enemies, ":team", "$nord_team"),
+
+              (agent_set_speed_limit, ":agent", north_debuff_value),
+              
+              (agent_set_slot, ":agent", slot_agent_north_debuff, 1),
+          (try_end),
+      (try_end),
+  ]),
+  
+  (ti_on_agent_spawn, 0, 0, [],
+  [
+      (store_trigger_param_1, ":agent"),
+
+      (agent_get_horse, ":horse", ":agent"),
+      (ge, ":horse", 0),
+
+      (agent_get_team, ":team", ":agent"),
+
+      (try_begin),
+          (agent_get_team, ":team", ":agent"),
+          (teams_are_enemies, ":team", "$nord_team"),
+          (agent_set_speed_limit, ":agent", north_debuff_value),
+          (agent_set_slot, ":agent", slot_agent_north_debuff, 1),
+      (try_end),
+  ]),
+  
+  (ti_on_agent_dismount, 0, 0, [],
+  [
+      (store_trigger_param_1, ":agent"),
+      (agent_slot_eq, ":agent", slot_agent_north_debuff, 1),
+      (agent_set_speed_limit, ":agent", 100),
+  ]),
+  
+  (ti_on_agent_mount, 0, 0, [],
+  [
+      (store_trigger_param_1, ":agent"),
+      (agent_slot_eq, ":agent", slot_agent_north_debuff, 1),
+      (agent_set_speed_limit, ":agent", north_debuff_value),
+  ]),
+  #ABILITY - Northern Lords slow enemy's mounts END
+]
+
 ##diplomacy begin
 
 unarmed_agent_damage = (
@@ -2323,6 +2405,7 @@ tournament_triggers = [
        ]),
   ] #SB : include horse cull + unarmed_agent_damage?
 
+# 001 - Main mission templates
 mission_templates = [
   (
     "town_default",0,-1,
@@ -3787,7 +3870,8 @@ mission_templates = [
 
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers + dplmc_horse_cull,  #SB : horse cull
+    + dplmc_battle_mode_triggers + dplmc_horse_cull + unique_lords_abilities
+    #SB : horse cull
     ##diplomacy end
   ),
 

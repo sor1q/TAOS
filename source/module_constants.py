@@ -10,7 +10,22 @@ from ID_factions import *
 # that it will be easy to change it if you need to.
 ##############################################################
 
-#MOD constants
+
+
+# HEADING
+# 001 - MOD constants
+# 002 - Troop tree
+# 003 - Custom slots
+# 004 - Custom constants
+
+
+# 003 - Custom slots
+slot_agent_north_debuff = 600
+
+# 004 - Custom constants
+north_debuff_value = 15
+
+# 001 - MOD constants
 all_troops_begin = 0
 all_troops_end = "trp_follower_woman"
 #TARGET SCREEN RATIO (or specify resolution, for example resolution 1920x1080 has ratio of 16:9, while Warband renders UI at 4x3, then stretches it to screen resolution)
@@ -20,7 +35,7 @@ target_ratio_y = 9
 mult_x = (4.0*target_ratio_y)/(3.0*target_ratio_x) #to keep y size unchanged, multiply x size by mult_x; to avoid rounding errors you can multiply by 100*mult_x and later divide by 100; if compiler complains about data type, you may need to cast initial result to int(result)
 mult_y = (3.0*target_ratio_x)/(4.0*target_ratio_y) #to keep x size unchanged, multiply y size by mult_y; to avoid rounding errors you can multiply by 100*mult_y and later divide by 100; if compiler complains about data type, you may need to cast initial result to int(result)
 
-#MOD BEGIN - troop tree
+# 002 - Troop tree
 equipment_slots_begin = 0
 inventory_slots_end = 106
 attributes_begin = 0
