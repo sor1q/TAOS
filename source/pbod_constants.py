@@ -207,6 +207,7 @@ cs_target_on_right_hand_side = 8     # horse archers
 from header_triggers import *
 #-- Parts to modify as your mod need --------------
 ##Wuan  modified the default key
+
 keys_list = [
 			  ("$key_camera_forward",  key_w,                "Camera Forward"),
               ("$key_camera_backward", key_s,              "Camera Backward"),

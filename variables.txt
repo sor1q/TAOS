@@ -1451,3 +1451,5 @@ next_infantry_place
 gpu_ccp_mode
 gpu_object
 party_window_selected_troop
+deathcam_just_switched
+g_camera_ready

@@ -16277,7 +16277,7 @@ scripts = [
       # (try_end),
     (else_try),
       (eq, ":button_value", 3),
-      (call_script, "script_dplmc_party_calculate_strength_in_terrain", ":party_no", 0, 0, 1),
+      (call_script, "script_dplmc_party_calculate_strength_in_terrain", ":party_no", 3, 0, 2),
       (party_get_slot, ":strength", ":party_no", slot_party_cached_strength),
       (assign, reg0, ":strength"),
       (display_message, "@Party strength: {reg0}"),
@@ -48528,7 +48528,6 @@ scripts = [
 	(try_begin),
 		(eq, "$cheat_mode", 2),
 		(display_message, "@{!}DEBUG -- Analyzing lord allegiances, combined bonuses and penalties = {reg0}"),
-		#(display_message, "str_combined_bonuses_and_penalties_=_reg0"),
 	(try_end),
 	]),
 
@@ -63733,6 +63732,9 @@ scripts = [
         (val_add, ":stack_strength", 4), #new was 12 (patch 1.125)
         (val_mul, ":stack_strength", ":stack_strength"),
         (val_mul, ":stack_strength", 2), #new (patch 1.125)
+      
+        
+        
         #move the next two lines to after terrain advantage
         #(val_div, ":stack_strength", 100),
         #(val_max, ":stack_strength", 1), #new (patch 1.125)
@@ -63794,6 +63796,10 @@ scripts = [
         (val_max, ":stack_strength", 1), #new (patch 1.125) #<- moved here from above
         (val_div, ":terrain_free_strength", 100),
         (val_max, ":terrain_free_strength", 1),
+        
+        (assign, reg6, ":stack_troop"),
+        (assign, reg7, ":stack_strength"),
+        (display_message, "@Troop: {reg6}, str: {reg7}"),
         (try_begin),
           (neg|troop_is_hero, ":stack_troop"),
           (party_stack_get_size, ":stack_size",":party",":i_stack"),

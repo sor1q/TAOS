@@ -2481,8 +2481,12 @@ custom_camera_triggers = [
   
  (0, 0, 0, [(key_clicked, "$key_camera_toggle"),(lt, "$cam_mode", cam_mode_shoot)], #camera_toggle
    # toggling only when came mode =0 or 1 (2=disable) ; shoot_mode=1 temporary diable toggling
-   [(try_begin),
+   [
+     
+     
+     (try_begin),
      (eq, "$cam_mode", cam_mode_default),
+     
 	 #Wuan
 	 (assign, "$g_camera_z", 250),
 	 (assign, "$g_camera_y", -250),
@@ -2545,6 +2549,11 @@ custom_camera_triggers = [
       (this_or_next|key_is_down, "$key_camera_zoom_plus"), 
 	  (key_is_down, "$key_camera_zoom_min"),],
 	  [
+       #MOD Soriq fix camera wrong rotation
+		(mission_cam_get_position, cam_position),
+		(position_get_rotation_around_x, "$g_camera_rotx", cam_position),
+	   #MOD Soriq fix camera wrong rotation end
+    
 		(assign, "$cam_mode", cam_mode_free),
 		(start_presentation, "prsnt_caba_camera_mode_display"),
 	  ]),

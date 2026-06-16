@@ -376,17 +376,6 @@ common_rotate_deathcam = (
     [
         (set_fixed_point_multiplier, 10000), #Extra Precision
 
-        (try_begin),
-            (this_or_next|is_presentation_active, "prsnt_battle"), #Opened (mouse must move)
-            (this_or_next|key_clicked, key_escape), #Menu
-            (this_or_next|key_clicked, key_q), #Notes, etc
-            (key_clicked, key_tab), #Retreat
-            (eq, "$deathcam_prsnt_was_active", 0),
-            (assign, "$deathcam_prsnt_was_active", 1),
-            (assign, "$deathcam_mouse_last_notmoved_x", "$deathcam_mouse_notmoved_x"),
-            (assign, "$deathcam_mouse_last_notmoved_y", "$deathcam_mouse_notmoved_y"),
-        (try_end),
-
         (assign, ":continue", 0),
 
         (try_begin),
@@ -487,6 +476,8 @@ common_rotate_deathcam = (
           (assign, "$deathcam_keyboard_rotation_y", 0),
           (assign, ":rotating_vertical", 0),
         (try_end),
+        
+
 
         (try_begin),
           (eq, ":continue", 1),
@@ -529,6 +520,7 @@ common_rotate_deathcam = (
           (val_add, "$deathcam_total_rotx", ":delta_y"), #Fix yaw
           (mission_cam_set_position, pos47),
         (try_end),
+      (try_end),
     ]
 )
 ##BEAN END - Deathcam
