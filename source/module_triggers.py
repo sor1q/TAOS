@@ -28,7 +28,6 @@ merchant_inventory_space = 30
 num_merchandise_goods = 36
 
 
-
 triggers = [
 # Tutorial:
   (0.1, 0, ti_once, [(map_free,0)], [(dialog_box,"str_tutorial_map1")]),
@@ -56,6 +55,7 @@ triggers = [
   [
     (call_script, "script_refresh_center_stables"),
                      ]),
+  
 
 
 #############

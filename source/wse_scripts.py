@@ -1,3 +1,7 @@
+from header_common import *
+from header_operations import *
+from module_constants import *
+
 scripts = [
 ###WSE - Warband Script Enhancer 2 v1.0.8.4 by K700
 #script_wse_multiplayer_message_received
@@ -44,8 +48,8 @@ scripts = [
 # trigger result = anything non-zero if the command succeeded
 # result string = message to display on success (if empty, default message will be used)
 ("wse_console_command_received", [
-	#(store_script_param, ":command_type", 1),
-	#(store_script_param, ":num_parts", 2),
+	# (store_script_param, ":command_type", 1),
+	# (store_script_param, ":num_parts", 2),
 ]),
 
 #script_wse_get_agent_scale

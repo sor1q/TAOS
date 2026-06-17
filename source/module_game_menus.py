@@ -115,7 +115,7 @@ game_menus = [
           (store_random_in_range, "$background_answer_3", dplmc_cb3_bravo, cb3_student + 1),
           (store_random_in_range, "$background_answer_4", cb4_revenge, cb4_greed + 1),
           (str_store_string, s13, "@Perhaps you have forgotten the face of your father."),
-          (assign, "$cheat_mode", 1),
+          (assign, "$cheat_menu", 1),
           # (jump_to_menu, "mnu_choose_skill"),
           (change_screen_map),
         (else_try),
@@ -3401,7 +3401,8 @@ TOTAL:  {reg5}"),
         ]
        ),
       ("camp_cheat",
-       [(ge, "$cheat_mode", 1)
+       [(this_or_next|ge, "$cheat_mode", 1),
+        (gt, "$cheat_menu", 0),
         ], "CHEAT MENU!",
        [(jump_to_menu, "mnu_camp_cheat"),
         ],
@@ -4623,6 +4624,8 @@ TOTAL:  {reg5}"),
         (try_begin),
           (eq, "$new_encounter", 1),
           (assign, "$new_encounter", 0),
+          (assign, "$replay_battle_active", 1), #Added by Soriq
+          (assign, "$replay_battle_copy_party", 1), #Added by Soriq
           (assign, "$g_encounter_is_in_village", 0),
           (assign, "$g_encounter_type", 0),
           (try_begin),
@@ -4826,6 +4829,24 @@ TOTAL:  {reg5}"),
             (set_background_mesh, "mesh_pic_sarranid_encounter"),
 		  (try_end),
         (try_end),
+        
+      #Soriq replay autbattle init
+      (try_begin),
+        (gt, "$replay_battle_copy_party", 0),
+        
+        (party_clear, "p_temp_party_autobattle_player"),
+        (party_clear, "p_temp_party_autobattle_ally"),
+        (party_clear, "p_temp_party_autobattle_enemy"),
+          
+        (call_script, "script_party_copy", "p_temp_party_autobattle_player", "p_main_party"),
+        (try_begin),
+          (ge, "$g_ally_party", 0),
+          (call_script, "script_party_copy", "p_temp_party_autobattle_ally", "$g_ally_party"),
+        (try_end),
+        (call_script, "script_party_copy", "p_temp_party_autobattle_enemy", "$g_encountered_party"),
+        (assign, "$replay_battle_copy_party", 0),
+      (try_end),
+      #Soriq replay autbattle init end
     ],
     [
       ("encounter_attack",
@@ -4837,6 +4858,8 @@ TOTAL:  {reg5}"),
       [
         (assign, "$g_battle_result", 0),
         (assign, "$g_engaged_enemy", 1),
+        
+        (assign, "$replay_battle_active", 0), #By Soriq
 
         (party_get_template_id, ":encountered_party_template", "$g_encountered_party"),
         (try_begin),
@@ -5054,6 +5077,7 @@ TOTAL:  {reg5}"),
 		  (unlock_achievement, ACHIEVEMENT_HELP_HELP_IM_BEING_REPRESSED),
 		(try_end),
 
+
         (assign, "$g_engaged_enemy", 1),
         (jump_to_menu,"mnu_order_attack_2"),
       ]),
@@ -5078,9 +5102,13 @@ TOTAL:  {reg5}"),
       
       (call_script, "script_dplmc_party_calculate_strength_in_terrain", "p_main_party", ":terrain_code", 1, 1),
       (assign, ":player_party_strength", reg0),
+      
+      (display_message, "@Player str: {reg0}"),
 
       (call_script, "script_dplmc_party_calculate_strength_in_terrain", "p_collective_enemy", ":terrain_code", 0, 1),
       (assign, ":enemy_party_strength", reg0),
+      
+      (display_message, "@Enemy str: {reg0}"),
 
       (party_collect_attachments_to_party, "p_main_party", "p_collective_ally"),
       
@@ -5090,80 +5118,98 @@ TOTAL:  {reg5}"),
       (call_script, "script_dplmc_party_calculate_strength_in_terrain", "p_collective_ally", ":terrain_code", 0, 1),
       (assign, ":total_player_and_followers_strength", reg0),
 
-      (try_begin),
-        (le, ":total_player_and_followers_strength", ":enemy_party_strength"),
-        (assign, ":minimum_power", ":total_player_and_followers_strength"),
-      (else_try),
-        (assign, ":minimum_power", ":enemy_party_strength"),
-      (try_end),
+      # (try_begin),
+      #   (le, ":total_player_and_followers_strength", ":enemy_party_strength"),
+      #   (assign, ":minimum_power", ":total_player_and_followers_strength"),
+      # (else_try),
+      #   (assign, ":minimum_power", ":enemy_party_strength"),
+      # (try_end),
 
-      (try_begin),
-        (le, ":minimum_power", 25),
-        (assign, ":division_constant", 1),
-      (else_try),
-        (le, ":minimum_power", 50),
-        (assign, ":division_constant", 2),
-      (else_try),
-        (le, ":minimum_power", 75),
-        (assign, ":division_constant", 3),
-      (else_try),
-        (le, ":minimum_power", 125),
-        (assign, ":division_constant", 4),
-      (else_try),
-        (le, ":minimum_power", 200),
-        (assign, ":division_constant", 5),
-      (else_try),
-        (le, ":minimum_power", 400),
-        (assign, ":division_constant", 6),
-      (else_try),
-        (le, ":minimum_power", 800),
-        (assign, ":division_constant", 7),
-      (else_try),
-        (le, ":minimum_power", 1600),
-        (assign, ":division_constant", 8),
-      (else_try),
-        (le, ":minimum_power", 3200),
-        (assign, ":division_constant", 9),
-      (else_try),
-        (le, ":minimum_power", 6400),
-        (assign, ":division_constant", 10),
-      (else_try),
-        (le, ":minimum_power", 12800),
-        (assign, ":division_constant", 11),
-      (else_try),
-        (le, ":minimum_power", 25600),
-        (assign, ":division_constant", 12),
-      (else_try),
-        (le, ":minimum_power", 51200),
-        (assign, ":division_constant", 13),
-      (else_try),
-        (le, ":minimum_power", 102400),
-        (assign, ":division_constant", 14),
-      (else_try),
-        (assign, ":division_constant", 15),
-      (try_end),
+      # (try_begin),
+      #   (le, ":minimum_power", 25),
+      #   (assign, ":division_constant", 1),
+      # (else_try),
+      #   (le, ":minimum_power", 50),
+      #   (assign, ":division_constant", 2),
+      # (else_try),
+      #   (le, ":minimum_power", 75),
+      #   (assign, ":division_constant", 3),
+      # (else_try),
+      #   (le, ":minimum_power", 125),
+      #   (assign, ":division_constant", 4),
+      # (else_try),
+      #   (le, ":minimum_power", 200),
+      #   (assign, ":division_constant", 5),
+      # (else_try),
+      #   (le, ":minimum_power", 400),
+      #   (assign, ":division_constant", 6),
+      # (else_try),
+      #   (le, ":minimum_power", 800),
+      #   (assign, ":division_constant", 7),
+      # (else_try),
+      #   (le, ":minimum_power", 1600),
+      #   (assign, ":division_constant", 8),
+      # (else_try),
+      #   (le, ":minimum_power", 3200),
+      #   (assign, ":division_constant", 9),
+      # (else_try),
+      #   (le, ":minimum_power", 6400),
+      #   (assign, ":division_constant", 10),
+      # (else_try),
+      #   (le, ":minimum_power", 12800),
+      #   (assign, ":division_constant", 11),
+      # (else_try),
+      #   (le, ":minimum_power", 25600),
+      #   (assign, ":division_constant", 12),
+      # (else_try),
+      #   (le, ":minimum_power", 51200),
+      #   (assign, ":division_constant", 13),
+      # (else_try),
+      #   (le, ":minimum_power", 102400),
+      #   (assign, ":division_constant", 14),
+      # (else_try),
+      #   (assign, ":division_constant", 15),
+      # (try_end),
 
-      (val_div, ":player_party_strength", ":division_constant"), #1.126, ":division_constant" was 5 before
-      (val_max, ":player_party_strength", 1), #1.126
-      (val_div, ":enemy_party_strength", ":division_constant"), #1.126, ":division_constant" was 5 before
-      (val_max, ":enemy_party_strength", 1), #1.126
-      (val_div, ":total_player_and_followers_strength", ":division_constant"), #1.126, ":division_constant" was 5 before
-      (val_max, ":total_player_and_followers_strength", 1), #1.126
+      # (val_div, ":player_party_strength", ":division_constant"), #1.126, ":division_constant" was 5 before
+      # (val_max, ":player_party_strength", 1), #1.126
+      # (val_div, ":enemy_party_strength", ":division_constant"), #1.126, ":division_constant" was 5 before
+      # (val_max, ":enemy_party_strength", 1), #1.126
+      # (val_div, ":total_player_and_followers_strength", ":division_constant"), #1.126, ":division_constant" was 5 before
+      # (val_max, ":total_player_and_followers_strength", 1), #1.126
 
       (store_mul, "$g_strength_contribution_of_player", ":player_party_strength", 100),
       (val_div, "$g_strength_contribution_of_player", ":total_player_and_followers_strength"),
 
-      (inflict_casualties_to_party_group, "p_main_party", ":enemy_party_strength", "p_temp_casualties"),
+      # (inflict_casualties_to_party_group, "p_main_party", ":enemy_party_strength", "p_temp_casualties"),
+      # (call_script, "script_print_casualties_to_s0", "p_temp_casualties", 0),
+      # (str_store_string_reg, s8, s0),
+
+      # (try_begin),
+      #   (ge, "$g_ally_party", 0),
+      #   (inflict_casualties_to_party_group, "$g_ally_party", ":enemy_party_strength", "p_temp_casualties"),
+      #   (str_store_string_reg, s8, s0),
+      # (try_end),
+
+      # (inflict_casualties_to_party_group, "$g_encountered_party", ":total_player_and_followers_strength", "p_temp_casualties"),
+
+      #MOD Soriq test new inflict
+      
+
+      
+      (call_script, "script_inflict_casualties_to_party_group_custom", "p_main_party", ":enemy_party_strength", "p_temp_casualties"),
       (call_script, "script_print_casualties_to_s0", "p_temp_casualties", 0),
       (str_store_string_reg, s8, s0),
+      
 
       (try_begin),
         (ge, "$g_ally_party", 0),
-        (inflict_casualties_to_party_group, "$g_ally_party", ":enemy_party_strength", "p_temp_casualties"),
+        (call_script, "script_inflict_casualties_to_party_group_custom", "$g_ally_party", ":enemy_party_strength", "p_temp_casualties"),
         (str_store_string_reg, s8, s0),
       (try_end),
-
-      (inflict_casualties_to_party_group, "$g_encountered_party", ":total_player_and_followers_strength", "p_temp_casualties"),
+      
+      (call_script, "script_inflict_casualties_to_party_group_custom", "$g_encountered_party", ":total_player_and_followers_strength", "p_temp_casualties"),
+      #MOD Soriq test new inflict end
 
       #ozan begin
       (party_get_num_companion_stacks, ":num_stacks", "p_temp_casualties"),
@@ -5224,14 +5270,30 @@ TOTAL:  {reg5}"),
       ("order_attack_continue",[(eq, "$no_soldiers_left", 0)],"Order your soldiers to continue the attack.",[
           (jump_to_menu,"mnu_order_attack_2"),
           ]),
-      ("order_retreat",[(eq, "$no_soldiers_left", 0)],"Call your soldiers back.",[
+      ("order_retreat",[(eq, "$no_soldiers_left", 0)],"Call your soldiers back. (Turning off replay)",[
+          (assign, "$replay_battle_active", 0), #By Soriq
           (jump_to_menu,"mnu_simple_encounter"),
           ]),
       ("continue",[(eq, "$no_soldiers_left", 1)],"Continue...",[
           (jump_to_menu,"mnu_simple_encounter"),
           ]),
+      #Replay battle by Soriq
+      ("replay_autobattle",[(eq, "$no_soldiers_left", 1), (eq, "$replay_battle_active", 1)],"Replay Autobattle",[
+
+          (call_script, "script_party_copy", "p_main_party", "p_temp_party_autobattle_player"),
+          (try_begin),
+            (ge, "$g_ally_party", 0),
+            (call_script, "script_party_copy", "$g_ally_party", "p_temp_party_autobattle_ally"),
+          (try_end),
+          (call_script, "script_party_copy", "$g_encountered_party", "p_temp_party_autobattle_enemy"),
+          
+          (display_message, "@Casualties are cancelled, replaying the battle..."),
+          (assign, "$no_soldiers_left", 0),
+          (jump_to_menu,"mnu_simple_encounter"),
+          ]),
     ]
   ),
+  
 
   (
     "battle_debrief",mnf_scale_picture|mnf_disable_all_keys,
@@ -18284,15 +18346,9 @@ goods, and books will never be sold. ^^You can change some settings here freely.
        [
         (assign, "$g_starting_town", -1), #this disables the startup merchant from taverns
         #let triggers load first
-        (rest_for_hours, 3, 5, 0),
         (assign, "$auto_enter_town", "$current_town"),
         # (start_encounter, "$current_town"),
         (change_screen_return),
-       ]),
-
-      ("continue",[], "Go find an inn...",
-       [
-        (jump_to_menu, "mnu_start_phase_3"),
        ]),
     ]
   ),

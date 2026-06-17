@@ -1,4 +1,4 @@
-1726
+1740
 qstr_Next_Page Next_Page
 qstr_Mod_Options Mod_Options
 qstr_Full_PBOD^Features Full_PBOD^Features
@@ -1725,3 +1725,17 @@ qstr_Castle_Guard Castle_Guard
 qstr_Troop:_{reg6}_str:_ Troop:_{reg6},_str:_{reg7}
 qstr_Camera_mode:_{reg7} Camera_mode:_{reg7}
 qstr_rotx={reg0} rotx={reg0}
+qstr_Cavalry_bonus:_{reg7 Cavalry_bonus:_{reg7}_was_cancelled
+qstr_Phase_1:_{reg} Phase_1:_{reg}
+qstr_Phase_2:_{reg} Phase_2:_{reg}
+qstr_Phase_1:_{reg7} Phase_1:_{reg7}
+qstr_Phase_2:_{reg7} Phase_2:_{reg7}
+qstr_Player_str:_{reg0} Player_str:_{reg0}
+qstr_Enemy_str:_{reg0} Enemy_str:_{reg0}
+qstr_Casualties_are_cance Casualties_are_cancelled,_replaying_the_battle...
+qstr_cmenu cmenu
+qstr_Cheat_menu_enabled__ Cheat_menu_enabled_(without_debug)
+qstr_S0_=_{s0} S0_=_{s0}
+qstr_damage={reg20}_troop damage={reg20}_troop={reg21}
+qstr_No_soliders:_{reg7} No_soliders:_{reg7}
+qstr_Lord:_{reg7} Lord:_{reg7}

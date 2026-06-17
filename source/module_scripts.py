@@ -44,6 +44,156 @@ def keys_array():
 # 003 - Script attachment place
 # 004 - Inventory as presentation
 # 005 - Troop tree scripts
+# 006 - Custom battle scripts
+
+
+# 006 - Custom battle scripts
+custom_battle_scripts = [
+
+  ("calculate_troop_strength_custom",
+    [
+      (store_script_param, ":troop_id", 1),
+
+        #MOD Soriq improve autobattle formula
+        (store_character_level, ":stack_strength", ":troop_id"),
+        (val_add, ":stack_strength", 4), 
+        (val_mul, ":stack_strength", ":stack_strength"),
+        
+        #Attributes mult
+        (store_attribute_level, ":stack_str", ":troop_id", ca_strength),
+        (store_attribute_level, ":stack_agi", ":troop_id", ca_agility),
+        (store_add, ":stat_multiplier", ":stack_str",  ":stack_agi"),
+        (val_add, ":stat_multiplier", 80),
+        
+        #Skills mult
+        (store_skill_level, ":stack_ironflesh", skl_ironflesh ,":troop_id"),
+        (store_skill_level, ":stack_power_strike", skl_power_strike ,":troop_id"),
+        (store_skill_level, ":stack_power_draw", skl_power_draw ,":troop_id"),
+        (store_skill_level, ":stack_power_throw", skl_power_throw ,":troop_id"),
+        (store_skill_level, ":stack_athletics", skl_athletics ,":troop_id"), 
+        (store_skill_level, ":stack_riding", skl_riding ,":troop_id"), 
+        (store_skill_level, ":stack_shield", skl_shield ,":troop_id"),
+        (store_add, ":skill_multiplier", ":stack_ironflesh",  ":stack_power_strike"),
+        (val_add, ":skill_multiplier", ":stack_power_draw"),
+        (val_add, ":skill_multiplier", ":stack_power_throw"),
+        (val_add, ":skill_multiplier", ":stack_athletics"),
+        (val_add, ":skill_multiplier", ":stack_riding"),
+        (val_add, ":skill_multiplier", ":stack_shield"),
+        (val_mul, ":skill_multiplier", 2),
+        (val_add, ":skill_multiplier", 100),
+
+        
+        (val_mul, ":stack_strength", ":stat_multiplier"),
+        (val_mul, ":stack_strength", ":skill_multiplier"),
+        (val_div, ":stack_strength", 100),
+        (val_div, ":stack_strength", 100),                
+        #MOD Soriq improve autobattle formula end
+        
+        (val_div, ":stack_strength", 100),
+        (val_max, ":stack_strength", 1),
+      
+      (assign, reg0, ":stack_strength"),
+    ]
+   ),
+
+("inflict_casualties_to_party_group_custom",
+  [
+    (store_script_param, ":target_party", 1),
+    (store_script_param, ":attacker_strength", 2),
+    (store_script_param, ":temp_casualties_party", 3),
+
+    (party_clear, ":temp_casualties_party"),
+
+    (assign, ":surgery", 0),
+    (party_get_num_companion_stacks, ":num_stacks", ":target_party"),
+    (try_for_range, ":stack_no", 0, ":num_stacks"),
+        (party_stack_get_troop_id, ":troop_id", ":target_party", ":stack_no"),
+        (store_skill_level, ":skill", "skl_surgery", ":troop_id"),
+        (val_max, ":surgery", ":skill"),
+    (try_end),
+
+    (store_mul, ":survival_chance", ":surgery", 5),
+    (val_add, ":survival_chance", 5),
+
+    (assign, ":damage_pool", ":attacker_strength"),
+
+    (try_for_range, ":pass", 0, 100),
+        (gt, ":damage_pool", 0),
+
+        (assign, ":target_troop", -1),
+        (party_get_num_companion_stacks, ":num_stacks", ":target_party"),
+        (try_for_range, ":stack_no", 0, ":num_stacks"),
+            (party_stack_get_size, ":size", ":target_party", ":stack_no"),
+            (party_stack_get_num_wounded, ":wounded", ":target_party", ":stack_no"),
+            (store_sub, ":healthy", ":size", ":wounded"),
+            (gt, ":healthy", 0),
+            (party_stack_get_troop_id, ":target_troop", ":target_party", ":stack_no"),
+            (assign, ":stack_no", ":num_stacks"),
+        (try_end),
+
+        (try_begin),
+            (gt, ":target_troop", -1),
+            (call_script, "script_calculate_troop_strength_custom", ":target_troop"),
+            (assign, ":troop_cost", reg0),
+            (val_max, ":troop_cost", 1),
+
+            (try_begin),
+                (ge, ":damage_pool", ":troop_cost"),
+                (store_random_in_range, ":roll", 0, 100),
+                (try_begin),
+                    (lt, ":roll", ":survival_chance"),
+                    (party_wound_members, ":target_party", ":target_troop", 1),
+                    (party_add_members, ":temp_casualties_party", ":target_troop", 1),
+                    (party_wound_members, ":temp_casualties_party", ":target_troop", 1),
+                (else_try),
+                    (try_begin),
+                        (troop_is_hero, ":target_troop"),
+                        (troop_set_health, ":target_troop", 0),
+                        (party_add_members, ":temp_casualties_party", ":target_troop", 1),
+                        (party_wound_members, ":temp_casualties_party", ":target_troop", 1),
+                    (else_try),
+                        (party_remove_members, ":target_party", ":target_troop", 1),
+                        (party_add_members, ":temp_casualties_party", ":target_troop", 1),
+                    (try_end),
+                (try_end),
+                (val_sub, ":damage_pool", ":troop_cost"),
+            (else_try),
+                (party_wound_members, ":target_party", ":target_troop", 1),
+                (party_add_members, ":temp_casualties_party", ":target_troop", 1),
+                (party_wound_members, ":temp_casualties_party", ":target_troop", 1),
+                (assign, ":damage_pool", 0),
+            (try_end),
+        (else_try),
+            (assign, ":damage_pool", 0),
+        (try_end),
+    (try_end),
+  ]),
+  ("merge_party_into_party",
+    [
+      (store_script_param, ":source_party", 1),
+      (store_script_param, ":target_party", 2),
+
+      (party_get_num_companion_stacks, ":num_stacks", ":source_party"),
+      (try_for_range, ":stack_no", 0, ":num_stacks"),
+
+          (party_stack_get_troop_id, ":troop_id", ":source_party", ":stack_no"),
+          (party_stack_get_size, ":size", ":source_party", ":stack_no"),
+          (party_stack_get_num_wounded, ":wounded", ":source_party", ":stack_no"),
+          
+          (store_sub, ":healthy", ":size", ":wounded"),
+          (try_begin),
+              (gt, ":healthy", 0),
+              (party_add_members, ":target_party", ":troop_id", ":healthy"),
+          (try_end),
+          
+          (try_begin),
+              (gt, ":wounded", 0),
+              (party_wound_members, ":target_party", ":troop_id", ":wounded"),
+          (try_end),
+      (try_end),
+    ]
+  ),
+]
 
 # 005 - Troop tree scripts
 troop_tree_scripts = [
@@ -1280,14 +1430,44 @@ scripts = [
 
 
 	    #Give towns to great lords
-      (call_script, "script_give_center_to_lord", "p_town_1",  "trp_kingdom_1_lord", 0), 
-      (call_script, "script_give_center_to_lord", "p_town_6",  "trp_kingdom_2_lord", 0),
-      (call_script, "script_give_center_to_lord", "p_town_11",  "trp_kingdom_3_lord", 0),
-      (call_script, "script_give_center_to_lord", "p_town_14",  "trp_kingdom_4_lord", 0),  
-      (call_script, "script_give_center_to_lord", "p_town_19",  "trp_kingdom_5_lord", 0),
-      (call_script, "script_give_center_to_lord", "p_town_23",  "trp_kingdom_6_lord", 0),
-      (call_script, "script_give_center_to_lord", "p_town_27",  "trp_kingdom_7_lord", 0),
+      (call_script, "script_give_center_to_lord", "p_town_1",  "trp_kingdom_1_lord", 0),
+      (call_script, "script_give_center_to_lord", "p_town_2",  "trp_knight_1_8", 0),
+      (call_script, "script_give_center_to_lord", "p_town_3",  "trp_knight_1_9", 0),
+      (call_script, "script_give_center_to_lord", "p_town_4",  "trp_knight_1_10", 0),
+      (call_script, "script_give_center_to_lord", "p_town_5",  "trp_knight_1_11", 0),
       
+      (call_script, "script_give_center_to_lord", "p_town_6",  "trp_kingdom_2_lord", 0),
+      (call_script, "script_give_center_to_lord", "p_town_7",  "trp_knight_2_8", 0),
+      (call_script, "script_give_center_to_lord", "p_town_8",  "trp_knight_2_9", 0),
+      (call_script, "script_give_center_to_lord", "p_town_9",  "trp_knight_2_10", 0),
+      (call_script, "script_give_center_to_lord", "p_town_10",  "trp_knight_2_11", 0),
+      
+      (call_script, "script_give_center_to_lord", "p_town_11",  "trp_kingdom_3_lord", 0),
+      (call_script, "script_give_center_to_lord", "p_town_12",  "trp_knight_3_8", 0),
+      (call_script, "script_give_center_to_lord", "p_town_13",  "trp_knight_3_9", 0),
+
+      (call_script, "script_give_center_to_lord", "p_town_14",  "trp_kingdom_4_lord", 0), 
+      (call_script, "script_give_center_to_lord", "p_town_15",  "trp_knight_4_8", 0),
+      (call_script, "script_give_center_to_lord", "p_town_16",  "trp_knight_4_9", 0),
+      (call_script, "script_give_center_to_lord", "p_town_17",  "trp_knight_4_10", 0),
+      (call_script, "script_give_center_to_lord", "p_town_18",  "trp_knight_4_11", 0),
+      
+      (call_script, "script_give_center_to_lord", "p_town_19",  "trp_kingdom_5_lord", 0),
+      (call_script, "script_give_center_to_lord", "p_town_20",  "trp_knight_5_8", 0),
+      (call_script, "script_give_center_to_lord", "p_town_21",  "trp_knight_5_9", 0),
+      (call_script, "script_give_center_to_lord", "p_town_22",  "trp_knight_5_10", 0),
+      
+      (call_script, "script_give_center_to_lord", "p_town_23",  "trp_kingdom_6_lord", 0),
+      (call_script, "script_give_center_to_lord", "p_town_24",  "trp_knight_6_8", 0),
+      (call_script, "script_give_center_to_lord", "p_town_25",  "trp_knight_6_9", 0),
+      (call_script, "script_give_center_to_lord", "p_town_26",  "trp_knight_6_10", 0),
+
+      
+      (call_script, "script_give_center_to_lord", "p_town_27",  "trp_kingdom_7_lord", 0),
+      (call_script, "script_give_center_to_lord", "p_town_28",  "trp_knight_7_8", 0),
+      (call_script, "script_give_center_to_lord", "p_town_29",  "trp_knight_7_9", 0),
+      (call_script, "script_give_center_to_lord", "p_town_30",  "trp_knight_7_10", 0),
+      (call_script, "script_give_center_to_lord", "p_town_31",  "trp_knight_7_11", 0),
       #Give towns to lords
       
       
@@ -4060,6 +4240,7 @@ scripts = [
            (eq, "$g_encountered_party", "p_camp_bandits"),
            (jump_to_menu, "mnu_camp"),
          (else_try),
+
            (jump_to_menu, "mnu_simple_encounter"),
          (try_end),
         (else_try), #Battle or siege
@@ -4125,8 +4306,6 @@ scripts = [
 
                 (val_add, ":cavalry_bonus", ":bonus"),
             (try_end),
-            (assign, reg7, ":cavalry_bonus"),
-            (display_message, "@Cavalry bonus: {reg7} was cancelled"),
             (val_sub, ":defender_strength", ":cavalry_bonus"),
         (try_end),
         (try_begin),
@@ -4158,8 +4337,6 @@ scripts = [
 
                 (val_add, ":cavalry_bonus", ":bonus"),
             (try_end),
-            (assign, reg7, ":cavalry_bonus"),
-            (display_message, "@Cavalry bonus: {reg7} was cancelled"),
             (val_sub, ":attacker_strength", ":cavalry_bonus"),
         (try_end),
 
@@ -16376,7 +16553,8 @@ scripts = [
       # (try_end),
     (else_try),
       (eq, ":button_value", 3),
-      (call_script, "script_dplmc_party_calculate_strength_in_terrain", ":party_no", 3, 0, 2),
+      (party_get_current_terrain, ":terrain_type", ":party_no"),
+      (call_script, "script_dplmc_party_calculate_strength_in_terrain", ":party_no", ":terrain_type", 0, 1),
       (party_get_slot, ":strength", ":party_no", slot_party_cached_strength),
       (assign, reg0, ":strength"),
       (display_message, "@Party strength: {reg0}"),
@@ -63759,6 +63937,7 @@ scripts = [
   
   
 
+  
 
 
   #script_dplmc_party_calculate_strength_in_terrain
@@ -63778,9 +63957,6 @@ scripts = [
       (assign, ":total_strength_terrain", 0),
       (assign, ":total_strength_no_terrain", 0),
 
-
-  
-      
       (party_get_num_companion_stacks, ":num_stacks", ":party"),
       (assign, ":first_stack", 0),
       (try_begin),
@@ -63836,11 +64012,13 @@ scripts = [
 
       (try_for_range, ":i_stack", ":first_stack", ":num_stacks"),
         (party_stack_get_troop_id, ":stack_troop",":party", ":i_stack"),
-        (store_character_level, ":stack_strength", ":stack_troop"),
-        (val_add, ":stack_strength", 4), #new was 12 (patch 1.125)
-        (val_mul, ":stack_strength", ":stack_strength"),
-        (val_mul, ":stack_strength", 2), #new (patch 1.125)
-        
+        # (store_character_level, ":stack_strength", ":stack_troop"),
+        # (val_add, ":stack_strength", 4), #new was 12 (patch 1.125)
+        # (val_mul, ":stack_strength", ":stack_strength"),
+        # (val_mul, ":stack_strength", 2), #new (patch 1.125)
+        (call_script, "script_calculate_troop_strength_custom", ":stack_troop"),
+        (assign, ":stack_strength", reg0),
+
      
         #move the next two lines to after terrain advantage
         #(val_div, ":stack_strength", 100),
@@ -63895,14 +64073,14 @@ scripts = [
 
 		   (val_mul, ":stack_strength", ":stack_strength_multiplier"),
 		   (val_add, ":stack_strength", 50),#add this before division for correct rounding
-           (val_div, ":stack_strength", 100),
+       (val_div, ":stack_strength", 100),
            ##AotE terrain advantages
-        (try_end),
+      (try_end),
         #moved the next two lines here from above
-        (val_div, ":stack_strength", 100),#<- moved here from above
-        (val_max, ":stack_strength", 1), #new (patch 1.125) #<- moved here from above
-        (val_div, ":terrain_free_strength", 100),
-        (val_max, ":terrain_free_strength", 1),
+        # (val_div, ":stack_strength", 100),#<- moved here from above
+        # (val_max, ":stack_strength", 1), #new (patch 1.125) #<- moved here from above
+        # (val_div, ":terrain_free_strength", 100),
+        # (val_max, ":terrain_free_strength", 1),
         
         (try_begin),
           (neg|troop_is_hero, ":stack_troop"),
@@ -63920,6 +64098,7 @@ scripts = [
         (val_add, ":total_strength_no_terrain", ":terrain_free_strength"),
       (try_end),
 	  #Load results into registers and cache if appropriate
+   
 	  (assign, reg0, ":total_strength_terrain"),
 	  (assign, reg1, ":total_strength_no_terrain"),
       (try_begin),
@@ -74533,7 +74712,7 @@ Born at {s43}^Contact in {s44} of the {s45}.^\
 		(try_end),
 	]),	
 
-] + math_scripts + inventory_in_presentation_scripts + troop_tree_scripts
+] + math_scripts + inventory_in_presentation_scripts + troop_tree_scripts + custom_battle_scripts
 # 003 - Script attachment place
 # modmerger_start version=201 type=2
 try:

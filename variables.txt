@@ -1453,3 +1453,9 @@ gpu_object
 party_window_selected_troop
 deathcam_just_switched
 g_camera_ready
+player_team
+nord_team
+no_soliders_left
+cheat_menu
+replay_battle_active
+replay_battle_copy_party
