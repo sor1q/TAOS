@@ -149,6 +149,9 @@ custom_battle_scripts = [
                     (try_begin),
                         (troop_is_hero, ":target_troop"),
                         (troop_set_health, ":target_troop", 0),
+                        (party_wound_members, ":target_party", ":target_troop", 1),
+                        (str_store_troop_name, s0, ":target_troop"),
+                        (display_message, "@Attempting to wound hero...{s0}"),
                         (party_add_members, ":temp_casualties_party", ":target_troop", 1),
                         (party_wound_members, ":temp_casualties_party", ":target_troop", 1),
                     (else_try),
@@ -1348,86 +1351,6 @@ scripts = [
         (add_faction_note_tableau_mesh, ":faction_no", "tableau_faction_note_mesh_banner"),
       (try_end),
 
-	  #Give centers to factions first, to ensure more equal distributions
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_1", "fac_kingdom_4"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_2", "fac_kingdom_4"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_3", "fac_kingdom_5"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_4", "fac_kingdom_1"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_5", "fac_kingdom_5"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_6", "fac_kingdom_1"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_7", "fac_kingdom_1"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_8", "fac_kingdom_2"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_9", "fac_kingdom_2"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_10", "fac_kingdom_3"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_11", "fac_kingdom_2"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_12", "fac_kingdom_4"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_13", "fac_kingdom_2"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_14", "fac_kingdom_3"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_15", "fac_kingdom_5"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_16", "fac_kingdom_1"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_17", "fac_kingdom_3"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_18", "fac_kingdom_3"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_19", "fac_kingdom_6"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_20", "fac_kingdom_7"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_21", "fac_kingdom_7"),
-	  # (call_script, "script_give_center_to_faction_aux", "p_town_22", "fac_kingdom_7"),
-
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_1", "fac_kingdom_5"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_2", "fac_kingdom_3"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_3", "fac_kingdom_2"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_4", "fac_kingdom_2"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_5", "fac_kingdom_4"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_6", "fac_kingdom_1"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_7", "fac_kingdom_3"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_8", "fac_kingdom_2"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_9", "fac_kingdom_5"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_10", "fac_kingdom_7"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_11", "fac_kingdom_7"),
-
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_12", "fac_kingdom_4"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_13", "fac_kingdom_1"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_14", "fac_kingdom_5"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_15", "fac_kingdom_5"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_16", "fac_kingdom_5"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_17", "fac_kingdom_3"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_18", "fac_kingdom_2"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_19", "fac_kingdom_2"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_20", "fac_kingdom_1"),
-
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_21", "fac_kingdom_5"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_22", "fac_kingdom_3"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_23", "fac_kingdom_1"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_24", "fac_kingdom_1"),
-
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_25", "fac_kingdom_1"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_26", "fac_kingdom_1"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_27", "fac_kingdom_1"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_28", "fac_kingdom_5"),
-
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_29", "fac_kingdom_2"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_30", "fac_kingdom_3"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_31", "fac_kingdom_1"),
-
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_32", "fac_kingdom_4"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_33", "fac_kingdom_5"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_34", "fac_kingdom_4"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_35", "fac_kingdom_1"),
-
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_36", "fac_kingdom_4"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_37", "fac_kingdom_2"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_38", "fac_kingdom_3"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_39", "fac_kingdom_2"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_40", "fac_kingdom_3"),
-
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_41", "fac_kingdom_6"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_42", "fac_kingdom_6"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_43", "fac_kingdom_6"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_44", "fac_kingdom_6"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_45", "fac_kingdom_6"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_46", "fac_kingdom_6"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_47", "fac_kingdom_6"),
-    #   (call_script, "script_give_center_to_faction_aux", "p_castle_48", "fac_kingdom_7"),
-
 
 	    #Give towns to great lords
       (call_script, "script_give_center_to_lord", "p_town_1",  "trp_kingdom_1_lord", 0),
@@ -1536,6 +1459,13 @@ scripts = [
       (call_script, "script_give_center_to_lord", "p_castle_49",  "trp_knight_7_7", 0),
       (call_script, "script_give_center_to_lord", "p_castle_50",  "trp_knight_7_7", 0),
       
+      
+      
+      #Soriq setup slot_lord_init_faction slots:
+      (try_for_range, ":troop_id", kings_begin, lords_end),
+          (store_troop_faction, ":lord_faction", ":troop_id"),
+          (troop_set_slot, ":troop_id", slot_lord_init_faction, ":lord_faction"),
+      (try_end),
    ##diplomacy end+
 
       # Give family castles to certain nobles.
@@ -4265,6 +4195,27 @@ scripts = [
        (assign,"$auto_besiege_town",0),
       ]),
   
+  ("if_party_has_north_lord", [
+    
+    (store_script_param, ":target_party", 1),
+    (party_get_num_companion_stacks, ":num_stacks", ":target_party"),
+    (assign, reg0, 0),
+
+    (try_for_range, ":stack_no", 0, ":num_stacks"),
+        (party_stack_get_troop_id, ":troop_id", ":target_party", ":stack_no"),
+        (try_begin),
+            (troop_is_hero, ":troop_id"),
+            
+            (troop_get_slot, ":lord_init_fac", ":troop_id", slot_lord_init_faction),
+            (try_begin),
+              (eq, ":lord_init_fac", "fac_kingdom_1"),
+              (assign, reg0, 1),
+              (break_loop),
+            (try_end),
+        (try_end),
+    (try_end),
+  ]),
+  
   
   #Soriq calculate North bonus
   ("unique_north_bonus_calculate",
@@ -4274,11 +4225,15 @@ scripts = [
         (store_script_param, ":defender", 3),
         (store_script_param, ":defender_strength", 4),
 
-        (store_faction_of_party, ":attacker_faction", ":attacker"),
-        (store_faction_of_party, ":defender_faction", ":defender"),
 
+        (call_script, "script_if_party_has_north_lord", ":attacker"),
+        (assign, ":attacker_is_north", reg0),
+        (call_script, "script_if_party_has_north_lord", ":defender"),
+        (assign, ":defender_is_north", reg0),
+
+        
         (try_begin),
-            (eq, ":attacker_faction", "fac_kingdom_1"),
+            (gt, ":attacker_is_north", 0),
 
             (assign, ":cavalry_bonus", 0),
 
@@ -4288,12 +4243,8 @@ scripts = [
                 (party_stack_get_troop_id, ":troop", ":defender", ":stack"),
                 (troop_is_guarantee_horse, ":troop"),
 
-                (store_character_level, ":strength", ":troop"),
-                (val_add, ":strength", 4),
-                (val_mul, ":strength", ":strength"),
-                (val_mul, ":strength", 2),
-                (val_div, ":strength", 100),
-                (val_max, ":strength", 1),
+                (call_script, "script_calculate_troop_strength_custom", ":troop"),
+                (assign, ":strength", reg0),
 
                 (party_stack_get_size, ":size", ":defender", ":stack"),
                 (party_stack_get_num_wounded, ":wounded", ":defender", ":stack"),
@@ -4309,7 +4260,7 @@ scripts = [
             (val_sub, ":defender_strength", ":cavalry_bonus"),
         (try_end),
         (try_begin),
-            (eq, ":defender_faction", "fac_kingdom_1"),
+            (gt, ":defender_is_north", 0),
 
             (assign, ":cavalry_bonus", 0),
 
@@ -4319,12 +4270,8 @@ scripts = [
                 (party_stack_get_troop_id, ":troop", ":attacker", ":stack"),
                 (troop_is_guarantee_horse, ":troop"),
 
-                (store_character_level, ":strength", ":troop"),
-                (val_add, ":strength", 4),
-                (val_mul, ":strength", ":strength"),
-                (val_mul, ":strength", 2),
-                (val_div, ":strength", 100),
-                (val_max, ":strength", 1),
+                (call_script, "script_calculate_troop_strength_custom", ":troop"),
+                (assign, ":strength", reg0),
 
                 (party_stack_get_size, ":size", ":attacker", ":stack"),
                 (party_stack_get_num_wounded, ":wounded", ":attacker", ":stack"),
@@ -4418,9 +4365,9 @@ scripts = [
               
               
               (call_script, "script_unique_north_bonus_calculate",
-                ":root_attacker_party",
+                "p_collective_enemy",
                 ":attacker_strength",
-                ":root_defender_party",
+                "p_collective_ally",
                 ":defender_strength"),
 
               (assign, ":attacker_strength", reg0),
@@ -4435,11 +4382,14 @@ scripts = [
           (try_end),
           ##diplomacy end+
 
-          (store_div, ":defender_strength", ":defender_strength", 20),
-          (val_min, ":defender_strength", 50),
+          # (store_div, ":defender_strength", ":defender_strength", 20),
+          # (val_min, ":defender_strength", 50),
+          # (val_max, ":defender_strength", 1),
+          # (store_div, ":attacker_strength", ":attacker_strength", 20),
+          # (val_min, ":attacker_strength", 50),
+          # (val_add, ":attacker_strength", 1),
+          
           (val_max, ":defender_strength", 1),
-          (store_div, ":attacker_strength", ":attacker_strength", 20),
-          (val_min, ":attacker_strength", 50),
           (val_add, ":attacker_strength", 1),
           (try_begin),
             #For sieges increase attacker casualties and reduce defender casualties.
@@ -4493,7 +4443,8 @@ scripts = [
           
           (try_begin),
             (neg|is_currently_night), #Don't fight at night
-            (inflict_casualties_to_party_group, ":root_attacker_party", ":defender_strength", "p_temp_casualties"),
+            # (inflict_casualties_to_party_group, ":root_attacker_party", ":defender_strength", "p_temp_casualties"),
+             (call_script, "script_inflict_casualties_to_party_group_custom", ":root_attacker_party", ":defender_strength", "p_temp_casualties"),
             (party_collect_attachments_to_party, ":root_attacker_party", "p_collective_enemy"),
           (try_end),
           (call_script, "script_party_count_fit_for_battle", "p_collective_enemy", 0),
@@ -4502,7 +4453,8 @@ scripts = [
           (try_begin),
             (gt, ":new_attacker_strength", 0),
             (neg|is_currently_night), #Don't fight at night
-            (inflict_casualties_to_party_group, ":root_defender_party", ":attacker_strength", "p_temp_casualties"),
+            # (inflict_casualties_to_party_group, ":root_defender_party", ":attacker_strength", "p_temp_casualties"),
+             (call_script, "script_inflict_casualties_to_party_group_custom", ":root_defender_party", ":attacker_strength", "p_temp_casualties"),
             (party_collect_attachments_to_party, ":root_defender_party", "p_collective_ally"),
           (try_end),
           (call_script, "script_party_count_fit_for_battle", "p_collective_ally", 0),

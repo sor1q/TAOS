@@ -1,4 +1,4 @@
-1740
+1749
 qstr_Next_Page Next_Page
 qstr_Mod_Options Mod_Options
 qstr_Full_PBOD^Features Full_PBOD^Features
@@ -1739,3 +1739,12 @@ qstr_S0_=_{s0} S0_=_{s0}
 qstr_damage={reg20}_troop damage={reg20}_troop={reg21}
 qstr_No_soliders:_{reg7} No_soliders:_{reg7}
 qstr_Lord:_{reg7} Lord:_{reg7}
+qstr_Player_str__dplmc_:_ Player_str_(dplmc):_{reg0}
+qstr_Player_str__soriq_:_ Player_str_(soriq):_{reg0}
+qstr_Player_str__dplmcN_: Player_str_(dplmcN):_{reg0}
+qstr_Enemy_str_dplmcN_:_{ Enemy_str(dplmcN):_{reg1}
+qstr_AttackerF:_{reg6} AttackerF:_{reg6}
+qstr_DefenderF:_{reg7} DefenderF:_{reg7}
+qstr_Attempting_to_wound_ Attempting_to_wound_hero...{s0}
+qstr_Лорд_{reg8}_пр Лорд_{reg8}_принадлежит_к_фракции_{reg7}
+qstr_Лорд_{s0}_при Лорд_{s0}_принадлежит_к_фракции_{reg7}

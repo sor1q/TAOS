@@ -22,6 +22,7 @@ from ID_factions import *
 # 003 - Custom slots
 slot_agent_north_debuff = 600
 slot_party_autobattle_damage = 601
+slot_lord_init_faction = 602
 
 # 004 - Custom constants
 north_debuff_value = 15

@@ -5111,19 +5111,46 @@ TOTAL:  {reg5}"),
       (call_script, "script_dplmc_party_calculate_strength_in_terrain", "p_main_party", ":terrain_code", 1, 1),
       (assign, ":player_party_strength", reg0),
       
-      (display_message, "@Player str: {reg0}"),
+      
+      
+      
+      
+      (assign, ":party_value", 0),
+      
+      (party_get_num_companion_stacks, ":num_stacks", ":p_main_party"),
+        (try_for_range, ":stack_no", 0, ":num_stacks"),
+            (party_stack_get_size, ":size", ":target_party", ":stack_no"),
+            (party_stack_get_troop_id, ":target_troop", ":p_main_party", ":stack_no"),
+            
+            (call_script, "script_calculate_troop_strength_custom", ":target_troop"),
+            (assign, ":troop_value", reg0),
+            (store_mul, ":stack_value", ":size", ":troop_value"),
+            (val_add, ":party_value", ":stack_value"),
+        (try_end),
+        
+        (assign, reg0, ":party_value"),
+        (display_message, "@Player str (soriq): {reg0}"),
 
       (call_script, "script_dplmc_party_calculate_strength_in_terrain", "p_collective_enemy", ":terrain_code", 0, 1),
       (assign, ":enemy_party_strength", reg0),
       
-      (display_message, "@Enemy str: {reg0}"),
+      
 
       (party_collect_attachments_to_party, "p_main_party", "p_collective_ally"),
       
    
       (call_script, "script_dplmc_party_calculate_strength_in_terrain", "p_collective_ally", ":terrain_code", 0, 1),
       (assign, ":total_player_and_followers_strength", reg0),
+      
+      
+      (call_script, "script_unique_north_bonus_calculate",
+                ":p_main_party",
+                ":player_party_strength",
+                "$g_encountered_party",
+                ":enemy_party_strength"),
 
+      (display_message, "@Player str (dplmcN): {reg0}"),
+      (display_message, "@Enemy str(dplmcN): {reg1}"),
     
       (store_mul, "$g_strength_contribution_of_player", ":player_party_strength", 100),
       (val_div, "$g_strength_contribution_of_player", ":total_player_and_followers_strength"),
@@ -5213,12 +5240,16 @@ TOTAL:  {reg5}"),
       #Replay battle by Soriq
       ("replay_autobattle",[(eq, "$no_soldiers_left", 1), (eq, "$replay_battle_active", 1)],"Replay Autobattle",[
 
-          (call_script, "script_party_copy", "p_main_party", "p_temp_party_autobattle_player"),
+          (assign, "$g_move_heroes", 0),
+          (party_clear, "p_main_party"),
+          (party_clear, "$g_encountered_party"),
+          (call_script, "script_party_add_party_companions", "p_main_party", "p_temp_party_autobattle_player"),
           (try_begin),
             (ge, "$g_ally_party", 0),
-            (call_script, "script_party_copy", "$g_ally_party", "p_temp_party_autobattle_ally"),
+            (party_clear, "$g_ally_party"),
+            (call_script, "script_party_add_party_companions", "$g_ally_party", "p_temp_party_autobattle_ally"),
           (try_end),
-          (call_script, "script_party_copy", "$g_encountered_party", "p_temp_party_autobattle_enemy"),
+          (call_script, "script_party_add_party_companions", "$g_encountered_party", "p_temp_party_autobattle_enemy"),
           
           (display_message, "@Casualties are cancelled, replaying the battle..."),
           (assign, "$no_soldiers_left", 0),
@@ -5244,7 +5275,7 @@ TOTAL:  {reg5}"),
       (call_script, "script_party_calculate_strength", "p_collective_ally", 1), #exclude player
       (assign, ":total_player_and_followers_strength", reg0),
 
-      (try_begin),
+      (try_begin),  
         (le, ":total_player_and_followers_strength", ":enemy_party_strength"),
         (assign, ":minimum_power", ":total_player_and_followers_strength"),
       (else_try),

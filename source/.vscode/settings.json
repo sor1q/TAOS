@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "**/*.pyc": true,
+        "**/__pycache__": true,
+        "ID_*.py": true,
+        "build_*.py": true,
+        "compil*.py": true,
+        "process_*.py": true
+    }
+}

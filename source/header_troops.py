@@ -93,10 +93,10 @@ def entry(n):
 
 # Generate constants for attribute levels in [3..64) range.
 for index in range(3, 64):
-	globals()['str_%d' % index] = bignum | index
-	globals()['agi_%d' % index] = bignum | (index << 8)
-	globals()['int_%d' % index] = bignum | (index << 16)
-	globals()['cha_%d' % index] = bignum | (index << 24)
+  globals()['str_%d' % index] = index
+  globals()['agi_%d' % index] = (index << 8)
+  globals()['int_%d' % index] = (index << 16)
+  globals()['cha_%d' % index] = (index << 24)
 
 # str_3            = bignum | 0x00000003
 # str_4            = bignum | 0x00000004
