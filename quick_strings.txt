@@ -1,4 +1,4 @@
-1805
+1806
 qstr_Next_Page Next_Page
 qstr_Mod_Options Mod_Options
 qstr_Full_PBOD^Features Full_PBOD^Features
@@ -1804,3 +1804,4 @@ qstr_Party_EHP:_{reg0} Party_EHP:_{reg0}
 qstr_WARNING:_{s0}_has_EH WARNING:_{s0}_has_EHP_<=_0
 qstr_full_ehp=0_{s0} full_ehp=0_{s0}
 qstr_10_Slaver_Chiefs_wer 10_Slaver_Chiefs_were_added_to_your_party.
+qstr_AUTORESOLVER_CLEAN_F AUTORESOLVER_CLEAN_FOR:_{reg6}_and_{reg7}
