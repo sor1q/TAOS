@@ -17,15 +17,24 @@ from ID_factions import *
 # 002 - Troop tree
 # 003 - Custom slots
 # 004 - Custom constants
+# 005 - Autoresolve const
 
 
 # 003 - Custom slots
-slot_agent_north_debuff = 600
-slot_party_autobattle_damage = 601
-slot_lord_init_faction = 602
+slot_agent_north_debuff = 600 #Checks if a troop has north debuff (0 or 1)
+slot_hero_last_health = 601 #Stores last value of a hero's hp (0-100)
+slot_lord_init_faction = 602 #Stores an initial lord's faction 
+
+
 
 # 004 - Custom constants
 north_debuff_value = 15
+
+# 005 - Autoresolve const
+slot_party_stacks_offset = 380
+slot_party_stacks_num = 381
+slot_troop_ehp = 141
+slot_troop_dph = 142
 
 # 001 - MOD constants
 all_troops_begin = 0
@@ -523,9 +532,9 @@ slot_center_player_enterprise_production_order    = 138
 slot_center_player_enterprise_consumption_order   = 139 #not used
 slot_center_player_enterprise_days_until_complete = 139 #Used instead
 
-slot_center_player_enterprise_balance             = 140 #not used
-slot_center_player_enterprise_input_price         = 141 #not used
-slot_center_player_enterprise_output_price        = 142 #not used
+# slot_center_player_enterprise_balance             = 140 #not used
+# slot_center_player_enterprise_input_price         = 141 #not used
+# slot_center_player_enterprise_output_price        = 142 #not used
 
 
 

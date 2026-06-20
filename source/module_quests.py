@@ -413,6 +413,10 @@ quests = [
   "{!}placeholder."
   ),   
   
+  ("autoresolver", "{!}autoresolver", 0, "{!}None"),
+  # First slot 0 - number of stacks stored
+  # Each tuple has 2 slots: 0 - troop and size (each shares half bits 0xFFFF), 1 - current ehp and party (each shares half bits 0xFFFF)
+  
  ("quests_end", "Quests End", 0, "{!}."),
 ]
 # modmerger_start version=201 type=2

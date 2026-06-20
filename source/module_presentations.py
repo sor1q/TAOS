@@ -539,6 +539,12 @@ troop_tree_presentations = [
                             (assign,":slots_end",-1), #break
                             (neg|troop_slot_eq,"trp_temp_array_c",":slot","$troop_tree_root_troop"), #don't reload tree if it's the same troop
                             (troop_get_slot,"$troop_tree_root_troop","trp_temp_array_c",":slot"),
+                            
+                            (call_script, "script_calculate_troop_strength_custom", "trp_temp_array_c"),
+                            (assign, ":attacker_troop_strength", reg0),
+                            (str_store_troop_name, s0, "trp_temp_array_c"),
+                            (display_message, "@{s0}'s strength is {reg0}"),
+                            
                             (close_item_details), #close whatever might be open
                             (start_presentation,"prsnt_rndl_troop_tree"),
                         (try_end),
