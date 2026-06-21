@@ -8,6 +8,7 @@ from header_troops import *
 from header_music import *
 ##diplomacy start+
 from header_terrain_types import *
+from header_sounds import *
 from module_factions import dplmc_factions_end
 from ID_info_pages import ip_morale
 ##diplomacy end+
@@ -23,8 +24,60 @@ from module_constants import *
 # 2) Operation block: This must be a valid operation block. See header_operations.py for reference.
 ####################################################################################################################
 
+# HEADING
+# 001 - Main simple triggers
+# 002 - Custom simple triggers
 
 
+# 002 - Custom simple triggers
+custom_simple_triggers = [
+  (0, [
+    (try_begin),
+      (key_clicked, key_page_up),
+      (eq, "$cheat_mode", 0),
+      (assign, "$cheat_mode", 1),
+      (play_sound, "snd_quest_cancelled", sf_vol_15),
+      (display_message, "@Cheat Mode enabled."),
+    (else_try),
+      (key_clicked, key_page_down),
+      (neq, "$cheat_mode", 0),
+      (assign, "$cheat_mode", 0),
+      (play_sound, "snd_quest_cancelled", sf_vol_15),
+      (display_message, "@Cheat Mode disabled."),
+  (else_try),
+      (key_clicked, key_back_space),
+      (troop_get_slot, ":cur_target", "trp_player", slot_troop_camera_target),
+      (gt, ":cur_target", 0),
+      (try_begin),
+        (party_is_active, ":cur_target"),
+        (party_set_flags, ":cur_target", pf_always_visible, 1),
+        (set_camera_follow_party, ":cur_target"),
+        (str_store_party_name, s3, ":cur_target"),
+        (store_faction_of_party, ":faction", ":cur_target"),
+        (faction_get_color, ":color", ":faction"),   
+        (tutorial_message_set_center_justify, 1),
+        (tutorial_message_set_background, 1),                                                                   
+        (tutorial_message, "@The camera is now following {s3}. If you loose this party from sight somehow, press [Backspace] to renew tracking (party should still exist on the map). Any movement key will reset camera back on player's party, so keep that in mind.", ":color"),
+      (else_try),
+        (display_message, "@That party is gone. Camera is switched back on player.", 0xFA5858),
+        (troop_set_slot, "trp_player", slot_troop_camera_target, 0),
+        (play_sound, "snd_quest_failed", sf_vol_15),
+      (try_end),
+  (try_end),
+  (this_or_next|key_clicked, key_w),
+  (this_or_next|key_clicked, key_s),
+  (this_or_next|key_clicked, key_a),
+  (this_or_next|key_clicked, key_d),
+  (key_clicked, key_left_mouse_button),
+  (tutorial_message, -1),
+  (troop_get_slot, ":cur_target", "trp_player", slot_troop_camera_target),
+  (gt, ":cur_target", 0),
+  (party_is_active, ":cur_target"), 
+  (party_set_flags, ":cur_target", pf_always_visible, 0),
+  ]),
+]
+
+# 001 - Main simple triggers
 simple_triggers = [
 
 # This trigger is deprecated. Use "script_game_event_party_encounter" in module_scripts.py instead
@@ -6766,7 +6819,9 @@ simple_triggers = [
     ]),
 
   ##diplomacy end
-]# modmerger_start version=201 type=2
+] + custom_simple_triggers
+
+# modmerger_start version=201 type=2
 try:
     component_name = "simple_triggers"
     var_set = { "simple_triggers" : simple_triggers }

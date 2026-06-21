@@ -104,6 +104,17 @@ custom_menus = [
     ),
   ]
   ),
+  
+  # Cheat function
+  ("manage_members", 0,
+    "{!}You shouldn't be reading this...",
+    "none",
+  [
+    (jump_to_menu, "mnu_auto_return_to_map"),
+    (change_screen_exchange_members, 1, reg30),
+    (party_set_flags, reg30, pf_default_behavior, 0),
+    ],
+  []),
 ]
 
 # 001 - Main menus

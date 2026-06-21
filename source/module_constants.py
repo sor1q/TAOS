@@ -30,6 +30,9 @@ slot_lord_init_faction = 602 #Stores an initial lord's faction
 # 004 - Custom constants
 north_debuff_value = 15
 
+# Cheats for Party
+slot_troop_camera_target = 542
+
 # 005 - Autoresolve const
 slot_party_stacks_offset = 380
 slot_party_stacks_num = 381
