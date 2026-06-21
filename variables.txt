@@ -1464,3 +1464,4 @@ last_faction
 last_troop
 last_item
 last_time_init_troop_ehp_dph
+p_collective_enemy

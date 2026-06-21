@@ -1,4 +1,4 @@
-1826
+1830
 qstr_Next_Page Next_Page
 qstr_Mod_Options Mod_Options
 qstr_Full_PBOD^Features Full_PBOD^Features
@@ -1825,3 +1825,7 @@ qstr_CHEAT:_Get_over_here CHEAT:_Get_over_here!
 qstr_CHEAT:_Destroy_party CHEAT:_Destroy_party
 qstr_CHEAT:_Attack_{s1} CHEAT:_Attack_{s1}
 qstr_Pos_=_X:_{reg1}_Y:_ Pos_=_X:_{reg1},_Y:_{reg2},_dist:_{reg3}
+qstr_Ally_str_before:_{re Ally_str_before:_{reg6}
+qstr_Enemy_str_before:_{r Enemy_str_before:_{reg7}
+qstr_Ally_str_after:_{reg Ally_str_after:_{reg0}
+qstr_Enemy_str_after:_{re Enemy_str_after:_{reg1}

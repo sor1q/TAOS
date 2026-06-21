@@ -5125,6 +5125,22 @@ TOTAL:  {reg5}"),
 
 			(call_script, "script_calculate_damage", "p_collective_enemy"),
 			(assign, ":enemy_strength", reg0),		
+   
+      #Soriq recalculate damage depends on troop types
+      # (assign, reg6, ":player_and_ally_strength"),
+      # (assign, reg7, ":enemy_strength"),
+      # (display_message, "@Ally str before: {reg6}"),
+      # (display_message, "@Enemy str before: {reg7}"),
+      
+      (call_script, "script_parties_troop_typed_strength", "p_main_party", "$g_encountered_party", ":player_and_ally_strength", ":enemy_strength"),
+      
+      # (display_message, "@Ally str after: {reg0}"),
+      # (display_message, "@Enemy str after: {reg1}"),
+      
+      (assign, ":player_and_ally_strength", reg0),
+      (assign, ":enemy_strength", reg1),
+      
+      #Soriq recalculate damage depends on troop types end
    		 
 			(val_mul, ":player_and_ally_strength", 2), # speed up simulation
 			(val_mul, ":enemy_strength", 2),
@@ -5171,6 +5187,7 @@ TOTAL:  {reg5}"),
 				(val_mul, ":player_and_ally_strength", ":multiplier"),
 				(val_div, ":player_and_ally_strength", 100),
 			(try_end),
+  
 
 			(call_script, "script_inflict_casualties_to_party_group", "p_main_party", ":enemy_strength", "p_temp_casualties"),
 			(call_script, "script_print_casualties_to_s0", "p_temp_casualties", 0),
