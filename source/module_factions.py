@@ -36,9 +36,8 @@ factions = [
   ("culture_4",  "{!}culture_4", 0, 0.9, [], []),
   ("culture_5",  "{!}culture_5", 0, 0.9, [], []),
   ("culture_6",  "{!}culture_6", 0, 0.9, [], []),
+  ("culture_7",  "{!}culture_6", 0, 0.9, [], []),
 
-#  ("swadian_caravans","Swadian Caravans", 0, 0.5,[("outlaws",-0.8), ("dark_knights",-0.2)], []),
-#  ("vaegir_caravans","Vaegir Caravans", 0, 0.5,[("outlaws",-0.8), ("dark_knights",-0.2)], []),
 
   ("player_faction","Player Faction",0, 0.9, [], []),
   ("player_supporters_faction","Player's Supporters",0, 0.9, [("player_faction",1.00),("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05)], [], 0xFF4433), #changed name so that can tell difference if shows up on map

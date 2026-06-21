@@ -142,27 +142,6 @@ triggers = [
    ]),
 
 
-#Tax Collectors
-# Prisoner Trains
-#  (4.1, 0, 0.0, [],
-#                     [
-#                         (assign, "$pin_faction", "fac_swadians"),
-#                         (assign, "$pin_party_template", "pt_swadian_prisoner_train"),
-#                         (assign, "$pin_limit", peak_prisoner_trains),
-#                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
-#                         (party_set_ai_behavior,"$pout_party",ai_bhvr_travel_to_party),
-#                         (party_set_ai_object,"$pout_party","$pout_town"),
-#                    ]),
-#
-#  (4.1, 0, 0.0, [],
-#                     [
-#                         (assign, "$pin_faction", "fac_vaegirs"),
-#                         (assign, "$pin_party_template", "pt_vaegir_prisoner_train"),
-#                         (assign, "$pin_limit", peak_prisoner_trains),
-#                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
-#                         (party_set_ai_behavior,"$pout_party",ai_bhvr_travel_to_party),
-#                         (party_set_ai_object,"$pout_party","$pout_town"),
-#                    ]),
 
   (2.0, 0, 0, [(store_random_party_of_template, reg(2), "pt_prisoner_train_party"),
                (party_is_in_any_town,reg(2)),
@@ -174,36 +153,6 @@ triggers = [
                (party_set_flags, reg(2), pf_default_behavior, 0),
             ]),
 
-##Caravans
-#  (4.2, 0, 0.0, [],
-#                     [
-#                         (assign, "$pin_faction", "fac_swadians"),
-#                         (assign, "$pin_party_template", "pt_swadian_caravan"),
-#                         (assign, "$pin_limit", peak_kingdom_caravans),
-#                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
-#                         (party_set_ai_behavior,"$pout_party",ai_bhvr_travel_to_party),
-#                         (party_set_ai_object,"$pout_party","$pout_town"),
-#                    ]),
-
-#  (4.2, 0, 0.0, [],
-#                     [
-#                         (assign, "$pin_faction", "fac_vaegirs"),
-#                         (assign, "$pin_party_template", "pt_vaegir_caravan"),
-#                         (assign, "$pin_limit", peak_kingdom_caravans),
-#                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
-#                         (party_set_ai_behavior,"$pout_party",ai_bhvr_travel_to_party),
-#                         (party_set_ai_object,"$pout_party","$pout_town"),
-#                    ]),
-
-##  (2.0, 0, 0, [(store_random_party_of_template, reg(2), "pt_kingdom_caravan_party"),
-##               (party_is_in_any_town,reg(2)),
-##               ],
-##              [(store_faction_of_party, ":faction_no", reg(2)),
-##               (call_script,"script_cf_select_random_town_with_faction", ":faction_no"),
-##               (party_set_ai_behavior,reg(2),ai_bhvr_travel_to_party),
-##               (party_set_ai_object,reg(2),reg0),
-##               (party_set_flags, reg(2), pf_default_behavior, 0),
-##            ]),
 
   (4.0, 0, 0.0,
    [
@@ -223,24 +172,7 @@ triggers = [
      (assign, "$caravan_escort_state", 0),
      ]),
 
-#Messengers
-#  (4.2, 0, 0.0, [],
-#   [(assign, "$pin_faction", "fac_swadians"),
-#    (assign, "$pin_party_template", "pt_swadian_messenger"),
-#    (assign, "$pin_limit", peak_kingdom_messengers),
-#    (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
-#    (party_set_ai_behavior,"$pout_party",ai_bhvr_travel_to_party),
-#    (party_set_ai_object,"$pout_party","$pout_town"),
-#    ]),
 
-#  (4.2, 0, 0.0, [],
-#   [(assign, "$pin_faction", "fac_vaegirs"),
-#    (assign, "$pin_party_template", "pt_vaegir_messenger"),
-#    (assign, "$pin_limit", peak_kingdom_caravans),
-#    (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
-#    (party_set_ai_behavior,"$pout_party",ai_bhvr_travel_to_party),
-#    (party_set_ai_object,"$pout_party","$pout_town"),
-#    ]),
 
 #SB : messengers are deleted upon reaching destination, this should never apply
   (1.5, 0, 0, [
@@ -259,23 +191,6 @@ triggers = [
 
 
 
-#Deserters
-
-#  (10.2, 0, 0.0, [],
-#                     [
-#                         (assign, "$pin_faction", "fac_swadians"),
-#                         (assign, "$pin_party_template", "pt_swadian_deserters"),
-#                         (assign, "$pin_limit", 4),
-#                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
-#                    ]),
-
-#  (10.2, 0, 0.0, [],
-#                     [
-#                         (assign, "$pin_faction", "fac_vaegirs"),
-#                         (assign, "$pin_party_template", "pt_vaegir_deserters"),
-#                         (assign, "$pin_limit", 4),
-#                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
-#                    ]),
 
 #Kingdom Parties
   (1.0, 0, 0.0, [],
@@ -316,154 +231,6 @@ triggers = [
     ]),
 
 
-#Swadians
-#  (0.0, 0.0, ti_once, [], [(assign,"$peak_swadian_foragers",4)]),
-#  (0.0, 0.0, ti_once, [], [(assign,"$peak_swadian_scouts",4)]),
-#  (0.0, 0.0, ti_once, [], [(assign,"$peak_swadian_harassers",3)]),
-#  (0.0, 0.0, ti_once, [], [(assign,"$peak_swadian_war_parties",2)]),
-
-
-#  (10.2, 0, 0.0, [],
-#                     [
-#                         (assign, "$pin_faction", "fac_swadians"),
-#                         (assign, "$pin_party_template", "pt_swadian_foragers"),
-#                         (assign, "$pin_limit", "$peak_swadian_foragers"),
-#                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
-#                    ]),
-
-#  (10.2, 0, 0.0, [],
-#                     [
-#                         (assign, "$pin_faction", "fac_swadians"),
-#                         (assign, "$pin_party_template", "pt_swadian_scouts"),
-#                         (assign, "$pin_limit", "$peak_swadian_scouts"),
-#                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
-#                    ]),
-
-#  (10.2, 0, 0.0, [],
-#                     [
-#                         (assign, "$pin_faction", "fac_swadians"),
-#                         (assign, "$pin_party_template", "pt_swadian_patrol"),
-#                         (assign, "$pin_limit", "$peak_swadian_harassers"),
-#                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
-#                    ]),
-
-#  (10.2, 0, 0.0, [],
-#                     [
-#                         (assign, "$pin_faction", "fac_swadians"),
-#                         (assign, "$pin_party_template", "pt_swadian_war_party"),
-#                         (assign, "$pin_limit", "$peak_swadian_war_parties"),
-#                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
-#                    ]),
-#Vaegirs
-#  (0.0, 0.0, ti_once, [], [(assign,"$peak_vaegir_foragers",4)]),
-#  (0.0, 0.0, ti_once, [], [(assign,"$peak_vaegir_scouts",4)]),
-#  (0.0, 0.0, ti_once, [], [(assign,"$peak_vaegir_harassers",3)]),
-#  (0.0, 0.0, ti_once, [], [(assign,"$peak_vaegir_war_parties",2)]),
-
-
-#  (10.2, 0, 0.0, [],
-#                     [
-#                         (assign, "$pin_faction", "fac_vaegirs"),
-#                         (assign, "$pin_party_template", "pt_vaegir_foragers"),
-#                         (assign, "$pin_limit", "$peak_vaegir_foragers"),
-#                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
-#                    ]),
-
-#  (10.2, 0, 0.0, [],
-#                     [
-#                         (assign, "$pin_faction", "fac_vaegirs"),
-#                         (assign, "$pin_party_template", "pt_vaegir_scouts"),
-#                         (assign, "$pin_limit", "$peak_vaegir_scouts"),
-#                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
-#                    ]),
-
-#  (10.2, 0, 0.0, [],
-#                     [
-#                         (assign, "$pin_faction", "fac_vaegirs"),
-#                         (assign, "$pin_party_template", "pt_vaegir_patrol"),
-#                         (assign, "$pin_limit", "$peak_vaegir_harassers"),
-#                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
-#                    ]),
-
-#  (10.2, 0, 0.0, [],
-#                     [
-#                         (assign, "$pin_faction", "fac_vaegirs"),
-#                         (assign, "$pin_party_template", "pt_vaegir_war_party"),
-#                         (assign, "$pin_limit", "$peak_vaegir_war_parties"),
-#                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
-#                    ]),
-
-#Villains etc.
-#  (14.2, 0, 0.0, [],
-#                     [
-#                         (assign, "$pin_faction", "fac_sea_raiders"),
-#                         (assign, "$pin_party_template", "pt_sea_raiders"),
-#                         (assign, "$pin_limit", 5),
-#                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
-#                    ]),
-
-
-#
-##  (10.1, 0, 0.0, [],
-##                     [
-##                         (assign, "$pin_party_template", "pt_refugees"),
-##                         (assign, "$pin_limit", 5),
-##                         (call_script,"script_cf_spawn_party_at_random_town_if_below_limit"),
-##                    ]),
-##
-##  (10.1, 0, 0.0, [],
-##                     [
-##                         (assign, "$pin_party_template", "pt_farmers"),
-##                         (assign, "$pin_limit", 6),
-##                         (call_script,"script_cf_spawn_party_at_random_town_if_below_limit"),
-##                    ]),
-
-#  [1.0, 96.0, ti_once, [], [[assign,"$peak_dark_hunters",3]]],
-
-##  (10.1, 0, 0.0, [],
-##                     [
-##                         (assign, "$pin_party_template", "pt_dark_hunters"),
-##                         (assign, "$pin_limit", "$peak_dark_hunters"),
-##                         (call_script,"script_cf_spawn_party_at_random_town_if_below_limit"),
-##                    ]),
-
-#Companion quests
-
-##  (0, 0, ti_once,
-##   [
-##       (entering_town,"p_town_1"),
-##       (main_party_has_troop,"trp_borcha"),
-##       (eq,"$borcha_freed",0)
-##    ],
-##
-##   [
-##       (assign,"$borcha_arrive_sargoth_as_prisoner", 1),
-##       (start_map_conversation, "trp_borcha", -1)
-##    ]
-##   ),
-##
-##  (1, 0, ti_once,
-##   [
-##      (map_free,0),
-##      (eq,"$borcha_asked_for_freedom",0),
-##      (main_party_has_troop,"trp_borcha")
-##    ],
-##   [
-##       (start_map_conversation, "trp_borcha", -1)
-##    ]
-##   ),
-##
-##  (2, 0, ti_once,
-##   [
-##      (map_free, 0),
-##      (neq,"$borcha_asked_for_freedom",0),
-##      (eq,"$borcha_freed",0),
-##      (main_party_has_troop,"trp_borcha")
-##    ],
-##   [
-##       (start_map_conversation, "trp_borcha", -1),
-##    ]
-##   ),
 
 ##### TODO: QUESTS COMMENT OUT BEGIN
 

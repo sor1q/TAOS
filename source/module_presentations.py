@@ -348,7 +348,7 @@ troop_tree_presentations = [
                             (overlay_set_size,reg0,pos1),
                             (overlay_set_position,reg0,pos2),
                             #proficiency value
-                            (store_proficiency_level,reg0,":proficiency","$troop_tree_root_troop"),
+                            (store_proficiency_level,reg0,"$troop_tree_root_troop",":proficiency"),
                             (create_text_overlay,reg0,"@{reg0}",tf_right_align),
                             (overlay_set_color,reg0,0x330000),
                             (overlay_set_size,reg0,pos1),
@@ -468,7 +468,7 @@ troop_tree_presentations = [
                           (assign,"$troop_tree_root_troop", "trp_northern_recruit"), 
                         (else_try),
                           (eq, reg0, 1), 
-                          (assign,"$troop_tree_root_troop", "trp_vaegir_recruit"),
+                          (assign,"$troop_tree_root_troop", "trp_syndicate_recruit"),
                         (else_try),
                           (eq, reg0, 2), 
                           (assign,"$troop_tree_root_troop", "trp_nord_recruit"),
@@ -542,8 +542,6 @@ troop_tree_presentations = [
                             
                             (call_script, "script_calculate_troop_strength_custom", "trp_temp_array_c"),
                             (assign, ":attacker_troop_strength", reg0),
-                            (str_store_troop_name, s0, "trp_temp_array_c"),
-                            (display_message, "@{s0}'s strength is {reg0}"),
                             
                             (close_item_details), #close whatever might be open
                             (start_presentation,"prsnt_rndl_troop_tree"),
@@ -959,27 +957,8 @@ presentations = [
       (position_set_y, pos1, 370),
       (overlay_set_position, reg0, pos1),
 
-      (try_begin),
-        (eq, "$g_quick_battle_team_2_faction", "fac_kingdom_1"),
-        (assign, ":cur_troop", "trp_northern_phalanx"),
-      (else_try),
-        (eq, "$g_quick_battle_team_2_faction", "fac_kingdom_2"),
-        (assign, ":cur_troop", "trp_vaegir_knight"),
-      (else_try),
-        (eq, "$g_quick_battle_team_2_faction", "fac_kingdom_3"),
-        (assign, ":cur_troop", "trp_khergit_veteran_horse_archer"),
-      (else_try),
-        (eq, "$g_quick_battle_team_2_faction", "fac_kingdom_4"),
-        (assign, ":cur_troop", "trp_nord_champion"),
-      (else_try),
-        (eq, "$g_quick_battle_team_2_faction", "fac_kingdom_5"),
-        (assign, ":cur_troop", "trp_rhodok_sergeant"),
-      (else_try),
-        (eq, "$g_quick_battle_team_2_faction", "fac_kingdom_6"),
-        (assign, ":cur_troop", "trp_sarranid_mamluke"),
-      (else_try),
-        (assign, ":cur_troop", "trp_taiga_bandit"),
-      (try_end),
+      (assign, ":cur_troop", "trp_northern_phalanx"),
+
       (val_mul, ":cur_troop", 2), #with weapons
       (create_mesh_overlay_with_tableau_material, reg0, -1, "tableau_game_party_window", ":cur_troop"),
       (position_set_x, pos1, 670),

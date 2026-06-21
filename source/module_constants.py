@@ -57,7 +57,7 @@ attributes_end = 4
 skills_begin = 0
 skills_end = 42 #some of them may be disabled, but this number will not change
 weapon_proficiencies_begin = 0
-weapon_proficiencies_end = 7#!#change this to 6 if your mod doesn't have firearms!
+weapon_proficiencies_end = 6#!#change this to 6 if your mod doesn't have firearms!
 troop_tree_screen_edge_u = 200.0
 troop_tree_screen_edge_d = 200.0
 troop_tree_screen_edge_l = 200.0*mult_x
@@ -1782,11 +1782,6 @@ spawn_points_end = "p_spawn_points_end"
 regular_troops_begin       = "trp_novice_fighter"
 regular_troops_end         = "trp_tournament_master"
 
-# swadian_merc_parties_begin = "p_town_1_mercs"
-# swadian_merc_parties_end   = "p_town_8_mercs"
-
-# vaegir_merc_parties_begin  = "p_town_8_mercs"
-# vaegir_merc_parties_end    = "p_zendar"
 
 arena_masters_begin    = "trp_town_1_arena_master"
 arena_masters_end      = "trp_town_1_armorer"

@@ -1,5 +1,5 @@
 itemsfile version 3
-805
+920
  itm_no_item INVALID_ITEM INVALID_ITEM 1  invalid_item 0  12582914 9223388529554358287 3 0 1.500000 100 0 0 0 0 0 103 0 90 0 522 528
  0
 0
@@ -522,12 +522,12 @@ itemsfile version 3
 
  itm_steppe_horse Steppe_Horse Steppe_Horse 1  steppe_horse 0  65537 0 192 41876193280 0.000000 80 0 10 0 2 120 51 40 98 0 8 0
  2
- 16 17
+ 17 18
 0
 
  itm_arabian_horse_a Desert_Horse Desert_Horse 1  arabian_horse_a 0  65537 0 550 110595670016 0.000000 80 0 10 0 2 110 50 42 100 0 12 0
  2
- 17 20
+ 18 21
 0
 
  itm_courser Courser Courser 1  courser 0  65537 0 600 110595670016 0.000000 70 0 12 0 2 110 44 50 106 0 12 0
@@ -536,7 +536,7 @@ itemsfile version 3
 
  itm_arabian_horse_b Sarranid_Horse Sarranid_Horse 1  arabian_horse_b 0  65537 0 700 110595670016 0.000000 80 0 10 0 3 120 54 43 100 0 16 0
  1
- 20
+ 21
 0
 
  itm_hunter Hunter Hunter 2  hunting_horse 0  hunting_horse 34360000512  65537 0 810 110595670016 0.000000 60 0 18 0 3 160 44 43 108 0 24 0
@@ -549,7 +549,7 @@ itemsfile version 3
 
  itm_charger Charger Charger 2  charger_new 0  charger_plate_1 536870912  65537 0 1811 110595670016 0.000000 40 0 58 0 4 165 44 40 112 0 32 0
  2
- 15 19
+ 16 20
 0
 
  itm_arrows Arrows Arrows 3  arrow 0  flying_missile 2305843009213693952  quiver 3458764513820540928  98309 2147483648 72 4398046511112 3.000000 160 0 0 0 0 0 0 0 95 30 257 0
@@ -2385,12 +2385,12 @@ itemsfile version 3
 
  itm_warhorse_sarranid Sarranian_War_Horse Sarranian_War_Horse 1  warhorse_sarranid 0  65537 0 1811 110595670016 0.000000 40 0 58 0 4 165 44 40 112 0 32 0
  1
- 20
+ 21
 0
 
  itm_warhorse_steppe Steppe_Charger Steppe_Charger 1  warhorse_steppe 0  65537 0 1400 110595670016 0.000000 45 0 40 0 4 150 50 40 112 0 28 0
  2
- 17 16
+ 18 17
 0
 
  itm_sword_north_p Northern_Steel Northern_Steel 2  norman_sword 0  scab_norman_sword 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
@@ -2534,6 +2534,10 @@ itemsfile version 3
 0
 
  itm_armor_infantry_north_3 Frozen_Sqire's_Gambeson Frozen_Sqire's_Gambeson 1  outlaw_mix 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor_infantry_syndicate_1 Black_Plate_Mail Black_Plate_Mail 1  wei_xiadi_swa_mail_and_plate_black 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
  0
 0
 
@@ -2729,6 +2733,210 @@ itemsfile version 3
  0
 0
 
+ itm_wei_xiadi_archers_vest01 wei_xiadi_archers_vest01 wei_xiadi_archers_vest01 1  wei_xiadi_archers_vest01 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_archers_vest02 wei_xiadi_archers_vest02 wei_xiadi_archers_vest02 1  wei_xiadi_archers_vest02 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_archers_vest03 wei_xiadi_archers_vest03 wei_xiadi_archers_vest03 1  wei_xiadi_archers_vest03 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_cataphract_armor wei_xiadi_cataphract_armor wei_xiadi_cataphract_armor 1  wei_xiadi_cataphract_armor 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_coat_of_plates_red wei_xiadi_coat_of_plates_red wei_xiadi_coat_of_plates_red 1  wei_xiadi_coat_of_plates_red 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_kher_kaftan wei_xiadi_kher_kaftan wei_xiadi_kher_kaftan 1  wei_xiadi_kher_kaftan 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_kher_lamellar_vest01 wei_xiadi_kher_lamellar_vest01 wei_xiadi_kher_lamellar_vest01 1  wei_xiadi_kher_lamellar_vest01 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_kher_lamellar_vest02 wei_xiadi_kher_lamellar_vest02 wei_xiadi_kher_lamellar_vest02 1  wei_xiadi_kher_lamellar_vest02 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_kher_ragged_outfit wei_xiadi_kher_ragged_outfit wei_xiadi_kher_ragged_outfit 1  wei_xiadi_kher_ragged_outfit 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_kher_skirmisher_armor wei_xiadi_kher_skirmisher_armor wei_xiadi_kher_skirmisher_armor 1  wei_xiadi_kher_skirmisher_armor 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_lamellar_armor01 wei_xiadi_lamellar_armor01 wei_xiadi_lamellar_armor01 1  wei_xiadi_lamellar_armor01 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_lamellar_armor02 wei_xiadi_lamellar_armor02 wei_xiadi_lamellar_armor02 1  wei_xiadi_lamellar_armor02 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_lamellar_armor03 wei_xiadi_lamellar_armor03 wei_xiadi_lamellar_armor03 1  wei_xiadi_lamellar_armor03 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_lamellar_chainmail wei_xiadi_lamellar_chainmail wei_xiadi_lamellar_chainmail 1  wei_xiadi_lamellar_chainmail 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_mail_shirt01 wei_xiadi_mail_shirt01 wei_xiadi_mail_shirt01 1  wei_xiadi_mail_shirt01 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_mail_shirt02 wei_xiadi_mail_shirt02 wei_xiadi_mail_shirt02 1  wei_xiadi_mail_shirt02 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_nord_cuir_bouilli wei_xiadi_nord_cuir_bouilli wei_xiadi_nord_cuir_bouilli 1  wei_xiadi_nord_cuir_bouilli 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_nord_lamellar_plain wei_xiadi_nord_lamellar_plain wei_xiadi_nord_lamellar_plain 1  wei_xiadi_nord_lamellar_plain 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_rod_coat_of_plates wei_xiadi_rod_coat_of_plates wei_xiadi_rod_coat_of_plates 1  wei_xiadi_rod_coat_of_plates 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_rod_full_plate wei_xiadi_rod_full_plate wei_xiadi_rod_full_plate 1  wei_xiadi_rod_full_plate 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_rod_padded_cloth wei_xiadi_rod_padded_cloth wei_xiadi_rod_padded_cloth 1  wei_xiadi_rod_padded_cloth 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_rod_thick_coat wei_xiadi_rod_thick_coat wei_xiadi_rod_thick_coat 1  wei_xiadi_rod_thick_coat 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_samurai_armor01 wei_xiadi_samurai_armor01 wei_xiadi_samurai_armor01 1  wei_xiadi_samurai_armor01 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_samurai_armor02 wei_xiadi_samurai_armor02 wei_xiadi_samurai_armor02 1  wei_xiadi_samurai_armor02 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_sar_byrnie wei_xiadi_sar_byrnie wei_xiadi_sar_byrnie 1  wei_xiadi_sar_byrnie 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_scale_armor01 wei_xiadi_scale_armor01 wei_xiadi_scale_armor01 1  wei_xiadi_scale_armor01 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_scale_armor02 wei_xiadi_scale_armor02 wei_xiadi_scale_armor02 1  wei_xiadi_scale_armor02 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_swa_tabard wei_xiadi_swa_tabard wei_xiadi_swa_tabard 1  wei_xiadi_swa_tabard 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_templar_surcoat_white wei_xiadi_templar_surcoat_white wei_xiadi_templar_surcoat_white 1  wei_xiadi_templar_surcoat_white 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_templar_surcoat_red wei_xiadi_templar_surcoat_red wei_xiadi_templar_surcoat_red 1  wei_xiadi_templar_surcoat_red 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor1 armor1 armor1 1  armor1 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor10 armor10 armor10 1  armor10 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor10_b armor10_b armor10_b 1  armor10_b 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor12 armor12 armor12 1  armor12 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor16 armor16 armor16 1  armor16 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor17 armor17 armor17 1  armor17 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor2 armor2 armor2 1  armor2 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor20 armor20 armor20 1  armor20 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor21 armor21 armor21 1  armor21 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor22 armor22 armor22 1  armor22 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor23 armor23 armor23 1  armor23 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor24 armor24 armor24 1  armor24 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor31 armor31 armor31 1  armor31 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor33 armor33 armor33 1  armor33 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor8 armor8 armor8 1  armor8 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor8_g armor8_g armor8_g 1  armor8_g 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor8_w armor8_w armor8_w 1  armor8_w 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_Elf_Armor Elf_Armor Elf_Armor 1  Elf_Armor 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_Elf_Armor Elf_Armor Elf_Armor 1  Elf_Armor 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_Elf_Armor Elf_Armor Elf_Armor 1  Elf_Armor 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_rod_plate_boots Plate_wei_xiadi_rod_plate_boots Plate_wei_xiadi_rod_plate_boots 1  wei_xiadi_rod_plate_boots 0  69390 0 1770 704643238 3.500000 100 0 0 33 9 0 0 0 0 0 0 0
+ 0
+0
+
  itm_wardens_helmet Warden's_Helmet Warden's_Helmet 1  sorry_im_berserk_helm_inventory 0  65548 0 3200 123731968 2.000000 100 62 2 0 0 0 0 0 0 0 0 0
  0
 0
@@ -2738,6 +2946,10 @@ itemsfile version 3
 0
 
  itm_helmet_infantry_north_3 Frozen_Sqire's_Helmet Frozen_Sqire's_Helmet 1  skull_cap 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helmet_infantry_syndicate_1 Chain-Veil_Mask Chain-Veil_Mask 1  frenchpepperpot 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
  0
 0
 
@@ -2893,6 +3105,206 @@ itemsfile version 3
  0
 0
 
+ itm_youhou_assassin_hood youhou_assassin_hood youhou_assassin_hood 1  youhou_assassin_hood 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_kettlehatfacebyrnie kettlehatfacebyrnie kettlehatfacebyrnie 1  kettlehatfacebyrnie 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_coif coif coif 1  coif 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_bolzanobucket bolzanobucket bolzanobucket 1  bolzanobucket 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_col1_bolzanobucket col1_bolzanobucket col1_bolzanobucket 1  col1_bolzanobucket 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_col2_bolzanobucket col2_bolzanobucket col2_bolzanobucket 1  col2_bolzanobucket 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_gotlandbucket gotlandbucket gotlandbucket 1  gotlandbucket 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_madelnbucket2 madelnbucket2 madelnbucket2 1  madelnbucket2 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_col2_crusaderbucket1 col2_crusaderbucket1 col2_crusaderbucket1 1  col2_crusaderbucket1 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_col2_madelnbucket2 col2_madelnbucket2 col2_madelnbucket2 1  col2_madelnbucket2 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_col1_crusaderbucket1 col1_crusaderbucket1 col1_crusaderbucket1 1  col1_crusaderbucket1 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_col1_gotlandbucket col1_gotlandbucket col1_gotlandbucket 1  col1_gotlandbucket 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_col1_madelnbucket2 col1_madelnbucket2 col1_madelnbucket2 1  col1_madelnbucket2 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_barbuta1 barbuta1 barbuta1 1  barbuta1 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_barbuta2 barbuta2 barbuta2 1  barbuta2 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_flemish_armet flemish_armet flemish_armet 1  flemish_armet 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_greatbascinet1 greatbascinet1 greatbascinet1 1  greatbascinet1 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_greathelm1 greathelm1 greathelm1 1  greathelm1 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_greathelmwhat greathelmwhat greathelmwhat 1  greathelmwhat 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_klappvisier klappvisier klappvisier 1  klappvisier 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_milanese_sallet milanese_sallet milanese_sallet 1  milanese_sallet 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_byzantion byzantion byzantion 1  byzantion 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_kettlehat1 kettlehat1 kettlehat1 1  kettlehat1 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_col1_byzantion col1_byzantion col1_byzantion 1  col1_byzantion 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_col1_kettlehat1 col1_kettlehat1 col1_kettlehat1 1  col1_kettlehat1 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_col1_kettlehat2 col1_kettlehat2 col1_kettlehat2 1  col1_kettlehat2 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_weimarhelm weimarhelm weimarhelm 1  weimarhelm 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_frenchpepperpot2 frenchpepperpot2 frenchpepperpot2 1  frenchpepperpot2 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_normanpepperpot normanpepperpot normanpepperpot 1  normanpepperpot 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_crownedhelm crownedhelm crownedhelm 1  crownedhelm 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helm11 helm11 helm11 1  helm11 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helm14 helm14 helm14 1  helm14 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helm15 helm15 helm15 1  helm15 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helm16 helm16 helm16 1  helm16 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helm19 helm19 helm19 1  helm19 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helm20 helm20 helm20 1  helm20 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helm21 helm21 helm21 1  helm21 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helm23 helm23 helm23 1  helm23 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helm24 helm24 helm24 1  helm24 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helm27 helm27 helm27 1  helm27 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helm3 helm3 helm3 1  helm3 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helm31 helm31 helm31 1  helm31 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helm35 helm35 helm35 1  helm35 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helm7 helm7 helm7 1  helm7 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helm8 helm8 helm8 1  helm8 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_helm9 helm9 helm9 1  helm9 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_mask_1 mask_1 mask_1 1  mask_1 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_mask_2 mask_2 mask_2 1  mask_2 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_frenchpepperpot frenchpepperpot frenchpepperpot 1  frenchpepperpot 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_frenchpepperpot frenchpepperpot frenchpepperpot 1  frenchpepperpot 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
  itm_shield_north_p Northern_Ironwood_Shield Northern_Ironwood_Shield 1  normkite 0  65543 5100273664 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
  0
 0
@@ -2947,6 +3359,66 @@ itemsfile version 3
 
  itm_hoplite_shield_e hoplite_shield_e hoplite_shield_e 1  hoplite_shield_e 0  65543 5100273664 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
  0
+0
+
+ itm_horse1 Charger Charger 1  horse1 0  65537 0 1811 110595670016 0.000000 40 0 58 0 4 165 44 40 112 0 32 0
+ 2
+ 16 20
+0
+
+ itm_horse2 Charger Charger 1  horse2 0  65537 0 1811 110595670016 0.000000 40 0 58 0 4 165 44 40 112 0 32 0
+ 2
+ 16 20
+0
+
+ itm_horse3 Charger Charger 1  horse3 0  65537 0 1811 110595670016 0.000000 40 0 58 0 4 165 44 40 112 0 32 0
+ 2
+ 16 20
+0
+
+ itm_horse4 Charger Charger 1  horse4 0  65537 0 1811 110595670016 0.000000 40 0 58 0 4 165 44 40 112 0 32 0
+ 2
+ 16 20
+0
+
+ itm_horse5_1 Charger Charger 1  horse5_1 0  65537 0 1811 110595670016 0.000000 40 0 58 0 4 165 44 40 112 0 32 0
+ 2
+ 16 20
+0
+
+ itm_horse5_2 Charger Charger 1  horse5_2 0  65537 0 1811 110595670016 0.000000 40 0 58 0 4 165 44 40 112 0 32 0
+ 2
+ 16 20
+0
+
+ itm_horse5_2_a Charger Charger 1  horse5_2_a 0  65537 0 1811 110595670016 0.000000 40 0 58 0 4 165 44 40 112 0 32 0
+ 2
+ 16 20
+0
+
+ itm_horse5_3 Charger Charger 1  horse5_3 0  65537 0 1811 110595670016 0.000000 40 0 58 0 4 165 44 40 112 0 32 0
+ 2
+ 16 20
+0
+
+ itm_horse5_4 Charger Charger 1  horse5_4 0  65537 0 1811 110595670016 0.000000 40 0 58 0 4 165 44 40 112 0 32 0
+ 2
+ 16 20
+0
+
+ itm_horse5_5 Charger Charger 1  horse5_5 0  65537 0 1811 110595670016 0.000000 40 0 58 0 4 165 44 40 112 0 32 0
+ 2
+ 16 20
+0
+
+ itm_horse6 Charger Charger 1  horse6 0  65537 0 1811 110595670016 0.000000 40 0 58 0 4 165 44 40 112 0 32 0
+ 2
+ 16 20
+0
+
+ itm_horse7 Charger Charger 1  horse7 0  65537 0 1811 110595670016 0.000000 40 0 58 0 4 165 44 40 112 0 32 0
+ 2
+ 16 20
 0
 
  itm_dplmc_coat_of_plates_red_constable Constable_Coat_of_Plates Constable_Coat_of_Plates 1  coat_of_plates_red 0  553652237 0 3828 704643236 25.000000 100 0 52 16 0 0 0 0 0 0 0 0
@@ -3020,42 +3492,42 @@ itemsfile version 3
 
  itm_red_tpe_tunic Tournament_Tunic Tournament_Tunic 1  arena_tunic_red 0  16777229 0 1720 704643238 10.000000 55 0 15 8 0 0 0 0 0 0 0 0
  1
- 15
+ 16
 0
 
  itm_blue_tpe_tunic Tournament_Tunic Tournament_Tunic 1  arena_tunic_blue 0  16777229 0 1544 704643236 10.000000 55 0 15 8 0 0 0 0 0 0 0 0
  1
- 15
+ 16
 0
 
  itm_green_tpe_tunic Tournament_Tunic Tournament_Tunic 1  arena_tunic_green 0  16777229 0 1544 704643236 10.000000 55 0 15 8 0 0 0 0 0 0 0 0
  1
- 15
+ 16
 0
 
  itm_gold_tpe_tunic Tournament_Tunic Tournament_Tunic 1  arena_tunic_yellow 0  16777229 0 1544 704643236 10.000000 55 0 15 8 0 0 0 0 0 0 0 0
  1
- 15
+ 16
 0
 
  itm_red_tpe_armor Tournament_Armor Tournament_Armor 1  arena_armor_red 0  16777229 0 1720 704643238 22.000000 55 0 30 15 0 0 0 0 0 0 0 0
  1
- 15
+ 16
 0
 
  itm_blue_tpe_armor Tournament_Armor Tournament_Armor 1  arena_armor_blue 0  16777229 0 1544 704643236 22.000000 55 0 30 15 0 0 0 0 0 0 0 0
  1
- 15
+ 16
 0
 
  itm_green_tpe_armor Tournament_Armor Tournament_Armor 1  arena_armor_green 0  16777229 0 1544 704643236 22.000000 55 0 30 15 0 0 0 0 0 0 0 0
  1
- 15
+ 16
 0
 
  itm_gold_tpe_armor Tournament_Armor Tournament_Armor 1  arena_armor_yellow 0  16777229 0 1544 704643236 22.000000 55 0 30 15 0 0 0 0 0 0 0 0
  1
- 15
+ 16
 0
 
  itm_tpe_enhanced_shield_red Tournament_Shield Tournament_Shield 1  arena_shield_red 0  262151 4831838208 42 167772194 2.000000 100 0 15 0 0 600 100 0 60 0 0 0
