@@ -91,21 +91,27 @@ custom_menus = [
           (party_add_members, "p_main_party", "trp_sarranid_skirmisher", 5), 
         ] 
       ),
-    ("cheat_add_troop_khergit_horse_archer", [], "Add 5 Slaver Chiefs", 
+    ("cheat_add_troop_khergit_horse_archer", [], "Add 5 syndicate_shooter", 
         [
-          (display_message, "@5 Slaver Chiefs were added to your party."),
-          (party_add_members, "p_main_party", "trp_slaver_chief", 5), 
+          (display_message, "@5 syndicate_shooter were added to your party."),
+          (party_add_members, "p_main_party", "trp_syndicate_shooter", 5), 
         ] 
       ),
-    ("cheat_add_troop_khergit_horse_archer", [], "Add 5 Sarranid Skirmishers",
+    ("cheat_add_troop_khergit_horse_archer", [], "Add 5 Syndicate Praetorians",
         [
           (display_message, "@5 Syndicate Praetorians were added to your party."),
           (party_add_members, "p_main_party", "trp_syndicate_praetorian", 5), 
         ] 
       ),
+    ("cheat_add_troop_khergit_horse_archer", [], "Add 5 Syndicate Cavalry",
+        [
+          (display_message, "@5 Syndicate Cavalry were added to your party."),
+          (party_add_members, "p_main_party", "trp_syndicate_cavalry", 5), 
+        ] 
+      ),
     ("back_to_camp_menu",[],"{!}Back to camp menu.",
       [
-        (jump_to_menu, "mnu_camp"),
+        (jump_to_menu, "mnu_camp"), 
       ]
     ),
   ]
@@ -4944,6 +4950,7 @@ TOTAL:  {reg5}"),
       (assign, ":enemy_strength", reg1),
       
       #Soriq recalculate damage depends on troop types end
+
    		 
 			(val_mul, ":player_and_ally_strength", 2), # speed up simulation
 			(val_mul, ":enemy_strength", 2),
@@ -6345,6 +6352,12 @@ TOTAL:  {reg5}"),
 			(assign, ":player_and_ally_strength", reg0),
 			(call_script, "script_calculate_damage", "p_collective_enemy"),
 			(assign, ":enemy_strength", reg0),
+   
+   
+      #Soriq recalculate damage depends on troop types
+      (call_script, "script_parties_troop_typed_strength", "p_collective_friends", "p_collective_enemy", ":player_and_ally_strength", ":enemy_strength"),
+      (assign, ":player_and_ally_strength", reg0),
+      (assign, ":enemy_strength", reg1),
 
 			(store_mul, ":enemy_strength_for_player", ":enemy_strength", "$g_strength_contribution_of_player"),
 			(val_div, ":enemy_strength_for_player", 100),
@@ -8162,6 +8175,11 @@ TOTAL:  {reg5}"),
 			(assign, ":enemy_damage", reg0),
 			(val_mul, ":enemy_damage", 130),
 			(val_div, ":enemy_damage", 100),
+   
+      #Soriq recalculate damage depends on troop types
+      (call_script, "script_parties_troop_typed_strength", "p_main_party", "$g_encountered_party", ":player_damage", ":enemy_damage"),
+      (assign, ":player_damage", reg0),
+      (assign, ":enemy_damage", reg1),
 			
 			(val_mul, ":player_damage", 3), # speed up
 			(val_mul, ":enemy_damage", 3),
@@ -8265,6 +8283,8 @@ TOTAL:  {reg5}"),
 			(assign, ":enemy_strength", reg0),
 			(val_mul, ":enemy_strength", 130),
 			(val_div, ":enemy_strength", 100),
+   
+
 			
 			(val_mul, ":player_strength", 3),
 			(val_mul, ":ally_strength", 3),

@@ -1,4 +1,4 @@
-1743
+1753
 qstr_Breaking_camp... Breaking_camp...
 qstr_Removing_disguise... Removing_disguise...
 qstr_{s17}_has_{reg17}_de {s17}_has_{reg17}_denars
@@ -1742,3 +1742,13 @@ qstr_Quest_ended_due_to_t Quest_ended_due_to_tournament_system_quests_being_disa
 qstr_5_Khergit_Veteran_Ho 5_Khergit_Veteran_Horse_Archers_were_added_to_your_party.
 qstr_5_Slaver_Chiefs_were 5_Slaver_Chiefs_were_added_to_your_party.
 qstr_5_Syndicate_Praetori 5_Syndicate_Praetorians_were_added_to_your_party.
+qstr_5_Syndicate_Cavalry_ 5_Syndicate_Cavalry_were_added_to_your_party.
+qstr_DMG_BEFORE:_{reg6} DMG_BEFORE:_{reg6}
+qstr_DMG_AFTER:_{reg6}_AA DMG_AFTER:_{reg6}_AA:_{reg7}
+qstr_PT:_{reg6} PT:_{reg6}
+qstr_debuging_after_damag debuging_after_damaged_parties_{reg0}
+qstr_Ally_str_before:_{re Ally_str_before:_{reg6}
+qstr_Enemy_str_before:_{r Enemy_str_before:_{reg7}
+qstr_Ally_str_after:_{reg Ally_str_after:_{reg0}
+qstr_Enemy_str_after:_{re Enemy_str_after:_{reg1}
+qstr_5_syndicate_shooter_ 5_syndicate_shooter_were_added_to_your_party.
