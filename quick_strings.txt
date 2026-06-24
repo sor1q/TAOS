@@ -1,4 +1,4 @@
-1753
+1741
 qstr_Breaking_camp... Breaking_camp...
 qstr_Removing_disguise... Removing_disguise...
 qstr_{s17}_has_{reg17}_de {s17}_has_{reg17}_denars
@@ -914,8 +914,6 @@ qstr_Townswoman Townswoman
 qstr_Townswomen Townswomen
 qstr_{s1}_ehp{reg0}_dph{r {s1}_ehp{reg0}_dph{reg1}_m{reg2}_b{reg3}_xb{reg4}_f{reg5}_th{reg6}
 qstr_{!}ERROR:_script_inf {!}ERROR:_script`inflict`casualties`to`party`group,_wrong_stored_party
-qstr_full_ehp=0_{s0} full_ehp=0_{s0}
-qstr_WARNING:_{s0}_has_EH WARNING:_{s0}_has_EHP_<=_0
 qstr_debuging_autorsolver debuging_autorsolver_stacks
 qstr_{s1}_stacks#{reg1}_o {s1}_stacks#{reg1}_offset#{reg2}_last-in-combat#{reg3}_hours-since-last#{reg4}
 qstr_{s0}_size{reg1}_ehp{ {s0}_size{reg1}_ehp{reg2}_slot_{reg10}_p:{s1}
@@ -1723,8 +1721,10 @@ qstr_As_a_caravan_guard_ As_a_caravan_guard,_you_will_be_able_to_bear_weapons_bu
 qstr_As_a_merchant_you_w As_a_merchant,_you_will_be_able_to_bring_any_assortment_of_goods.
 qstr_As_a_bard_you_will_ As_a_bard,_you_will_be_allowed_some_personal_possessions_and_your_instrument.
 qstr_10_Wardens_of_the_No 10_Wardens_of_the_North_were_added_to_your_party.
-qstr_10_Khergit_Veteran_H 10_Khergit_Veteran_Horse_Archers_were_added_to_your_party.
-qstr_10_Slaver_Chiefs_wer 10_Slaver_Chiefs_were_added_to_your_party.
+qstr_5_Khergit_Veteran_Ho 5_Khergit_Veteran_Horse_Archers_were_added_to_your_party.
+qstr_5_syndicate_shooter_ 5_syndicate_shooter_were_added_to_your_party.
+qstr_5_Syndicate_Praetori 5_Syndicate_Praetorians_were_added_to_your_party.
+qstr_5_Syndicate_Cavalry_ 5_Syndicate_Cavalry_were_added_to_your_party.
 qstr_^You_are_currently_r ^You_are_currently_rank_{reg21}_of_{reg22}_participants.
 qstr_^_{s27}_ ^'{s27}'
 qstr_{s21}{s29} {s21}{s29}
@@ -1739,16 +1739,4 @@ qstr_DEBUG__TPE_:_{s1}_pla DEBUG_(TPE):_{s1}_placed_in_slot_#{reg1}_for_tourname
 qstr_DEBUG__TPE_:_Discove DEBUG_(TPE):_Discovered_invalid_troop.__Replaced_with_{s1}_in_slot_{reg0}.
 qstr_DEBUG__TPE_:_Entry_# DEBUG_(TPE):_Entry_#{reg2}_/_Team_#{reg1}_=_{s1}
 qstr_Quest_ended_due_to_t Quest_ended_due_to_tournament_system_quests_being_disabled.
-qstr_5_Khergit_Veteran_Ho 5_Khergit_Veteran_Horse_Archers_were_added_to_your_party.
-qstr_5_Slaver_Chiefs_were 5_Slaver_Chiefs_were_added_to_your_party.
-qstr_5_Syndicate_Praetori 5_Syndicate_Praetorians_were_added_to_your_party.
-qstr_5_Syndicate_Cavalry_ 5_Syndicate_Cavalry_were_added_to_your_party.
-qstr_DMG_BEFORE:_{reg6} DMG_BEFORE:_{reg6}
-qstr_DMG_AFTER:_{reg6}_AA DMG_AFTER:_{reg6}_AA:_{reg7}
-qstr_PT:_{reg6} PT:_{reg6}
-qstr_debuging_after_damag debuging_after_damaged_parties_{reg0}
-qstr_Ally_str_before:_{re Ally_str_before:_{reg6}
-qstr_Enemy_str_before:_{r Enemy_str_before:_{reg7}
-qstr_Ally_str_after:_{reg Ally_str_after:_{reg0}
-qstr_Enemy_str_after:_{re Enemy_str_after:_{reg1}
-qstr_5_syndicate_shooter_ 5_syndicate_shooter_were_added_to_your_party.
+qstr_10_Syndicate_Recruit 10_Syndicate_Recruits_were_added_to_your_party.

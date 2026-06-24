@@ -1,5 +1,5 @@
 itemsfile version 3
-921
+928
  itm_no_item INVALID_ITEM INVALID_ITEM 1  invalid_item 0  12582914 9223388529554358287 3 0 1.500000 100 0 0 0 0 0 103 0 90 0 522 528
  0
 0
@@ -2525,6 +2525,10 @@ itemsfile version 3
  0
 0
 
+ itm_syndicate_spiked_mace Syndicate_Spiked_Mace Syndicate_Spiked_Mace 2  spiked_mace_new 0  assassins_sword_scabbard 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
  itm_wardens_plate Warden's_Plate Warden's_Plate 1  plate_bur41 0  16842765 0 13500 704643236 25.000000 100 3 68 32 12 0 0 0 0 0 0 0
  0
 0
@@ -2537,7 +2541,11 @@ itemsfile version 3
  0
 0
 
- itm_armor_infantry_syndicate_1 Black_Plate_Mail Black_Plate_Mail 1  wei_xiadi_swa_mail_and_plate_black 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ itm_armor_infantry_syndicate_5 Black_Plate_T5 Black_Plate_T5 1  wei_xiadi_swa_mail_and_plate_black 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_armor_infantry_syndicate_4 Black_Plate_T4 Black_Plate_T4 1  xiadi_mail_and_plate_black 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
  0
 0
 
@@ -2953,6 +2961,10 @@ itemsfile version 3
  0
 0
 
+ itm_helmet_infantry_syndicate_4 Northern_Warrior_Helmet Northern_Warrior_Helmet 1  Helmet_B 0  1073807372 0 240 704643238 2.000000 100 34 0 0 7 0 0 0 0 0 0 0
+ 0
+0
+
  itm_facemasck facemasck facemasck 1  facemasck 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
  0
 0
@@ -3305,7 +3317,23 @@ itemsfile version 3
  0
 0
 
- itm_shield_syndicate_leather shield_syndicate_leather shield_syndicate_leather 1  shield_syndicate_leather 0  65543 5100273664 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
+ itm_eirven_shield Eirven_Shield Eirven_Shield 1  eirven_shield 0  65543 5100273664 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
+ 0
+0
+
+ itm_vallor_shield Vallor_Shield Vallor_Shield 1  vallor_shield 0  65543 5100273664 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
+ 0
+0
+
+ itm_north_shield Northern_Shield Northern_Shield 1  north_shield 0  65543 6442450944 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
+ 0
+0
+
+ itm_syndicate_shield Syndicate_Shield Syndicate_Shield 1  syndicate_shield 0  65543 6442450944 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
+ 0
+0
+
+ itm_eye_shield Eye_Shield Eye_Shield 1  eye_shield 0  65543 6442450944 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
  0
 0
 

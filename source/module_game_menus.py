@@ -85,10 +85,10 @@ custom_menus = [
           (party_add_members, "p_main_party", "trp_khergit_veteran_horse_archer", 5), 
         ]
       ),
-    ("cheat_add_troop_khergit_horse_archer", [], "Add 5 Sarranid Skirmishers",
+    ("cheat_add_troop_khergit_horse_archer", [], "Add 10 Syndicate Recruits",
         [
-          (display_message, "@5 Khergit Veteran Horse Archers were added to your party."),
-          (party_add_members, "p_main_party", "trp_sarranid_skirmisher", 5), 
+          (display_message, "@10 Syndicate Recruits were added to your party."),
+          (party_add_members, "p_main_party", "trp_syndicate_recruit", 10), 
         ] 
       ),
     ("cheat_add_troop_khergit_horse_archer", [], "Add 5 syndicate_shooter", 

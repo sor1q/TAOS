@@ -248,9 +248,11 @@ custom_items = [
 ["assassins_sword", "assassins_sword", [("assassins_sword",0),("assassins_sword_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
  650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
 
+["syndicate_spiked_mace", "Syndicate Spiked Mace", [("spiked_mace_new",0),("assassins_sword_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
 
 
-#Test Swords end
+#Test Swords end 
 
 #Armor 
 
@@ -263,11 +265,15 @@ custom_items = [
 ["armor_infantry_north_3", "Frozen Sqire's Gambeson", [("outlaw_mix",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
 
-["armor_infantry_syndicate_1", "Black Plate Mail", [("wei_xiadi_swa_mail_and_plate_black",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+["armor_infantry_syndicate_5", "Black Plate T5", [("wei_xiadi_swa_mail_and_plate_black",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+
+["armor_infantry_syndicate_4", "Black Plate T4", [("xiadi_mail_and_plate_black",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
 
 
-#Test Armor
+
+#Test Armor 
 
 ["Female_Armor_Hospitallers", "Female_Armor_Hospitallers", [("Female_Armor_Hospitallers",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
@@ -591,6 +597,9 @@ custom_items = [
 ["helmet_infantry_syndicate_1", "Chain-Veil Mask", [("frenchpepperpot",0)], itp_type_head_armor |itp_merchandise   ,0, 
  1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
 
+["helmet_infantry_syndicate_4", "Northern Warrior Helmet", [("Helmet_B",0)], itp_merchandise| itp_type_head_armor|itp_fit_to_head ,0, 240 ,
+ weight(2)|abundance(100)|head_armor(34)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
+
 
 #Test Helmets
 
@@ -867,10 +876,23 @@ custom_items = [
 
 #Shields 
 
-["shield_syndicate_leather", "shield_syndicate_leather", [("shield_syndicate_leather",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+["eirven_shield", "Eirven Shield", [("eirven_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
 400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
 
-#Test Shields
+["vallor_shield", "Vallor Shield", [("vallor_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+["north_shield", "Northern Shield", [("north_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_board_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+["syndicate_shield", "Syndicate Shield", [("syndicate_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_board_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+["eye_shield", "Eye Shield", [("eye_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_board_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+
+#Test Shields   
 
 ["shield_north_p", "Northern Ironwood Shield", [("normkite",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
 400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
