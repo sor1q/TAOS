@@ -390,7 +390,8 @@ troops = [
    str_20 | agi_18 | int_10 | cha_10 |level(30), wp_melee(200), 
    knows_common|knows_ironflesh_6|knows_power_strike_6|knows_shield_6|knows_athletics_5, swadian_face_young_1, swadian_face_old_2],
   ["northern_phalanx", "Northern Phalanx", "Northern Phalanxes", tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_shield|tf_guarantee_helmet, 0, 0, fac_kingdom_1,
-  [itm_pike, itm_tab_shield_heater_b],
+  [itm_bamboo_spear, itm_north_shield,
+   itm_north_helmet_spearman, itm_north_armor_t5, itm_iron_greaves, itm_gauntlets],
    str_24 | agi_22 | int_12 | cha_12 |level(40), wp_melee(360), 
    knows_common|knows_ironflesh_7|knows_power_strike_9|knows_weapon_master_8, swadian_face_young_1, swadian_face_old_2],
   

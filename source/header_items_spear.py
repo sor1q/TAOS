@@ -58,10 +58,6 @@ itp_food                 = 0x0000000000080000
 #itp_javelin              = 0x0000000000000040
 #itp_crossbow             = 0x0000000000000080
 
-itp_replaces_helm            = 0x0000000000400000 #in VC some hoods are attached to tunics
-itp_covers_hair_partially    = 0x0000080000000000
-itp_disable_agent_sounds     = 0x0040000000000000 #disable agent related sounds, but not voices. useful for animals
-
 itp_cant_reload_on_horseback = 0x0000000000100000
 itp_two_handed               = 0x0000000000200000
 itp_primary                  = 0x0000000000400000
@@ -87,10 +83,6 @@ itp_unbalanced               = 0x0000000800000000
 itp_covers_beard             = 0x0000001000000000    #remove beard mesh
 itp_no_pick_up_from_ground   = 0x0000002000000000
 itp_can_knock_down           = 0x0000004000000000
-itp_covers_hair              = 0x0000008000000000    #remove hair mesh for armors only
-itp_force_show_body          = 0x0000010000000000 # forces showing body (works on body armor items)
-itp_force_show_left_hand     = 0x0000020000000000 # forces showing left hand (works on hand armor items)
-itp_force_show_right_hand    = 0x0000040000000000 # forces showing right hand (works on hand armor items)
 itp_extra_penetration        = 0x0000100000000000
 itp_has_bayonet              = 0x0000200000000000
 itp_cant_reload_while_moving = 0x0000400000000000
@@ -105,15 +97,6 @@ itp_has_upper_stab           = 0x0020000000000000
 itp_kill_info_mask           = 0x0700000000000000
 itp_kill_info_bits           = 56 # 0x0700000000000000
 
-
-##WSE2
-itp_shield_no_parry = 0x0000000000004000 # left handed item without shield functionality
-itp_offset_mortschlag = 0x1000000000000000 # offsets melee weapon to mortschlag grip
-itp_covers_hands = 0x1000000000000000 # remove hands mesh (works on body armor items)
-itp_offset_flip = 0x4000000000000000 # flips melee weapon model 180 degrees on y-axis
-##WSE2
-
-
 #equipment slots
 ek_item_0 = 0
 ek_item_1 = 1
@@ -125,29 +108,6 @@ ek_foot   = 6
 ek_gloves = 7
 ek_horse  = 8
 ek_food   = 9
-##diplomacy start+
-dplmc_ek_alt_item_a = 10
-dplmc_ek_alt_item_b = 11
-dplmc_ek_alt_item_c = 12
-dplmc_ek_alt_item_d = 13
-
-dplmc_ek_alt_items_begin = dplmc_ek_alt_item_a
-dplmc_ek_alt_items_end   = dplmc_ek_alt_item_d + 1
-
-#SB : meta-item type
-meta_itp_mask = 100
-meta_dmg_mask = 1000
-dplmc_itp_morningstar = meta_itp_mask + itp_type_two_handed_wpn
-dplmc_itp_lance =       meta_itp_mask + itp_type_polearm
-dplmc_itp_pike =    2 * meta_itp_mask + itp_type_polearm
-dplmc_itp_halberd = 3 * meta_itp_mask + itp_type_polearm
-
-dplmc_pike_length_cutoff = 165
-
-armor_cloth = 0 #basic stuff
-armor_armor = 1 #can be mail
-armor_plate = 2 #usually heavy plate
-##diplomacy end+
 
 
 max_inventory_items = 96
