@@ -61,9 +61,7 @@ custom_menus = [
           (assign, "$troop_tree_root_troop", "trp_northern_recruit"),
       (try_end),
         (close_item_details), #close whatever might be open
-        (start_presentation,"prsnt_rndl_troop_tree"), #starting new presentation closes this one, so the troop tree button will disappear
-        (call_script, "script_init_troop_ehp_dph"),
-        (call_script, "script_debug_ehp_dph"),       
+        (start_presentation,"prsnt_rndl_troop_tree"), #starting new presentation closes this one, so the troop tree button will disappear      
       (try_end),
     ],
     []
@@ -3135,7 +3133,7 @@ TOTAL:  {reg5}"),
     ##diplomacy end+
     ],
     [
-      ("camp_action_1",[(eq,"$cheat_mode",1)],"{!}Cheat: Walk around.",
+      ("camp_action_1",[(this_or_next|eq,"$cheat_mode",1), (gt, "$cheat_menu", 0)],"{!}Cheat: Walk around.",
        [(set_jump_mission,"mt_ai_training"),
         (call_script, "script_setup_random_scene"),
         (change_screen_mission),
@@ -3260,6 +3258,11 @@ TOTAL:  {reg5}"),
    [
      ],
     [
+      ("camp_cheat_debug_ehp_dph", [], "Debug EHP/DPH",
+       [
+        (call_script, "script_init_troop_ehp_dph"),
+        (call_script, "script_debug_ehp_dph"), 
+       ]),
       ("camp_cheat_find_item",[], "Find an item...",
        [(jump_to_menu, "mnu_cheat_find_item"),]
        ),

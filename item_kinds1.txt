@@ -1,5 +1,5 @@
 itemsfile version 3
-944
+952
  itm_no_item INVALID_ITEM INVALID_ITEM 1  invalid_item 0  12582914 9223388529554358287 3 0 1.500000 100 0 0 0 0 0 103 0 90 0 522 528
  0
 0
@@ -2405,6 +2405,10 @@ itemsfile version 3
  0
 0
 
+ itm_north_one_handed_axe Northern_One_Handed_Axe Northern_One_Handed_Axe 1  one_handed_war_axe_a 0  80019458 9223388530091229198 87 262164 1.500000 100 0 0 0 9 0 98 0 71 0 256 32
+ 0
+0
+
  itm_2scimitar_black2 2scimitar_black2 2scimitar_black2 2  2scimitar_black2 0  2scimitar_black2_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
  0
 0
@@ -2553,7 +2557,19 @@ itemsfile version 3
  0
 0
 
- itm_north_armor_t4 north_armor_t4 north_armor_t4 1  north_armor_t4 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ itm_north_armor_t5 north_armor_t4 north_armor_t4 1  north_armor_t4 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_armor_t4 Northern_Veteran_Mail Northern_Veteran_Mail 1  mailnormans 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_armor_t3 Northern_Foorman_Byrnie Northern_Foorman_Byrnie 1  byrnie_a_new 0  16842765 0 795 704643236 17.000000 100 0 39 6 7 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_leather_jerkin Northern_Leather_Jerkin Northern_Leather_Jerkin 1  ragged_leather_jerkin 0  553713677 0 321 123731968 6.000000 100 0 23 6 0 0 0 0 0 0 0 0
  0
 0
 
@@ -2574,10 +2590,6 @@ itemsfile version 3
 0
 
  itm_mailrusss mailrusss mailrusss 1  mailrusss 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
- 0
-0
-
- itm_mailnormans mailnormans mailnormans 1  mailnormans 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
  0
 0
 
@@ -2997,7 +3009,15 @@ itemsfile version 3
  0
 0
 
- itm_north_champion_helmet Champion's_Helmet Champion's_Helmet 1  north_champion_helmet 0  65548 0 880 704643238 2.250000 100 48 0 0 7 0 0 0 0 0 0 0
+ itm_north_champion_helmet Northern_Champion's_Helmet Northern_Champion's_Helmet 1  north_champion_helmet 0  65548 0 880 704643238 2.250000 100 48 0 0 7 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_veteran_helmet Northern_Veteran's_Helmet Northern_Veteran's_Helmet 1  Helmet_C_vs2 0  65548 0 880 704643238 2.250000 100 48 0 0 7 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_steppe_cap Northern_Steppe_Cap Northern_Steppe_Cap 1  steppe_cap_a_new 0  536936460 0 14 123731968 1.000000 100 14 0 0 0 0 0 0 0 0 0 0
  0
 0
 
@@ -3401,7 +3421,15 @@ itemsfile version 3
  0
 0
 
- itm_shield_north_p Northern_Ironwood_Shield Northern_Ironwood_Shield 1  normkite 0  65543 5100273664 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
+ itm_north_round_shield Northern_Round_Shield Northern_Round_Shield 1  north_round_shield 0  65543 5100273664 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
+ 0
+0
+
+ itm_north_round_shield_s Northern_Round_Shield_Small Northern_Round_Shield_Small 1  north_shield_round_small 0  65543 5100273664 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
+ 0
+0
+
+ itm_north_leather_shield Northern_Leather_Shield Northern_Leather_Shield 1  shield_round_d 0  262151 5100273664 80 167772194 2.500000 100 0 8 0 0 310 96 0 40 0 0 0
  0
 0
 
@@ -3515,6 +3543,10 @@ itemsfile version 3
  itm_horse7 Charger_57 Charger_57 1  horse7 0  65537 0 1811 110595670016 0.000000 40 0 58 0 4 165 44 40 112 0 32 0
  2
  16 20
+0
+
+ itm_north_hide_boots Northern_Hide_Boots Northern_Hide_Boots 1  hide_boots_a 0  536940302 0 34 123731968 1.000000 100 0 0 10 0 0 0 0 0 0 0 0
+ 0
 0
 
  itm_dplmc_coat_of_plates_red_constable Constable_Coat_of_Plates Constable_Coat_of_Plates 1  coat_of_plates_red 0  553652237 0 3828 704643236 25.000000 100 0 52 16 0 0 0 0 0 0 0 0

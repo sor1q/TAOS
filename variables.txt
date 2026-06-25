@@ -1453,6 +1453,7 @@ prsnt_troop_tree_button
 troop_tree_root_troop
 troop_tree_troop_details_container
 choose_faction_box
+prsnt_troop_tree_cheat_hire
 prsnt_troop_tree_close
 is_troop_tree_report_launch
 g_presentation_obj_banner_selection_2
@@ -1461,4 +1462,3 @@ g_presentation_obj_22
 g_presentation_obj_17
 replay_battle_active
 replay_battle_copy_party
-prsnt_troop_tree_cheat_hire

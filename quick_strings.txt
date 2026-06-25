@@ -1,4 +1,4 @@
-1745
+1744
 qstr_Breaking_camp... Breaking_camp...
 qstr_Removing_disguise... Removing_disguise...
 qstr_{s17}_has_{reg17}_de {s17}_has_{reg17}_denars
@@ -1255,9 +1255,11 @@ qstr_Equipment_pool: Equipment_pool:
 qstr_{s0}^{reg0} {s0}^{reg0}
 qstr_Level:_{reg0} Level:_{reg0}
 qstr_Health:_{reg0} Health:_{reg0}
+qstr__CHEAT__Hire_10 (CHEAT)_Hire_10
 qstr_Close Close
 qstr_Closing_troop_tree Closing_troop_tree
 qstr_No_report_launch No_report_launch
+qstr_10_{s0}_were_added_t 10_{s0}_were_added_to_your_party.
 qstr_Plan_Deployment Plan_Deployment
 qstr_You_will_have_{reg60 You_will_have_{reg60}_troops_available_at_the_battle's_start
 qstr_Troop Troop
@@ -1723,6 +1725,7 @@ qstr_As_a_bard_you_will_ As_a_bard,_you_will_be_allowed_some_personal_possession
 qstr_10_Wardens_of_the_No 10_Wardens_of_the_North_were_added_to_your_party.
 qstr_5_Khergit_Veteran_Ho 5_Khergit_Veteran_Horse_Archers_were_added_to_your_party.
 qstr_10_Syndicate_Recruit 10_Syndicate_Recruits_were_added_to_your_party.
+qstr_10_Northern_Recruits 10_Northern_Recruits_were_added_to_your_party.
 qstr_5_syndicate_shooter_ 5_syndicate_shooter_were_added_to_your_party.
 qstr_5_Syndicate_Praetori 5_Syndicate_Praetorians_were_added_to_your_party.
 qstr_5_Syndicate_Cavalry_ 5_Syndicate_Cavalry_were_added_to_your_party.
@@ -1740,7 +1743,3 @@ qstr_DEBUG__TPE_:_{s1}_pla DEBUG_(TPE):_{s1}_placed_in_slot_#{reg1}_for_tourname
 qstr_DEBUG__TPE_:_Discove DEBUG_(TPE):_Discovered_invalid_troop.__Replaced_with_{s1}_in_slot_{reg0}.
 qstr_DEBUG__TPE_:_Entry_# DEBUG_(TPE):_Entry_#{reg2}_/_Team_#{reg1}_=_{s1}
 qstr_Quest_ended_due_to_t Quest_ended_due_to_tournament_system_quests_being_disabled.
-qstr_10_Northern_Recruits 10_Northern_Recruits_were_added_to_your_party.
-qstr__Cheat__Hire_10 (Cheat)_Hire_10
-qstr__CHEAT__Hire_10 (CHEAT)_Hire_10
-qstr_10_{s0}_were_added_t 10_{s0}_were_added_to_your_party.
