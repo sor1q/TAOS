@@ -1461,3 +1461,4 @@ g_presentation_obj_22
 g_presentation_obj_17
 replay_battle_active
 replay_battle_copy_party
+prsnt_troop_tree_cheat_hire

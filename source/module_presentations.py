@@ -446,9 +446,17 @@ troop_tree_presentations = [
                             (try_end),
                         (try_end),
                     (try_end),
+                    (try_begin), #Cheat Hire button
+                        (gt, "$cheat_menu", 0),
+                        (create_game_button_overlay,"$prsnt_troop_tree_cheat_hire","@(CHEAT) Hire 10"),
+                        (position_set_x,pos0,troop_tree_screen_edge_l+troop_tree_draw_area_wdth+troop_tree_gap_to_details+troop_tree_troop_details_wdth/2+troop_tree_inv_slots_realign/2 - 1800), #centered to inventory slots (which is why troop_tree_inv_slots_realign is added)
+                        (val_add,":overlay_y",troop_tree_screen_edge_d+troop_tree_close_button_hght), #half of unused height + originally intended position
+                        (position_set_y,pos0,troop_tree_screen_edge_d),
+                        (overlay_set_position,"$prsnt_troop_tree_cheat_hire",pos0),
+                    (try_end),
                     (try_begin), #close button
                         (create_game_button_overlay,"$prsnt_troop_tree_close","@Close"),
-                        (position_set_x,pos0,troop_tree_screen_edge_l+troop_tree_draw_area_wdth+troop_tree_gap_to_details+troop_tree_troop_details_wdth/2+troop_tree_inv_slots_realign/2), #centered to inventory slots (which is why troop_tree_inv_slots_realign is added)
+                        (position_set_x,pos0,troop_tree_screen_edge_l+troop_tree_draw_area_wdth+troop_tree_gap_to_details+troop_tree_troop_details_wdth/2+troop_tree_inv_slots_realign/2 ), #centered to inventory slots (which is why troop_tree_inv_slots_realign is added)
                         (val_add,":overlay_y",troop_tree_screen_edge_d+troop_tree_close_button_hght), #half of unused height + originally intended position
                         (position_set_y,pos0,troop_tree_screen_edge_d),
                         (overlay_set_position,"$prsnt_troop_tree_close",pos0),
@@ -516,8 +524,6 @@ troop_tree_presentations = [
                       (presentation_set_duration, 0),
                       (start_presentation,"prsnt_rndl_troop_tree"), 
                     
-         
-
                     (else_try), #close button
                         (eq,":overlay","$prsnt_troop_tree_close"),
                         (display_message, "@Closing troop tree"),
@@ -531,7 +537,12 @@ troop_tree_presentations = [
                         (display_message, "@No report launch"),
                           (close_item_details), #close whatever might be open (although in this case it's highly unlikely anything would be open)
                           (start_presentation,"prsnt_rndl_troop_tree_button"), #show troop tree button
-                        (try_end),
+                        (try_end),                    
+                    (else_try),
+                      (eq,":overlay","$prsnt_troop_tree_cheat_hire"),
+                      (str_store_troop_name_plural, s0, "$troop_tree_root_troop"),
+                      (display_message, "@10 {s0} were added to your party."),
+                      (party_add_members, "p_main_party", "$troop_tree_root_troop", 10),  
                     (else_try), #troop pic buttons (make sure this is the last else)
                         (troop_get_slot,":slots_end","trp_temp_array_b",0),
                         (try_for_range,":slot",1,":slots_end"),

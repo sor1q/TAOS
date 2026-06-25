@@ -1,4 +1,4 @@
-1742
+1745
 qstr_Breaking_camp... Breaking_camp...
 qstr_Removing_disguise... Removing_disguise...
 qstr_{s17}_has_{reg17}_de {s17}_has_{reg17}_denars
@@ -1741,3 +1741,6 @@ qstr_DEBUG__TPE_:_Discove DEBUG_(TPE):_Discovered_invalid_troop.__Replaced_with_
 qstr_DEBUG__TPE_:_Entry_# DEBUG_(TPE):_Entry_#{reg2}_/_Team_#{reg1}_=_{s1}
 qstr_Quest_ended_due_to_t Quest_ended_due_to_tournament_system_quests_being_disabled.
 qstr_10_Northern_Recruits 10_Northern_Recruits_were_added_to_your_party.
+qstr__Cheat__Hire_10 (Cheat)_Hire_10
+qstr__CHEAT__Hire_10 (CHEAT)_Hire_10
+qstr_10_{s0}_were_added_t 10_{s0}_were_added_to_your_party.
