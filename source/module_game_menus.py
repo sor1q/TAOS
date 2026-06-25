@@ -91,6 +91,12 @@ custom_menus = [
           (party_add_members, "p_main_party", "trp_syndicate_recruit", 10), 
         ] 
       ),
+    ("cheat_add_troop_khergit_horse_archer", [], "Add 10 Northern Recruits",
+        [
+          (display_message, "@10 Northern Recruits were added to your party."),
+          (party_add_members, "p_main_party", "trp_northern_recruit", 10), 
+        ] 
+      ),
     ("cheat_add_troop_khergit_horse_archer", [], "Add 5 syndicate_shooter", 
         [
           (display_message, "@5 syndicate_shooter were added to your party."),

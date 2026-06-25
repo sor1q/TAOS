@@ -150,6 +150,13 @@ custom_items = [
 ["sword_north_p", "Northern Steel", [("norman_sword",0),("scab_norman_sword", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
  650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
 
+["north_warden_axe", "Warden's Axe", [("new_axe",0),("new_axe", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
+
+["north_champion_axe", "Champion's Axe", [("first_axe",0),("first_axe", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 650 , weight(1.5)|difficulty(8)|spd_rtng(100) | weapon_length(115)|swing_damage(48 , cut) | thrust_damage(35 ,  pierce),imodbits_sword_high ],
+
+
 #Test Swords
 
 ["2scimitar_black2", "2scimitar_black2", [("2scimitar_black2",0),("2scimitar_black2_scab", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
@@ -239,12 +246,6 @@ custom_items = [
 ["langsax", "langsax", [("langsax",0),("langsax_scab", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
  650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
 
-["new_axe", "new_axe", [("new_axe",0),("new_axe", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
- 650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
-
-["first_axe", "first_axe", [("first_axe",0),("first_axe", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
- 650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
-
 ["assassins_sword", "assassins_sword", [("assassins_sword",0),("assassins_sword_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
  650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
 
@@ -269,6 +270,12 @@ custom_items = [
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
 
 ["armor_infantry_syndicate_4", "Black Plate T4", [("xiadi_mail_and_plate_black",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+
+["north_armor", "north_armor", [("north_armor",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+
+["north_armor_t4", "north_armor_t4", [("north_armor_t4",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
 
 
@@ -580,8 +587,29 @@ custom_items = [
 ["wei_xiadi_rod_plate_boots", "Plate wei_xiadi_rod_plate_boots", [("wei_xiadi_rod_plate_boots",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature,0,
  1770 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(9) ,imodbits_plate ],
 
+["steel_boots_01", "steel_boots_01", [("steel_boots_01",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature,0,
+ 1770 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(9) ,imodbits_plate ],
+
+["wei_xiadi_rod_plate_boots", "Plate wei_xiadi_rod_plate_boots", [("wei_xiadi_rod_plate_boots",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature,0,
+ 1770 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(9) ,imodbits_plate ],
+
+["wei_xiadi_rod_plate_boots", "Plate wei_xiadi_rod_plate_boots", [("wei_xiadi_rod_plate_boots",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature,0,
+ 1770 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(9) ,imodbits_plate ],
+
+
 
 #Test boots end
+
+#Test Gloves
+
+["steel_gauntlets_L","steel_gauntlets_L", [("steel_gauntlets_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
+
+["steel_mittens_L","steel_mittens_L", [("steel_mittens_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
+
+
+#Test Gloves end
 
 #Helmets 
 
@@ -599,6 +627,13 @@ custom_items = [
 
 ["helmet_infantry_syndicate_4", "Northern Warrior Helmet", [("Helmet_B",0)], itp_merchandise| itp_type_head_armor|itp_fit_to_head ,0, 240 ,
  weight(2)|abundance(100)|head_armor(34)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
+
+["north_wolf_helmet", "Northern Clan Helmet", [("north_wolf_helmet",0)], itp_merchandise| itp_type_head_armor|itp_fit_to_head ,0, 240 ,
+ weight(2)|abundance(100)|head_armor(34)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
+
+["north_champion_helmet", "Champion's Helmet", [("north_champion_helmet",0)], itp_merchandise| itp_type_head_armor ,0, 880 , 
+ weight(2.25)|abundance(100)|head_armor(48)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
+
 
 
 #Test Helmets
@@ -862,10 +897,31 @@ custom_items = [
  1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
 
 
-["frenchpepperpot", "frenchpepperpot", [("frenchpepperpot",0)], itp_type_head_armor |itp_merchandise   ,0, 
+["sallet_06", "sallet_06", [("sallet_06",0)], itp_type_head_armor |itp_merchandise   ,0, 
  1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
 
-["frenchpepperpot", "frenchpepperpot", [("frenchpepperpot",0)], itp_type_head_armor |itp_merchandise   ,0, 
+["sallet_01", "sallet_01", [("sallet_01",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+
+["sallet_02", "sallet_02", [("sallet_02",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+
+["sallet_03", "sallet_03", [("sallet_03",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+
+["sallet_04", "sallet_04", [("sallet_04",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+
+["sallet_05", "sallet_05", [("sallet_05",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+
+["eirven_helmet", "eirven_helmet", [("eirven_helmet",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+
+["mask_2", "mask_2", [("mask_2",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+
+["mask_2", "mask_2", [("mask_2",0)], itp_type_head_armor |itp_merchandise   ,0, 
  1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
 
 

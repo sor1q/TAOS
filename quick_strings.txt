@@ -1,4 +1,4 @@
-1741
+1742
 qstr_Breaking_camp... Breaking_camp...
 qstr_Removing_disguise... Removing_disguise...
 qstr_{s17}_has_{reg17}_de {s17}_has_{reg17}_denars
@@ -1722,6 +1722,7 @@ qstr_As_a_merchant_you_w As_a_merchant,_you_will_be_able_to_bring_any_assortment
 qstr_As_a_bard_you_will_ As_a_bard,_you_will_be_allowed_some_personal_possessions_and_your_instrument.
 qstr_10_Wardens_of_the_No 10_Wardens_of_the_North_were_added_to_your_party.
 qstr_5_Khergit_Veteran_Ho 5_Khergit_Veteran_Horse_Archers_were_added_to_your_party.
+qstr_10_Syndicate_Recruit 10_Syndicate_Recruits_were_added_to_your_party.
 qstr_5_syndicate_shooter_ 5_syndicate_shooter_were_added_to_your_party.
 qstr_5_Syndicate_Praetori 5_Syndicate_Praetorians_were_added_to_your_party.
 qstr_5_Syndicate_Cavalry_ 5_Syndicate_Cavalry_were_added_to_your_party.
@@ -1739,4 +1740,4 @@ qstr_DEBUG__TPE_:_{s1}_pla DEBUG_(TPE):_{s1}_placed_in_slot_#{reg1}_for_tourname
 qstr_DEBUG__TPE_:_Discove DEBUG_(TPE):_Discovered_invalid_troop.__Replaced_with_{s1}_in_slot_{reg0}.
 qstr_DEBUG__TPE_:_Entry_# DEBUG_(TPE):_Entry_#{reg2}_/_Team_#{reg1}_=_{s1}
 qstr_Quest_ended_due_to_t Quest_ended_due_to_tournament_system_quests_being_disabled.
-qstr_10_Syndicate_Recruit 10_Syndicate_Recruits_were_added_to_your_party.
+qstr_10_Northern_Recruits 10_Northern_Recruits_were_added_to_your_party.

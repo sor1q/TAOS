@@ -1,5 +1,5 @@
 itemsfile version 3
-928
+944
  itm_no_item INVALID_ITEM INVALID_ITEM 1  invalid_item 0  12582914 9223388529554358287 3 0 1.500000 100 0 0 0 0 0 103 0 90 0 522 528
  0
 0
@@ -2397,6 +2397,14 @@ itemsfile version 3
  0
 0
 
+ itm_north_warden_axe Warden's_Axe Warden's_Axe 2  new_axe 0  new_axe 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ 0
+0
+
+ itm_north_champion_axe Champion's_Axe Champion's_Axe 2  first_axe 0  first_axe 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 8 0 100 0 115 0 291 48
+ 0
+0
+
  itm_2scimitar_black2 2scimitar_black2 2scimitar_black2 2  2scimitar_black2 0  2scimitar_black2_scab 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
  0
 0
@@ -2513,14 +2521,6 @@ itemsfile version 3
  0
 0
 
- itm_new_axe new_axe new_axe 2  new_axe 0  new_axe 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
- 0
-0
-
- itm_first_axe first_axe first_axe 2  first_axe 0  first_axe 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
- 0
-0
-
  itm_assassins_sword assassins_sword assassins_sword 2  assassins_sword 0  assassins_sword_scabbard 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
  0
 0
@@ -2546,6 +2546,14 @@ itemsfile version 3
 0
 
  itm_armor_infantry_syndicate_4 Black_Plate_T4 Black_Plate_T4 1  xiadi_mail_and_plate_black 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_armor north_armor north_armor 1  north_armor 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_armor_t4 north_armor_t4 north_armor_t4 1  north_armor_t4 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
  0
 0
 
@@ -2945,6 +2953,26 @@ itemsfile version 3
  0
 0
 
+ itm_steel_boots_01 steel_boots_01 steel_boots_01 1  steel_boots_01 0  69390 0 1770 704643238 3.500000 100 0 0 33 9 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_rod_plate_boots Plate_wei_xiadi_rod_plate_boots Plate_wei_xiadi_rod_plate_boots 1  wei_xiadi_rod_plate_boots 0  69390 0 1770 704643238 3.500000 100 0 0 33 9 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_wei_xiadi_rod_plate_boots Plate_wei_xiadi_rod_plate_boots Plate_wei_xiadi_rod_plate_boots 1  wei_xiadi_rod_plate_boots 0  69390 0 1770 704643238 3.500000 100 0 0 33 9 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_steel_gauntlets_L steel_gauntlets_L steel_gauntlets_L 1  steel_gauntlets_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_steel_mittens_L steel_mittens_L steel_mittens_L 1  steel_mittens_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
+ 0
+0
+
  itm_wardens_helmet Warden's_Helmet Warden's_Helmet 1  sorry_im_berserk_helm_inventory 0  65548 0 3200 123731968 2.000000 100 62 2 0 0 0 0 0 0 0 0 0
  0
 0
@@ -2962,6 +2990,14 @@ itemsfile version 3
 0
 
  itm_helmet_infantry_syndicate_4 Northern_Warrior_Helmet Northern_Warrior_Helmet 1  Helmet_B 0  1073807372 0 240 704643238 2.000000 100 34 0 0 7 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_wolf_helmet Northern_Clan_Helmet Northern_Clan_Helmet 1  north_wolf_helmet 0  1073807372 0 240 704643238 2.000000 100 34 0 0 7 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_champion_helmet Champion's_Helmet Champion's_Helmet 1  north_champion_helmet 0  65548 0 880 704643238 2.250000 100 48 0 0 7 0 0 0 0 0 0 0
  0
 0
 
@@ -3309,11 +3345,39 @@ itemsfile version 3
  0
 0
 
- itm_frenchpepperpot frenchpepperpot frenchpepperpot 1  frenchpepperpot 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ itm_sallet_06 sallet_06 sallet_06 1  sallet_06 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
  0
 0
 
- itm_frenchpepperpot frenchpepperpot frenchpepperpot 1  frenchpepperpot 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ itm_sallet_01 sallet_01 sallet_01 1  sallet_01 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_sallet_02 sallet_02 sallet_02 1  sallet_02 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_sallet_03 sallet_03 sallet_03 1  sallet_03 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_sallet_04 sallet_04 sallet_04 1  sallet_04 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_sallet_05 sallet_05 sallet_05 1  sallet_05 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_eirven_helmet eirven_helmet eirven_helmet 1  eirven_helmet 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_mask_2 mask_2 mask_2 1  mask_2 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_mask_2 mask_2 mask_2 1  mask_2 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
  0
 0
 

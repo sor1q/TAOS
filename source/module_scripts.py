@@ -216,7 +216,7 @@ autoresolver_scripts = [
     (val_max, ":avg_prof", ":prof_cross"),
     (val_max, ":avg_prof", ":prof_throw"),
     
-    (store_div, ":survival_bonus", ":avg_prof", 10),
+    (store_div, ":survival_bonus", ":avg_prof", 25),
 
     
     (val_add, ":survival_bonus", 100),
@@ -226,7 +226,7 @@ autoresolver_scripts = [
     (try_begin),
       (gt, ":melee_damage_max", 0),
       (store_skill_level, ":skill", "skl_power_strike", ":troop"),
-      (store_mul, ":mult", ":skill", 25),
+      (store_mul, ":mult", ":skill", 15),
       (assign, ":prof", 0),
       (store_proficiency_level, ":prof_one", ":troop", wpt_one_handed_weapon),
       (val_max, ":prof", ":prof_one"),
@@ -247,7 +247,7 @@ autoresolver_scripts = [
     (try_begin),
       (gt, ":bow_damage_max", 0),
       (store_skill_level, ":skill", "skl_power_draw", ":troop"),
-      (store_mul, ":mult", ":skill", 25),
+      (store_mul, ":mult", ":skill", 15),
       (store_proficiency_level, ":prof", ":troop", wpt_archery),
       (store_mul, ":prof_mult", ":prof", 50),
       (val_div, ":prof_mult", 100),
@@ -276,7 +276,7 @@ autoresolver_scripts = [
     (try_begin),
       (gt, ":thrown_damage_max", 0),
       (store_skill_level, ":skill", "skl_power_throw", ":troop"),
-      (store_mul, ":mult", ":skill", 25),
+      (store_mul, ":mult", ":skill", 15),
       (store_proficiency_level, ":prof", ":troop", wpt_throwing),
       (store_mul, ":prof_mult", ":prof", 50),
       (val_div, ":prof_mult", 100),
@@ -521,8 +521,7 @@ autoresolver_scripts = [
     (store_script_param, ":damage", 2),
     (store_script_param, ":casualties_party", 3),
     (party_clear, ":casualties_party"),
-    
-    (assign, ":absorption_coeff", 170),
+  
     
     (assign, ":total_num", 0),
     (party_get_num_attached_parties, ":num_attached", ":root_party"),
@@ -618,9 +617,6 @@ autoresolver_scripts = [
           (val_add, ":stack_damage", ":overflow_damage"),
           (assign, ":overflow_damage", 0),
           (troop_get_slot, ":troop_ehp", ":troop", slot_troop_ehp),
-          (store_div, ":armor_absorption", ":troop_ehp", ":absorption_coeff"),
-          (val_max, ":armor_absorption", 1),
-          (val_div, ":stack_damage", ":armor_absorption"),
           (store_mul, ":total_ehp", ":troop_ehp", ":size"),
           (store_sub, ":damaged_ehp", ":troop_ehp", ":ehp"),
           (val_sub, ":total_ehp", ":damaged_ehp"),
