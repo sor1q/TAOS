@@ -9,6 +9,9 @@ from module_constants import *
 from header_mission_templates import *
 from header_scenes import *
 
+
+
+
 ## Prebattle Orders & Deployment Begin
 init_player_global_variables = ( #in pbod_common_triggers and custom_camera_triggers
   0, 0, ti_once, [(get_player_agent_no, "$fplayer_agent_no"),(ge, "$fplayer_agent_no", 0)], [
@@ -1189,6 +1192,12 @@ field_ai_triggers = [
    # For mounted lancers and foot spears, affect their Decision on weapon use,
    # based on if closest 3 enemies are within 5 meters and if currently attacking/defending.
    [  	   
+    (try_begin),
+    	(is_between, "$g_encountered_party", walled_centers_begin, walled_centers_end),
+		(assign, ":is_walled_center_combat", 1),
+	(else_try),
+		(assign, ":is_walled_center_combat", 0),
+    (try_end),
 	(try_for_agents, ":agent"), # Run through all active NPCs on the battle field.
      # Hasn't been defeated.
         (agent_is_alive, ":agent"),
@@ -1301,6 +1310,7 @@ field_ai_triggers = [
             (assign, ":closest_dist", reg1),
 			(agent_get_wielded_item, ":wielded", ":agent", 0), # Get wielded
             (try_begin), #Weapon Use
+				(eq, ":is_walled_center_combat", 1),
                 (this_or_next|lt, ":closest_dist", 300), # Closest enemy within 3 meters?
                 (lt, ":avg_dist", 700), # Are the 3 enemies within an average of 7 meters?
                 (agent_get_combat_state, ":combat", ":agent"),
@@ -1308,7 +1318,8 @@ field_ai_triggers = [
                 (eq, ":wielded", ":spear"), # Still using spear?
                 (call_script, "script_weapon_use_backup_weapon", ":agent", 1), # Then equip a close weapon
             (else_try),
-                (neq, ":wielded", ":spear"), # Enemies farther than 7 meters and/or not fighting, and not using spear?
+                (this_or_next|neq, ":wielded", ":spear"), # Enemies farther than 7 meters and/or not fighting, and not using spear?
+                (neq, ":is_walled_center_combat", 1),
                 (agent_set_wielded_item, ":agent", ":spear"), # Then equip it!                
             (try_end),
         (try_end),
@@ -1806,7 +1817,7 @@ field_ai_triggers = [
 		(try_end), #Team Loop
     ]),
       
-  (0.5, 0, 0, [(call_script, "script_cf_order_active_check", slot_team_d0_order_skirmish)], [(call_script, "script_order_skirmish_skirmish")]), 
+  (0.5, 0, 0, [(call_script, "script_cf_order_active_check", slot_team_d0_order_skirmish)],[(call_script, "script_order_skirmish_skirmish")]), 
  
   (1, 0, 0, [(call_script, "script_cf_order_active_check", slot_team_d0_order_volley)], [
 		(try_begin), #Disable Volley @ end of battle 

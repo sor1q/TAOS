@@ -1,4 +1,4 @@
-1744
+1752
 qstr_Breaking_camp... Breaking_camp...
 qstr_Removing_disguise... Removing_disguise...
 qstr_{s17}_has_{reg17}_de {s17}_has_{reg17}_denars
@@ -1743,3 +1743,11 @@ qstr_DEBUG__TPE_:_{s1}_pla DEBUG_(TPE):_{s1}_placed_in_slot_#{reg1}_for_tourname
 qstr_DEBUG__TPE_:_Discove DEBUG_(TPE):_Discovered_invalid_troop.__Replaced_with_{s1}_in_slot_{reg0}.
 qstr_DEBUG__TPE_:_Entry_# DEBUG_(TPE):_Entry_#{reg2}_/_Team_#{reg1}_=_{s1}
 qstr_Quest_ended_due_to_t Quest_ended_due_to_tournament_system_quests_being_disabled.
+qstr_Agent_{s0}_is_steppi Agent_{s0}_is_stepping_back!
+qstr_closest_=_{reg1} closest_=_{reg1}
+qstr_Agent_{s0}_s_pos_was Agent_{s0}'s_pos_was_{pos2}
+qstr_Agent_{s0}_is_steppin Agent_{s0}_is_stepping_back_to_{pos2}
+qstr_Agent_{s0}:_x:_{reg1 Agent_{s0}:_x:_{reg10},_y:_{reg11}
+qstr_I_am_going_BACK! I_am_going_BACK!
+qstr_CABA_ORDERS CABA_ORDERS
+qstr_EQUIPING EQUIPING

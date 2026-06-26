@@ -59,6 +59,7 @@ def write_key_config():
    return global_key[:]      
 #-- Dunde's Key Config END
 
+
 ## Prebattle Orders & Deployment Begin
 scripts = [
   # script_prebattle_order_update_text_slot

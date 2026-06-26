@@ -49,7 +49,16 @@ af_castle_lord = af_override_horse | af_override_weapons| af_require_civilian
 # HEADING
 # 001 - Main mission templates
 # 002 - Unique lords abilites
+# 003 - Custom battle templates
 
+# 003 - Custom battle templates
+custom_battle_templates = [
+	(0.1, 0, 0,
+	[],
+	[
+		(call_script, "script_ai_spearmen_keep_distance"),
+	]),
+]
 
 # 002 - Unique lords abilites
 unique_lords_abilities = [
@@ -3870,7 +3879,7 @@ mission_templates = [
 
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers + dplmc_horse_cull + unique_lords_abilities
+    + dplmc_battle_mode_triggers + dplmc_horse_cull + unique_lords_abilities + custom_battle_templates
     #SB : horse cull
     ##diplomacy end
   ),
@@ -4114,16 +4123,6 @@ mission_templates = [
       common_battle_order_panel,
       common_battle_order_panel_tick,
 
-##      #AI Tiggers
-##      (0, 0, ti_once, [
-##          (store_mission_timer_a,reg(1)),(ge,reg(1),4),
-##          (call_script, "script_select_battle_tactic"),
-##          (call_script, "script_battle_tactic_init"),
-##          ], []),
-##      (1, 0, 0, [
-##          (store_mission_timer_a,reg(1)),(ge,reg(1),4),
-##          (call_script, "script_battle_tactic_apply"),
-##          ], []),
     ]
     ##diplomacy begin
     + dplmc_battle_mode_triggers + dplmc_horse_cull, #SB : horse cull
@@ -4131,160 +4130,6 @@ mission_templates = [
   ),
 
 
-
-##  (
-##    "charge_with_allies",mtf_battle_mode,charge_with_ally,
-##    "Taking a handful of fighters with you, you set off to patrol the area.",
-##    [
-##     (1,mtef_defenders,0,0|aif_start_alarmed,8,[]),
-##     (0,mtef_defenders,0,0|aif_start_alarmed,0,[]),
-##     (4,mtef_attackers,0,aif_start_alarmed,8,[]),
-##     (4,mtef_attackers,0,aif_start_alarmed,0,[]),
-##     ],
-##    [
-##      (ti_tab_pressed, 0, 0, [],
-##       [
-##           (try_begin),
-##             (eq, "$battle_won", 1),
-##             (finish_mission,0),
-##           (else_try),
-##             (call_script, "script_cf_check_enemies_nearby"),
-##             (question_box,"str_do_you_want_to_retreat"),
-##           (else_try),
-##             (display_message,"str_can_not_retreat"),
-##           (try_end),
-##        ]),
-##      (ti_question_answered, 0, 0, [],
-##       [(store_trigger_param_1,":answer"),
-##        (eq,":answer",0),
-##        (assign, "$pin_player_fallen", 0),
-##        (str_store_string, s5, "str_retreat"),
-##        (call_script, "script_simulate_retreat", 10, 30),
-##        (finish_mission,0),]),
-##
-##      (0, 0, ti_once, [], [(assign,"$battle_won",0),(assign,"$defender_reinforcement_stage",0),(assign,"$attacker_reinforcement_stage",0)]),
-##      (1, 0, 5, [(lt,"$defender_reinforcement_stage",2),(store_mission_timer_a,reg(1)),(ge,reg(1),10),(store_defender_count,reg(2)),(lt,reg(2),3)],
-##           [(add_reinforcements_to_entry,0,4),(val_add,"$defender_reinforcement_stage",1)]),
-##      (1, 0, 5, [(lt,"$attacker_reinforcement_stage",2),(store_mission_timer_a,reg(1)),(ge,reg(1),10),(store_attacker_count,reg(2)),(lt,reg(2),3)],
-##           [(add_reinforcements_to_entry,3,4),(val_add,"$attacker_reinforcement_stage",1)]),
-##      (1, 60, ti_once, [(store_mission_timer_a,reg(1)),
-##                        (ge,reg(1),10),(all_enemies_defeated,2),
-##                        (neg|main_hero_fallen,0),
-##                        (set_mission_result,1),
-##                        (assign, "$g_battle_result", 1),
-##                        (display_message,"str_msg_battle_won"),
-##                        (assign,"$battle_won",1)],
-##           [(finish_mission,1)]),
-##      (10, 0, 0, [], [(eq,"$battle_won",1),(display_message,"str_msg_battle_won")]),
-##
-##      (1, 4, ti_once, [(main_hero_fallen)],
-##          [
-##              (assign, "$pin_player_fallen", 1),
-##              (str_store_string, s5, "str_retreat"),
-##              (call_script, "script_simulate_retreat", 20, 30),
-##              (assign, "$g_battle_result", -1),
-##              (set_mission_result,-1),(finish_mission,0)]),
-##      (ti_inventory_key_pressed, 0, 0, [(display_message,"str_use_baggage_for_inventory")], []),
-##    ],
-##  ),
-
-##  (
-##    "charge_with_allies_old",mtf_battle_mode,charge_with_ally,
-##    "Taking a handful of fighters with you, you set off to patrol the area.",
-##    [(1,mtef_leader_only,0,0,1,[]),
-##     (1,mtef_no_leader,0,0|aif_start_alarmed,2,[]),
-##     (1,mtef_reverse_order|mtef_ally_party,0,0|aif_start_alarmed,3,[]),
-##     (0,mtef_no_leader,0,0|aif_start_alarmed,0,[]),
-##     (0,mtef_reverse_order|mtef_ally_party,0,0|aif_start_alarmed,0,[]),
-##     (3,mtef_reverse_order|mtef_enemy_party,0,aif_start_alarmed,6,[]),
-##     (4,mtef_reverse_order|mtef_enemy_party,0,aif_start_alarmed,0,[])],
-##    [
-##      (ti_tab_pressed, 0, 0, [],
-##       [
-##           (try_begin),
-##             (eq, "$battle_won", 1),
-##             (finish_mission,0),
-##           (else_try),
-##             (call_script, "script_cf_check_enemies_nearby"),
-##             (question_box,"str_do_you_want_to_retreat"),
-##           (else_try),
-##             (display_message,"str_can_not_retreat"),
-##           (try_end),
-##        ]),
-##      (ti_question_answered, 0, 0, [],
-##       [(store_trigger_param_1,":answer"),(eq,":answer",0),(finish_mission,0),]),
-##
-##      (0, 0, ti_once, [], [(assign,"$battle_won",0),(assign,"$enemy_reinforcement_stage",0),(assign,"$friend_reinforcement_stage",0),(assign,"$ally_reinforcement_stage",0)]),
-##
-##      (1, 0, 5, [(lt,"$enemy_reinforcement_stage",2),(store_mission_timer_a,reg(1)),(ge,reg(1),10),(store_enemy_count,reg(2)),(lt,reg(2),3)],
-##       [(add_reinforcements_to_entry,6,3),(val_add,"$enemy_reinforcement_stage",1)]),
-##      (1, 0, 5, [(lt,"$friend_reinforcement_stage",2),(store_mission_timer_a,reg(1)),(ge,reg(1),10),(store_friend_count,reg(2)),(lt,reg(2),2)],
-##       [(add_reinforcements_to_entry,3,1),(val_add,"$friend_reinforcement_stage",1)]),
-##      (1, 0, 5, [(lt,"$ally_reinforcement_stage",2),(store_mission_timer_a,reg(1)),(ge,reg(1),10),(store_ally_count,reg(2)),  (lt,reg(2),2)],
-##       [(add_reinforcements_to_entry,4,2),(val_add,"$ally_reinforcement_stage",1)]),
-##      (1, 60, ti_once, [(store_mission_timer_a,reg(1)),
-##                        (ge,reg(1),10),
-##                        (all_enemies_defeated,2),
-##                        (neg|main_hero_fallen,0),
-##                        (set_mission_result,1),
-##                        (assign, "$g_battle_result", 1),
-##                        (display_message,"str_msg_battle_won"),
-##                        (assign,"$battle_won",1),
-##                        ],
-##       [(finish_mission,1)]),
-##      (10, 0, 0, [], [(eq,"$battle_won",1),(display_message,"str_msg_battle_won")]),
-##      (1, 4, ti_once, [(main_hero_fallen,0)],
-##       [(set_mission_result,-1),(finish_mission,1)]),
-##      (ti_inventory_key_pressed, 0, 0, [(display_message,"str_use_baggage_for_inventory")], []),
-##    ],
-##  ),
-##  (
-##    "lead_charge_old",mtf_battle_mode,charge,
-##    "You lead your men to battle.",
-##    [
-##     (1,mtef_leader_only,0,0,1,[]),
-##     (1,mtef_no_leader,0,0|aif_start_alarmed,5,[]),
-##     (0,mtef_no_leader,0,0|aif_start_alarmed,0,[]),
-##     (3,mtef_enemy_party|mtef_reverse_order,0,aif_start_alarmed,6,[]),
-##     (4,mtef_enemy_party|mtef_reverse_order,0,aif_start_alarmed,0,[]),
-##     ],
-##    [
-##      (ti_tab_pressed, 0, 0, [],
-##       [
-##           (try_begin),
-##             (eq, "$battle_won", 1),
-##             (finish_mission,0),
-##           (else_try),
-##             (call_script, "script_cf_check_enemies_nearby"),
-##             (question_box,"str_do_you_want_to_retreat"),
-##           (else_try),
-##             (display_message,"str_can_not_retreat"),
-##           (try_end),
-##        ]),
-##      (ti_question_answered, 0, 0, [],
-##       [(store_trigger_param_1,":answer"),(eq,":answer",0),(finish_mission,0),]),
-##
-##      (0, 0, ti_once, [], [(assign,"$battle_won",0),(assign,"$enemy_reinforcement_stage",0),(assign,"$friend_reinforcement_stage",0)]),
-##      (1, 0, 5, [(lt,"$enemy_reinforcement_stage",2),(store_mission_timer_a,reg(1)),(ge,reg(1),10),(store_enemy_count,reg(2)),(lt,reg(2),3)],
-##           [(add_reinforcements_to_entry,4,3),(val_add,"$enemy_reinforcement_stage",1)]),
-##      (1, 0, 5, [(lt,"$friend_reinforcement_stage",2),(store_mission_timer_a,reg(1)),(ge,reg(1),10),(store_friend_count,reg(2)),(lt,reg(2),3)],
-##           [(add_reinforcements_to_entry,2,3),(val_add,"$friend_reinforcement_stage",1)]),
-##      (1, 60, ti_once, [(store_mission_timer_a,reg(1)),
-##                        (ge,reg(1),10),(all_enemies_defeated,2),
-##                        (neg|main_hero_fallen,0),
-##                        (set_mission_result,1),
-##                        (assign, "$g_battle_result", 1),
-##                        (display_message,"str_msg_battle_won"),
-##                        (assign,"$battle_won",1)],
-##           [(finish_mission,1)]),
-##      (10, 0, 0, [], [(eq,"$battle_won",1),(display_message,"str_msg_battle_won")]),
-##      (1, 4, ti_once, [(main_hero_fallen)],
-##          [
-##              (assign, "$g_battle_result", -1),
-##              (set_mission_result,-1),(finish_mission,1)]),
-##      (ti_inventory_key_pressed, 0, 0, [(display_message,"str_use_baggage_for_inventory")], []),
-##    ],
-##  ),
 
 
 
@@ -4702,7 +4547,7 @@ mission_templates = [
       common_siege_assign_men_to_belfry,
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers,
+    + dplmc_battle_mode_triggers
     ##diplomacy end
   ),
 
