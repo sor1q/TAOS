@@ -30,6 +30,10 @@ slot_lord_init_faction = 602 #Stores an initial lord's faction
 # 004 - Custom constants
 north_debuff_value = 15
 
+# Troop Exchange constants
+slot_last_requested_troop = 11 #related to slot_adv_transfer_mode 12
+slot_adv_transfer_mode = 12 #10 for prisoners, 12 for fiefs
+
 # Cheats for Party
 slot_troop_camera_target = 542
 

@@ -140,6 +140,7 @@ tableaus = [
        (position_set_z, pos1, 200),
        (cur_tableau_add_tableau_mesh, "tableau_troop_party_alpha_mask", ":troop_no", pos1, 0, 0),
        (position_set_z, pos1, 300),
+
        
        #MOD BEGIN - troop tree
             (store_div,"$party_window_selected_troop",":troop_no",2), #discard hide_weapons_flag data

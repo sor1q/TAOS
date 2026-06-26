@@ -386,7 +386,8 @@ troops = [
   
 #The North infantry (Spearmen)
   ["northern_guard", "Northern Guard", "Northern Guards", tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_shield|tf_guarantee_helmet, 0, 0, fac_kingdom_1,
-  [itm_pike, itm_tab_shield_heater_b],
+  [itm_bamboo_spear, itm_sarranid_axe_a, itm_north_shield,
+    itm_north_armor_t4,itm_splinted_leather_greaves, itm_north_veteran_helmet, itm_scale_gauntlets],
    str_20 | agi_18 | int_10 | cha_10 |level(30), wp_melee(200), 
    knows_common|knows_ironflesh_6|knows_power_strike_6|knows_shield_6|knows_athletics_5, swadian_face_young_1, swadian_face_old_2],
   ["northern_phalanx", "Northern Phalanx", "Northern Phalanxes", tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_shield|tf_guarantee_helmet|tf_guarantee_polearm, 0, 0, fac_kingdom_1,
@@ -2725,6 +2726,10 @@ troops = [
    def_attrib|agi_21|int_30|cha_21|level(25),wp(130),knows_common|knows_riding_7|knows_horse_archery_5|knows_leadership_7,swadian_face_young_1, swadian_face_old_2],
 # recruiter kit end
   ##diplomacy end
+  
+  # Troop Exchange temp
+  ["globals_troop", "globals_troop", "globals_troop", 0,0,0, tf_hero|fac_commoners,[],str_10|agi_10|int_10|cha_10|level(1),wp(1),knows_inventory_management_10, 0x000000000000710004820c24204c000200000000001d16100000000000000000, 0x000000003f00714049fefe393fffc7ff00000000001ef96f0000000000000000],
+  
   
   #bodysliding
   ["bodysliding_temp", "BODYSLIDING TEMP", "BODYSLIDING TEMP", 0,0,0, tf_hero|fac_kingdom_6,[],str_30|agi_14|int_8|cha_16|level(1),wp(1),knows_inventory_management_10, 0x000000000000710004820c24204c000200000000001d16100000000000000000, 0x000000003f00714049fefe393fffc7ff00000000001ef96f0000000000000000],

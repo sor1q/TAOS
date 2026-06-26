@@ -1192,6 +1192,7 @@ field_ai_triggers = [
    # For mounted lancers and foot spears, affect their Decision on weapon use,
    # based on if closest 3 enemies are within 5 meters and if currently attacking/defending.
    [  	   
+    #New AI for spearmen by SORIQ
     (try_begin),
     	(is_between, "$g_encountered_party", walled_centers_begin, walled_centers_end),
 		(assign, ":is_walled_center_combat", 1),
@@ -1310,6 +1311,7 @@ field_ai_triggers = [
             (assign, ":closest_dist", reg1),
 			(agent_get_wielded_item, ":wielded", ":agent", 0), # Get wielded
             (try_begin), #Weapon Use
+            	#New AI for spearmen by SORIQ	
 				(eq, ":is_walled_center_combat", 1),
                 (this_or_next|lt, ":closest_dist", 300), # Closest enemy within 3 meters?
                 (lt, ":avg_dist", 700), # Are the 3 enemies within an average of 7 meters?
@@ -1318,6 +1320,7 @@ field_ai_triggers = [
                 (eq, ":wielded", ":spear"), # Still using spear?
                 (call_script, "script_weapon_use_backup_weapon", ":agent", 1), # Then equip a close weapon
             (else_try),
+           		 #New AI for spearmen by SORIQ
                 (this_or_next|neq, ":wielded", ":spear"), # Enemies farther than 7 meters and/or not fighting, and not using spear?
                 (neq, ":is_walled_center_combat", 1),
                 (agent_set_wielded_item, ":agent", ":spear"), # Then equip it!                

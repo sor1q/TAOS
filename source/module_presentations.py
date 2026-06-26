@@ -30,6 +30,53 @@ from module_factions import *
 # 002 - Troop tree pres
 
 
+# troop_exchange_pres = [
+#   ("troop_exchange",0,0,
+#    [
+#     (ti_on_presentation_run, [
+#       (key_clicked, key_left_mouse_button),
+#       (mouse_get_position, pos2),
+#       (position_get_x,":pos_x",pos2),
+#       (position_get_y,":pos_y",pos2),
+#       (assign,reg1,":pos_x"),
+#       (assign,reg2,":pos_y"),
+#       (display_message,"@x: {reg1}, y: {reg2}"),
+#     ]),
+#     (ti_on_presentation_load,
+#       [
+#           (presentation_set_duration,0x7FFFFFFF),
+#           (set_fixed_point_multiplier,1000),
+#           (try_begin), #show troop exchange
+#               (create_game_button_overlay,"$prsnt_troop_exchage_get","@Get",tf_center_justify),
+#               (position_set_x,pos0,60), #roughly the same size as other buttons
+#               (position_set_y,pos0,32),
+#               (overlay_set_size,"$prsnt_troop_exchage_get",pos0),
+#               (position_set_x,pos0,607), 
+#               (position_set_y,pos0,162),
+#               (overlay_set_position,"$prsnt_troop_exchage_get",pos0),
+#               # (try_begin), #hide button if the tree is on
+#               #     (is_presentation_active,"prsnt_rndl_troop_tree"),
+#               #     (overlay_set_display,"$prsnt_troop_exchage_get",0),
+#               # (try_end),
+#           (try_end),
+#       ]
+#    ),
+#     (ti_on_presentation_event_state_change,
+#       [
+#           (store_trigger_param,":overlay",1),
+
+#           (try_begin),
+#               (eq,":overlay","$prsnt_troop_exchage_get"),
+#               (display_message, "@HI"),
+#               (call_script, "script_troop_exchange_get_rescued"),
+#               (change_screen_map),
+#               (jump_to_menu, "mnu_total_victory"),
+#           (try_end),
+#       ]
+#     ),
+#   ]),
+# ]
+
 # 002 - Troop tree pres
 troop_tree_presentations = [
     #MOD BEGIN - troop tree
@@ -430,20 +477,22 @@ troop_tree_presentations = [
                             (overlay_set_position,"$troop_tree_troop_details_container",pos2),
                         (try_end),
                         (try_begin), ## Choose faction button Soriq
-                        (set_container_overlay,-1),
-                            (position_set_x, pos1, 1400),
-                            (position_set_y, pos1, 6700),
-                            (create_combo_button_overlay, reg1),
-                            (assign, "$choose_faction_box", reg1),
-                            (overlay_set_position, "$choose_faction_box", pos1),
-                            (try_for_range, ":faction", kingdoms_begin, kingdoms_end),
-                              (try_begin),
-                                (eq, ":faction", kingdoms_begin),
-                                (continue_loop),
-                              (try_end),
-                              (str_store_faction_name, s1, ":faction"),
-                              (overlay_add_item, "$choose_faction_box", s1),
+                          (set_container_overlay,-1),
+                          (position_set_x, pos1, 1400),
+                          (position_set_y, pos1, 6700),
+                          (create_combo_button_overlay, reg1),
+                          (assign, "$choose_faction_box", reg1),
+                          (overlay_set_position, "$choose_faction_box", pos1),
+                          (try_for_range, ":faction", kingdoms_begin, kingdoms_end),
+                            (try_begin),
+                              (eq, ":faction", kingdoms_begin),
+                              (continue_loop),
                             (try_end),
+                            (str_store_faction_name, s1, ":faction"),
+                            (overlay_add_item, "$choose_faction_box", s1),
+                          (try_end),
+                          (ge, "$current_tree_id", 0),
+                          (overlay_set_val, "$choose_faction_box", "$current_tree_id"), 
                         (try_end),
                     (try_end),
                     (try_begin), #Cheat Hire button
@@ -519,10 +568,13 @@ troop_tree_presentations = [
                         (else_try),
                           (assign, "$troop_tree_root_troop", "trp_khergit_tribesman"), 
                         (try_end),
+                        
+                        (assign, "$current_tree_id", reg0),
 
                       (close_item_details),
                       (presentation_set_duration, 0),
-                      (start_presentation,"prsnt_rndl_troop_tree"), 
+                      (start_presentation,"prsnt_rndl_troop_tree"),
+                      
                     
                     (else_try), #close button
                         (eq,":overlay","$prsnt_troop_tree_close"),

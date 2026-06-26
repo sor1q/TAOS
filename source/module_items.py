@@ -882,9 +882,6 @@ custom_items = [
 ["helm23", "helm23", [("helm23",0)], itp_type_head_armor |itp_merchandise   ,0, 
  1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
 
-["helm24", "helm24", [("helm24",0)], itp_type_head_armor |itp_merchandise   ,0, 
- 1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
-
 ["helm27", "helm27", [("helm27",0)], itp_type_head_armor |itp_merchandise   ,0, 
  1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
 

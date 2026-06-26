@@ -1,4 +1,4 @@
-1752
+1755
 qstr_Breaking_camp... Breaking_camp...
 qstr_Removing_disguise... Removing_disguise...
 qstr_{s17}_has_{reg17}_de {s17}_has_{reg17}_denars
@@ -1751,3 +1751,6 @@ qstr_Agent_{s0}:_x:_{reg1 Agent_{s0}:_x:_{reg10},_y:_{reg11}
 qstr_I_am_going_BACK! I_am_going_BACK!
 qstr_CABA_ORDERS CABA_ORDERS
 qstr_EQUIPING EQUIPING
+qstr_x:_{reg1}_y:_{reg2} x:_{reg1},_y:_{reg2}
+qstr_Get Get
+qstr_HI HI

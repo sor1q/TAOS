@@ -56,6 +56,13 @@ triggers = [
     (call_script, "script_refresh_center_stables"),
                      ]),
   
+  
+  #Troop Exchange Mod
+  (0,0, ti_on_switch_to_map, [],
+    [
+      (troop_set_slot, "trp_globals_troop", slot_adv_transfer_mode, 0),
+    ]
+  ),
 
 
 #############
