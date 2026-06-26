@@ -648,7 +648,7 @@ custom_items = [
  weight(1)|abundance(100)|head_armor(14)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 
 ["north_helmet_spearman", "Northern Spearman Helmet", [("north_helmet_spearman",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
- weight(1)|abundance(100)|head_armor(14)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+ weight(1)|abundance(100)|head_armor(48)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 
 
 #Test Helmets  

@@ -618,50 +618,53 @@ custom_battle_ai_scripts = [
                                 
 	(set_fixed_point_multiplier, 100),	 
     (try_for_agents, ":agent"),
-        (agent_is_alive, ":agent"),
-        (agent_is_human, ":agent"),
-        (agent_is_non_player, ":agent"),
-		# (agent_slot_eq, ":agent", slot_agent_is_running_away, 0), #Is not routing or ordered to retreat
-		(agent_get_team, ":team", ":agent"),
-		(agent_get_division, ":class", ":agent"),
-		
-  		(agent_get_wielded_item, ":item", ":agent", 0),
-		(gt, ":item", 0),
-		(item_get_type, ":item_type", ":item"),
-		(eq, ":item_type", itp_type_polearm),
-		(item_has_capability, ":item", itc_staff),
-		
-		(agent_get_position, pos1, ":agent"),   
-         
-        (try_begin),           
-	        (assign, ":radius", 1000),
-			(convert_to_fixed_point, ":radius"), #converting it back (just in case the FPM is different for some reason
-			(call_script, "script_get_closest3_distance_of_enemies_at_pos1_with_radius", ":team", ":radius"), # Find distance of nearest 3 enemies
-            (assign, ":avg_dist", reg0),
-	        (assign, ":closest_dist", reg1),
-         
-            (item_get_weapon_length, ":len", ":item"),
-            (store_add, ":stepping_dist", ":len", 50),
-            (store_add, ":resume_dist", ":len", 20),
-			(store_sub, ":spear_dist", 0, ":len"),
-			(val_sub, ":spear_dist", 30),
-	        (try_begin),
-                    (eq, ":closest_dist", -1), 
-                    (agent_clear_scripted_mode, ":agent"),
-                (else_try),
-                    (lt, ":closest_dist", ":stepping_dist"),
-                    (agent_clear_scripted_mode, ":agent"),
-                    (agent_get_position, pos2, ":agent"),
-                    (position_move_y, pos2, ":spear_dist"),
-                    (display_message, "@I am going BACK!"),
-                    (agent_set_scripted_destination, ":agent", pos2, 0),   
-                (else_try),
-                	(gt, ":closest_dist", ":resume_dist"),
-                    (agent_clear_scripted_mode, ":agent"), 
-                    (agent_force_rethink, ":agent"),
-                (try_end),
-		(try_end), #Distance from edge
-	(try_end), #Agent loop
+      (agent_is_alive, ":agent"),
+      (agent_is_human, ":agent"),
+      (agent_is_non_player, ":agent"),
+      # (agent_slot_eq, ":agent", slot_agent_is_running_away, 0), #Is not routing or ordered to retreat
+      (agent_get_team, ":team", ":agent"),
+      (agent_get_division, ":class", ":agent"),
+      
+      (agent_get_horse, ":horse", ":agent"),
+      (le, ":horse", 0),
+      
+      (agent_get_wielded_item, ":item", ":agent", 0),
+      (gt, ":item", 0),
+      (item_get_type, ":item_type", ":item"),
+      (eq, ":item_type", itp_type_polearm),
+      (item_has_capability, ":item", itc_staff),
+      
+      (agent_get_position, pos1, ":agent"),   
+            
+          (try_begin),           
+            (assign, ":radius", 1000),
+        (convert_to_fixed_point, ":radius"), #converting it back (just in case the FPM is different for some reason
+        (call_script, "script_get_closest3_distance_of_enemies_at_pos1_with_radius", ":team", ":radius"), # Find distance of nearest 3 enemies
+              (assign, ":avg_dist", reg0),
+            (assign, ":closest_dist", reg1),
+            
+              (item_get_weapon_length, ":len", ":item"),
+              (store_add, ":stepping_dist", ":len", 50),
+              (store_add, ":resume_dist", ":len", 20),
+        (store_sub, ":spear_dist", 0, ":len"),
+        (val_sub, ":spear_dist", 30),
+            (try_begin),
+                      (eq, ":closest_dist", -1), 
+                      (agent_clear_scripted_mode, ":agent"),
+                  (else_try),
+                      (lt, ":closest_dist", ":stepping_dist"),
+                      (agent_clear_scripted_mode, ":agent"),
+                      (agent_get_position, pos2, ":agent"),
+                      (position_move_y, pos2, ":spear_dist"),
+                      (display_message, "@I am going BACK!"),
+                      (agent_set_scripted_destination, ":agent", pos2, 0),   
+                  (else_try),
+                    (gt, ":closest_dist", ":resume_dist"),
+                      (agent_clear_scripted_mode, ":agent"), 
+                      (agent_force_rethink, ":agent"),
+                  (try_end),
+      (try_end), #Distance from edge
+    (try_end), #Agent loop
     ]),
 ]
 

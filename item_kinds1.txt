@@ -1,5 +1,5 @@
 itemsfile version 3
-953
+952
  itm_no_item INVALID_ITEM INVALID_ITEM 1  invalid_item 0  12582914 9223388529554358287 3 0 1.500000 100 0 0 0 0 0 103 0 90 0 522 528
  0
 0
@@ -3021,7 +3021,7 @@ itemsfile version 3
  0
 0
 
- itm_north_helmet_spearman Northern_Spearman_Helmet Northern_Spearman_Helmet 1  north_helmet_spearman 0  536936460 0 14 123731968 1.000000 100 14 0 0 0 0 0 0 0 0 0 0
+ itm_north_helmet_spearman Northern_Spearman_Helmet Northern_Spearman_Helmet 1  north_helmet_spearman 0  536936460 0 14 123731968 1.000000 100 48 0 0 0 0 0 0 0 0 0 0
  0
 0
 
@@ -3326,10 +3326,6 @@ itemsfile version 3
 0
 
  itm_helm23 helm23 helm23 1  helm23 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
- 0
-0
-
- itm_helm24 helm24 helm24 1  helm24 0  65548 0 1000 123731968 1.000000 100 43 0 0 0 0 0 0 0 0 0 0
  0
 0
 
