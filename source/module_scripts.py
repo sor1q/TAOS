@@ -626,7 +626,7 @@ custom_battle_ai_scripts = [
       (agent_get_division, ":class", ":agent"),
       
       (agent_get_horse, ":horse", ":agent"),
-      (le, ":horse", 0),
+      (lt, ":horse", 0),
       
       (agent_get_wielded_item, ":item", ":agent", 0),
       (gt, ":item", 0),
