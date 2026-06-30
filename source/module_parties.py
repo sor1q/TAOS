@@ -42,7 +42,7 @@ pf_village = pf_is_static|pf_always_visible|pf_hide_defenders|pf_label_small
 
 
 parties = [
-  ("main_party","Main Party",icon_player|pf_limit_members, no_menu, pt_none,fac_player_faction,0,ai_bhvr_hold,0,(17, 52.5),[(trp_player,1,0)]),
+  ("main_party","Main Party",icon_player|pf_limit_members, no_menu, pt_none,fac_player_faction,0,ai_bhvr_hold,0,(-15.14, 17.25),[(trp_player,1,0)]),
   ("temp_party","{!}temp_party",pf_disabled, no_menu, pt_none, fac_commoners,0,ai_bhvr_hold,0,(0,0),[]),
   ("camp_bandits","{!}camp_bandits",pf_disabled, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(1,1),[(trp_temp_troop,3,0)]),
 #parties before this point are hardwired. Their order should not be changed.
@@ -76,9 +76,9 @@ parties = [
 #  ("village_reinforcements","village_reinforcements",pf_is_static|pf_disabled, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(1,1),[]),
 
 ###############################################################  
-  ("zendar","Zendar",pf_disabled|icon_town|pf_is_static|pf_always_visible|pf_hide_defenders, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(18,60),[]),
+  ("zendar","Zendar",pf_disabled|icon_town|pf_is_static|pf_always_visible|pf_hide_defenders, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-15.67, 16.77),[]),
 
-  ("town_1", "Winterhold", icon_town|pf_town, no_menu, pt_none, fac_kingdom_1,0,ai_bhvr_hold,0,(-180.94, -234.86),[]),
+  ("town_1", "Winterhold", icon_town|pf_town, no_menu, pt_none, fac_kingdom_1,0,ai_bhvr_hold,0,(-181.32, -233.87),[]),
   ("town_2", "Icehaven", icon_town|pf_town, no_menu, pt_none, fac_kingdom_1,0,ai_bhvr_hold,0,(-40.65, -260.21),[]),
   ("town_3", "Helgard", icon_town|pf_town, no_menu, pt_none, fac_kingdom_1,0,ai_bhvr_hold,0,(-27.42, -142.47),[]),
   ("town_4", "Northwatch", icon_town|pf_town, no_menu, pt_none, fac_kingdom_1,0,ai_bhvr_hold,0,(50.85, -219.17),[]),
@@ -92,7 +92,7 @@ parties = [
   ("town_10", "Coinstead", icon_town|pf_town, no_menu, pt_none, fac_kingdom_2,0,ai_bhvr_hold,0,(-75.98, -30.21),[]),
 
   #Kara-Thar towns 
-  ("town_11", "Obsidian_Citadel", icon_town|pf_town, no_menu, pt_none, fac_kingdom_3,0,ai_bhvr_hold,0,(-145.24, 63.06),[]),
+  ("town_11", "Obsidian_Citadel", icon_town|pf_town, no_menu, pt_none, fac_kingdom_3,0,ai_bhvr_hold,0,(-147.89, 60.56),[]),
   ("town_12", "Shadow_Cage", icon_town|pf_town, no_menu, pt_none, fac_kingdom_3,0,ai_bhvr_hold,0,(-131.63, 113.60),[]),
   ("town_13", "Voidspire", icon_town|pf_town, no_menu, pt_none, fac_kingdom_3,0,ai_bhvr_hold,0,(-80.35, 38.79),[]),                        
 
@@ -107,31 +107,31 @@ parties = [
   ("town_19", "Sanctum", icon_town|pf_town, no_menu, pt_none, fac_kingdom_5,0,ai_bhvr_hold,0,(154.93, 144.66),[]),
   ("town_20", "Oldtown", icon_town|pf_town, no_menu, pt_none, fac_kingdom_5,0,ai_bhvr_hold,0,(148.07, 81.02),[]),
   ("town_21", "Moonport", icon_town|pf_town, no_menu, pt_none, fac_kingdom_5,0,ai_bhvr_hold,0,(204.50, 134.09),[]),
-  ("town_22", "Bronzegate", icon_town|pf_town, no_menu, pt_none, fac_kingdom_5,0,ai_bhvr_hold,0,(51.05, 90.34),[]),
+  ("town_22", "Bronzegate", icon_town|pf_town, no_menu, pt_none, fac_kingdom_5,0,ai_bhvr_hold,0,(51.88, 94.23),[]),
 
   #Union of Eirven towns
-  ("town_23", "Eir-Glen", icon_town|pf_town, no_menu, pt_none, fac_kingdom_6,0,ai_bhvr_hold,0,(126.58, -146.87),[]),
+  ("town_23", "Eir-Glen", icon_town|pf_town, no_menu, pt_none, fac_kingdom_6,0,ai_bhvr_hold,0,(127.72, -145.10),[]),
   ("town_24", "Mosscliff", icon_town|pf_town, no_menu, pt_none, fac_kingdom_6,0,ai_bhvr_hold,0,(168.48, -73.38),[]),                           
-  ("town_25", "Eldergrove", icon_town|pf_town, no_menu, pt_none, fac_kingdom_6,0,ai_bhvr_hold,0,(60.49, -114.79),[]),
+  ("town_25", "Eldergrove", icon_town|pf_town, no_menu, pt_none, fac_kingdom_6,0,ai_bhvr_hold,0,(59.36, -114.55),[]),
   ("town_26", "Highmist", icon_town|pf_town, no_menu, pt_none, fac_kingdom_6,0,ai_bhvr_hold,0,(179.73, -174.13),[]),
 
   #Kingdom of Vallor towns
-  ("town_27", "Asteria", icon_town|pf_town, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(12.54, 23.29),[]),
-  ("town_28", "Sunreach", icon_town|pf_town, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(168.28, -15.09),[]),
+  ("town_27", "Asteria", icon_town|pf_town, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(17.93, 26.22),[]),
+  ("town_28", "Sunreach", icon_town|pf_town, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(165.94, -27.42),[]),
   ("town_29", "Silverpeak", icon_town|pf_town, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(49.94, -25.54),[]),
-  ("town_30", "Argenthold", icon_town|pf_town, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(8.60, 80.09),[]),                          
+  ("town_30", "Argenthold", icon_town|pf_town, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(3.97, 73.05),[]),                          
   ("town_31", "Saltcliffe", icon_town|pf_town, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(80.09, 43.41),[]),
 
   #----------------------------------
   #North Castles
-  ("castle_1", "The_Twins", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_1,0,ai_bhvr_hold,0,(-125.67, -202.46),[]),
+  ("castle_1", "The_Twins", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_1,0,ai_bhvr_hold,0,(-79.48, -234.17),[]),
   ("castle_2", "Torrhen's_Square", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_1,0,ai_bhvr_hold,0,(-131.42, -225.19),[]),
-  ("castle_3", "Last_Hearth", icon_castle_c|pf_castle, no_menu, pt_none, fac_kingdom_1,0,ai_bhvr_hold,0,(-116.82, -256.34),[]),
+  ("castle_3", "Last_Hearth", icon_castle_c|pf_castle, no_menu, pt_none, fac_kingdom_1,0,ai_bhvr_hold,0,(-116.88, -255.86),[]),
   ("castle_4", "Deepwood_Motte", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_1,0,ai_bhvr_hold,0,(-58.11, -197.08),[]),
-  ("castle_5", "Dreadfort", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_1,0,ai_bhvr_hold,0,(79.60, -255.66),[]),
-  ("castle_6", "Moat_Cailin", icon_castle_c|pf_castle, no_menu, pt_none, fac_kingdom_1,0,ai_bhvr_hold,0,(-29.95, -283.05),[]),
-  ("castle_7", "Hammerhorn", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_1,0,ai_bhvr_hold,0,(-65.06, -245.47),[]),
-  ("castle_51", "Blackstone_Keep", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(-87.71, -200.57),[]),
+  ("castle_5", "Dreadfort", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_1,0,ai_bhvr_hold,0,(79.75, -254.64),[]),
+  ("castle_6", "Moat_Cailin", icon_castle_c|pf_castle, no_menu, pt_none, fac_kingdom_1,0,ai_bhvr_hold,0,(10.92, -246.81),[]),
+  ("castle_7", "Hammerhorn", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_1,0,ai_bhvr_hold,0,(-51.94, -230.14),[]),
+  ("castle_51", "Blackstone_Keep", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(-93.91, -198.58),[]),
 
 
   #Ost-Gart castles
@@ -149,7 +149,7 @@ parties = [
   ("castle_17", "Cider_Hall", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_3,0,ai_bhvr_hold,0,(-70.82, 99.20),[]),
   ("castle_18", "Claw_Isle", icon_castle_c|pf_castle, no_menu, pt_none, fac_kingdom_3,0,ai_bhvr_hold,0,(-86.00, 72.37),[]),
   ("castle_19", "Runestone", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_3,0,ai_bhvr_hold,0,(-50.64, 54.90),[]),
-  ("castle_20", "Evenfall_Hall", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_3,0,ai_bhvr_hold,0,(-42.69, 74.61),[]),
+  ("castle_20", "Evenfall_Hall", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_3,0,ai_bhvr_hold,0,(-41.41, 77.79),[]),
   ("castle_21", "Deep_Den", icon_castle_c|pf_castle, no_menu, pt_none, fac_kingdom_3,0,ai_bhvr_hold,0,(-122.75, 48.86),[]),
   ("castle_53", "Ironhold", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(-97.81, 96.54),[]),
 
@@ -167,9 +167,9 @@ parties = [
 
   #Solmark castles
   ("castle_29", "Yronwood", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_5,0,ai_bhvr_hold,0,(110.63, 139.80),[]),
-  ("castle_30", "Strongsong", icon_castle_c|pf_castle, no_menu, pt_none, fac_kingdom_5,0,ai_bhvr_hold,0,(104.88, 91.92),[]),                     #[swycartographr] prev. coords: (48.36, -46.99)
-  ("castle_31", "Rain_House", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_5,0,ai_bhvr_hold,0,(124.07, 65.94),[]),
-  ("castle_32", "Hornvale", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_5,0,ai_bhvr_hold,0,(66.57, 58.48),[]),
+  ("castle_30", "Strongsong", icon_castle_c|pf_castle, no_menu, pt_none, fac_kingdom_5,0,ai_bhvr_hold,0,(121.07, 97.30),[]),                     #[swycartographr] prev. coords: (48.36, -46.99)
+  ("castle_31", "Rain_House", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_5,0,ai_bhvr_hold,0,(124.45, 67.60),[]),
+  ("castle_32", "Hornvale", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_5,0,ai_bhvr_hold,0,(63.38, 73.26),[]),
   ("castle_33", "Sea_Dragon_Cove", icon_castle_c|pf_castle, no_menu, pt_none, fac_kingdom_5,0,ai_bhvr_hold,0,(67.11, 117.81),[]),
   ("castle_34", "Dragonstone", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_5,0,ai_bhvr_hold,0,(100.16, 75.10),[]),
   ("castle_35", "Stonehelm", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_5,0,ai_bhvr_hold,0,(120.70, 38.65),[]),
@@ -179,18 +179,18 @@ parties = [
   ("castle_37", "Stormlands_Watch", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_6,0,ai_bhvr_hold,0,(125.26, -183.93),[]),
   ("castle_38", "Harlaw_Hall", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_6,0,ai_bhvr_hold,0,(171.40, -141.10),[]),
   ("castle_39", "Karhold", icon_castle_c|pf_castle, no_menu, pt_none, fac_kingdom_6,0,ai_bhvr_hold,0,(107.86, -129.75),[]),
-  ("castle_40", "The_Eyrie", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_6,0,ai_bhvr_hold,0,(91.30, -151.63),[]),                      #[swycartographr] prev. coords: (77.98, -13.36)
+  ("castle_40", "The_Eyrie", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_6,0,ai_bhvr_hold,0,(91.20, -155.44),[]),                      #[swycartographr] prev. coords: (77.98, -13.36)
   ("castle_41", "Grey_Garden", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_6,0,ai_bhvr_hold,0,(136.64, -118.49),[]),
-  ("castle_42", "Ironoaks", icon_castle_c|pf_castle, no_menu, pt_none, fac_kingdom_6,0,ai_bhvr_hold,0,(84.26, -113.48),[]),                       #[swycartographr] prev. coords: (65.75, -43.36)
+  ("castle_42", "Ironoaks", icon_castle_c|pf_castle, no_menu, pt_none, fac_kingdom_6,0,ai_bhvr_hold,0,(78.62, -108.84),[]),                       #[swycartographr] prev. coords: (65.75, -43.36)
 
   #Vallor castles
-  ("castle_43", "Longbow_Hall", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(-25.91, 100.07),[]),                    #[swycartographr] prev. coords: (40.2, 8.02)
-  ("castle_44", "Redfort", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(52.15, 24.65),[]),
+  ("castle_43", "Longbow_Hall", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(-25.77, 101.28),[]),                    #[swycartographr] prev. coords: (40.2, 8.02)
+  ("castle_44", "Redfort", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(50.04, 25.05),[]),
   ("castle_45", "Long_Lake_Fort", icon_castle_c|pf_castle, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(108.41, -37.93),[]),
-  ("castle_46", "Ninestars", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(119.08, -8.74),[]),                        #[swycartographr] prev. coords: (46.7, -10.72)
+  ("castle_46", "Ninestars", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(107.44, -20.11),[]),                        #[swycartographr] prev. coords: (46.7, -10.72)
   ("castle_47", "Sharp_Point", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(139.64, -46.61),[]),
   ("castle_48", "Hornwood", icon_castle_c|pf_castle, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(25.11, 53.56),[]),
-  ("castle_49", "Bear_Island_Keep", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(90.26, 2.67),[]),
+  ("castle_49", "Bear_Island_Keep", icon_castle_b|pf_castle, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(80.51, -4.32),[]),
   ("castle_50", "Rook's_Rest", icon_castle_a|pf_castle, no_menu, pt_none, fac_kingdom_7,0,ai_bhvr_hold,0,(76.81, -54.61),[]),
 
 
@@ -199,17 +199,17 @@ parties = [
   #North villages
   ("village_1", "Tumbleton", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-125.84, -229.24),[]),
   ("village_2", "Brindlewood", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-136.46, -235.04),[]),
-  ("village_3", "Nightfort_Ruins", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-121.48, -263.54),[]),
-  ("village_4", "Pebble_Shore", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-108.44, -253.73),[]),
-  ("village_5", "Hornwood_Village", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-93.47, -204.87),[]),
-  ("village_6", "Sow's_Horn", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-92.33, -190.03),[]),
-  ("village_7", "Westerridge", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-118.30, -208.96),[]),
+  ("village_3", "Nightfort_Ruins", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-128.30, -268.43),[]),
+  ("village_4", "Pebble_Shore", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-96.80, -274.37),[]),
+  ("village_5", "Hornwood_Village", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-101.46, -217.14),[]),
+  ("village_6", "Sow's_Horn", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-94.55, -180.02),[]),
+  ("village_7", "Westerridge", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-75.39, -247.22),[]),
   
-  ("village_51", "Ice_River", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-122.29, -196.76),[]),
-  ("village_52", "White_Knife", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-59.66, -239.22),[]),
-  ("village_53", "Blackpool", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(74.03, -246.37),[]),
-  ("village_54", "Orkmont", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-22.74, -289.89),[]),
-  ("village_55", "Sealskin", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-10.70, -284.15),[]),
+  ("village_51", "Ice_River", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-94.40, -236.15),[]),
+  ("village_52", "White_Knife", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-55.04, -241.52),[]),
+  ("village_53", "Blackpool", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(93.57, -255.52),[]),
+  ("village_54", "Orkmont", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(13.28, -279.13),[]),
+  ("village_55", "Sealskin", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(20.62, -255.59),[]),
   ("village_56", "Longboat_Point", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-58.97, -187.82),[]),
   ("village_57", "Driftwood", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-37.58, -191.67),[]),
   ("village_58", "Old_Wyk", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(3.13, -156.47),[]),
@@ -234,20 +234,20 @@ parties = [
 
   
   #Kara-Thar villages
-  ("village_15", "Castamere_Ruins", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-120.63, 58.18),[]),
-  ("village_16", "Blackwood_Grove", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-114.81, 50.38),[]),
-  ("village_17", "Plowman's_Rest", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-158.65, 97.68),[]),
-  ("village_18", "Drake's_Landing", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-154.67, 104.52),[]),
+  ("village_15", "Castamere_Ruins", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-133.78, 60.97),[]),
+  ("village_16", "Blackwood_Grove", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-105.38, 56.68),[]),
+  ("village_17", "Plowman's_Rest", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-152.54, 94.72),[]),
+  ("village_18", "Drake's_Landing", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-144.83, 111.64),[]),
   ("village_19", "Tarbeck", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-86.79, 79.94),[]),
   ("village_20", "Skyreach", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-85.90, 63.78),[]),                     #[swycartographr] prev. coords: (56.49, -51.77)
   ("village_21", "Bitterbridge", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-85.90, 63.78),[]),
   
   ("village_66", "Red_Watch", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-60.80, 96.73),[]),                    
   ("village_67", "Ironshore", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-71.10, 113.97),[]),
-  ("village_68", "Baratheon's_Ford", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-100.70, 114.94),[]),            
-  ("village_69", "Three_Towers", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-92.81, 121.36),[]),
-  ("village_70", "Fossoway_Village", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-52.54, 47.91),[]),
-  ("village_71", "Honeyholt", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-52.08, 65.74),[]),
+  ("village_68", "Baratheon's_Ford", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-107.04, 108.68),[]),            
+  ("village_69", "Three_Towers", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-85.09, 120.24),[]),
+  ("village_70", "Fossoway_Village", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-66.55, 59.78),[]),
+  ("village_71", "Honeyholt", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-30.79, 49.81),[]),
   ("village_72", "Stone_Door", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-22.30, 65.68),[]),
   ("village_73", "Arryn_Vale", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-93.06, 101.08),[]),
  
@@ -257,9 +257,9 @@ parties = [
   ("village_23", "Brackenford", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(62.62, 178.58),[]),                  #[swycartographr] prev. coords: (-83.73, 7.08)
   ("village_24", "Rainwood", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(89.89, 210.83),[]),                   
   ("village_25", "Saltstone", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(86.43, 201.83),[]),
-  ("village_26", "Parchfield", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-65.72, 252.50),[]),
-  ("village_27", "Blue_Fork", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-55.59, 259.36),[]),
-  ("village_28", "Moon's_Brook", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-120.40, 220.75),[]),
+  ("village_26", "Parchfield", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-50.54, 234.14),[]),
+  ("village_27", "Blue_Fork", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-50.95, 270.34),[]),
+  ("village_28", "Moon's_Brook", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-119.28, 213.84),[]),
   
   ("village_74", "Longvalley", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-152.56, 240.70),[]),
   ("village_75", "Horn_Hill", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-71.40, 173.29),[]),
@@ -275,18 +275,18 @@ parties = [
   ("village_29", "Darry", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(133.05, 112.83),[]),
   ("village_30", "Great_Wyk_Village", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(139.42, 117.85),[]),
   ("village_31", "Squiddly", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(102.66, 98.31),[]),
-  ("village_32", "Cracklaw_Point", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(102.19, 102.58),[]),
+  ("village_32", "Cracklaw_Point", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(112.14, 116.14),[]),
   ("village_33", "Saltpans", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(116.50, 146.15),[]),
   ("village_34", "Paynesford", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(92.65, 136.84),[]),
-  ("village_35", "Clawford", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(61.61, 117.31),[]),
+  ("village_35", "Clawford", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(90.22, 105.43),[]),
   
   ("village_82", "Stone_Mill", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(194.62, 142.44),[]),
-  ("village_83", "Frey's_Crossing", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(62.95, 64.41),[]),
-  ("village_84", "Blackwater_Rush", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(73.40, 58.23),[]),
-  ("village_85", "Targaryen's_Ford", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(124.29, 71.70),[]),
+  ("village_83", "Frey's_Crossing", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(82.12, 73.78),[]),
+  ("village_84", "Blackwater_Rush", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(66.94, 61.31),[]),
+  ("village_85", "Targaryen's_Ford", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(112.63, 67.15),[]),
   ("village_86", "Summerhall_Ashes", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(122.34, 80.93),[]),
-  ("village_87", "Bywater", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(106.04, 28.29),[]),
-  ("village_88", "Frosthollow", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(126.26, 30.90),[]),
+  ("village_87", "Bywater", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(113.35, 21.64),[]),
+  ("village_88", "Frosthollow", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(127.08, 27.32),[]),
 
   
   #Eirven villages
@@ -294,9 +294,9 @@ parties = [
   ("village_37", "Rossfoss", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(119.75, -170.20),[]),
   ("village_38", "Greenfield", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(179.12, -129.76),[]),
   ("village_39", "Acorn_Hall", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(182.34, -142.52),[]),
-  ("village_40", "Lion's_Roost", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(83.74, -106.04),[]),
-  ("village_41", "Silverstream", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(76.18, -105.25),[]),
-  ("village_42", "Greywater", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(80.02, -150.81),[]),
+  ("village_40", "Lion's_Roost", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(87.11, -101.96),[]),
+  ("village_41", "Silverstream", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(66.90, -104.97),[]),
+  ("village_42", "Greywater", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(75.26, -149.25),[]),
   
   ("village_89", "Summerhall_Ruins", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(83.71, -141.78),[]),
   ("village_90", "Lemonwood", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(99.06, -129.91),[]),
@@ -304,17 +304,17 @@ parties = [
   ("village_92", "Skyfall", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(150.50, -176.00),[]),
   
   #Vallor villages
-  ("village_43", "Redbrook", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-37.45, 89.12),[]),
-  ("village_44", "Lann's_Hill", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-17.35, 101.28),[]),
-  ("village_45", "Darryford", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(22.64, 45.33),[]),
-  ("village_46", "Brightwater", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(16.44, 55.65),[]),
-  ("village_47", "Lannett", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(43.44, 35.98),[]),
+  ("village_43", "Redbrook", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-39.27, 92.89),[]),
+  ("village_44", "Lann's_Hill", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-12.72, 89.44),[]),
+  ("village_45", "Darryford", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(18.56, 44.75),[]),
+  ("village_46", "Brightwater", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(17.22, 56.04),[]),
+  ("village_47", "Lannett", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(41.41, 38.74),[]),
   ("village_48", "Bloody_Gate", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(65.61, 24.21),[]),
-  ("village_49", "Falcon's_Rest", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(91.26, -6.25),[]),
-  ("village_50", "Flint's_Finger", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(92.86, 13.92),[]),
+  ("village_49", "Falcon's_Rest", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(101.69, -10.36),[]),
+  ("village_50", "Flint's_Finger", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(91.31, 4.14),[]),
   
 
-  ("village_93", "Vaith", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(113.82, -9.18),[]),                     
+  ("village_93", "Vaith", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(118.71, -7.69),[]),                     
   ("village_94", "Red_Dunes", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(126.28, -19.94),[]),                   
   ("village_95", "Water_Gardens", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(135.54, -40.54),[]),
  
@@ -349,8 +349,8 @@ parties = [
   ("village_112", "Mallery", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(49.08, 221.83),[]),
   #Asteria
   ("village_113", "Grandview", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-19.18, 29.80),[]),
-  ("village_114", "Timberton", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(3.55, 23.07),[]),
-  ("village_115", "Goldenfield", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(5.88, 39.17),[]),
+  ("village_114", "Timberton", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-3.57, 29.01),[]),
+  ("village_115", "Goldenfield", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(7.40, 40.32),[]),
   ("village_116", "Crannog_Village", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-12.83, 45.49),[]),
   #Sanctum
   ("village_117", "Bolton's_Mill", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(158.76, 155.72),[]),
@@ -364,7 +364,7 @@ parties = [
   ("village_122", "Rillwater", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(62.42, -212.29),[]),
   #Sahar-Dun
   ("village_123", "Gates_of_the_Moon", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-88.58, 222.83),[]),
-  ("village_124", "Salt_Shore", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-99.01, 259.62),[]),
+  ("village_124", "Salt_Shore", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-100.71, 267.27),[]),
   
   #3 vil on town
   #North
@@ -377,9 +377,9 @@ parties = [
   ("village_131", "Wolfswood_Edge", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-119.44, -185.20),[]),
   ("village_132", "Wintertown", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-104.65, -168.16),[]),
   ("village_133", "Parchments", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-30.16, -157.37),[]),                   #[swycartographr] prev. coords: (94.74, -1.5)
-  ("village_134", "Oakenshield", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-177.66, -214.12),[]),
-  ("village_135", "Drowned_Village", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-170.08, -229.32),[]),
-  ("village_136", "Kraken'_Teeth", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-162.85, -208.17),[]),
+  ("village_134", "Oakenshield", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-176.81, -205.83),[]),
+  ("village_135", "Drowned_Village", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-162.35, -227.24),[]),
+  ("village_136", "Kraken'_Teeth", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-150.40, -207.67),[]),
   #Ost-Gart
   ("village_137", "Nagga's_Crag", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-15.82, -86.77),[]),
   ("village_138", "Grey_King's_Landing", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-29.80, -75.12),[]),
@@ -396,32 +396,32 @@ parties = [
   ("village_148", "Stonehaven", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-125.29, 100.59),[]),
   ("village_149", "Oakridge", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-122.34, 117.64),[]),
   ("village_150", "Ashford", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-96.66, 38.90),[]),
-  ("village_151", "Ravenmoor", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-90.25, 47.90),[]),
-  ("village_152", "Ironhill", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-71.01, 37.95),[]),
+  ("village_151", "Ravenmoor", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-88.82, 55.95),[]),
+  ("village_152", "Ironhill", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-64.27, 36.69),[]),
   #Ashkar
   ("village_153", "Goldbrook", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(30.64, 145.09),[]),
   ("village_154", "Westvale", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(16.31, 160.25),[]),
   ("village_155", "Eastmere", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(10.77, 146.23),[]),
-  ("village_156", "Pinewatch", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-54.17, 140.01),[]),
+  ("village_156", "Pinewatch", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-37.34, 144.38),[]),
   ("village_157", "Deepwood", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-60.43, 123.82),[]),
   ("village_158", "Brightwater", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(0.10, 194.93),[]),
   ("village_159", "Mistfield", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-2.35, 210.40),[]),
   ("village_160", "Wolfden", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(12.90, 185.40),[]),
-  ("village_161", "Redcliff", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-71.52, 146.40),[]),
+  ("village_161", "Redcliff", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-76.87, 146.92),[]),
   #Solmark
   ("village_162", "Highrock", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(143.55, 100.31),[]),
   ("village_163", "Greenhollow", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(168.62, 98.24),[]),
   ("village_164", "Blackford", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(145.48, 67.35),[]),
   ("village_165", "Silverbrook", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(84.99, 45.86),[]),
   ("village_166", "Thornfield", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(86.46, 58.92),[]),
-  ("village_167", "Fairmeadow", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(96.21, 53.57),[]),
+  ("village_167", "Fairmeadow", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(92.78, 34.37),[]),
   ("village_168", "Frostholm", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(61.21, 94.72),[]),
-  ("village_169", "Stormridge", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(63.38, 80.20),[]),
-  ("village_170", "Kingswell", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(76.21, 97.33),[]),
+  ("village_169", "Stormridge", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(53.76, 75.56),[]),
+  ("village_170", "Kingswell", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(79.89, 96.22),[]),
   #Eirven
   ("village_171", "Cedarcross", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(175.76, -82.48),[]),
-  ("village_172", "Rivergate", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(176.34, -93.43),[]),
-  ("village_173", "Ashbrook", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(157.31, -95.07),[]),
+  ("village_172", "Rivergate", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(182.11, -113.62),[]),
+  ("village_173", "Ashbrook", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(148.35, -87.40),[]),
   ("village_174", "Oakridge", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(178.46, -163.58),[]),
   ("village_175", "Stoneford", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(167.69, -159.43),[]),
   ("village_176", "Wolfden", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(177.48, -189.61),[]),
@@ -429,19 +429,19 @@ parties = [
   ("village_178", "Greyhill", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(140.01, -138.94),[]),
   ("village_179", "Ravenmoor", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(120.11, -141.32),[]),
   ("village_180", "Thornfield", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(116.84, -153.25),[]),
-  ("village_181", "Redbrook", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(55.58, -109.96),[]),
-  ("village_182", "Greenhollow", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(54.66, -128.84),[]),
+  ("village_181", "Redbrook", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(55.57, -109.96),[]),
+  ("village_182", "Greenhollow", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(62.14, -131.36),[]),
   #Vallor
-  ("village_183", "Elmwatch", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(179.71, -29.06),[]),
-  ("village_184", "Ironwell", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(161.05, -28.00),[]),
-  ("village_185", "Mistwood", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(148.62, -10.98),[]),
+  ("village_183", "Elmwatch", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(176.59, -14.75),[]),
+  ("village_184", "Ironwell", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(149.49, -24.01),[]),
+  ("village_185", "Mistwood", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(144.80, -14.07),[]),
   ("village_186", "Highmead", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(65.52, -13.81),[]),
   ("village_187", "Deepford", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(84.07, -27.88),[]),
-  ("village_188", "Kingsbrook", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(43.41, -11.92),[]),
+  ("village_188", "Kingsbrook", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(43.55, -12.34),[]),
   ("village_189", "Falconrest", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(86.50, -51.13),[]),
-  ("village_190", "Birchvale", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-2.33, 75.07),[]),
-  ("village_191", "Silverbrook", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(9.49, 103.13),[]),
-  ("village_192", "Westmere", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(18.65, 92.77),[]),
+  ("village_190", "Birchvale", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-10.79, 66.49),[]),
+  ("village_191", "Silverbrook", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(7.13, 102.73),[]),
+  ("village_192", "Westmere", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(19.09, 98.01),[]),
   ("village_193", "Coldharbor", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(144.96, -42.20),[]),
   ("village_194", "Quill", icon_village_a|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(74.73, -43.79),[]),
   
@@ -457,13 +457,13 @@ parties = [
 
   ("training_ground_1", "Training Field",  icon_training_ground|pf_hide_defenders|pf_is_static|pf_always_visible|pf_label_medium, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(37.4, 102.8),[], 100),
   ("training_ground_2", "Training Field",  icon_training_ground|pf_hide_defenders|pf_is_static|pf_always_visible|pf_label_medium, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-12.8, 33),[], 100),
-  ("training_ground_3", "Training Field",  icon_training_ground|pf_hide_defenders|pf_is_static|pf_always_visible|pf_label_medium, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(70.5, 72.0),[], 100),
+  ("training_ground_3", "Training Field",  icon_training_ground|pf_hide_defenders|pf_is_static|pf_always_visible|pf_label_medium, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(94.41, 84.77),[], 100),
   ("training_ground_4", "Training Field",  icon_training_ground|pf_hide_defenders|pf_is_static|pf_always_visible|pf_label_medium, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(11.5, -75.2),[], 100),
   ("training_ground_5", "Training Field",  icon_training_ground|pf_hide_defenders|pf_is_static|pf_always_visible|pf_label_medium, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-120.56, -11.90),[], 100),
 
 
 #  bridge_a
-  ("Bridge_1","{!}1",icon_bridge_snow_a|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(39.37, 65.10),[], -44.8),
+  ("Bridge_1","{!}1",icon_bridge_snow_a|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(201.05, 207.52),[], 57),
   ("Bridge_2","{!}2",icon_bridge_snow_a|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(110.00, -50.58),[], 259),
   ("Bridge_3","{!}3",icon_bridge_snow_a|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(117.67, -37.33),[], 36),
   ("Bridge_4","{!}4",icon_bridge_snow_a|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(37.64, 29.64),[], 48),
@@ -485,7 +485,7 @@ parties = [
   ("forest_bandit_spawn_point"  ,"the forests",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(-35, 18),[(trp_looter,15,0)]),
   ("mountain_bandit_spawn_point","the highlands",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(-26.53, -17.86),[(trp_looter,15,0)]),
   ("sea_raider_spawn_point_1"   ,"the coast",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(48.5, 110),[(trp_looter,15,0)]),
-  ("sea_raider_spawn_point_2"   ,"the coast",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(-42, 76.7),[(trp_looter,15,0)]),
+  ("sea_raider_spawn_point_2"   ,"the coast",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(-61.64, 79.14),[(trp_looter,15,0)]),
   ("desert_bandit_spawn_point"  ,"the desert",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(110, -100),[(trp_looter,15,0)]),
  # add extra towns before this point 
   ("spawn_points_end"                  ,"{!}last_spawn_point",    pf_disabled|pf_is_static, no_menu, pt_none, fac_commoners,0,ai_bhvr_hold,0,(0., 0),[(trp_looter,15,0)]),

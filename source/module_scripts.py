@@ -656,7 +656,7 @@ custom_battle_ai_scripts = [
                       (agent_clear_scripted_mode, ":agent"),
                       (agent_get_position, pos2, ":agent"),
                       (position_move_y, pos2, ":spear_dist"),
-                      (display_message, "@I am going BACK!"),
+                      # (display_message, "@I am going BACK!"),
                       (agent_set_scripted_destination, ":agent", pos2, 0),   
                   (else_try),
                     (gt, ":closest_dist", ":resume_dist"),
