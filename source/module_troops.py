@@ -397,12 +397,12 @@ troops = [
    knows_common|knows_ironflesh_7|knows_power_strike_9|knows_weapon_master_8, swadian_face_young_1, swadian_face_old_2],
   
 #The North crossbowmen
-  ["northern_crossbowman","Northern Crossbowman","Northern Crossbowmen",tf_guarantee_ranged|tf_guarantee_boots|tf_guarantee_armor,0,0,fac_kingdom_1,
+  ["northern_crossbowman","Northern Crossbowman","Northern Crossbowmen",tf_guarantee_ranged|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet,0,0,fac_kingdom_1,
    [itm_hunting_crossbow, itm_bolts, itm_hand_axe,
     itm_nordic_archer_helmet, itm_studded_leather_coat, itm_leather_boots, itm_leather_gloves],
     str_15 | agi_15 | int_8 | cha_8 |level(20), wp_one_handed (150)|wp_crossbow (180), 
     knows_common|knows_ironflesh_4|knows_power_strike_2|knows_weapon_master_4, swadian_face_young_1, swadian_face_middle_2],
-  ["northern_marksman","Northern Marksman","Northern Marksmen",tf_guarantee_ranged|tf_guarantee_boots|tf_guarantee_armor,0,0,fac_kingdom_1,
+  ["northern_marksman","Northern Marksman","Northern Marksmen",tf_guarantee_ranged|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet,0,0,fac_kingdom_1,
    [itm_light_crossbow, itm_bolts, itm_leather_covered_round_shield, itm_hand_axe,
     itm_helmet_infantry_syndicate_4, itm_mail_hauberk, itm_splinted_leather_greaves, itm_mail_mittens],
     str_20 | agi_18 | int_10 | cha_10 |level(30), wp_one_handed (220)|wp_crossbow (280), 

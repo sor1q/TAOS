@@ -7560,68 +7560,7 @@ TOTAL:  {reg5}"),
     ]
   ),
   
-  #SB : restructue this to call new script
-  # (
-    # "castle_meeting",mnf_scale_picture,
-    # "With whom do you want to meet?",
-    # "none",
-    # [
-        # (assign, "$num_castle_meeting_troops", 0),
-        # (try_for_range, ":troop_no", active_npcs_begin, active_npcs_end),
-          # (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_kingdom_hero),
-          # (call_script, "script_get_troop_attached_party", ":troop_no"),
-          # (eq, "$g_encountered_party", reg0),
-          # (troop_set_slot, "trp_temp_array_a", "$num_castle_meeting_troops", ":troop_no"),
-          # (val_add, "$num_castle_meeting_troops", 1),
-        # (try_end),
-        # (call_script, "script_set_town_picture"),
-    # ],
-    # [
-      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 0),(troop_get_slot, ":troop_no", "trp_temp_array_a", 0),(str_store_troop_name, s5, ":troop_no")],
-       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 0),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 1),(troop_get_slot, ":troop_no", "trp_temp_array_a", 1),(str_store_troop_name, s5, ":troop_no")],
-       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 1),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 2),(troop_get_slot, ":troop_no", "trp_temp_array_a", 2),(str_store_troop_name, s5, ":troop_no")],
-       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 2),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 3),(troop_get_slot, ":troop_no", "trp_temp_array_a", 3),(str_store_troop_name, s5, ":troop_no")],
-       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 3),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 4),(troop_get_slot, ":troop_no", "trp_temp_array_a", 4),(str_store_troop_name, s5, ":troop_no")],
-       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 4),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 5),(troop_get_slot, ":troop_no", "trp_temp_array_a", 5),(str_store_troop_name, s5, ":troop_no")],
-       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 5),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 6),(troop_get_slot, ":troop_no", "trp_temp_array_a", 6),(str_store_troop_name, s5, ":troop_no")],
-       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 6),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 7),(troop_get_slot, ":troop_no", "trp_temp_array_a", 7),(str_store_troop_name, s5, ":troop_no")],
-       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 7),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 8),(troop_get_slot, ":troop_no", "trp_temp_array_a", 8),(str_store_troop_name, s5, ":troop_no")],
-       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 8),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 9),(troop_get_slot, ":troop_no", "trp_temp_array_a", 9),(str_store_troop_name, s5, ":troop_no")],
-       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 9),(jump_to_menu,"mnu_castle_meeting_selected")]),
 
-      # ("forget_it",[],
-       # "Forget it.",
-       # [(jump_to_menu,"mnu_castle_guard")]),
-    # ]
-  # ),
-  # (
-    # "castle_meeting_selected",0,
-    # "Your request for a meeting is relayed inside, and finally {s6} appears in the courtyard to speak with you.",
-    # "none",
-    # [(str_store_troop_name, s6, "$castle_meeting_selected_troop")],
-    # [
-      # ("continue",[],
-       # "Continue...",
-       # [(jump_to_menu, "mnu_castle_outside"),
-        # (modify_visitors_at_site,"scn_conversation_scene"),(reset_visitors),
-        # (set_visitor,0,"trp_player"),
-        # (set_visitor,17,"$castle_meeting_selected_troop"),
-        # (set_jump_mission,"mt_conversation_encounter"),
-        # (jump_to_scene,"scn_conversation_scene"),
-        # (assign, "$talk_context", tc_castle_gate),
-        # (change_screen_map_conversation, "$castle_meeting_selected_troop"),
-        # ]),
-    # ]
-  # ),
   (
     "castle_meeting",mnf_scale_picture,
     "With whom do you want to meet?",
@@ -7891,13 +7830,33 @@ TOTAL:  {reg5}"),
            (set_party_battle_mode),
            (assign, "$g_siege_battle_state", 1),
            (assign, ":siege_sally", 0),
-           (try_begin),
-             (le, ":battle_advantage", -4), #we are outnumbered, defenders sally out
-             (eq, "$g_siege_sallied_out_once", 0),
-             (set_jump_mission,"mt_castle_attack_walls_defenders_sally"),
-             (assign, "$g_siege_battle_state", 0),
-             (assign, ":siege_sally", 1),
+          #  (try_begin),
+          #    (le, ":battle_advantage", -4), #we are outnumbered, defenders sally out
+          #    (eq, "$g_siege_sallied_out_once", 0),
+          #    (set_jump_mission,"mt_castle_attack_walls_defenders_sally"),
+          #    (assign, "$g_siege_battle_state", 0),
+          #    (assign, ":siege_sally", 1),
+          #  (else_try),
+          
+          #Soriq MOD defenders sally out if they have much less archers than the player
+          (try_begin),
+            (call_script, "script_parties_calculate_archers_ratio", "$g_encountered_party", "p_main_party"),
+            (str_assigned_love_interests_attraction_seed_reg3, ":archer_ratio", reg0),
+            (lt, ":archer_ratio", 100), 
+            
+            (call_script, "script_party_calculate_troop_ratio", "$g_encountered_party"),
+            (assign, ":archers_def_percent", reg2),
+            (val_add, ":archers_def_percent", reg3), 
+            
+            (lt, ":archers_def_percent", 50), 
+            
+            (eq, "$g_siege_sallied_out_once", 0),
+            (set_jump_mission,"mt_castle_attack_walls_defenders_sally"),
+            (assign, "$g_siege_battle_state", 0),
+            (assign, ":siege_sally", 1),
            (else_try),
+           #Soriq MOD end
+          
              (party_slot_eq, "$current_town", slot_center_siege_with_belfry, 1),
              (set_jump_mission,"mt_castle_attack_walls_belfry"),
            (else_try),

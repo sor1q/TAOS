@@ -1811,12 +1811,31 @@ autoresolver_scripts = [
     (assign, reg0, ":total_ehp"),
   ]),
 
+  #Script for calculating the ratio of archers between 2 parties
+  ("parties_calculate_archers_ratio", [
+    (store_script_param, ":first_party", 1),
+    (store_script_param, ":second_party", 2),
+    
+    (call_script, "script_party_calculate_troop_ratio", ":first_party"),
+    (assign, ":first_party_archers_percent", reg2),
+    (val_add, ":first_party_archers_percent", reg3),
+    (call_script, "script_party_calculate_troop_ratio", ":second_party"),
+    (assign, ":second_party_archers_percent", reg2),
+    (val_add, ":second_party_archers_percent", reg3),
+    
+    (val_max, ":second_party_archers_percent", 1),
+    (val_mul, ":first_party_archers_percent", 100),
+    (store_div, ":archers_ratio", ":first_party_archers_percent", ":second_party_archers_percent"),
+    
+    (assign, reg0, ":archers_ratio"),        
+  ]),
+
   #Script for calculating the ratio of different types of troops in party
-  # reg0 - infantry_no_shield count
-  # reg1 - infantry_shielded count
-  # reg2 - archers count
-  # reg3 - horse_archers count
-  # reg4 - horseman count
+  # reg0 - infantry_no_shield percent
+  # reg1 - infantry_shielded percent
+  # reg2 - archers percent
+  # reg3 - horse_archers percent
+  # reg4 - horseman percent
   ("party_calculate_troop_ratio", [ 
     (store_script_param, ":party", 1),
     
@@ -3332,111 +3351,111 @@ scripts = [
 
 
 	    #Give towns to great lords
-      (call_script, "script_give_center_to_lord", "p_town_1",  "trp_kingdom_1_lord", 0),
-      (call_script, "script_give_center_to_lord", "p_town_2",  "trp_knight_1_8", 0),
-      (call_script, "script_give_center_to_lord", "p_town_3",  "trp_knight_1_9", 0),
-      (call_script, "script_give_center_to_lord", "p_town_4",  "trp_knight_1_10", 0),
-      (call_script, "script_give_center_to_lord", "p_town_5",  "trp_knight_1_11", 0),
+      (call_script, "script_give_center_to_lord", "p_town_1",  "trp_kingdom_1_lord", 1),
+      (call_script, "script_give_center_to_lord", "p_town_2",  "trp_knight_1_8", 1),
+      (call_script, "script_give_center_to_lord", "p_town_3",  "trp_knight_1_9", 1),
+      (call_script, "script_give_center_to_lord", "p_town_4",  "trp_knight_1_10", 1),
+      (call_script, "script_give_center_to_lord", "p_town_5",  "trp_knight_1_11", 1),
       
-      (call_script, "script_give_center_to_lord", "p_town_6",  "trp_kingdom_2_lord", 0),
-      (call_script, "script_give_center_to_lord", "p_town_7",  "trp_knight_2_8", 0),
-      (call_script, "script_give_center_to_lord", "p_town_8",  "trp_knight_2_9", 0),
-      (call_script, "script_give_center_to_lord", "p_town_9",  "trp_knight_2_10", 0),
-      (call_script, "script_give_center_to_lord", "p_town_10",  "trp_knight_2_11", 0),
+      (call_script, "script_give_center_to_lord", "p_town_6",  "trp_kingdom_2_lord", 1),
+      (call_script, "script_give_center_to_lord", "p_town_7",  "trp_knight_2_8", 1),
+      (call_script, "script_give_center_to_lord", "p_town_8",  "trp_knight_2_9", 1),
+      (call_script, "script_give_center_to_lord", "p_town_9",  "trp_knight_2_10", 1),
+      (call_script, "script_give_center_to_lord", "p_town_10",  "trp_knight_2_11", 1),
       
-      (call_script, "script_give_center_to_lord", "p_town_11",  "trp_kingdom_3_lord", 0),
-      (call_script, "script_give_center_to_lord", "p_town_12",  "trp_knight_3_8", 0),
-      (call_script, "script_give_center_to_lord", "p_town_13",  "trp_knight_3_9", 0),
+      (call_script, "script_give_center_to_lord", "p_town_11",  "trp_kingdom_3_lord", 1),
+      (call_script, "script_give_center_to_lord", "p_town_12",  "trp_knight_3_8", 1),
+      (call_script, "script_give_center_to_lord", "p_town_13",  "trp_knight_3_9", 1),
 
-      (call_script, "script_give_center_to_lord", "p_town_14",  "trp_kingdom_4_lord", 0), 
-      (call_script, "script_give_center_to_lord", "p_town_15",  "trp_knight_4_8", 0),
-      (call_script, "script_give_center_to_lord", "p_town_16",  "trp_knight_4_9", 0),
-      (call_script, "script_give_center_to_lord", "p_town_17",  "trp_knight_4_10", 0),
-      (call_script, "script_give_center_to_lord", "p_town_18",  "trp_knight_4_11", 0),
+      (call_script, "script_give_center_to_lord", "p_town_14",  "trp_kingdom_4_lord", 1), 
+      (call_script, "script_give_center_to_lord", "p_town_15",  "trp_knight_4_8", 1),
+      (call_script, "script_give_center_to_lord", "p_town_16",  "trp_knight_4_9", 1),
+      (call_script, "script_give_center_to_lord", "p_town_17",  "trp_knight_4_10", 1),
+      (call_script, "script_give_center_to_lord", "p_town_18",  "trp_knight_4_11", 1),
       
-      (call_script, "script_give_center_to_lord", "p_town_19",  "trp_kingdom_5_lord", 0),
-      (call_script, "script_give_center_to_lord", "p_town_20",  "trp_knight_5_8", 0),
-      (call_script, "script_give_center_to_lord", "p_town_21",  "trp_knight_5_9", 0),
-      (call_script, "script_give_center_to_lord", "p_town_22",  "trp_knight_5_10", 0),
+      (call_script, "script_give_center_to_lord", "p_town_19",  "trp_kingdom_5_lord", 1),
+      (call_script, "script_give_center_to_lord", "p_town_20",  "trp_knight_5_8", 1),
+      (call_script, "script_give_center_to_lord", "p_town_21",  "trp_knight_5_9", 1),
+      (call_script, "script_give_center_to_lord", "p_town_22",  "trp_knight_5_10", 1),
       
-      (call_script, "script_give_center_to_lord", "p_town_23",  "trp_kingdom_6_lord", 0),
-      (call_script, "script_give_center_to_lord", "p_town_24",  "trp_knight_6_8", 0),
-      (call_script, "script_give_center_to_lord", "p_town_25",  "trp_knight_6_9", 0),
-      (call_script, "script_give_center_to_lord", "p_town_26",  "trp_knight_6_10", 0),
+      (call_script, "script_give_center_to_lord", "p_town_23",  "trp_kingdom_6_lord", 1),
+      (call_script, "script_give_center_to_lord", "p_town_24",  "trp_knight_6_8", 1),
+      (call_script, "script_give_center_to_lord", "p_town_25",  "trp_knight_6_9", 1),
+      (call_script, "script_give_center_to_lord", "p_town_26",  "trp_knight_6_10", 1),
 
       
-      (call_script, "script_give_center_to_lord", "p_town_27",  "trp_kingdom_7_lord", 0),
-      (call_script, "script_give_center_to_lord", "p_town_28",  "trp_knight_7_8", 0),
-      (call_script, "script_give_center_to_lord", "p_town_29",  "trp_knight_7_9", 0),
-      (call_script, "script_give_center_to_lord", "p_town_30",  "trp_knight_7_10", 0),
-      (call_script, "script_give_center_to_lord", "p_town_31",  "trp_knight_7_11", 0),
+      (call_script, "script_give_center_to_lord", "p_town_27",  "trp_kingdom_7_lord", 1),
+      (call_script, "script_give_center_to_lord", "p_town_28",  "trp_knight_7_8", 1),
+      (call_script, "script_give_center_to_lord", "p_town_29",  "trp_knight_7_9", 1),
+      (call_script, "script_give_center_to_lord", "p_town_30",  "trp_knight_7_10", 1),
+      (call_script, "script_give_center_to_lord", "p_town_31",  "trp_knight_7_11", 1),
       #Give towns to lords
       
       
       #Give castles to lords
       #North
-      (call_script, "script_give_center_to_lord", "p_castle_1",  "trp_knight_1_1", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_2",  "trp_knight_1_2", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_3",  "trp_knight_1_3", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_4",  "trp_knight_1_4", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_5",  "trp_knight_1_5", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_6",  "trp_knight_1_6", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_7",  "trp_knight_1_7", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_1",  "trp_knight_1_1", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_2",  "trp_knight_1_2", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_3",  "trp_knight_1_3", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_4",  "trp_knight_1_4", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_5",  "trp_knight_1_5", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_6",  "trp_knight_1_6", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_7",  "trp_knight_1_7", 1),
 
       #Ost-Gart
-      (call_script, "script_give_center_to_lord", "p_castle_8",  "trp_knight_2_1", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_9",  "trp_knight_2_2", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_10",  "trp_knight_2_3", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_11",  "trp_knight_2_4", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_12",  "trp_knight_2_5", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_13",  "trp_knight_2_6", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_14",  "trp_knight_2_7", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_8",  "trp_knight_2_1", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_9",  "trp_knight_2_2", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_10",  "trp_knight_2_3", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_11",  "trp_knight_2_4", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_12",  "trp_knight_2_5", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_13",  "trp_knight_2_6", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_14",  "trp_knight_2_7", 1),
       
       #Kara-Thar
-      (call_script, "script_give_center_to_lord", "p_castle_15",  "trp_knight_3_1", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_16",  "trp_knight_3_2", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_17",  "trp_knight_3_3", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_18",  "trp_knight_3_4", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_19",  "trp_knight_3_5", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_20",  "trp_knight_3_6", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_21",  "trp_knight_3_7", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_15",  "trp_knight_3_1", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_16",  "trp_knight_3_2", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_17",  "trp_knight_3_3", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_18",  "trp_knight_3_4", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_19",  "trp_knight_3_5", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_20",  "trp_knight_3_6", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_21",  "trp_knight_3_7", 1),
       
       #Ashkar
-      (call_script, "script_give_center_to_lord", "p_castle_22",  "trp_knight_4_1", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_23",  "trp_knight_4_2", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_24",  "trp_knight_4_3", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_25",  "trp_knight_4_4", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_26",  "trp_knight_4_5", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_27",  "trp_knight_4_6", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_28",  "trp_knight_4_7", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_22",  "trp_knight_4_1", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_23",  "trp_knight_4_2", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_24",  "trp_knight_4_3", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_25",  "trp_knight_4_4", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_26",  "trp_knight_4_5", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_27",  "trp_knight_4_6", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_28",  "trp_knight_4_7", 1),
       
       #Solmark
-      (call_script, "script_give_center_to_lord", "p_castle_29",  "trp_knight_5_1", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_30",  "trp_knight_5_2", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_31",  "trp_knight_5_3", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_32",  "trp_knight_5_4", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_33",  "trp_knight_5_5", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_34",  "trp_knight_5_6", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_35",  "trp_knight_5_7", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_29",  "trp_knight_5_1", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_30",  "trp_knight_5_2", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_31",  "trp_knight_5_3", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_32",  "trp_knight_5_4", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_33",  "trp_knight_5_5", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_34",  "trp_knight_5_6", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_35",  "trp_knight_5_7", 1),
       
       #Eirven
-      (call_script, "script_give_center_to_lord", "p_castle_36",  "trp_knight_6_1", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_37",  "trp_knight_6_2", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_38",  "trp_knight_6_3", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_39",  "trp_knight_6_4", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_40",  "trp_knight_6_5", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_41",  "trp_knight_6_6", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_42",  "trp_knight_6_7", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_36",  "trp_knight_6_1", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_37",  "trp_knight_6_2", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_38",  "trp_knight_6_3", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_39",  "trp_knight_6_4", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_40",  "trp_knight_6_5", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_41",  "trp_knight_6_6", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_42",  "trp_knight_6_7", 1),
       
       #Vallor
-      (call_script, "script_give_center_to_lord", "p_castle_43",  "trp_knight_7_1", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_44",  "trp_knight_7_2", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_45",  "trp_knight_7_3", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_46",  "trp_knight_7_4", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_47",  "trp_knight_7_5", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_48",  "trp_knight_7_6", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_49",  "trp_knight_7_7", 0),
-      (call_script, "script_give_center_to_lord", "p_castle_50",  "trp_knight_7_7", 0),
+      (call_script, "script_give_center_to_lord", "p_castle_43",  "trp_knight_7_1", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_44",  "trp_knight_7_2", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_45",  "trp_knight_7_3", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_46",  "trp_knight_7_4", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_47",  "trp_knight_7_5", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_48",  "trp_knight_7_6", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_49",  "trp_knight_7_7", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_50",  "trp_knight_7_7", 1),
       
       
       
@@ -3447,10 +3466,6 @@ scripts = [
       (try_end),
    ##diplomacy end+
 
-      # Give family castles to certain nobles.
-      # (call_script, "script_give_center_to_lord", "p_castle_29", "trp_knight_2_10", 0), #Nelag_Castle
-      # (call_script, "script_give_center_to_lord", "p_castle_30", "trp_knight_3_4", 0), #Asugan_Castle
-      # (call_script, "script_give_center_to_lord", "p_castle_35", "trp_knight_1_3", 0), #Haringoth_Castle
       ##diplomacy start+
       # (call_script, "script_give_center_to_lord", "p_castle_33", "trp_knight_5_11", 0), #Etrosq Castle -- why wasn't this being done already?
 	  #Add home centers for claimants
@@ -3514,16 +3529,16 @@ scripts = [
       (try_end),
 
 	  #set territorial disputes/outstanding border issues
-	  (party_set_slot, "p_castle_10", slot_center_ex_faction, "fac_kingdom_2"), #vaegirs claim nord-held alburq
-	  (party_set_slot, "p_castle_13", slot_center_ex_faction, "fac_kingdom_4"), #nords claim swadian-held kelredan
-	  (party_set_slot, "p_castle_15", slot_center_ex_faction, "fac_kingdom_1"), #swadians claim rhodok-held ergelon
-	  (party_set_slot, "p_castle_46", slot_center_ex_faction, "fac_kingdom_5"), #rhodoks claim sarranid-held weyyah
-	  (party_set_slot, "p_castle_40", slot_center_ex_faction, "fac_kingdom_6"), #sarranids claim khergit-held uhhun
-	  (party_set_slot, "p_town_11",   slot_center_ex_faction, "fac_kingdom_3"), #Khergits claim vaegir-held curaw
+	  # (party_set_slot, "p_castle_10", slot_center_ex_faction, "fac_kingdom_2"), #vaegirs claim nord-held alburq
+	  # (party_set_slot, "p_castle_13", slot_center_ex_faction, "fac_kingdom_4"), #nords claim swadian-held kelredan
+	  # (party_set_slot, "p_castle_15", slot_center_ex_faction, "fac_kingdom_1"), #swadians claim rhodok-held ergelon
+	  # (party_set_slot, "p_castle_46", slot_center_ex_faction, "fac_kingdom_5"), #rhodoks claim sarranid-held weyyah
+	  # (party_set_slot, "p_castle_40", slot_center_ex_faction, "fac_kingdom_6"), #sarranids claim khergit-held uhhun
+	  # (party_set_slot, "p_town_11",   slot_center_ex_faction, "fac_kingdom_3"), #Khergits claim vaegir-held curaw
 
-	  #Swadians, being in the middle, will have additional claims on two of their neighhbors
-	  (party_set_slot, "p_castle_15", slot_center_ex_faction, "fac_kingdom_1"), #swadians claim vaegir-held tilbault
-	  (party_set_slot, "p_castle_22", slot_center_ex_faction, "fac_kingdom_1"), #swadians claim khergit-held unuzdaq
+	  # #Swadians, being in the middle, will have additional claims on two of their neighhbors
+	  # (party_set_slot, "p_castle_15", slot_center_ex_faction, "fac_kingdom_1"), #swadians claim vaegir-held tilbault
+	  # (party_set_slot, "p_castle_22", slot_center_ex_faction, "fac_kingdom_1"), #swadians claim khergit-held unuzdaq
 
       (call_script, "script_update_village_market_towns"),
 
@@ -3624,11 +3639,19 @@ scripts = [
         (try_end),
         (party_set_slot, ":center_no", slot_town_wealth, ":initial_wealth"),
 
-        (assign, ":garrison_strength", 15),
+        # (assign, ":garrison_strength", 15),
+        # (try_begin),
+        #   (party_slot_eq, ":center_no", slot_party_type, spt_town),
+        #   (assign, ":garrison_strength", 40),
+        # (try_end),
+        
+        #Soriq modification: change initial garrison size
+        (assign, ":garrison_strength", 7),
         (try_begin),
           (party_slot_eq, ":center_no", slot_party_type, spt_town),
-          (assign, ":garrison_strength", 40),
+          (assign, ":garrison_strength", 20),
         (try_end),
+        
         (try_for_range, ":unused", 0, ":garrison_strength"),
           (call_script, "script_cf_reinforce_party", ":center_no"),
         (try_end),
@@ -7882,6 +7905,8 @@ scripts = [
         (val_div, ":limit", 100),
         ##diplomacy end
       (try_end),
+      
+      (val_div, ":limit", 2), #Soriq modification
 
       (assign, reg0, ":limit"),
       (set_trigger_result, reg0),
@@ -17550,6 +17575,8 @@ scripts = [
       (store_add, ":level_factor", 80, ":level"),
       (val_mul, ":limit", ":level_factor"),
       (val_div, ":limit", 80),
+      
+      (val_div, ":limit", 2), #Soriq modification
       (assign, reg0, ":limit"),
   ]),
 
@@ -27415,13 +27442,26 @@ scripts = [
 	  (try_end),
 	  ##diplomacy end+
       (try_begin),
-        (this_or_next|eq, ":party_type", spt_town),
-        (eq, ":party_type", spt_castle),  #CASTLE OR TOWN
+        (eq, ":party_type", spt_castle),
         (try_begin),
-          (lt, ":rand", 65),
+          (lt, ":rand", 50),
           (assign, ":party_template", ":party_template_a"),
         (else_try),
+          (lt, ":rand", 95),
           (assign, ":party_template", ":party_template_b"),
+        (else_try),
+          (assign, ":party_template", ":party_template_c"),
+        (try_end),
+      (else_try),
+        (this_or_next|eq, ":party_type", spt_town),
+        (try_begin),
+          (lt, ":rand", 50),
+          (assign, ":party_template", ":party_template_a"),
+        (else_try),
+          (lt, ":rand", 85),
+          (assign, ":party_template", ":party_template_b"),
+        (else_try),
+          (assign, ":party_template", ":party_template_c"),
         (try_end),
       (else_try),
         (eq, ":party_type", spt_kingdom_hero_party),

@@ -452,10 +452,10 @@ custom_items = [
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
 
 ["north_armor", "north_armor", [("north_armor",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+ 13500 , weight(25)|abundance(100)|head_armor(3)|body_armor(68)|leg_armor(32)|difficulty(12) ,imodbits_armor ],
 
 ["north_armor_t5", "north_armor_t4", [("north_armor_t4",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(56)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
 
 ["north_armor_t4", "Northern Veteran Mail", [("mailnormans",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
@@ -889,11 +889,11 @@ custom_items = [
 ["helmet_infantry_syndicate_4", "Northern Warrior Helmet", [("Helmet_B",0)], itp_merchandise| itp_type_head_armor|itp_fit_to_head ,0, 240 ,
  weight(2)|abundance(100)|head_armor(34)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
 
-["north_wolf_helmet", "Northern Clan Helmet", [("north_wolf_helmet",0)], itp_merchandise| itp_type_head_armor|itp_fit_to_head ,0, 240 ,
- weight(2)|abundance(100)|head_armor(34)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
+["north_wolf_helmet", "Northern Clan Helmet", [("north_wolf_helmet",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 3200 , weight(2)|abundance(100)|head_armor(62)|body_armor(2)|leg_armor(0) ,imodbits_cloth ],
 
 ["north_champion_helmet", "Northern Champion's Helmet", [("north_champion_helmet",0)], itp_merchandise| itp_type_head_armor ,0, 880 , 
- weight(2.25)|abundance(100)|head_armor(48)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
+ weight(2.25)|abundance(100)|head_armor(52)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
 
 ["north_veteran_helmet", "Northern Veteran's Helmet", [("Helmet_C_vs2",0)], itp_merchandise| itp_type_head_armor ,0, 880 , 
  weight(2.25)|abundance(100)|head_armor(48)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
