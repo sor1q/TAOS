@@ -2314,12 +2314,13 @@ strings = [
   ("feast_lengthy_description_6", 			  "The realm will be speaking of the bounty of your table for months to come, and it will become the standard to which all other feasts will aspire. You have filled the bellies not just of your noble guests and their retinues, but also of the poor who flocked to the gates. "),
 
 
-  ("kingdom_1_adjective",                     "Swadian"),
-  ("kingdom_2_adjective",                     "Vaegir"),
-  ("kingdom_3_adjective",                     "Khergit"),
-  ("kingdom_4_adjective",                     "Nord"),
-  ("kingdom_5_adjective",                     "Rhodok"),
-  ("kingdom_6_adjective",                     "Sarranid"),
+  ("kingdom_1_adjective",                     "Northern"),
+  ("kingdom_2_adjective",                     "Syndicate"),
+  ("kingdom_3_adjective",                     "Kara-Thar"),
+  ("kingdom_4_adjective",                     "Ashkar"),
+  ("kingdom_5_adjective",                     "Solmark"),
+  ("kingdom_6_adjective",                     "Eirven"),
+  ("kingdom_7_adjective",                     "Vallor"),
 
 
   ("credits_1", "Mount&Blade: Warband Copyright 2008-2015 Taleworlds Entertainment"),

@@ -77,12 +77,6 @@ custom_menus = [
           (party_add_members, "p_main_party", "trp_northern_warden", 10), 
         ]
       ),
-    ("cheat_add_troop_khergit_horse_archer", [], "Add 5 Khergit Horse Archers",
-        [
-          (display_message, "@5 Khergit Veteran Horse Archers were added to your party."),
-          (party_add_members, "p_main_party", "trp_khergit_veteran_horse_archer", 5), 
-        ]
-      ),
     ("cheat_add_troop_khergit_horse_archer", [], "Add 10 Syndicate Recruits",
         [
           (display_message, "@10 Syndicate Recruits were added to your party."),
@@ -7841,7 +7835,7 @@ TOTAL:  {reg5}"),
           #Soriq MOD defenders sally out if they have much less archers than the player
           (try_begin),
             (call_script, "script_parties_calculate_archers_ratio", "$g_encountered_party", "p_main_party"),
-            (str_assigned_love_interests_attraction_seed_reg3, ":archer_ratio", reg0),
+            (assign, ":archer_ratio", reg0),
             (lt, ":archer_ratio", 100), 
             
             (call_script, "script_party_calculate_troop_ratio", "$g_encountered_party"),

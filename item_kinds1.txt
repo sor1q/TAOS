@@ -1,5 +1,5 @@
 itemsfile version 3
-1153
+1157
  itm_no_item INVALID_ITEM INVALID_ITEM 1  invalid_item 0  12582914 9223388529554358287 3 0 1.500000 100 0 0 0 0 0 103 0 90 0 522 528
  0
 0
@@ -2601,7 +2601,7 @@ itemsfile version 3
  0
 0
 
- itm_mackie_falcata01 mackie_falcata01 mackie_falcata01 1  mackie_falcata01 0  4259842 9223388529822793743 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
+ itm_mackie_falcata01 mackie_falcata01 mackie_falcata01 1  mackie_falcata01 0  4259842 9223388529822793743 650 155668 1.500000 100 0 0 0 10 0 100 0 95 0 294 45
  0
 0
 
@@ -2757,6 +2757,10 @@ itemsfile version 3
  0
 0
 
+ itm_kthar_xbow Cursed_Siege_Crossbow Cursed_Siege_Crossbow 1  crossbow_c 0  7405577 5637160960 7683 131082 2.750000 100 0 0 0 10 0 42 80 0 3 341 0
+ 0
+0
+
  itm_wardens_plate Warden's_Plate Warden's_Plate 1  plate_bur41 0  16842765 0 13500 704643236 25.000000 100 3 68 32 12 0 0 0 0 0 0 0
  0
 0
@@ -2810,6 +2814,10 @@ itemsfile version 3
 0
 
  itm_kher_ragged_outfit_syndicate Syndicate_Ragged_Outfit Syndicate_Ragged_Outfit 1  wei_xiadi_kher_ragged_outfit 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_kthar_cuir Kara-Thar_Elite_Cuirass Kara-Thar_Elite_Cuirass 1  kthar_cuir 0  16842765 0 5200 704643236 20.000000 100 5 65 30 8 0 0 0 0 0 0 0
  0
 0
 
@@ -3350,6 +3358,14 @@ itemsfile version 3
 0
 
  itm_steppe_cap_syndicate Steppe_Cap Steppe_Cap 1  steppe_cap_a_new 0  536936460 0 14 123731968 1.000000 100 14 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_kthar_helmet Kthar_Elite_Sallet Kthar_Elite_Sallet 1  kthar_helmet 0  536936460 0 14 123731968 3.000000 100 64 4 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_kthar_horn_helmet Kthar_Horn_Helmet Kthar_Horn_Helmet 1  kthar_horn_helmet 0  536936460 0 14 123731968 3.000000 100 64 4 0 0 0 0 0 0 0 0 0
  0
 0
 

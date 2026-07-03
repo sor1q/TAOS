@@ -308,7 +308,7 @@ custom_items = [
  650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
 
 ["mackie_falcata01", "mackie_falcata01", [("mackie_falcata01",0)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip,
- 650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
+ 650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(95)|swing_damage(45 , cut) | thrust_damage(38 ,  pierce),imodbits_sword_high ],
 
 ["mackie_falchion01", "mackie_falchion01", [("mackie_falchion01",0)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip,
  650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
@@ -434,6 +434,14 @@ custom_items = [
 
 #Test Bows end
 
+#Test XBows
+
+["kthar_xbow", "Cursed Siege Crossbow", [("crossbow_c",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback ,itcf_shoot_crossbow|itcf_carry_crossbow_back,
+7683 , weight(2.75)|difficulty(10)|spd_rtng(42) | shoot_speed(80) | thrust_damage(85 ,pierce)|max_ammo(3),imodbits_crossbow ],
+
+
+#Test XBows end
+
 #Armor 
 
 ["wardens_plate", "Warden's Plate", [("plate_bur41",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
@@ -477,6 +485,9 @@ custom_items = [
 
 ["kher_ragged_outfit_syndicate", "Syndicate Ragged Outfit", [("wei_xiadi_kher_ragged_outfit",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+
+["kthar_cuir", "Kara-Thar Elite Cuirass", [("kthar_cuir",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(5)|body_armor(65)|leg_armor(30)|difficulty(8) ,imodbits_armor ],
 
 
 #Test Armor 
@@ -907,6 +918,12 @@ custom_items = [
 ["nasal_helmet_syndicate", "Nasal Helmet", [("nasal_helmet_b",0)], itp_merchandise| itp_type_head_armor   ,0, 121 , weight(1.25)|abundance(100)|head_armor(26)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
 
 ["steppe_cap_syndicate", "Steppe Cap", [("steppe_cap_a_new",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 , weight(1)|abundance(100)|head_armor(14)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+
+["kthar_helmet", "Kthar Elite Sallet", [("kthar_helmet",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(3)|abundance(100)|head_armor(64)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+
+["kthar_horn_helmet", "Kthar Horn Helmet", [("kthar_horn_helmet",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(3)|abundance(100)|head_armor(64)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 
 
 #Test Helmets  

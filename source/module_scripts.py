@@ -2949,17 +2949,17 @@ scripts = [
       (faction_set_slot, "fac_culture_2", slot_faction_tier_4_troop, "trp_syndicate_security"),
       (faction_set_slot, "fac_culture_2", slot_faction_tier_5_troop, "trp_syndicate_cavalry"),
 
-      (faction_set_slot, "fac_culture_3", slot_faction_tier_1_troop, "trp_khergit_tribesman"),
-      (faction_set_slot, "fac_culture_3", slot_faction_tier_2_troop, "trp_khergit_skirmisher"),
-      (faction_set_slot, "fac_culture_3", slot_faction_tier_3_troop, "trp_khergit_horseman"),
-      (faction_set_slot, "fac_culture_3", slot_faction_tier_4_troop, "trp_khergit_horse_archer"),
-      (faction_set_slot, "fac_culture_3", slot_faction_tier_5_troop, "trp_khergit_veteran_horse_archer"),
+      (faction_set_slot, "fac_culture_3", slot_faction_tier_1_troop, "trp_kthar_recruit"),
+      (faction_set_slot, "fac_culture_3", slot_faction_tier_2_troop, "trp_kthar_volunteer"),
+      (faction_set_slot, "fac_culture_3", slot_faction_tier_3_troop, "trp_kthar_footman"),
+      (faction_set_slot, "fac_culture_3", slot_faction_tier_4_troop, "trp_kthar_marksman"),
+      (faction_set_slot, "fac_culture_3", slot_faction_tier_5_troop, "trp_kthar_knight"),
 
-      (faction_set_slot, "fac_culture_4", slot_faction_tier_1_troop, "trp_nord_recruit"),
-      (faction_set_slot, "fac_culture_4", slot_faction_tier_2_troop, "trp_nord_footman"),
-      (faction_set_slot, "fac_culture_4", slot_faction_tier_3_troop, "trp_nord_trained_footman"),
-      (faction_set_slot, "fac_culture_4", slot_faction_tier_4_troop, "trp_nord_warrior"),
-      (faction_set_slot, "fac_culture_4", slot_faction_tier_5_troop, "trp_nord_veteran"),
+      (faction_set_slot, "fac_culture_4", slot_faction_tier_1_troop, "trp_ashkar_recruit"),
+      (faction_set_slot, "fac_culture_4", slot_faction_tier_2_troop, "trp_ashkar_runner"),
+      (faction_set_slot, "fac_culture_4", slot_faction_tier_3_troop, "trp_ashkar_caravan_spear"),
+      (faction_set_slot, "fac_culture_4", slot_faction_tier_4_troop, "trp_ashkar_sickle"),
+      (faction_set_slot, "fac_culture_4", slot_faction_tier_5_troop, "trp_ashkar_dust"),
 
       (faction_set_slot, "fac_culture_5", slot_faction_tier_1_troop, "trp_rhodok_tribesman"),
       (faction_set_slot, "fac_culture_5", slot_faction_tier_2_troop, "trp_rhodok_spearman"),
@@ -3645,11 +3645,13 @@ scripts = [
         #   (assign, ":garrison_strength", 40),
         # (try_end),
         
-        #Soriq modification: change initial garrison size
-        (assign, ":garrison_strength", 7),
+        #Soriq MOD change initial garrison size
+        (store_random_in_range, ":rand_size", 15, 36),
+        (assign, ":garrison_strength", ":rand_size"),
         (try_begin),
           (party_slot_eq, ":center_no", slot_party_type, spt_town),
-          (assign, ":garrison_strength", 20),
+          (store_random_in_range, ":rand_size", 50, 81),
+          (assign, ":garrison_strength", ":rand_size"),
         (try_end),
         
         (try_for_range, ":unused", 0, ":garrison_strength"),
@@ -3929,12 +3931,8 @@ scripts = [
 	  (faction_set_slot, "fac_kingdom_4", slot_faction_adjective, "str_kingdom_4_adjective"),
 	  (faction_set_slot, "fac_kingdom_5", slot_faction_adjective, "str_kingdom_5_adjective"),
 	  (faction_set_slot, "fac_kingdom_6", slot_faction_adjective, "str_kingdom_6_adjective"),
-
-##      (assign, "$players_kingdom", "fac_kingdom_1"),
-##      (call_script, "script_give_center_to_lord", "p_town_7", "trp_player", 0),
-##      (call_script, "script_give_center_to_lord", "p_town_16", "trp_player", 0),
-####      (call_script, "script_give_center_to_lord", "p_castle_10", "trp_player", 0),
-##      (assign, "$g_castle_requested_by_player", "p_castle_10"),
+    (faction_set_slot, "fac_kingdom_7", slot_faction_adjective, "str_kingdom_7_adjective"),
+    
       (call_script, "script_get_player_party_morale_values"),
       (party_set_morale, "p_main_party", reg0),
 
@@ -7906,8 +7904,10 @@ scripts = [
         ##diplomacy end
       (try_end),
       
-      (val_div, ":limit", 2), #Soriq modification
-
+      #Soriq MOD party size
+      (val_mul, ":limit", 2), 
+      (val_div, ":limit", 3), 
+      
       (assign, reg0, ":limit"),
       (set_trigger_result, reg0),
   ]),
@@ -9829,7 +9829,7 @@ scripts = [
           (faction_slot_eq, ":faction_no", slot_faction_culture, "fac_culture_3"),
 
           (faction_set_slot, ":faction_no", slot_faction_deserter_troop, "trp_khergit_deserter"),
-          (faction_set_slot, ":faction_no", slot_faction_guard_troop, "trp_khergit_horseman"),
+          (faction_set_slot, ":faction_no", slot_faction_guard_troop, "trp_kthar_piercer"),
           (faction_set_slot, ":faction_no", slot_faction_messenger_troop, "trp_khergit_messenger"),
           (faction_set_slot, ":faction_no", slot_faction_prison_guard_troop, "trp_khergit_prison_guard"),
           (faction_set_slot, ":faction_no", slot_faction_castle_guard_troop, "trp_khergit_castle_guard"),
@@ -9840,7 +9840,7 @@ scripts = [
           (faction_slot_eq, ":faction_no", slot_faction_culture, "fac_culture_4"),
 
           (faction_set_slot, ":faction_no", slot_faction_deserter_troop, "trp_nord_deserter"),
-          (faction_set_slot, ":faction_no", slot_faction_guard_troop, "trp_nord_warrior"),
+          (faction_set_slot, ":faction_no", slot_faction_guard_troop, "trp_ashkar_dust"),
           (faction_set_slot, ":faction_no", slot_faction_messenger_troop, "trp_nord_messenger"),
           (faction_set_slot, ":faction_no", slot_faction_prison_guard_troop, "trp_nord_prison_guard"),
           (faction_set_slot, ":faction_no", slot_faction_castle_guard_troop, "trp_nord_castle_guard"),
@@ -17576,7 +17576,10 @@ scripts = [
       (val_mul, ":limit", ":level_factor"),
       (val_div, ":limit", 80),
       
-      (val_div, ":limit", 2), #Soriq modification
+      #Soriq MOD party size
+      (val_mul, ":limit", 2), 
+      (val_div, ":limit", 3), 
+      
       (assign, reg0, ":limit"),
   ]),
 
@@ -71496,34 +71499,34 @@ Born at {s43}^Contact in {s44} of the {s45}.^\
             (store_sub, ":result", "trp_sarranid_recruit", ":direction"),
           (try_end),
         (else_try), #nords
-          (is_between, ":troop_no", "trp_nord_recruit", "trp_rhodok_tribesman"),
+          (is_between, ":troop_no", "trp_ashkar_recruit", "trp_rhodok_tribesman"),
           (str_store_string, ":sreg", "str_kingdom_4_adjective"),
           (try_begin),
             (eq, ":direction", -1),
-            (assign, ":result", "trp_nord_recruit"),
+            (assign, ":result", "trp_ashkar_recruit"),
           (else_try),
             (eq, ":direction", 1),
             (store_sub, ":result", "trp_rhodok_tribesman", ":direction"),
           (try_end),
         (else_try), #khergits
-          (is_between, ":troop_no", "trp_khergit_tribesman", "trp_nord_recruit"),
+          (is_between, ":troop_no", "trp_kthar_recruit", "trp_ashkar_recruit"),
           (str_store_string, ":sreg", "str_kingdom_3_adjective"),
           (try_begin),
             (eq, ":direction", -1),
-            (assign, ":result", "trp_khergit_tribesman"),
+            (assign, ":result", "trp_kthar_recruit"),
           (else_try),
             (eq, ":direction", 1),
-            (store_sub, ":result", "trp_nord_recruit", ":direction"),
+            (store_sub, ":result", "trp_ashkar_recruit", ":direction"),
           (try_end),
         (else_try), #vaegirs
-          (is_between, ":troop_no", "trp_syndicate_recruit", "trp_khergit_tribesman"),
+          (is_between, ":troop_no", "trp_syndicate_recruit", "trp_kthar_recruit"),
           (str_store_string, ":sreg", "str_kingdom_2_adjective"),
           (try_begin),
             (eq, ":direction", -1),
             (assign, ":result", "trp_syndicate_recruit"),
           (else_try),
             (eq, ":direction", 1),
-            (store_sub, ":result", "trp_khergit_tribesman", ":direction"),
+            (store_sub, ":result", "trp_kthar_recruit", ":direction"),
           (try_end),
         (else_try), #swadians
           (is_between, ":troop_no", "trp_northern_recruit", "trp_syndicate_recruit"),

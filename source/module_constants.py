@@ -1672,9 +1672,9 @@ captain_multiplayer_troops_begin = "trp_farmer"
 captain_multiplayer_troops_end = "trp_northern_marksman"
 
 captain_multiplayer_new_troops_begin = "trp_northern_marksman"
-captain_multiplayer_new_troops_end = "trp_khergit_lancer"
+captain_multiplayer_new_troops_end = "trp_kthar_knight"
 
-captain_multiplayer_coop_new_troops_begin = "trp_khergit_lancer"
+captain_multiplayer_coop_new_troops_begin = "trp_kthar_knight"
 captain_multiplayer_coop_new_troops_end = "trp_slaver_chief"
 #INVASION MODE END
 multiplayer_scenes_begin = "scn_multi_scene_1"
@@ -2433,9 +2433,9 @@ captain_multiplayer_troops_begin = "trp_farmer"
 captain_multiplayer_troops_end = "trp_northern_marksman"
 
 captain_multiplayer_new_troops_begin = "trp_northern_marksman"
-captain_multiplayer_new_troops_end = "trp_khergit_lancer"
+captain_multiplayer_new_troops_end = "trp_kthar_knight"
 
-captain_multiplayer_coop_new_troops_begin = "trp_khergit_lancer"
+captain_multiplayer_coop_new_troops_begin = "trp_kthar_knight"
 captain_multiplayer_coop_new_troops_end = "trp_slaver_chief"
 
 

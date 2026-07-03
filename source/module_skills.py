@@ -41,7 +41,7 @@ from header_skills import *
 
 skills = [
   ("trade","Trade",sf_base_att_cha|sf_effects_party,10,"Every level of this skill reduces your trade penalty by 5%%. (Party skill)"),
-  ("leadership","Leadership",sf_base_att_cha,10,"Every point increases maximum number of troops you can command by 5, increases your party morale and reduces troop wages by 5%%. (Leader skill)"),
+  ("leadership","Leadership",sf_base_att_cha,15,"Every point increases maximum number of troops you can command, increases your party morale and reduces troop wages by 5%%. (Leader skill)"),
   ("prisoner_management", "Slavekeeping",sf_base_att_int|sf_effects_party,15,"Every level of this skill increases your maximum number of prisoners by 20%% relative to your party size. (Party skill)"),
   ("reserved_1","Reserved Skill 1",sf_base_att_cha|sf_inactive,10,"This is a reserved skill."), 
   ("reserved_2","Reserved Skill 2",sf_base_att_cha|sf_inactive,10,"This is a reserved skill."), 
