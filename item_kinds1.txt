@@ -1,5 +1,5 @@
 itemsfile version 3
-1157
+1164
  itm_no_item INVALID_ITEM INVALID_ITEM 1  invalid_item 0  12582914 9223388529554358287 3 0 1.500000 100 0 0 0 0 0 103 0 90 0 522 528
  0
 0
@@ -4442,6 +4442,34 @@ itemsfile version 3
 0
 
  itm_boot18 boot18 boot18 1  boot18 0  536940302 0 34 123731968 1.000000 100 0 0 10 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ashkar_awlpike_long Ashkar_Long_Awlpike Ashkar_Long_Awlpike 1  awl_pike_a 0  1212481540 22236529535484672 385 8202 2.250000 100 0 0 0 0 0 89 0 185 0 288 276
+ 0
+0
+
+ itm_ashkar_military_sickle Ashkar_Military_Sickle Ashkar_Military_Sickle 1  military_sickle_a 0  12910594 9223388530091229198 220 262164 1.000000 100 0 0 0 9 0 100 0 75 0 256 282
+ 0
+0
+
+ itm_ashkar_throwing_spears Ashkar_Throwing_Spears Ashkar_Throwing_Spears 2  jarid_new_b 0  jarid_new_b_bag 3458764513820540928  541130762 36507484160 525 4398046781448 3.000000 100 0 0 0 2 0 87 22 65 4 300 0
+ 0
+0
+
+ itm_ashkar_throwing_spear_melee Ashkar_Throwing_Spear Ashkar_Throwing_Spear 2  jarid_new_b 0  javelins_quiver 3458764513820540928  4456452 22236523361472256 525 4398046781448 1.000000 100 0 0 0 1 0 91 0 75 0 279 18
+ 0
+0
+
+ itm_ashkar_magyar_helmet Ashkar_Magyar_Helmet Ashkar_Magyar_Helmet 1  magyar_helmet_a 0  12 0 1278 123731968 2.000000 100 20 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ashkar_samurai_armor Ashkar_Samurai_Armor Ashkar_Samurai_Armor 1  wei_xiadi_samurai_armor02 0  16842765 0 5200 704643236 20.000000 100 0 35 15 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ashkar_leather_boots Ashkar_Leather_Boots Ashkar_Leather_Boots 1  boot6 0  536940302 0 534 123731968 1.000000 100 0 0 15 0 0 0 0 0 0 0 0
  0
 0
 

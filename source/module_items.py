@@ -166,7 +166,7 @@ custom_items = [
  650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
 
 
-#Test Swords
+### Test Swords
 
 ["2scimitar_black2", "2scimitar_black2", [("2scimitar_black2",0),("2scimitar_black2_scab", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip,
  650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
@@ -414,9 +414,9 @@ custom_items = [
 
 
 
-#Test Swords end 
+### Test Swords end 
 
-#Test Bows
+### Test Bows
 
 ["Duskfall",         "Duskfall", [("Duskfall",0),("Duskfall_carry", ixmesh_carry)], itp_type_bow |itp_merchandise|itp_primary|itp_two_handed,itcf_shoot_bow|itcf_carry_bowcase_left|itcf_show_holster_when_drawn,
 269 , weight(1.25)|difficulty(3)|spd_rtng(90) | shoot_speed(57) | thrust_damage(21 ,pierce),imodbits_bow ],
@@ -432,15 +432,15 @@ custom_items = [
 
 
 
-#Test Bows end
+### Test Bows end
 
-#Test XBows
+### Test XBows
 
 ["kthar_xbow", "Cursed Siege Crossbow", [("crossbow_c",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback ,itcf_shoot_crossbow|itcf_carry_crossbow_back,
 7683 , weight(2.75)|difficulty(10)|spd_rtng(42) | shoot_speed(80) | thrust_damage(85 ,pierce)|max_ammo(3),imodbits_crossbow ],
 
 
-#Test XBows end
+### Test XBows end
 
 #Armor 
 
@@ -490,7 +490,7 @@ custom_items = [
  5200 , weight(20)|abundance(100)|head_armor(5)|body_armor(65)|leg_armor(30)|difficulty(8) ,imodbits_armor ],
 
 
-#Test Armor 
+### Test Armor 
 
 ["Female_Armor_Hospitallers", "Female_Armor_Hospitallers", [("Female_Armor_Hospitallers",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
@@ -824,7 +824,7 @@ custom_items = [
 
 
 
-#Test Armor end 
+### Test Armor end 
 
 #Boots
 
@@ -832,7 +832,7 @@ custom_items = [
  3 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(3)|difficulty(0) ,imodbits_cloth ],
 
 
-#Test boots
+### Test boots
 
 ["black_leather_boots_syndicate", "Khergit Leather Boots", [("khergit_leather_boots",0)], itp_merchandise| itp_type_foot_armor |itp_civilian | itp_attach_armature ,0,
  1770 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(9) ,imodbits_plate ],
@@ -851,9 +851,9 @@ custom_items = [
 
 
 
-#Test boots end
+### Test boots end
 
-#Test Gloves
+### Test Gloves
 
 ["steel_gauntlets_L","steel_gauntlets_L", [("steel_gauntlets_L",0)], 
   itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
@@ -881,7 +881,7 @@ custom_items = [
 
 
 
-#Test Gloves end
+### Test Gloves end
 
 #Helmets 
 
@@ -926,7 +926,7 @@ custom_items = [
  weight(3)|abundance(100)|head_armor(64)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 
 
-#Test Helmets  
+### Test Helmets  
 
 ["saxon_conical_helmet_coif", "saxon_conical_helmet_coif", [("saxon_conical_helmet_coif",0)], itp_type_head_armor |itp_merchandise   ,0, 
  1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
@@ -1290,7 +1290,7 @@ custom_items = [
 
 
 
-#Test Helmets end 
+### Test Helmets end 
 
 #Shields 
 
@@ -1321,7 +1321,7 @@ custom_items = [
 ["north_leather_shield", "Northern Leather Shield", [("shield_round_d",0)], itp_type_shield|itp_wooden_parry, itcf_carry_round_shield,  80 , weight(2.5)|hit_points(310)|body_armor(8)|spd_rtng(96)|shield_width(40),imodbits_shield ],
 
 
-#Test Shields    
+### Test Shields    
  
 ["krag_nobility_shield", "krag_nobility_shield Shield", [("krag_nobility_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
 400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
@@ -1368,9 +1368,9 @@ custom_items = [
 
 
 
-#Test Shields end 
+### Test Shields end 
 
-#Test Horses
+### Test Horses
 
 ["horse1","Charger 1", [("horse1",0)], itp_merchandise|itp_type_horse, 0, 1811,abundance(40)|hit_points(165)|body_armor(58)|difficulty(4)|horse_speed(40)|horse_maneuver(44)|horse_charge(32)|horse_scale(112),imodbits_horse_basic|imodbit_champion, [], [fac_kingdom_1, fac_kingdom_5]],
 
@@ -1556,10 +1556,10 @@ custom_items = [
 
 
 
-#Test Horses end
+### Test Horses end
 
 
-#Test Boots
+### Test Boots
 
 ["north_hide_boots", "Northern Hide Boots", [("hide_boots_a",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
  34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(10)|difficulty(0) ,imodbits_cloth ],
@@ -1623,7 +1623,38 @@ custom_items = [
 
 
 
-#Test Boots end
+### Test Boots end
+
+# Grouped Items ------------------------------------------------------------------------------------
+
+## The North
+## Syndicate
+## Kara-Thar
+## Ashkar
+
+# spearmen
+["ashkar_awlpike_long",  "Ashkar Long Awlpike", [("awl_pike_a",0)], itp_type_polearm|itp_offset_lance|itp_merchandise| itp_primary|itp_penalty_with_shield|itp_wooden_parry, itc_cutting_spear|itcf_carry_spear,
+ 385 , weight(2.25)|difficulty(0)|spd_rtng(89) | weapon_length(185)|swing_damage(20 , pierce) | thrust_damage(32 ,  pierce),imodbits_polearm ],
+["ashkar_military_sickle", "Ashkar Military Sickle", [("military_sickle_a",0)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_secondary|itp_wooden_parry, itc_scimitar|itcf_carry_axe_left_hip,
+ 220 , weight(1.0)|difficulty(9)|spd_rtng(100) | weapon_length(75)|swing_damage(26 , pierce) | thrust_damage(0 ,  pierce),imodbits_axe ],
+
+["ashkar_throwing_spears",         "Ashkar Throwing Spears", [("jarid_new_b",0),("jarid_new_b_bag", ixmesh_carry)], itp_type_thrown |itp_merchandise|itp_primary|itp_next_item_as_melee ,itcf_throw_javelin|itcf_carry_quiver_back|itcf_show_holster_when_drawn,
+ 525 , weight(3)|difficulty(2)|spd_rtng(87) | shoot_speed(22) | thrust_damage(44 ,  pierce)|max_ammo(4)|weapon_length(65),imodbits_thrown ],
+["ashkar_throwing_spear_melee",         "Ashkar Throwing Spear", [("jarid_new_b",0),("javelins_quiver", ixmesh_carry)],itp_type_polearm|itp_primary|itp_wooden_parry , itc_staff,
+ 525 , weight(1)|difficulty(1)|spd_rtng(91) | swing_damage(18, cut) | thrust_damage(23 ,  pierce)|weapon_length(75),imodbits_thrown ],
+
+["ashkar_magyar_helmet", "Ashkar Magyar Helmet", [("magyar_helmet_a",0)], itp_type_head_armor   ,0, 
+ 1278 , weight(2)|abundance(100)|head_armor(20)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+["ashkar_samurai_armor", "Ashkar Samurai Armor", [("wei_xiadi_samurai_armor02",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(35)|leg_armor(15)|difficulty(8) ,imodbits_armor ],
+["ashkar_leather_boots", "Ashkar Leather Boots", [("boot6",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 534 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(15)|difficulty(0) ,imodbits_cloth ],
+
+
+
+## Solmark
+## Eirven
+## Vallor
 ]
 
 # 001 Items Main
