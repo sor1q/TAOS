@@ -489,6 +489,9 @@ custom_items = [
 ["kthar_cuir", "Kara-Thar Elite Cuirass", [("kthar_cuir",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(5)|body_armor(65)|leg_armor(30)|difficulty(8) ,imodbits_armor ],
 
+["eirven_chest", "eirven_chest", [("eirven_chest",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(5)|body_armor(65)|leg_armor(30)|difficulty(8) ,imodbits_armor ],
+
 
 ### Test Armor 
 
@@ -878,7 +881,6 @@ custom_items = [
 
 ["glove6_L","glove6_L", [("glove6_L",0)], 
   itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
-
 
 
 ### Test Gloves end
@@ -1633,8 +1635,8 @@ custom_items = [
 ## Ashkar
 
 # spearmen
-["ashkar_awlpike_long",  "Ashkar Long Awlpike", [("awl_pike_a",0)], itp_type_polearm|itp_offset_lance|itp_merchandise| itp_primary|itp_penalty_with_shield|itp_wooden_parry, itc_cutting_spear|itcf_carry_spear,
- 385 , weight(2.25)|difficulty(0)|spd_rtng(89) | weapon_length(185)|swing_damage(20 , pierce) | thrust_damage(32 ,  pierce),imodbits_polearm ],
+["ashkar_awlpike_long",  "Ashkar Long Awlpike", [("awl_pike_a",0)], itp_type_polearm|itp_offset_lance|itp_merchandise| itp_primary|itp_penalty_with_shield|itp_wooden_parry, itc_spear|itcf_carry_spear,
+ 385 , weight(2.25)|difficulty(0)|spd_rtng(89) | weapon_length(200)| thrust_damage(32 ,  pierce),imodbits_polearm ],
 ["ashkar_military_sickle", "Ashkar Military Sickle", [("military_sickle_a",0)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_secondary|itp_wooden_parry, itc_scimitar|itcf_carry_axe_left_hip,
  220 , weight(1.0)|difficulty(9)|spd_rtng(100) | weapon_length(75)|swing_damage(26 , pierce) | thrust_damage(0 ,  pierce),imodbits_axe ],
 
@@ -1644,17 +1646,92 @@ custom_items = [
  525 , weight(1)|difficulty(1)|spd_rtng(91) | swing_damage(18, cut) | thrust_damage(23 ,  pierce)|weapon_length(75),imodbits_thrown ],
 
 ["ashkar_magyar_helmet", "Ashkar Magyar Helmet", [("magyar_helmet_a",0)], itp_type_head_armor   ,0, 
- 1278 , weight(2)|abundance(100)|head_armor(20)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+ 1278 , weight(2)|abundance(100)|head_armor(20)|body_armor(0)|leg_armor(0) ,imodbits_plate ],
 ["ashkar_samurai_armor", "Ashkar Samurai Armor", [("wei_xiadi_samurai_armor02",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(35)|leg_armor(15)|difficulty(8) ,imodbits_armor ],
 ["ashkar_leather_boots", "Ashkar Leather Boots", [("boot6",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
  534 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(15)|difficulty(0) ,imodbits_cloth ],
 
+# knight
+
+["ashkar_voulge", "Ashkar Voulge", [("mackie_voulge",0)], itp_type_two_handed_wpn|itp_merchandise| itp_two_handed|itp_primary|itp_bonus_against_shield|itp_wooden_parry, itc_nodachi|itcf_carry_axe_back,
+ 3650 , weight(1.5)|difficulty(7)|spd_rtng(70) | weapon_length(220)|swing_damage(50 , cut) | thrust_damage(38 ,  pierce),imodbits_polearm ],
+["ashkar_nodachi", "Ashkar Nodachi", [("mackie_nodachi",0)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip,
+ 2650 , weight(1.5)|difficulty(7)|spd_rtng(80) | weapon_length(100)|swing_damage(40 , cut) | thrust_damage(30 ,  pierce),imodbits_sword ],
+["ashkar_round_shield", "Ashkar Round Shield", [("nobleman_round_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+900 , weight(2)|hit_points(400)|body_armor(10)|spd_rtng(90)|shield_width(90),imodbits_shield],
+
+
+["ashkar_pepperpot", "Ashkar Pepperpot Helmet", [("frenchpepperpot2",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 3000 , weight(1)|abundance(100)|head_armor(58)|body_armor(2)|leg_armor(0) ,imodbits_plate ],
+["ashkar_steel_boots", "Ashkar Steel Boots", [("boot12",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 234 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(30)|difficulty(5) ,imodbits_plate ],
+["ashkar_ranger_armor", "Ashkar Ranger Armor", [("armor23",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 6200 , weight(15)|abundance(100)|head_armor(0)|body_armor(52)|leg_armor(10)|difficulty(8) ,imodbits_armor ],
+["ashkar_steel_gauntlets","Ashkar Steel Gauntlets", [("steel_gauntlets_L",0)], itp_merchandise|itp_type_hand_armor,0, 
+ 850, weight(0.5)|abundance(100)|body_armor(8)|difficulty(2),imodbits_armor],
+
+["ashkar_akwarhorse","Ashkar Dune Horse", [("akwarhorse_bt",0)], itp_merchandise|itp_type_horse, 0, 
+ 3811,abundance(15)|hit_points(165)|body_armor(43)|difficulty(6)|horse_speed(60)|horse_maneuver(48)|horse_charge(44)|horse_scale(112),imodbits_horse_basic|imodbit_champion, [], [fac_kingdom_4]],
+
+# weaver
+["ashkar_weaver_bow", "Ashkar Weaver Bow", [("elvenbow",0),("elvenbow_carry", ixmesh_carry)], itp_type_bow |itp_primary|itp_two_handed,itcf_shoot_bow|itcf_carry_bow_back,
+269 , weight(1.25)|difficulty(3)|spd_rtng(90) | shoot_speed(57) | thrust_damage(21 ,pierce),imodbits_bow ],
+
+
+["ashkar_hood", "Ashkar Weaver Hood", [("youhou_assassin_hood",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 3000 , weight(0.5)|abundance(20)|head_armor(42)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+["ashkar_weaver_armor", "Ashkar Weaver Armor", [("armor31",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 7200 , weight(4)|abundance(20)|head_armor(4)|body_armor(65)|leg_armor(15)|difficulty(8) ,imodbits_armor ],
+["ashkar_weaver_gloves", "Ashkar Weaver Gloves", [("glove5_L",0)], itp_merchandise|itp_type_hand_armor,0, 
+ 650, weight(0.2)|abundance(20)|body_armor(5)|difficulty(0),imodbits_armor],
+
+["ashkar_weaver_horse","Ashkar Weaver Horse", [("akwarhorse_bz",0)], itp_merchandise|itp_type_horse, 0, 
+ 9811,abundance(5)|hit_points(170)|body_armor(42)|difficulty(4)|horse_speed(48)|horse_maneuver(47)|horse_charge(40)|horse_scale(112),imodbits_horse_basic|imodbit_champion, [], [fac_kingdom_4]],
+
 
 
 ## Solmark
+
+#knight
+["solmark_bastard_sword", "Solmark Bastard Sword", [("mackie_bastard",0)], itp_type_two_handed_wpn|itp_merchandise|itp_two_handed|itp_primary, itc_greatsword|itcf_carry_sword_back,
+ 1123 , weight(2.75)|difficulty(10)|spd_rtng(95) | weapon_length(120)|swing_damage(50 , cut) | thrust_damage(30 ,  pierce),imodbits_sword_high ],
+["solmark_dragon_shield", "Solmark Dragon Shield", [("solmark_dragon_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(3)|hit_points(550)|body_armor(15)|spd_rtng(82)|shield_width(90),imodbits_shield],
+
+
+["solmark_knight_helmet", "Solmark Knight Helmet", [("teutonichelm_d",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 1000 , weight(2)|abundance(100)|head_armor(47)|body_armor(5)|leg_armor(0) ,imodbits_plate ],
+["solmark_white_armor", "Solmark White Armor", [("armor10",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(54)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+["solmark_steel_boots", "Solmark Steel Boots", [("boot10",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(28)|difficulty(0) ,imodbits_plate ],
+["solmark_steel_gauntlets","Solmark Steel Gauntlets", [("steel_gauntlets_L",0)], itp_merchandise|itp_type_hand_armor,0, 
+ 350, weight(0.5)|abundance(100)|body_armor(7)|difficulty(0),imodbits_armor],
+
+["solmark_white_horse","Solmark White Horse", [("horse5_1",0)], itp_merchandise|itp_type_horse, 0, 
+ 1811,abundance(40)|hit_points(165)|body_armor(50)|difficulty(4)|horse_speed(36)|horse_maneuver(40)|horse_charge(40)|horse_scale(112),imodbits_horse_basic|imodbit_champion, [], [fac_kingdom_1, fac_kingdom_5]],
+
+
+
 ## Eirven
+
+#keeper
+["eirven_keeper_chest", "Eirven Keeper Chest", [("eirven_keeper_chest",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(10)|abundance(100)|head_armor(0)|body_armor(50)|leg_armor(22)|difficulty(8) ,imodbits_armor ],
+
+
 ## Vallor
+
+#Champion
+["vallor_champ_armor", "Vallor Champion Armor", [("vallor_champ_armor",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(5)|body_armor(65)|leg_armor(30)|difficulty(8) ,imodbits_armor ],
+["vallor_champ_helm", "vallor_champ_helm", [("vallor_champ_helm",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(3)|abundance(100)|head_armor(64)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["vallor_champ_boot", "vallor_champ_boot", [("vallor_champ_boot",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(10)|difficulty(0) ,imodbits_cloth ],
+["vallor_champ_glove_l","vallor_champ_glove_L", [("vallor_champ_glove_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
 ]
 
 # 001 Items Main
@@ -2541,7 +2618,7 @@ items_main = [
 #  80 , weight(2.0)|difficulty(0)|spd_rtng(88) | weapon_length(200)|swing_damage(15 , blunt) | thrust_damage(20 ,  pierce),imodbits_polearm ],
 
 ["bamboo_spear",         "Bamboo Spear", [("arabian_spear_a_3m",0)], itp_type_polearm|itp_offset_lance|itp_merchandise| itp_primary|itp_penalty_with_shield|itp_wooden_parry|itp_no_blur, itc_staff,
- 80 , weight(2.0)|difficulty(0)|spd_rtng(88) | weapon_length(200)|swing_damage(20 , blunt) | thrust_damage(20 ,  pierce),imodbits_polearm ],
+ 80 , weight(2.5)|difficulty(0)|spd_rtng(100) | weapon_length(160)|swing_damage(30 , pierce) | thrust_damage(30 ,  pierce),imodbits_polearm ],
 
 
 

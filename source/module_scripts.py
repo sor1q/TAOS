@@ -632,7 +632,9 @@ custom_battle_ai_scripts = [
       (gt, ":item", 0),
       (item_get_type, ":item_type", ":item"),
       (eq, ":item_type", itp_type_polearm),
-      (item_has_capability, ":item", itc_staff),
+      
+      (this_or_next|item_has_capability, ":item", itc_staff),
+      (item_has_capability, ":item", itc_spear),
       
       (agent_get_position, pos1, ":agent"),   
             
@@ -1932,7 +1934,8 @@ autoresolver_scripts = [
       
       (val_mul, ":attacker_strength", ":percent"),
       (val_div, ":attacker_strength", 100),
-    (else_try),
+    (try_end),
+    (try_begin),
       (gt, ":archer_ratio_att", 0),
       (gt, ":horseman_ratio_def"),
       (assign, ":archer_debuff_value", 20), #Change this value to change penalty for archers vs shields (orig 20%)
@@ -1959,7 +1962,8 @@ autoresolver_scripts = [
       
       (val_mul, ":defender_strength", ":percent"),
       (val_div, ":defender_strength", 100),
-    (else_try),
+    (try_end),
+    (try_begin),
       (gt, ":archer_ratio_def", 0),
       (gt, ":horseman_ratio_att"),
       (assign, ":archer_debuff_value", 20), #Change this value to change penalty for archers vs shields (orig 20%)
@@ -1976,7 +1980,7 @@ autoresolver_scripts = [
       (assign, reg0, ":attacker_strength"),
       (assign, reg1, ":defender_strength"),
     
-  ])
+  ]),
 ]
 
 # 007 - Find last obj scripts
@@ -2961,23 +2965,23 @@ scripts = [
       (faction_set_slot, "fac_culture_4", slot_faction_tier_4_troop, "trp_ashkar_sickle"),
       (faction_set_slot, "fac_culture_4", slot_faction_tier_5_troop, "trp_ashkar_dust"),
 
-      (faction_set_slot, "fac_culture_5", slot_faction_tier_1_troop, "trp_rhodok_tribesman"),
-      (faction_set_slot, "fac_culture_5", slot_faction_tier_2_troop, "trp_rhodok_spearman"),
-      (faction_set_slot, "fac_culture_5", slot_faction_tier_3_troop, "trp_rhodok_trained_spearman"),
-      (faction_set_slot, "fac_culture_5", slot_faction_tier_4_troop, "trp_rhodok_veteran_spearman"),
-      (faction_set_slot, "fac_culture_5", slot_faction_tier_5_troop, "trp_rhodok_sergeant"),
+      (faction_set_slot, "fac_culture_5", slot_faction_tier_1_troop, "trp_solmark_recruit"),
+      (faction_set_slot, "fac_culture_5", slot_faction_tier_2_troop, "trp_solmark_pursuer"),
+      (faction_set_slot, "fac_culture_5", slot_faction_tier_3_troop, "trp_solmark_inquisitor"),
+      (faction_set_slot, "fac_culture_5", slot_faction_tier_4_troop, "trp_solmark_warrior"),
+      (faction_set_slot, "fac_culture_5", slot_faction_tier_5_troop, "trp_solmark_purifier"),
 
-      (faction_set_slot, "fac_culture_6", slot_faction_tier_1_troop, "trp_sarranid_recruit"),
-      (faction_set_slot, "fac_culture_6", slot_faction_tier_2_troop, "trp_sarranid_footman"),
-      (faction_set_slot, "fac_culture_6", slot_faction_tier_3_troop, "trp_sarranid_archer"),
-      (faction_set_slot, "fac_culture_6", slot_faction_tier_4_troop, "trp_sarranid_horseman"),
-      (faction_set_slot, "fac_culture_6", slot_faction_tier_5_troop, "trp_sarranid_mamluke"),
+      (faction_set_slot, "fac_culture_6", slot_faction_tier_1_troop, "trp_eirven_recruit"),
+      (faction_set_slot, "fac_culture_6", slot_faction_tier_2_troop, "trp_eirven_recruit"),
+      (faction_set_slot, "fac_culture_6", slot_faction_tier_3_troop, "trp_eirven_recruit"),
+      (faction_set_slot, "fac_culture_6", slot_faction_tier_4_troop, "trp_eirven_recruit"),
+      (faction_set_slot, "fac_culture_6", slot_faction_tier_5_troop, "trp_eirven_recruit"),
       
-      (faction_set_slot, "fac_culture_7", slot_faction_tier_1_troop, "trp_sarranid_recruit"),
-      (faction_set_slot, "fac_culture_7", slot_faction_tier_2_troop, "trp_sarranid_footman"),
-      (faction_set_slot, "fac_culture_7", slot_faction_tier_3_troop, "trp_sarranid_archer"),
-      (faction_set_slot, "fac_culture_7", slot_faction_tier_4_troop, "trp_sarranid_horseman"),
-      (faction_set_slot, "fac_culture_7", slot_faction_tier_5_troop, "trp_sarranid_mamluke"),
+      (faction_set_slot, "fac_culture_7", slot_faction_tier_1_troop, "trp_eirven_recruit"),
+      (faction_set_slot, "fac_culture_7", slot_faction_tier_2_troop, "trp_eirven_recruit"),
+      (faction_set_slot, "fac_culture_7", slot_faction_tier_3_troop, "trp_eirven_recruit"),
+      (faction_set_slot, "fac_culture_7", slot_faction_tier_4_troop, "trp_eirven_recruit"),
+      (faction_set_slot, "fac_culture_7", slot_faction_tier_5_troop, "trp_eirven_recruit"),
 
       (faction_set_slot, "fac_culture_1", slot_faction_town_walker_male_troop, "trp_town_walker_1"),
       (faction_set_slot, "fac_culture_1", slot_faction_town_walker_female_troop, "trp_town_walker_2"),
@@ -3646,11 +3650,11 @@ scripts = [
         # (try_end),
         
         #Soriq MOD change initial garrison size
-        (store_random_in_range, ":rand_size", 15, 36),
+        (store_random_in_range, ":rand_size", 10, 21),
         (assign, ":garrison_strength", ":rand_size"),
         (try_begin),
           (party_slot_eq, ":center_no", slot_party_type, spt_town),
-          (store_random_in_range, ":rand_size", 50, 81),
+          (store_random_in_range, ":rand_size", 40, 61),
           (assign, ":garrison_strength", ":rand_size"),
         (try_end),
         
@@ -7904,9 +7908,6 @@ scripts = [
         ##diplomacy end
       (try_end),
       
-      #Soriq MOD party size
-      (val_mul, ":limit", 2), 
-      (val_div, ":limit", 3), 
       
       (assign, reg0, ":limit"),
       (set_trigger_result, reg0),
@@ -9851,7 +9852,7 @@ scripts = [
           (faction_slot_eq, ":faction_no", slot_faction_culture, "fac_culture_5"),
 
           (faction_set_slot, ":faction_no", slot_faction_deserter_troop, "trp_rhodok_deserter"),
-          (faction_set_slot, ":faction_no", slot_faction_guard_troop, "trp_rhodok_veteran_spearman"),
+          (faction_set_slot, ":faction_no", slot_faction_guard_troop, "trp_solmark_purifier"),
           (faction_set_slot, ":faction_no", slot_faction_messenger_troop, "trp_rhodok_messenger"),
           (faction_set_slot, ":faction_no", slot_faction_prison_guard_troop, "trp_rhodok_prison_guard"),
           (faction_set_slot, ":faction_no", slot_faction_castle_guard_troop, "trp_rhodok_castle_guard"),
@@ -9862,7 +9863,7 @@ scripts = [
           (faction_slot_eq, ":faction_no", slot_faction_culture, "fac_culture_6"),
 
           (faction_set_slot, ":faction_no", slot_faction_deserter_troop, "trp_sarranid_deserter"),
-          (faction_set_slot, ":faction_no", slot_faction_guard_troop, "trp_sarranid_guard"), #SB : fix this
+          (faction_set_slot, ":faction_no", slot_faction_guard_troop, "trp_eirven_recruit"), #SB : fix this
           (faction_set_slot, ":faction_no", slot_faction_messenger_troop, "trp_sarranid_messenger"),
           (faction_set_slot, ":faction_no", slot_faction_prison_guard_troop, "trp_sarranid_prison_guard"),
           (faction_set_slot, ":faction_no", slot_faction_castle_guard_troop, "trp_sarranid_castle_guard"),
@@ -9873,7 +9874,7 @@ scripts = [
           (faction_slot_eq, ":faction_no", slot_faction_culture, "fac_culture_7"),
 
           (faction_set_slot, ":faction_no", slot_faction_deserter_troop, "trp_sarranid_deserter"),
-          (faction_set_slot, ":faction_no", slot_faction_guard_troop, "trp_sarranid_guard"), #SB : fix this
+          (faction_set_slot, ":faction_no", slot_faction_guard_troop, "trp_eirven_recruit"), #SB : fix this
           (faction_set_slot, ":faction_no", slot_faction_messenger_troop, "trp_sarranid_messenger"),
           (faction_set_slot, ":faction_no", slot_faction_prison_guard_troop, "trp_sarranid_prison_guard"),
           (faction_set_slot, ":faction_no", slot_faction_castle_guard_troop, "trp_sarranid_castle_guard"),
@@ -17576,9 +17577,6 @@ scripts = [
       (val_mul, ":limit", ":level_factor"),
       (val_div, ":limit", 80),
       
-      #Soriq MOD party size
-      (val_mul, ":limit", 2), 
-      (val_div, ":limit", 3), 
       
       (assign, reg0, ":limit"),
   ]),
@@ -71479,34 +71477,34 @@ Born at {s43}^Contact in {s44} of the {s45}.^\
             (store_sub, ":result", startup_merchants_begin, ":direction"),
           (try_end),
         (else_try), #sarranids
-          (is_between, ":troop_no", "trp_sarranid_recruit", "trp_looter"),
+          (is_between, ":troop_no", "trp_eirven_recruit", "trp_looter"),
           (str_store_string, ":sreg", "str_kingdom_6_adjective"),
           (try_begin),
             (eq, ":direction", -1),
-            (assign, ":result", "trp_sarranid_recruit"),
+            (assign, ":result", "trp_eirven_recruit"),
           (else_try),
             (eq, ":direction", 1),
             (store_sub, ":result", "trp_looter", ":direction"),
           (try_end),
         (else_try), #rhodoks
-          (is_between, ":troop_no", "trp_rhodok_tribesman", "trp_sarranid_recruit"),
+          (is_between, ":troop_no", "trp_solmark_recruit", "trp_eirven_recruit"),
           (str_store_string, ":sreg", "str_kingdom_5_adjective"),
           (try_begin),
             (eq, ":direction", -1),
-            (assign, ":result", "trp_rhodok_tribesman"),
+            (assign, ":result", "trp_solmark_recruit"),
           (else_try),
             (eq, ":direction", 1),
-            (store_sub, ":result", "trp_sarranid_recruit", ":direction"),
+            (store_sub, ":result", "trp_eirven_recruit", ":direction"),
           (try_end),
         (else_try), #nords
-          (is_between, ":troop_no", "trp_ashkar_recruit", "trp_rhodok_tribesman"),
+          (is_between, ":troop_no", "trp_ashkar_recruit", "trp_solmark_recruit"),
           (str_store_string, ":sreg", "str_kingdom_4_adjective"),
           (try_begin),
             (eq, ":direction", -1),
             (assign, ":result", "trp_ashkar_recruit"),
           (else_try),
             (eq, ":direction", 1),
-            (store_sub, ":result", "trp_rhodok_tribesman", ":direction"),
+            (store_sub, ":result", "trp_solmark_recruit", ":direction"),
           (try_end),
         (else_try), #khergits
           (is_between, ":troop_no", "trp_kthar_recruit", "trp_ashkar_recruit"),
@@ -75419,7 +75417,7 @@ Born at {s43}^Contact in {s44} of the {s45}.^\
       (try_for_range, ":faction_no", kingdoms_begin, kingdoms_end),
         (faction_slot_eq, ":faction_no", slot_faction_culture, "fac_culture_6"),
         (faction_slot_eq, ":faction_no", slot_faction_guard_troop, "trp_sarranid_castle_guard"),
-        (faction_set_slot, ":faction_no", slot_faction_guard_troop, "trp_sarranid_guard"),
+        (faction_set_slot, ":faction_no", slot_faction_guard_troop, "trp_eirven_recruit"),
       (try_end),
       #rivacheg strange bonus chest
       (store_random_in_range, ":imod", imod_rusty, imod_strong),

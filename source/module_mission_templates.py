@@ -3879,7 +3879,7 @@ mission_templates = [
 
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers + dplmc_horse_cull + unique_lords_abilities + custom_battle_templates
+    + dplmc_battle_mode_triggers + dplmc_horse_cull + custom_battle_templates
     #SB : horse cull
     ##diplomacy end
   ),

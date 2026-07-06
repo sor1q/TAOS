@@ -1,5 +1,5 @@
 itemsfile version 3
-1164
+1190
  itm_no_item INVALID_ITEM INVALID_ITEM 1  invalid_item 0  12582914 9223388529554358287 3 0 1.500000 100 0 0 0 0 0 103 0 90 0 522 528
  0
 0
@@ -1872,7 +1872,7 @@ itemsfile version 3
  0
 0
 
- itm_bamboo_spear Bamboo_Spear Bamboo_Spear 1  arabian_spear_a_3m 0  2251801026166788 22236523361472256 80 8202 2.000000 100 0 0 0 0 0 88 0 200 0 276 532
+ itm_bamboo_spear Bamboo_Spear Bamboo_Spear 1  arabian_spear_a_3m 0  2251801026166788 22236523361472256 80 8202 2.500000 100 0 0 0 0 0 100 0 160 0 286 286
  0
 0
 
@@ -2818,6 +2818,10 @@ itemsfile version 3
 0
 
  itm_kthar_cuir Kara-Thar_Elite_Cuirass Kara-Thar_Elite_Cuirass 1  kthar_cuir 0  16842765 0 5200 704643236 20.000000 100 5 65 30 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_eirven_chest eirven_chest eirven_chest 1  eirven_chest 0  16842765 0 5200 704643236 20.000000 100 5 65 30 8 0 0 0 0 0 0 0
  0
 0
 
@@ -4445,7 +4449,7 @@ itemsfile version 3
  0
 0
 
- itm_ashkar_awlpike_long Ashkar_Long_Awlpike Ashkar_Long_Awlpike 1  awl_pike_a 0  1212481540 22236529535484672 385 8202 2.250000 100 0 0 0 0 0 89 0 185 0 288 276
+ itm_ashkar_awlpike_long Ashkar_Long_Awlpike Ashkar_Long_Awlpike 1  awl_pike_a 0  1212481540 22236529535484160 385 8202 2.250000 100 0 0 0 0 0 89 0 200 0 288 0
  0
 0
 
@@ -4461,7 +4465,7 @@ itemsfile version 3
  0
 0
 
- itm_ashkar_magyar_helmet Ashkar_Magyar_Helmet Ashkar_Magyar_Helmet 1  magyar_helmet_a 0  12 0 1278 123731968 2.000000 100 20 0 0 0 0 0 0 0 0 0 0
+ itm_ashkar_magyar_helmet Ashkar_Magyar_Helmet Ashkar_Magyar_Helmet 1  magyar_helmet_a 0  12 0 1278 704643238 2.000000 100 20 0 0 0 0 0 0 0 0 0 0
  0
 0
 
@@ -4470,6 +4474,109 @@ itemsfile version 3
 0
 
  itm_ashkar_leather_boots Ashkar_Leather_Boots Ashkar_Leather_Boots 1  boot6 0  536940302 0 534 123731968 1.000000 100 0 0 15 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ashkar_voulge Ashkar_Voulge Ashkar_Voulge 1  mackie_voulge 0  73728003 9223635923965575392 3650 8202 1.500000 100 0 0 0 7 0 70 0 220 0 294 50
+ 0
+0
+
+ itm_ashkar_nodachi Ashkar_Nodachi Ashkar_Nodachi 1  mackie_nodachi 0  4259842 9223388529822793743 2650 24596 1.500000 100 0 0 0 7 0 80 0 100 0 286 40
+ 0
+0
+
+ itm_ashkar_round_shield Ashkar_Round_Shield Ashkar_Round_Shield 1  nobleman_round_shield 0  65543 5100273664 900 167772194 2.000000 100 0 10 0 0 400 90 0 90 0 0 0
+ 0
+0
+
+ itm_ashkar_pepperpot Ashkar_Pepperpot_Helmet Ashkar_Pepperpot_Helmet 1  frenchpepperpot2 0  65548 0 3000 704643238 1.000000 100 58 2 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ashkar_steel_boots Ashkar_Steel_Boots Ashkar_Steel_Boots 1  boot12 0  536940302 0 234 704643238 1.000000 100 0 0 30 5 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ashkar_ranger_armor Ashkar_Ranger_Armor Ashkar_Ranger_Armor 1  armor23 0  16842765 0 6200 704643236 15.000000 100 0 52 10 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ashkar_steel_gauntlets Ashkar_Steel_Gauntlets Ashkar_Steel_Gauntlets 1  steel_gauntlets_L 0  65551 0 850 704643236 0.500000 100 0 8 0 2 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ashkar_akwarhorse Ashkar_Dune_Horse Ashkar_Dune_Horse 1  akwarhorse_bt 0  65537 0 3811 110595670016 0.000000 15 0 43 0 6 165 48 60 112 0 44 0
+ 1
+ 19
+0
+
+ itm_ashkar_weaver_bow Ashkar_Weaver_Bow Ashkar_Weaver_Bow 2  elvenbow 0  elvenbow_carry 3458764513820540928  6291464 5905584128 269 655370 1.250000 100 0 0 0 3 0 90 57 0 0 277 0
+ 0
+0
+
+ itm_ashkar_hood Ashkar_Weaver_Hood Ashkar_Weaver_Hood 1  youhou_assassin_hood 0  65548 0 3000 123731968 0.500000 20 42 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ashkar_weaver_armor Ashkar_Weaver_Armor Ashkar_Weaver_Armor 1  armor31 0  16842765 0 7200 704643236 4.000000 20 4 65 15 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ashkar_weaver_gloves Ashkar_Weaver_Gloves Ashkar_Weaver_Gloves 1  glove5_L 0  65551 0 650 704643236 0.000000 20 0 5 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_ashkar_weaver_horse Ashkar_Weaver_Horse Ashkar_Weaver_Horse 1  akwarhorse_bz 0  65537 0 9811 110595670016 0.000000 5 0 42 0 4 170 47 48 112 0 40 0
+ 1
+ 19
+0
+
+ itm_solmark_bastard_sword Solmark_Bastard_Sword Solmark_Bastard_Sword 1  mackie_bastard 0  6356995 9223635924301119728 1123 155668 2.750000 100 0 0 0 10 0 95 0 120 0 286 50
+ 0
+0
+
+ itm_solmark_dragon_shield Solmark_Dragon_Shield Solmark_Dragon_Shield 1  solmark_dragon_shield 0  65543 5100273664 400 167772194 3.000000 100 0 15 0 0 550 82 0 90 0 0 0
+ 0
+0
+
+ itm_solmark_knight_helmet Solmark_Knight_Helmet Solmark_Knight_Helmet 1  teutonichelm_d 0  65548 0 1000 704643238 2.000000 100 47 5 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_solmark_white_armor Solmark_White_Armor Solmark_White_Armor 1  armor10 0  16842765 0 5200 704643236 20.000000 100 0 54 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_solmark_steel_boots Solmark_Steel_Boots Solmark_Steel_Boots 1  boot10 0  536940302 0 34 704643238 1.000000 100 0 0 28 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_solmark_steel_gauntlets Solmark_Steel_Gauntlets Solmark_Steel_Gauntlets 1  steel_gauntlets_L 0  65551 0 350 704643236 0.500000 100 0 7 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_solmark_white_horse Solmark_White_Horse Solmark_White_Horse 1  horse5_1 0  65537 0 1811 110595670016 0.000000 40 0 50 0 4 165 40 36 112 0 40 0
+ 2
+ 16 20
+0
+
+ itm_eirven_keeper_chest Eirven_Keeper_Chest Eirven_Keeper_Chest 1  eirven_keeper_chest 0  16842765 0 5200 704643236 10.000000 100 0 50 22 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_vallor_champ_armor Vallor_Champion_Armor Vallor_Champion_Armor 1  vallor_champ_armor 0  16842765 0 5200 704643236 20.000000 100 5 65 30 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_vallor_champ_helm vallor_champ_helm vallor_champ_helm 1  vallor_champ_helm 0  536936460 0 14 123731968 3.000000 100 64 4 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_vallor_champ_boot vallor_champ_boot vallor_champ_boot 1  vallor_champ_boot 0  536940302 0 34 123731968 1.000000 100 0 0 10 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_vallor_champ_glove_l vallor_champ_glove_L vallor_champ_glove_L 1  vallor_champ_glove_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
  0
 0
 

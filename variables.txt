@@ -1327,8 +1327,6 @@ player_has_bodyslided
 enable_bodysliding
 bodysliding_last_troop
 g_horses_are_available
-player_team
-nord_team
 g_bound_right
 g_bound_top
 g_bound_left
