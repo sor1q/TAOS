@@ -1843,9 +1843,9 @@ custom_items = [
 
 #knight
 ["vallor_knight_armor", "Vallor Knight Armor", [("vallor_champ_armor",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 5200 , weight(20)|abundance(100)|head_armor(4)|body_armor(70)|leg_armor(30)|difficulty(8) ,imodbits_armor, [], [fac_kingdom_7]],
+ 5200 , weight(20)|abundance(100)|head_armor(4)|body_armor(58)|leg_armor(28)|difficulty(8) ,imodbits_armor, [], [fac_kingdom_7]],
 ["vallor_knight_helm", "Vallor Knight Helm", [("vallor_champ_helm",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
- weight(3)|abundance(100)|head_armor(65)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+ weight(3)|abundance(100)|head_armor(62)|body_armor(3)|leg_armor(0)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
 ["vallor_knight_boot", "Vallor Knight Boot", [("vallor_champ_boot",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
  34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(35)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
 ["vallor_knight_glove_l","Vallor Knight Gloves", [("vallor_champ_glove_L",0)], 

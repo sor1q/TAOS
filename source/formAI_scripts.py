@@ -777,6 +777,8 @@ formAI_scripts = [
 			(try_end),
 
 			(assign, ":cavalry_order", mordr_charge), ##CABA HERE
+		
+			
 			(try_begin),
 				(teams_are_enemies, ":team_no", 0),
 				(neg|team_slot_ge, 1, slot_team_reinforcement_stage, AI_Max_Reinforcements),

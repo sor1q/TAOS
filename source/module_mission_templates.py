@@ -69,7 +69,7 @@ custom_battle_templates_everywhere = [
       
       (store_character_level,":lvl" ,":dead_troop"),
       (val_mul, ":lvl", ":lvl"),
-      (val_div, ":lvl", 10),
+      (val_div, ":lvl", 100),
       (call_script, "script_player_add_essence", ":lvl"),
    ]),
 ]
