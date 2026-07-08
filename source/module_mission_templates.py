@@ -50,7 +50,9 @@ af_castle_lord = af_override_horse | af_override_weapons| af_require_civilian
 # 001 - Main mission templates
 # 002 - Unique lords abilites
 # 003 - Custom battle templates
+# 004 - Custom battle templates everywhere
 
+# 004 - Custom battle templates everywhere
 custom_battle_templates_everywhere = [
   (ti_on_agent_killed_or_wounded, 0,0,
    [
