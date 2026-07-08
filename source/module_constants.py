@@ -25,6 +25,10 @@ slot_agent_north_debuff = 600 #Checks if a troop has north debuff (0 or 1)
 slot_hero_last_health = 601 #Stores last value of a hero's hp (0-100)
 slot_lord_init_faction = 602 #Stores an initial lord's faction 
 
+#whisper mechanic slots
+slot_troop_is_whispering = 603 #Checks if a troop is whispering (0 or 1)
+slot_troop_essence = 604 #Stores a troop's essence
+slot_troop_whispering_influence = 605 
 
 
 # 004 - Custom constants

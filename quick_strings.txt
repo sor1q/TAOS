@@ -1,4 +1,4 @@
-1743
+1748
 qstr_Breaking_camp... Breaking_camp...
 qstr_Removing_disguise... Removing_disguise...
 qstr_{s17}_has_{reg17}_de {s17}_has_{reg17}_denars
@@ -1742,3 +1742,8 @@ qstr_DEBUG__TPE_:_{s1}_pla DEBUG_(TPE):_{s1}_placed_in_slot_#{reg1}_for_tourname
 qstr_DEBUG__TPE_:_Discove DEBUG_(TPE):_Discovered_invalid_troop.__Replaced_with_{s1}_in_slot_{reg0}.
 qstr_DEBUG__TPE_:_Entry_# DEBUG_(TPE):_Entry_#{reg2}_/_Team_#{reg1}_=_{s1}
 qstr_Quest_ended_due_to_t Quest_ended_due_to_tournament_system_quests_being_disabled.
+qstr_Whispering_influence Whispering_influence:_{reg6}
+qstr_Void_Essence:_{reg6} Void_Essence:_{reg6}
+qstr_The_world_goes_silen The_world_goes_silent_for_a_moment,_and_then..._you_hear_them._____________________Countless_voices_calling_out_from_the_shadows,_welcoming_you._You_are_now_a_Whisperer.
+qstr_You_ve_lost_{reg7}_e You've_lost_{reg7}_essence
+qstr_You_ve_got_{reg7}_es You've_got_{reg7}_essence

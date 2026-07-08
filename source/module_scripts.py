@@ -54,6 +54,26 @@ def keys_array():
 
 # 009 - Troop exchange scripts
 troop_exchange_scripts = [
+  #Script allows to add some void essence to player with message
+  ("player_add_essence", [
+    (store_script_param, ":difference", 1),
+    
+    (troop_get_slot,":before_val", "trp_player", slot_troop_essence),
+    (store_add, ":new_val", ":before_val", ":difference"),
+    
+    (troop_set_slot, "trp_player", slot_troop_essence, ":new_val"),
+    
+    (assign, reg7, ":difference"),
+    (try_begin),
+      (lt, ":before_val", 0),
+      (val_mul, reg7, -1),
+      (str_store_string, s1, "@You've lost {reg7} essence"),
+    (else_try),
+      (str_store_string, s1, "@You've got {reg7} essence"),
+    (try_end),
+    
+    (display_message, s1),
+  ]),
   # ("troop_exchange_get_rescued", [
   #       (troop_slot_eq, "trp_globals_troop", slot_adv_transfer_mode, 10),
   #       (party_get_num_companion_stacks, ":num_companion_stacks","p_temp_party"),
@@ -3468,6 +3488,8 @@ scripts = [
           (store_troop_faction, ":lord_faction", ":troop_id"),
           (troop_set_slot, ":troop_id", slot_lord_init_faction, ":lord_faction"),
       (try_end),
+      
+      (troop_set_slot, "trp_kingdom_3_lord", slot_troop_is_whispering, 1),
    ##diplomacy end+
 
       ##diplomacy start+
@@ -4857,34 +4879,15 @@ scripts = [
    [
        (store_script_param_1, "$g_encountered_party"),
        (store_script_param_2, "$g_encountered_party_2"),# encountered_party2 is set when we come across a battle or siege, otherwise it's a negative value
-#       (store_encountered_party, "$g_encountered_party"),
-#       (store_encountered_party2,"$g_encountered_party_2"), # encountered_party2 is set when we come across a battle or siege, otherwise it's a minus value
        (store_faction_of_party, "$g_encountered_party_faction","$g_encountered_party"),
        (store_relation, "$g_encountered_party_relation", "$g_encountered_party_faction", "fac_player_faction"),
 
        (party_get_slot, "$g_encountered_party_type", "$g_encountered_party", slot_party_type),
        (party_get_template_id,"$g_encountered_party_template","$g_encountered_party"),
-#       (try_begin),
-#         (gt, "$g_encountered_party_2", 0),
-#         (store_faction_of_party, "$g_encountered_party_2_faction","$g_encountered_party_2"),
-#         (store_relation, "$g_encountered_party_2_relation", "$g_encountered_party_2_faction", "fac_player_faction"),
-#         (party_get_template_id,"$g_encountered_party_2_template","$g_encountered_party_2"),
-#       (else_try),
-#         (assign, "$g_encountered_party_2_faction",-1),
-#         (assign, "$g_encountered_party_2_relation", 0),
-#         (assign,"$g_encountered_party_2_template", -1),
-#       (try_end),
 
 #NPC companion changes begin
        (call_script, "script_party_count_fit_regulars", "p_main_party"),
        (assign, "$playerparty_prebattle_regulars", reg0),
-
-#        (try_begin),
-#            (assign, "$player_party__regulars", 0),
-#            (call_script, "script_party_count_fit_regulars", "p_main_party"),
-#            (gt, reg0, 0),
-#            (assign, "$player_party_contains_regulars", 1),
-#        (try_end),
 #NPC companion changes end
 
 
@@ -4894,9 +4897,6 @@ scripts = [
         (assign, "$g_enemy_surrenders",0),
         (assign, "$g_leave_encounter",0),
         (assign, "$g_engaged_enemy", 0),
-#       (assign,"$waiting_for_arena_fight_result", 0),
-#       (assign,"$arena_bet_amount",0),
-#       (assign,"$g_player_raiding_village",0),
         (try_begin),
           (neg|is_between, "$g_encountered_party", centers_begin, centers_end),
           (rest_for_hours, 0), #stop waiting

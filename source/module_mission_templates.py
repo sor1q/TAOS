@@ -9,7 +9,7 @@ from header_skills import *
 from module_constants import *
 
 
-####################################################################################################################
+####################################d################################################################################
 #   Each mission-template is a tuple that contains the following fields:
 #  1) Mission-template id (string): used for referencing mission-templates in other files.
 #     The prefix mt_ is automatically added before each mission-template id
@@ -50,6 +50,29 @@ af_castle_lord = af_override_horse | af_override_weapons| af_require_civilian
 # 001 - Main mission templates
 # 002 - Unique lords abilites
 # 003 - Custom battle templates
+
+custom_battle_templates_everywhere = [
+  (ti_on_agent_killed_or_wounded, 0,0,
+   [
+     (troop_slot_eq, "trp_player", slot_troop_is_whispering, 1),
+   ],
+   [
+      (store_trigger_param_1, ":dead_agent"),
+      (store_trigger_param_2, ":killer_agent"),
+      (store_trigger_param_3, ":is_wounded"),
+      
+      (agent_is_human, ":killer_agent"),
+      (agent_get_troop_id, ":killer_troop", ":killer_agent"),
+      (eq, ":killer_troop", "trp_player"),
+      
+      (agent_get_troop_id, ":dead_troop", ":dead_agent"),
+      
+      (store_character_level,":lvl" ,":dead_troop"),
+      (val_mul, ":lvl", ":lvl"),
+      (val_div, ":lvl", 10),
+      (call_script, "script_player_add_essence", ":lvl"),
+   ]),
+]
 
 # 003 - Custom battle templates
 custom_battle_templates = [
@@ -3879,7 +3902,7 @@ mission_templates = [
 
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers + dplmc_horse_cull + custom_battle_templates
+    + dplmc_battle_mode_triggers + dplmc_horse_cull + custom_battle_templates + custom_battle_templates_everywhere
     #SB : horse cull
     ##diplomacy end
   ),
@@ -3970,7 +3993,8 @@ mission_templates = [
 
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers + dplmc_horse_cull,  #SB : horse cull
+    + dplmc_battle_mode_triggers + dplmc_horse_cull + custom_battle_templates_everywhere
+    #SB : horse cull
     ##diplomacy end
   ),
 
@@ -4125,7 +4149,7 @@ mission_templates = [
 
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers + dplmc_horse_cull, #SB : horse cull
+    + dplmc_battle_mode_triggers + dplmc_horse_cull + custom_battle_templates_everywhere
     ##diplomacy end
   ),
 
@@ -4228,7 +4252,7 @@ mission_templates = [
       common_battle_inventory,
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers,
+    + dplmc_battle_mode_triggers + custom_battle_templates_everywhere
     ##diplomacy end
   ),
 
@@ -4327,7 +4351,7 @@ mission_templates = [
       common_battle_inventory,
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers,
+    + dplmc_battle_mode_triggers + custom_battle_templates_everywhere
     ##diplomacy end
   ),
 
@@ -4462,7 +4486,7 @@ mission_templates = [
       common_battle_inventory,
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers,
+    + dplmc_battle_mode_triggers + custom_battle_templates_everywhere
     ##diplomacy end
   ),
 
@@ -4547,7 +4571,7 @@ mission_templates = [
       common_siege_assign_men_to_belfry,
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers
+    + dplmc_battle_mode_triggers + custom_battle_templates_everywhere
     ##diplomacy end
   ),
 
@@ -4665,7 +4689,7 @@ mission_templates = [
 ##       []),
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers,
+    + dplmc_battle_mode_triggers + custom_battle_templates_everywhere
     ##diplomacy end
   ),
 
@@ -5541,7 +5565,7 @@ mission_templates = [
 
       (ti_inventory_key_pressed, 0, 0, [(display_message,"str_cant_use_inventory_arena")], []),
 
-    ],
+    ] + custom_battle_templates_everywhere,
   ),
 
    (

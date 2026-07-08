@@ -20596,6 +20596,89 @@ dialogs = [
             "lord_recruit_1_relation",
             [],
         ],
+        #Soriq DIA Turning into whispering by lord relationship
+        [
+            anyone | plyr,
+            "lord_talk",
+            [ 
+                (troop_slot_eq, "trp_player", slot_troop_is_whispering, 0),
+                (troop_slot_eq, "$g_talk_troop", slot_troop_is_whispering, 1),
+                (troop_slot_ge, "$g_talk_troop", slot_troop_player_relation, 80),
+            ],
+            "I've noticed something weird about you.",
+            "lord_offer_whisp_turning",
+            [],
+        ],
+        [
+            anyone,
+            "lord_offer_whisp_turning",[],
+            "Lower your voice, friend... You see more than you should. But since you are loyal, I will tell you the truth." +
+            "I am a Whisperer. The whispers guide me, and they could guide you too. Join us, and embrace the power.",
+            "player_whisp_turning_descision",[],
+        ],
+        [
+            anyone | plyr,
+            "player_whisp_turning_descision",[],
+            "I am ready. Make me one of you. (+)",
+            "lord_turning_into_whispering",
+            [],
+        ],
+        [
+            anyone,
+            "lord_turning_into_whispering",[],
+            "The world thinks the void is empty. They are wrong. The void is alive, " +
+            "waiting to be heard. Open your mind and let the silence consume you.",
+            "lord_talk",
+            [
+                (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 20),
+                (troop_set_slot, "trp_player", slot_troop_is_whispering, 1),
+                (display_message, "@The world goes silent for a moment, and then... you hear them. \
+                    Countless voices calling out from the shadows, welcoming you. You are now a Whisperer.", 0xFFD073FF),
+            ],
+        ],
+        [
+            anyone | plyr,
+            "player_whisp_turning_descision",[],
+            "Tell me more about these whispers first. What is the price?",
+            "lord_whisp_turning_describe",
+            [],
+        ],
+        [
+            anyone,
+            "lord_whisp_turning_describe",[],
+            "Knowledge, my friend. The whispers are the true voice of this world," +
+            "the ones that existed long before the Seals were forged. They grant you foresight." +
+            "They show you the hidden intentions of your enemies, the rot inside your allies," +
+            "and the path to undeniable power. But everything demands its dues. The price is your quietude." +
+            "The normal world will forever feel distant, like a faded painting. You will never know true" +
+            "silence again. Every shadow will speak to you, every breeze will bear their weight, and sleep..." +
+            "sleep will become a battlefield. You exchange your comforting ignorance for the heavy, maddening truth." +
+            "So tell me... is your mind strong enough to bear it, or will you remain a blind sheep like the rest?",
+            "player_whisp_turning_descision",
+            [],
+        ],
+        [
+            anyone | plyr,
+            "player_whisp_turning_descision",[],
+            "This is madness. I want no part in this. (-)",
+            "lord_whisp_turning_refused",
+            [],
+        ],
+        [
+            anyone,
+            "lord_whisp_turning_refused",[],
+            "Madness?! You dare call the absolute truth madness, you sniveling worm?!" +
+            "I trusted you, shared the sacred echo with you, and you spit in my face?!" +
+            "Listen to me carefully: if a single word about this leaves your pathetic mouth," +
+            "the whispers will tear your mind apart before your corpse even hits the dirt." +
+            "Forget everything you saw, or I will personally carve the secrets out of your chest." +
+            "Speak of something else before I lose my patience entirely!",
+            "lord_leave",
+            [
+                (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", -180),
+            ],
+        ],
+        #end
         [
             anyone | plyr,
             "lord_talk",

@@ -66,54 +66,22 @@ custom_menus = [
     ],
     []
   ),
-  ("cheat_troops", 0,
-  "Choose troop type:",
-  "none",
-  [],
-  [
-    ("cheat_add_troop_warden_north", [], "Add 10 Wardens of the North",
-        [
-          (display_message, "@10 Wardens of the North were added to your party."),
-          (party_add_members, "p_main_party", "trp_northern_warden", 10), 
-        ]
-      ),
-    ("cheat_add_troop_khergit_horse_archer", [], "Add 10 Syndicate Recruits",
-        [
-          (display_message, "@10 Syndicate Recruits were added to your party."),
-          (party_add_members, "p_main_party", "trp_syndicate_recruit", 10), 
-        ] 
-      ),
-    ("cheat_add_troop_khergit_horse_archer", [], "Add 10 Northern Recruits",
-        [
-          (display_message, "@10 Northern Recruits were added to your party."),
-          (party_add_members, "p_main_party", "trp_northern_recruit", 10), 
-        ] 
-      ),
-    ("cheat_add_troop_khergit_horse_archer", [], "Add 5 syndicate_shooter", 
-        [
-          (display_message, "@5 syndicate_shooter were added to your party."),
-          (party_add_members, "p_main_party", "trp_syndicate_shooter", 5), 
-        ] 
-      ),
-    ("cheat_add_troop_khergit_horse_archer", [], "Add 5 Syndicate Praetorians",
-        [
-          (display_message, "@5 Syndicate Praetorians were added to your party."),
-          (party_add_members, "p_main_party", "trp_syndicate_praetorian", 5), 
-        ] 
-      ),
-    ("cheat_add_troop_khergit_horse_archer", [], "Add 5 Syndicate Cavalry",
-        [
-          (display_message, "@5 Syndicate Cavalry were added to your party."),
-          (party_add_members, "p_main_party", "trp_syndicate_cavalry", 5), 
-        ] 
-      ),
-    ("back_to_camp_menu",[],"{!}Back to camp menu.",
-      [
-        (jump_to_menu, "mnu_camp"), 
-      ]
+  ("whispering_report", 0,
+    "Whispering Report^^^{s1}^{s2}",
+    "none",
+    [
+      (troop_get_slot, reg6, "trp_player", slot_troop_whispering_influence),
+      (str_store_string, s1, "@Whispering influence: {reg6}"),
+      (troop_get_slot, reg6, "trp_player", slot_troop_essence),
+      (str_store_string, s2, "@Void Essence: {reg6}"),
+    ],
+    [
+      ("go_back",[],"Go back",
+       [
+         (jump_to_menu, "mnu_reports"),
+       ]),
+    ]
     ),
-  ]
-  ),
   
   # Cheat function
   ("manage_members", 0,
@@ -589,6 +557,10 @@ game_menus = [
     [
       ("view_troop_tree",[],"View troop tree.",
         [(jump_to_menu, "mnu_troop_tree"),
+        ]
+      ),
+      ("view_troop_tree",[(troop_slot_eq, "trp_player", slot_troop_is_whispering, 1)],"|| View whispering report ||",
+        [(jump_to_menu, "mnu_whispering_report"),
         ]
       ),
       ("cheat_faction_orders",[(ge,"$cheat_mode",1)],"{!}Cheat: Faction orders.",
@@ -3257,15 +3229,24 @@ TOTAL:  {reg5}"),
    [
      ],
     [
+      ("camp_cheat_find_item",[], "Find an item...",
+       [(jump_to_menu, "mnu_cheat_find_item"),]
+       ),
+      
       ("camp_cheat_debug_ehp_dph", [], "Debug EHP/DPH",
        [
         (call_script, "script_init_troop_ehp_dph"),
         (call_script, "script_debug_ehp_dph"), 
-       ]),
-      ("camp_cheat_find_item",[], "Find an item...",
-       [(jump_to_menu, "mnu_cheat_find_item"),]
-       ),
 
+       ]),
+      
+      ("camp_cheat_debug_ehp_dph", [], "Debug WHISPERING",
+       [
+        #Whisp Debug
+        (troop_set_slot, "trp_player", slot_troop_is_whispering, 1),
+        (call_script, "script_player_add_essence", 150),
+      
+       ]),
       ("camp_cheat_weather",[], "Change weather..",
        [(jump_to_menu, "mnu_cheat_change_weather"),]
        ),
@@ -3305,13 +3286,6 @@ TOTAL:  {reg5}"),
           (try_end),
         ]
        ),
-      
-      ("camp_cheat_9",[],"{!}Add troops.",
-        [
-           (jump_to_menu, "mnu_cheat_troops"),
-        ]
-      ),
-
       ("camp_cheat_3",[],"{!}Update political notes.",
        [
          (try_for_range, ":hero", active_npcs_begin, active_npcs_end),
