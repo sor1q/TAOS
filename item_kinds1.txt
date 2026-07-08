@@ -1,5 +1,5 @@
 itemsfile version 3
-1190
+1268
  itm_no_item INVALID_ITEM INVALID_ITEM 1  invalid_item 0  12582914 9223388529554358287 3 0 1.500000 100 0 0 0 0 0 103 0 90 0 522 528
  0
 0
@@ -1872,10 +1872,6 @@ itemsfile version 3
  0
 0
 
- itm_bamboo_spear Bamboo_Spear Bamboo_Spear 1  arabian_spear_a_3m 0  2251801026166788 22236523361472256 80 8202 2.500000 100 0 0 0 0 0 100 0 160 0 286 286
- 0
-0
-
  itm_war_spear War_Spear War_Spear 1  spear_i_2-3m 0  1078263812 22236529535487744 140 8202 2.500000 100 0 0 0 0 0 95 0 150 0 283 532
  0
 0
@@ -2393,22 +2389,6 @@ itemsfile version 3
  18 17
 0
 
- itm_sword_north_p Northern_Steel Northern_Steel 2  norman_sword 0  scab_norman_sword 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
- 0
-0
-
- itm_north_warden_axe Warden's_Axe Warden's_Axe 2  new_axe 0  new_axe 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 10 0 100 0 115 0 298 54
- 0
-0
-
- itm_north_champion_axe Champion's_Axe Champion's_Axe 2  first_axe 0  first_axe 3458764513820540928  4259842 9223388564182532111 650 155668 1.500000 100 0 0 0 8 0 100 0 115 0 291 48
- 0
-0
-
- itm_north_one_handed_axe Northern_One_Handed_Axe Northern_One_Handed_Axe 1  one_handed_war_axe_a 0  80019458 9223388530091229198 87 262164 1.500000 100 0 0 0 9 0 98 0 71 0 256 32
- 0
-0
-
  itm_long_spiked_club_syndicate Long_Spiked_Club Long_Spiked_Club 1  mace_long_c 0  274882428932 9223388533849325582 264 262164 3.000000 100 0 0 0 0 0 96 0 126 0 532 279
  0
 0
@@ -2761,43 +2741,11 @@ itemsfile version 3
  0
 0
 
- itm_wardens_plate Warden's_Plate Warden's_Plate 1  plate_bur41 0  16842765 0 13500 704643236 25.000000 100 3 68 32 12 0 0 0 0 0 0 0
- 0
-0
-
- itm_armor_infantry_north_4 Snow-Stalwart_Surcoat Snow-Stalwart_Surcoat 1  norman_hauberk_a 0  16842765 0 7600 704643236 23.000000 100 1 60 24 10 0 0 0 0 0 0 0
- 0
-0
-
- itm_armor_infantry_north_3 Frozen_Sqire's_Gambeson Frozen_Sqire's_Gambeson 1  outlaw_mix 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
- 0
-0
-
  itm_armor_infantry_syndicate_5 Black_Plate_T5 Black_Plate_T5 1  wei_xiadi_swa_mail_and_plate_black 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
  0
 0
 
  itm_armor_infantry_syndicate_4 Black_Plate_T4 Black_Plate_T4 1  xiadi_mail_and_plate_black 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
- 0
-0
-
- itm_north_armor north_armor north_armor 1  north_armor 0  16842765 0 13500 704643236 25.000000 100 3 68 32 12 0 0 0 0 0 0 0
- 0
-0
-
- itm_north_armor_t5 north_armor_t4 north_armor_t4 1  north_armor_t4 0  16842765 0 5200 704643236 20.000000 100 0 56 20 8 0 0 0 0 0 0 0
- 0
-0
-
- itm_north_armor_t4 Northern_Veteran_Mail Northern_Veteran_Mail 1  mailnormans 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
- 0
-0
-
- itm_north_armor_t3 Northern_Foorman_Byrnie Northern_Foorman_Byrnie 1  byrnie_a_new 0  16842765 0 795 704643236 17.000000 100 0 39 6 7 0 0 0 0 0 0 0
- 0
-0
-
- itm_north_leather_jerkin Northern_Leather_Jerkin Northern_Leather_Jerkin 1  ragged_leather_jerkin 0  553713677 0 321 123731968 6.000000 100 0 23 6 0 0 0 0 0 0 0 0
  0
 0
 
@@ -3285,43 +3233,35 @@ itemsfile version 3
  0
 0
 
- itm_steel_gauntlets_L steel_gauntlets_L steel_gauntlets_L 1  steel_gauntlets_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
+ itm_steel_gauntlets_l steel_gauntlets_L steel_gauntlets_L 1  steel_gauntlets_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
  0
 0
 
- itm_steel_mittens_L steel_mittens_L steel_mittens_L 1  steel_mittens_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
+ itm_steel_mittens_l steel_mittens_L steel_mittens_L 1  steel_mittens_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
  0
 0
 
- itm_glove1_L glove1_L glove1_L 1  glove1_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
+ itm_glove1_l glove1_l glove1_l 1  glove1_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
  0
 0
 
- itm_glove2_L glove2_L glove2_L 1  glove2_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
+ itm_glove2_l glove2_l glove2_l 1  glove2_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
  0
 0
 
- itm_glove3_L glove3_L glove3_L 1  glove3_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
+ itm_glove3_l glove3_l glove3_l 1  glove3_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
  0
 0
 
- itm_glove4_L glove4_L glove4_L 1  glove4_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
+ itm_glove4_l glove4_l glove4_l 1  glove4_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
  0
 0
 
- itm_glove5_L glove5_L glove5_L 1  glove5_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
+ itm_glove5_l glove5_l glove5_l 1  glove5_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
  0
 0
 
- itm_glove6_L glove6_L glove6_L 1  glove6_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
- 0
-0
-
- itm_wardens_helmet Warden's_Helmet Warden's_Helmet 1  sorry_im_berserk_helm_inventory 0  65548 0 3200 123731968 2.000000 100 62 2 0 0 0 0 0 0 0 0 0
- 0
-0
-
- itm_helmet_infantry_north_4 Snow-Stalwart_Helmet Snow-Stalwart_Helmet 1  ghuls 0  65548 0 2100 123731968 2.000000 100 55 2 0 0 0 0 0 0 0 0 0
+ itm_glove6_l glove6_l glove6_l 1  glove6_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
  0
 0
 
@@ -3334,26 +3274,6 @@ itemsfile version 3
 0
 
  itm_helmet_infantry_syndicate_4 Northern_Warrior_Helmet Northern_Warrior_Helmet 1  Helmet_B 0  1073807372 0 240 704643238 2.000000 100 34 0 0 7 0 0 0 0 0 0 0
- 0
-0
-
- itm_north_wolf_helmet Northern_Clan_Helmet Northern_Clan_Helmet 1  north_wolf_helmet 0  65548 0 3200 123731968 2.000000 100 62 2 0 0 0 0 0 0 0 0 0
- 0
-0
-
- itm_north_champion_helmet Northern_Champion's_Helmet Northern_Champion's_Helmet 1  north_champion_helmet 0  65548 0 880 704643238 2.250000 100 52 0 0 7 0 0 0 0 0 0 0
- 0
-0
-
- itm_north_veteran_helmet Northern_Veteran's_Helmet Northern_Veteran's_Helmet 1  Helmet_C_vs2 0  65548 0 880 704643238 2.250000 100 48 0 0 7 0 0 0 0 0 0 0
- 0
-0
-
- itm_north_steppe_cap Northern_Steppe_Cap Northern_Steppe_Cap 1  steppe_cap_a_new 0  536936460 0 14 123731968 1.000000 100 14 0 0 0 0 0 0 0 0 0 0
- 0
-0
-
- itm_north_helmet_spearman Northern_Spearman_Helmet Northern_Spearman_Helmet 1  north_helmet_spearman 0  536936460 0 14 123731968 1.000000 100 48 0 0 0 0 0 0 0 0 0 0
  0
 0
 
@@ -3849,14 +3769,6 @@ itemsfile version 3
  0
 0
 
- itm_vallor_shield Vallor_Shield Vallor_Shield 1  vallor_shield 0  65543 5100273664 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
- 0
-0
-
- itm_north_shield Northern_Shield Northern_Shield 1  north_shield 0  65543 6442450944 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
- 0
-0
-
  itm_syndicate_shield Syndicate_Shield Syndicate_Shield 1  syndicate_shield 0  65543 6442450944 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
  0
 0
@@ -3866,18 +3778,6 @@ itemsfile version 3
 0
 
  itm_eye_shield Eye_Shield Eye_Shield 1  eye_shield 0  65543 6442450944 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
- 0
-0
-
- itm_north_round_shield Northern_Round_Shield Northern_Round_Shield 1  north_round_shield 0  65543 5100273664 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
- 0
-0
-
- itm_north_round_shield_s Northern_Round_Shield_Small Northern_Round_Shield_Small 1  north_shield_round_small 0  65543 5100273664 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
- 0
-0
-
- itm_north_leather_shield Northern_Leather_Shield Northern_Leather_Shield 1  shield_round_d 0  262151 5100273664 80 167772194 2.500000 100 0 8 0 0 310 96 0 40 0 0 0
  0
 0
 
@@ -4373,10 +4273,6 @@ itemsfile version 3
  16 20
 0
 
- itm_north_hide_boots Northern_Hide_Boots Northern_Hide_Boots 1  hide_boots_a 0  536940302 0 34 123731968 1.000000 100 0 0 10 0 0 0 0 0 0 0 0
- 0
-0
-
  itm_boot1 boot1 boot1 1  boot1 0  536940302 0 34 123731968 1.000000 100 0 0 10 0 0 0 0 0 0 0 0
  0
 0
@@ -4446,6 +4342,240 @@ itemsfile version 3
 0
 
  itm_boot18 boot18 boot18 1  boot18 0  536940302 0 34 123731968 1.000000 100 0 0 10 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_xman_leather_boots3 Leather_Boots Leather_Boots 1  leather_boots_a 0  536940302 0 174 123731968 1.250000 100 0 0 16 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_inf_mail_mittens Mail_Mittens Mail_Mittens 1  mail_mittens_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_inf_scale_gauntlets Scale_Gauntlets Scale_Gauntlets 1  scale_gauntlets_b_L 0  65551 0 710 704643236 0.750000 100 0 5 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_inf_lamellar_gauntlets Lamellar_Gauntlets Lamellar_Gauntlets 1  scale_gauntlets_a_L 0  65551 0 910 704643236 0.750000 100 0 6 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_inf_gauntlets Gauntlets Gauntlets 1  gauntlets_L 0  65551 0 1040 704643236 1.000000 100 0 7 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_inf_mail_chausses Mail_Chausses Mail_Chausses 1  mail_chausses_a 0  69390 0 530 704643236 3.000000 100 0 0 24 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_inf_splinted_greaves Splinted_Greaves Splinted_Greaves 1  splinted_greaves_a 0  69390 0 853 704643236 2.750000 100 0 0 28 7 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_inf_mail_boots Mail_Boots Mail_Boots 1  mail_boots_a 0  69390 0 1250 704643236 3.000000 100 0 0 31 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_inf_hide_boots Hide_Boots Hide_Boots 1  hide_boots_a 0  536940302 0 34 123731968 1.000000 100 0 0 10 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_clan_shield Northern_Clan_Shield Northern_Clan_Shield 1  north_round_shield 0  65543 5100273664 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
+ 0
+0
+
+ itm_north_kite_shield Northern_Kite_Clan_Shield Northern_Kite_Clan_Shield 1  north_shield 0  65543 6442450944 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
+ 0
+0
+
+ itm_north_round_shield_s Northern_Round_Shield_Small Northern_Round_Shield_Small 1  north_shield_round_small 0  65543 5100273664 400 167772194 2.500000 100 0 10 0 0 600 82 0 90 0 0 0
+ 0
+0
+
+ itm_north_leather_shield Northern_Leather_Shield Northern_Leather_Shield 1  shield_round_d 0  262151 5100273664 80 167772194 2.500000 100 0 8 0 0 310 96 0 40 0 0 0
+ 0
+0
+
+ itm_north_wiron_axe Northern_Iron_War_Axe Northern_Iron_War_Axe 1  one_handed_battle_axe_h 0  80019458 9223388530091229198 560 262164 1.750000 100 0 0 0 9 0 97 0 71 0 256 40
+ 0
+0
+
+ itm_north_biron_axe Northern_Battle_Axe Northern_Battle_Axe 1  one_handed_battle_axe_g 0  80019458 9223388530091229198 250 262164 1.500000 100 0 0 0 9 0 97 0 71 0 256 35
+ 0
+0
+
+ itm_north_oh_axe Northern_One_Handed_Axe Northern_One_Handed_Axe 1  one_handed_war_axe_a 0  80019458 9223388530091229198 87 262164 1.500000 100 0 0 0 9 0 98 0 71 0 256 30
+ 0
+0
+
+ itm_north_warden_armor Northern_Warden_Armor Northern_Warden_Armor 1  north_armor 0  16842765 0 23500 704643236 30.000000 10 8 85 45 12 0 0 0 0 0 0 0
+ 1
+ 16
+0
+
+ itm_north_warden_helmet Northern_Clan_Helmet Northern_Clan_Helmet 1  north_wolf_helmet 0  65548 0 23200 123731968 5.000000 10 75 5 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_warden_boot Northern_Steel_Greaves Northern_Steel_Greaves 1  boot5 0  69390 0 1770 704643236 3.500000 100 0 0 33 9 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_warden_glove_l Northern_Elite_Mittens Northern_Elite_Mittens 1  steel_gauntlets_l 0  65551 0 350 704643236 0.500000 100 0 8 0 0 0 0 0 0 0 0 0
+ 1
+ 16
+0
+
+ itm_north_gskald_axe The_Great_Skald The_Great_Skald 2  new_axe 0  new_axe 3458764513820540928  4259842 9223388529822793743 650 155668 2.500000 100 0 0 0 10 0 100 0 115 0 298 65
+ 1
+ 16
+0
+
+ itm_north_champ_armor Northern_Champion_Armor Northern_Champion_Armor 1  north_armor_t4 0  16842765 0 5200 704643236 20.000000 100 0 56 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_champ_helmet Northern_Champion's_Helmet Northern_Champion's_Helmet 1  north_champion_helmet 0  65548 0 880 704643238 2.250000 100 52 0 0 7 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_champ_boot Northern_Champion_Boots Northern_Champion_Boots 1  boot5 0  536940302 0 34 123731968 1.000000 100 0 0 32 0 0 0 0 0 0 0 0
+ 1
+ 16
+0
+
+ itm_north_champ_glove_l Northern_Champion_Gloves Northern_Champion_Gloves 1  mail_mittens_L 0  65551 0 350 704643236 0.500000 100 0 6 0 0 0 0 0 0 0 0 0
+ 1
+ 16
+0
+
+ itm_north_skald_axe The_Skald The_Skald 2  first_axe 0  first_axe 3458764513820540928  4259842 9223388529822793743 650 155668 1.500000 20 0 0 0 8 0 100 0 115 0 291 48
+ 1
+ 16
+0
+
+ itm_northern_phalanx_armor Northern_Phalanx_Armor Northern_Phalanx_Armor 1  north_armor_t4 0  16842765 0 5200 704643236 20.000000 100 0 56 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_phalanx_helmet Northern_Phalanx_Helmet Northern_Phalanx_Helmet 1  north_helmet_spearman 0  536936460 0 14 123731968 1.000000 100 48 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_phalanx_boot Vallor_Knight_Boot Vallor_Knight_Boot 1  boot5 0  536940302 0 34 123731968 1.000000 100 0 0 35 0 0 0 0 0 0 0 0
+ 1
+ 16
+0
+
+ itm_north_phalanx_glove_l Vallor_Knight_Gloves Vallor_Knight_Gloves 1  mail_mittens_L 0  65551 0 350 704643236 0.500000 100 0 8 0 0 0 0 0 0 0 0 0
+ 1
+ 16
+0
+
+ itm_north_stinger_spear The_North-Stinger The_North-Stinger 1  spear_i_2-3m 0  2251801026166788 22236523361472256 2280 8202 2.500000 100 0 0 0 0 0 100 0 160 0 286 286
+ 0
+0
+
+ itm_north_arb_armor Northern_Shooter_Hauberk Northern_Shooter_Hauberk 1  norman_hauberk_a 0  16842765 0 7600 704643236 23.000000 100 1 55 30 10 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_arb_helm Northern_Shooter_Ironhat Northern_Shooter_Ironhat 1  kettlehat1 0  536936460 0 14 123731968 3.000000 100 49 2 0 0 0 0 0 0 0 0 0
+ 1
+ 16
+0
+
+ itm_north_arb_boot Northern_Arbalestier_Boot Northern_Arbalestier_Boot 1  mail_boots_a 0  536940302 0 34 123731968 1.000000 100 0 0 32 0 0 0 0 0 0 0 0
+ 1
+ 16
+0
+
+ itm_north_arb_glove_l Northern_Arbalestier_Gloves Northern_Arbalestier_Gloves 1  mail_mittens_L 0  65551 0 350 704643236 0.500000 100 0 6 0 0 0 0 0 0 0 0 0
+ 1
+ 16
+0
+
+ itm_north_xbow5 Northern_Heavy_Crossbow Northern_Heavy_Crossbow 1  crossbow_c 0  7405577 5637160960 10683 131082 3.000000 100 0 0 0 6 0 30 60 0 1 316 0
+ 1
+ 16
+0
+
+ itm_north_i_armor4 Reinforced_Mail_Shirt Reinforced_Mail_Shirt 1  mailnormans 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_xman_armor4 Marksman_Hauberk Marksman_Hauberk 1  hauberk_a_new 0  16842765 0 5200 704643236 20.000000 100 0 48 20 8 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_i_helmet4 Northern_Nasal_Helm Northern_Nasal_Helm 1  Helmet_C_vs2 0  65548 0 880 704643238 2.250000 100 48 0 0 7 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_xman_helmet4 Northern_Nasal_Helm Northern_Nasal_Helm 1  Helmet_B 0  65548 0 880 704643238 2.000000 100 35 0 0 6 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_i_boot4 Northern_Leather_Boots Northern_Leather_Boots 1  leather_greaves_a 0  69390 0 310 704643236 2.000000 100 0 0 21 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_i_glove4 Northern_Scale_Gauntlets Northern_Scale_Gauntlets 1  scale_gauntlets_b_L 0  65551 0 710 704643236 0.750000 100 0 5 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_xbow4 Northern_Light_Crossbow Northern_Light_Crossbow 1  crossbow_a 0  7405577 5637160960 10683 131082 2.000000 100 0 0 0 4 0 32 40 0 1 301 0
+ 1
+ 16
+0
+
+ itm_north_i_armor3 Northern_Foorman_Byrnie Northern_Foorman_Byrnie 1  byrnie_a_new 0  16842765 0 795 704643236 17.000000 100 0 39 6 7 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_i_helmet3 Northern_Warrior_Helm Northern_Warrior_Helm 1  Helmet_B 0  65548 0 880 704643238 2.250000 100 48 0 0 7 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_xman_armor3 Studded_Leather_Coat Studded_Leather_Coat 1  leather_armor_a 0  16842765 0 690 704643236 14.000000 100 0 36 10 7 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_xman_helmet3 Northern_Leather_Helmet Northern_Leather_Helmet 1  Helmet_A_vs2 0  65548 0 40 704643238 1.250000 100 14 0 0 7 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_xbow3 Northern_Lightest_Crossbow Northern_Lightest_Crossbow 1  light_crossbow 0  7405577 5637160960 10683 131082 2.000000 100 0 0 0 4 0 32 40 0 1 291 0
+ 1
+ 16
+0
+
+ itm_north_i_armor2 Northern_Leather_Jerkin Northern_Leather_Jerkin 1  ragged_leather_jerkin 0  553713677 0 321 123731968 6.000000 100 0 23 6 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_i_helmet2 Northern_Steppe_Cap Northern_Steppe_Cap 1  steppe_cap_a_new 0  536936460 0 14 123731968 1.000000 100 14 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_i_armor1 Fur_Coat Fur_Coat 1  fur_coat 0  553713677 0 117 704643236 6.000000 100 0 13 6 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_i_helmet1 Fur_Hat Fur_Hat 1  fur_hat_a_new 0  536936460 0 4 123731968 0.500000 100 8 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_i_boot1 Hunter_Boots Hunter_Boots 1  hunter_boots_a 0  536940302 0 19 123731968 1.250000 100 0 0 9 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_north_hatchet Hatchet Hatchet 1  hatchet 0  80019458 9223388530091229198 13 262164 2.000000 100 0 0 0 0 0 97 0 60 0 256 23
+ 0
+0
+
+ itm_north_shield1 Fur_Covered_Shield Fur_Covered_Shield 1  shield_kite_m 0  262151 4831838208 227 123731968 3.500000 100 0 1 0 0 600 76 81 35 0 0 0
  0
 0
 
@@ -4565,18 +4695,261 @@ itemsfile version 3
 0
 
  itm_vallor_champ_armor Vallor_Champion_Armor Vallor_Champion_Armor 1  vallor_champ_armor 0  16842765 0 5200 704643236 20.000000 100 5 65 30 8 0 0 0 0 0 0 0
- 0
+ 1
+ 22
 0
 
  itm_vallor_champ_helm vallor_champ_helm vallor_champ_helm 1  vallor_champ_helm 0  536936460 0 14 123731968 3.000000 100 64 4 0 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_champ_boot vallor_champ_boot vallor_champ_boot 1  vallor_champ_boot 0  536940302 0 34 123731968 1.000000 100 0 0 40 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_champ_glove_l vallor_champ_glove_L vallor_champ_glove_L 1  vallor_champ_glove_L 0  65551 0 350 704643236 0.500000 100 0 8 0 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_shield Vallor_Shield Vallor_Shield 1  vallor_shield 0  65543 5100273664 400 167772194 2.500000 100 0 30 0 0 670 82 0 90 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_champ_lance Champion_Lance Champion_Lance 1  heavy_lance 0  2286223364 201326848 410 8202 5.000000 100 0 0 0 11 0 55 0 240 0 296 0
+ 1
+ 22
+0
+
+ itm_vallor_champ_sword Long_Champion_Sword Long_Champion_Sword 2  sword_medieval_d_long 0  sword_medieval_d_long_scabbard 3458764513820540928  4259842 9223388564182532111 550 24596 1.750000 100 0 0 0 0 0 96 0 105 0 291 48
+ 1
+ 22
+0
+
+ itm_vallor_champ_horse Champion_Horse Champion_Horse 1  horse7 0  65537 0 11811 110595670016 0.000000 40 0 58 0 8 270 46 45 112 0 56 0
+ 1
+ 22
+0
+
+ itm_vallor_templar_armor Vallor_Templar_Armor Vallor_Templar_Armor 1  armor17 0  16842765 0 5200 704643236 20.000000 100 0 55 25 8 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_templar_helm Vallor_Templar_Helm Vallor_Templar_Helm 1  facemasck 0  536936460 0 14 123731968 3.000000 100 58 2 0 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_templar_boot Vallor_Templar_Boot Vallor_Templar_Boot 1  steel_boots_01 0  536940302 0 34 123731968 1.000000 100 0 0 32 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_templar_glove_l Vallor_Templar_Gloves Vallor_Templar_Gloves 1  glove2_L 0  65551 0 350 704643236 0.500000 100 0 6 0 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_templar_lance Templar_Lance Templar_Lance 1  heavy_lance 0  2286223364 201326848 410 8202 5.000000 100 0 0 0 11 0 55 0 240 0 291 0
+ 1
+ 22
+0
+
+ itm_vallor_templar_sword Long_Templar_Sword Long_Templar_Sword 2  sword_medieval_d_long 0  sword_medieval_d_long_scabbard 3458764513820540928  4259842 9223388564182532111 550 24596 1.750000 100 0 0 0 0 0 96 0 105 0 286 45
+ 1
+ 22
+0
+
+ itm_vallor_templar_horse Templar_Horse Templar_Horse 1  horse5_4 0  65537 0 1811 110595670016 0.000000 40 0 45 0 6 210 44 40 112 0 32 0
+ 1
+ 22
+0
+
+ itm_vallor_knight_armor Vallor_Knight_Armor Vallor_Knight_Armor 1  vallor_champ_armor 0  16842765 0 5200 704643236 20.000000 100 4 70 30 8 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_knight_helm Vallor_Knight_Helm Vallor_Knight_Helm 1  vallor_champ_helm 0  536936460 0 14 123731968 3.000000 100 65 4 0 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_knight_boot Vallor_Knight_Boot Vallor_Knight_Boot 1  vallor_champ_boot 0  536940302 0 34 123731968 1.000000 100 0 0 35 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_knight_glove_l Vallor_Knight_Gloves Vallor_Knight_Gloves 1  vallor_champ_glove_L 0  65551 0 350 704643236 0.500000 100 0 8 0 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_shield Vallor_Shield Vallor_Shield 1  vallor_shield 0  65543 5100273664 400 167772194 2.500000 100 0 15 0 0 850 82 0 90 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_knight_sword Long_Knight_Sword Long_Knight_Sword 2  sword_medieval_d_long 0  sword_medieval_d_long_scabbard 3458764513820540928  4259842 9223388564182532111 550 24596 1.750000 100 0 0 0 0 0 96 0 105 0 286 52
+ 1
+ 22
+0
+
+ itm_vallor_arb_armor Vallor_Arbalestier_Armor Vallor_Arbalestier_Armor 1  armor17 0  16842765 0 5200 704643236 20.000000 100 0 55 25 8 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_arb_helm Vallor_Arbalestier_Helm Vallor_Arbalestier_Helm 1  normanfaceplate 0  536936460 0 14 123731968 3.000000 100 58 2 0 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_arb_boot Vallor_Arbalestier_Boot Vallor_Arbalestier_Boot 1  boot11 0  536940302 0 34 123731968 1.000000 100 0 0 32 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_arb_glove_l Vallor_Arbalestier_Gloves Vallor_Arbalestier_Gloves 1  glove2_L 0  65551 0 350 704643236 0.500000 100 0 6 0 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_xbow5 Vallor_Sniper_Crossbow Vallor_Sniper_Crossbow 1  crossbow_c 0  7405577 5637160960 10683 131082 3.000000 100 0 0 0 6 0 32 90 0 1 321 0
+ 1
+ 22
+0
+
+ itm_vallor_short_voulge Short_Voulge Short_Voulge 1  two_handed_battle_axe_c 0  34433466371 9223635923965575392 828 262164 4.500000 100 0 0 0 10 0 50 0 100 0 256 45
  0
 0
 
- itm_vallor_champ_boot vallor_champ_boot vallor_champ_boot 1  vallor_champ_boot 0  536940302 0 34 123731968 1.000000 100 0 0 10 0 0 0 0 0 0 0 0
+ itm_vallor_r_armor4 Vallor_Rider_Armor Vallor_Rider_Armor 1  armor14 0  16842765 0 3000 704643236 14.000000 100 0 52 24 6 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_r_helmet4 vallor_rider_helm vallor_rider_helm 1  helm21 0  536936460 0 14 123731968 1.750000 100 50 2 0 4 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_r_boot4 vallor_rider_boot vallor_rider_boot 1  boot11 0  536940302 0 300 123731968 2.000000 100 0 0 30 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_r_glove4 vallor_rider_glove_L vallor_rider_glove_L 1  glove1_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_shield4 Vallor_Shield Vallor_Shield 1  vallor_shield_low 0  65543 5100273664 400 167772194 2.750000 100 0 13 0 0 400 92 0 90 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_r_lance4 Vallor_Heavy_Lance Vallor_Heavy_Lance 1  heavy_lance 0  2286223364 201326848 410 8202 2.500000 100 0 0 0 10 0 96 0 240 0 281 0
+ 1
+ 22
+0
+
+ itm_vallor_xbow4 Vallor_Veteran_Crossbow Vallor_Veteran_Crossbow 1  crossbow_a 0  7405577 5637160960 10683 131082 2.000000 100 0 0 0 4 0 32 40 0 1 308 0
+ 1
+ 22
+0
+
+ itm_vallor_r_sword4 Vallor_Long_Sword Vallor_Long_Sword 2  sword_medieval_d_long 0  sword_medieval_d_long_scabbard 3458764513820540928  4259842 9223388564182532111 700 24596 2.500000 100 0 0 0 0 0 96 0 105 0 286 39
+ 1
+ 22
+0
+
+ itm_vallor_r_horse4 Vallor_Rider_Horse Vallor_Rider_Horse 1  WCourserLiverChestnut 0  65537 0 1811 110595670016 0.000000 100 0 30 0 4 165 44 46 112 0 35 0
+ 1
+ 22
+0
+
+ itm_vallor_i_armor3 Vallor_Rider_Armor Vallor_Rider_Armor 1  wei_xiadi_mail_shirt02 0  16842765 0 3000 704643236 12.000000 100 0 46 18 6 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_i_helmet3 vallor_rider_helm vallor_rider_helm 1  saxon_conical_helmet_coif 0  536936460 0 14 123731968 2.000000 100 48 2 0 4 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_i_boot3 vallor_rider_boot vallor_rider_boot 1  boot11 0  536940302 0 300 123731968 2.000000 100 0 0 27 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_i_glove3 vallor_rider_glove_L vallor_rider_glove_L 1  glove1_L 0  65551 0 350 704643236 0.500000 100 0 3 0 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_shield3 Vallor_Shield Vallor_Shield 1  vallor_shield_low 0  65543 5100273664 400 167772194 2.750000 100 0 20 0 0 360 92 0 90 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_i_sword3 Vallor_Long_Sword Vallor_Long_Sword 2  sword_medieval_d_long 0  sword_medieval_d_long_scabbard 3458764513820540928  4259842 9223388564182532111 700 24596 2.500000 100 0 0 0 0 0 96 0 105 0 286 35
+ 1
+ 22
+0
+
+ itm_vallor_i_armor2 Vallor_Rider_Armor Vallor_Rider_Armor 1  saxon_leather_vest_red 0  16842765 0 3000 704643236 12.000000 100 0 30 6 6 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_i_helmet2 vallor_rider_helm vallor_rider_helm 1  helm37 0  536936460 0 14 123731968 2.000000 100 25 2 0 4 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_i_boot2 vallor_rider_boot vallor_rider_boot 1  boot13 0  536940302 0 300 123731968 2.000000 100 0 0 22 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_i_glove2 vallor_rider_glove_L vallor_rider_glove_L 1  glove4_L 0  65551 0 350 704643236 0.500000 100 0 2 0 0 0 0 0 0 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_shield2 Vallor_Shield Vallor_Shield 1  norman_shield_6 0  65543 5100273664 400 167772194 2.750000 100 0 10 0 0 300 92 0 90 0 0 0
+ 1
+ 22
+0
+
+ itm_vallor_i_sword2 Vallor_Long_Sword Vallor_Long_Sword 2  sword_medieval_a 0  sword_medieval_d_long_scabbard 3458764513820540928  4259842 9223388564182532111 700 24596 2.500000 100 0 0 0 0 0 96 0 105 0 281 32
+ 1
+ 22
+0
+
+ itm_vallor_i_armor1 Red_Tunic Red_Tunic 1  rich_tunic_a 0  553648141 0 10 123731968 1.000000 100 0 18 3 0 0 0 0 0 0 0 0
  0
 0
 
- itm_vallor_champ_glove_l vallor_champ_glove_L vallor_champ_glove_L 1  vallor_champ_glove_L 0  65551 0 350 704643236 0.500000 100 0 4 0 0 0 0 0 0 0 0 0
+ itm_vallor_i_helmet1 Padded_Coif Padded_Coif 1  padded_coif_a_new 0  65548 0 6 123731968 1.000000 100 8 0 0 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_vallor_i_boot1 Woolen_Hose Woolen_Hose 1  woolen_hose_a 0  536940302 0 6 123731968 1.000000 100 0 0 10 0 0 0 0 0 0 0 0
+ 0
+0
+
+ itm_vallor_i_sword1 Short_Sword Short_Sword 2  sword_medieval_b_small 0  sword_medieval_b_small_scabbard 3458764513820540928  4259842 9223388564182532111 152 155668 1.000000 100 0 0 0 0 0 102 0 85 0 271 22
+ 0
+0
+
+ itm_vallor_shield1 Leather_Covered_Vallor_Shield Leather_Covered_Vallor_Shield 1  shield_round_d 0  262151 5100273664 80 167772194 1.500000 100 0 5 0 0 180 96 0 40 0 0 0
  0
 0
 

@@ -46,7 +46,7 @@ pt_kingdom_3_reinforcements_a {!}kingdom_3_reinforcements_a 0 0 1 0 65 5 10 0 66
 pt_kingdom_3_reinforcements_b {!}kingdom_3_reinforcements_b 0 0 1 0 67 2 4 0 68 2 4 0 69 1 2 0 -1 -1 -1 
 pt_kingdom_3_reinforcements_c {!}kingdom_3_reinforcements_c 0 0 1 0 72 2 4 0 73 2 3 0 70 1 2 0 -1 -1 -1 
 pt_kingdom_4_reinforcements_a {!}kingdom_4_reinforcements_a 0 0 1 0 78 5 10 0 79 2 4 0 -1 -1 -1 -1 
-pt_kingdom_4_reinforcements_b {!}kingdom_4_reinforcements_b 0 0 1 0 82 2 5 0 84 2 3 0 87 1 2 0 -1 -1 -1 
+pt_kingdom_4_reinforcements_b {!}kingdom_4_reinforcements_b 0 0 1 0 83 2 5 0 84 2 3 0 87 1 2 0 -1 -1 -1 
 pt_kingdom_4_reinforcements_c {!}kingdom_4_reinforcements_c 0 0 1 0 88 3 5 0 86 1 2 0 -1 -1 -1 -1 
 pt_kingdom_5_reinforcements_a {!}kingdom_5_reinforcements_a 0 0 1 0 93 5 10 0 94 2 4 0 -1 -1 -1 -1 
 pt_kingdom_5_reinforcements_b {!}kingdom_5_reinforcements_b 0 0 1 0 95 3 6 0 101 2 4 0 -1 -1 -1 -1 

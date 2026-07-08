@@ -147,17 +147,6 @@ tournament_items = [
 custom_items = [
 #Swords   
 
-["sword_north_p", "Northern Steel", [("norman_sword",0),("scab_norman_sword", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
- 650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
-
-["north_warden_axe", "Warden's Axe", [("new_axe",0),("new_axe", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
- 650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
-
-["north_champion_axe", "Champion's Axe", [("first_axe",0),("first_axe", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
- 650 , weight(1.5)|difficulty(8)|spd_rtng(100) | weapon_length(115)|swing_damage(48 , cut) | thrust_damage(35 ,  pierce),imodbits_sword_high ],
-
-["north_one_handed_axe", "Northern One Handed Axe", [("one_handed_war_axe_a",0)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_secondary|itp_bonus_against_shield|itp_wooden_parry, itc_scimitar|itcf_carry_axe_left_hip,
- 87 , weight(1.5)|difficulty(9)|spd_rtng(98) | weapon_length(71)|swing_damage(32 , cut) | thrust_damage(0 ,  pierce),imodbits_axe ],
 
 ["long_spiked_club_syndicate",         "Long Spiked Club", [("mace_long_c",0)], itp_type_polearm|itp_can_knock_down|itp_merchandise| itp_primary|itp_wooden_parry, itc_scimitar|itcf_carry_axe_back,
  264 , weight(3)|difficulty(0)|spd_rtng(96) | weapon_length(126)|swing_damage(23 , pierce) | thrust_damage(20 ,  blunt),imodbits_mace ],
@@ -444,35 +433,12 @@ custom_items = [
 
 #Armor 
 
-["wardens_plate", "Warden's Plate", [("plate_bur41",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 13500 , weight(25)|abundance(100)|head_armor(3)|body_armor(68)|leg_armor(32)|difficulty(12) ,imodbits_armor ],
-
-["armor_infantry_north_4", "Snow-Stalwart Surcoat", [("norman_hauberk_a",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 7600 , weight(23)|abundance(100)|head_armor(1)|body_armor(60)|leg_armor(24)|difficulty(10) ,imodbits_armor ],
-
-["armor_infantry_north_3", "Frozen Sqire's Gambeson", [("outlaw_mix",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
-
 ["armor_infantry_syndicate_5", "Black Plate T5", [("wei_xiadi_swa_mail_and_plate_black",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
 
 ["armor_infantry_syndicate_4", "Black Plate T4", [("xiadi_mail_and_plate_black",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
 
-["north_armor", "north_armor", [("north_armor",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 13500 , weight(25)|abundance(100)|head_armor(3)|body_armor(68)|leg_armor(32)|difficulty(12) ,imodbits_armor ],
-
-["north_armor_t5", "north_armor_t4", [("north_armor_t4",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(56)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
-
-["north_armor_t4", "Northern Veteran Mail", [("mailnormans",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
-
-["north_armor_t3", "Northern Foorman Byrnie", [("byrnie_a_new",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 795 , weight(17)|abundance(100)|head_armor(0)|body_armor(39)|leg_armor(6)|difficulty(7) ,imodbits_armor ],
-
-["north_leather_jerkin", "Northern Leather Jerkin", [("ragged_leather_jerkin",0)], itp_merchandise| itp_type_body_armor |itp_civilian |itp_covers_legs ,0,
- 321 , weight(6)|abundance(100)|head_armor(0)|body_armor(23)|leg_armor(6)|difficulty(0) ,imodbits_cloth ],
 
 ["lamellar_chainmail_syndicate", "wei_xiadi_lamellar_chainmail", [("wei_xiadi_lamellar_chainmail",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
@@ -858,40 +824,34 @@ custom_items = [
 
 ### Test Gloves
 
-["steel_gauntlets_L","steel_gauntlets_L", [("steel_gauntlets_L",0)], 
+["steel_gauntlets_l","steel_gauntlets_L", [("steel_gauntlets_L",0)], 
   itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
 
-["steel_mittens_L","steel_mittens_L", [("steel_mittens_L",0)], 
+["steel_mittens_l","steel_mittens_L", [("steel_mittens_L",0)], 
   itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
 
-["glove1_L","glove1_L", [("glove1_L",0)], 
+["glove1_l","glove1_l", [("glove1_L",0)], 
   itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
 
-["glove2_L","glove2_L", [("glove2_L",0)], 
+["glove2_l","glove2_l", [("glove2_L",0)], 
   itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
 
-["glove3_L","glove3_L", [("glove3_L",0)], 
+["glove3_l","glove3_l", [("glove3_L",0)], 
   itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
 
-["glove4_L","glove4_L", [("glove4_L",0)], 
+["glove4_l","glove4_l", [("glove4_L",0)], 
   itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
 
-["glove5_L","glove5_L", [("glove5_L",0)], 
+["glove5_l","glove5_l", [("glove5_L",0)], 
   itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
 
-["glove6_L","glove6_L", [("glove6_L",0)], 
+["glove6_l","glove6_l", [("glove6_L",0)], 
   itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
 
 
 ### Test Gloves end
 
 #Helmets 
-
-["wardens_helmet", "Warden's Helmet", [("sorry_im_berserk_helm_inventory",0)], itp_type_head_armor |itp_merchandise   ,0, 
- 3200 , weight(2)|abundance(100)|head_armor(62)|body_armor(2)|leg_armor(0) ,imodbits_cloth ],
-
-["helmet_infantry_north_4", "Snow-Stalwart Helmet", [("ghuls",0)], itp_type_head_armor |itp_merchandise   ,0, 
- 2100 , weight(2)|abundance(100)|head_armor(55)|body_armor(2)|leg_armor(0) ,imodbits_cloth ],
 
 ["skull_cap_syndicate", "Skull Cap Syndicate", [("skull_cap",0)], itp_type_head_armor |itp_merchandise   ,0, 
  1000 , weight(1)|abundance(100)|head_armor(43)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
@@ -902,20 +862,6 @@ custom_items = [
 ["helmet_infantry_syndicate_4", "Northern Warrior Helmet", [("Helmet_B",0)], itp_merchandise| itp_type_head_armor|itp_fit_to_head ,0, 240 ,
  weight(2)|abundance(100)|head_armor(34)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
 
-["north_wolf_helmet", "Northern Clan Helmet", [("north_wolf_helmet",0)], itp_type_head_armor |itp_merchandise   ,0, 
- 3200 , weight(2)|abundance(100)|head_armor(62)|body_armor(2)|leg_armor(0) ,imodbits_cloth ],
-
-["north_champion_helmet", "Northern Champion's Helmet", [("north_champion_helmet",0)], itp_merchandise| itp_type_head_armor ,0, 880 , 
- weight(2.25)|abundance(100)|head_armor(52)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
-
-["north_veteran_helmet", "Northern Veteran's Helmet", [("Helmet_C_vs2",0)], itp_merchandise| itp_type_head_armor ,0, 880 , 
- weight(2.25)|abundance(100)|head_armor(48)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
-
-["north_steppe_cap", "Northern Steppe Cap", [("steppe_cap_a_new",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
- weight(1)|abundance(100)|head_armor(14)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
-
-["north_helmet_spearman", "Northern Spearman Helmet", [("north_helmet_spearman",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
- weight(1)|abundance(100)|head_armor(48)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 
 ["nasal_helmet_syndicate", "Nasal Helmet", [("nasal_helmet_b",0)], itp_merchandise| itp_type_head_armor   ,0, 121 , weight(1.25)|abundance(100)|head_armor(26)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
 
@@ -1299,11 +1245,6 @@ custom_items = [
 ["eirven_shield", "Eirven Shield", [("eirven_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
 400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
 
-["vallor_shield", "Vallor Shield", [("vallor_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
-400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
-
-["north_shield", "Northern Shield", [("north_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_board_shield,
-400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
 
 ["syndicate_shield", "Syndicate Shield", [("syndicate_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_board_shield,
 400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
@@ -1314,13 +1255,6 @@ custom_items = [
 ["eye_shield", "Eye Shield", [("eye_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_board_shield,
 400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
 
-["north_round_shield", "Northern Round Shield", [("north_round_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
-400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
-
-["north_round_shield_s", "Northern Round Shield Small", [("north_shield_round_small",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
-400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
-
-["north_leather_shield", "Northern Leather Shield", [("shield_round_d",0)], itp_type_shield|itp_wooden_parry, itcf_carry_round_shield,  80 , weight(2.5)|hit_points(310)|body_armor(8)|spd_rtng(96)|shield_width(40),imodbits_shield ],
 
 
 ### Test Shields    
@@ -1563,9 +1497,6 @@ custom_items = [
 
 ### Test Boots
 
-["north_hide_boots", "Northern Hide Boots", [("hide_boots_a",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
- 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(10)|difficulty(0) ,imodbits_cloth ],
-
 ["boot1", "boot1", [("boot1",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
  34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(10)|difficulty(0) ,imodbits_cloth ],
 
@@ -1629,7 +1560,158 @@ custom_items = [
 
 # Grouped Items ------------------------------------------------------------------------------------
 
+## All Common Staff
+
+["xman_leather_boots3", "Leather Boots", [("leather_boots_a",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian | itp_attach_armature,0,
+ 174 , weight(1.25)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(16)|difficulty(0) ,imodbits_cloth ],
+
+["inf_mail_mittens","Mail Mittens", [("mail_mittens_L",0)], itp_merchandise|itp_type_hand_armor,0, 
+ 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
+["inf_scale_gauntlets","Scale Gauntlets", [("scale_gauntlets_b_L",0)], itp_merchandise|itp_type_hand_armor,0, 
+ 710, weight(0.75)|abundance(100)|body_armor(5)|difficulty(0),imodbits_armor],
+["inf_lamellar_gauntlets","Lamellar Gauntlets", [("scale_gauntlets_a_L",0)], itp_merchandise|itp_type_hand_armor,0, 
+ 910, weight(0.9)|abundance(100)|body_armor(6)|difficulty(0),imodbits_armor],
+["inf_gauntlets","Gauntlets", [("gauntlets_L",0)], itp_merchandise|itp_type_hand_armor,0, 
+ 1040, weight(1.0)|abundance(100)|body_armor(7)|difficulty(0),imodbits_armor],
+
+["inf_mail_chausses", "Mail Chausses", [("mail_chausses_a",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature  ,0,
+ 530 , weight(3)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(24)|difficulty(0) ,imodbits_armor ],
+["inf_splinted_greaves", "Splinted Greaves", [("splinted_greaves_a",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature,0,
+ 853 , weight(2.75)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(28)|difficulty(7) ,imodbits_armor ],
+["inf_mail_boots", "Mail Boots", [("mail_boots_a",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature  ,0,
+ 1250 , weight(3)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(31)|difficulty(8) ,imodbits_armor ],
+["inf_hide_boots", "Hide Boots", [("hide_boots_a",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(10)|difficulty(0) ,imodbits_cloth ],
+
+
 ## The North
+
+#common staff
+["north_clan_shield", "Northern Clan Shield", [("north_round_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+["north_kite_shield", "Northern Kite Clan Shield", [("north_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_board_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+["north_round_shield_s", "Northern Round Shield Small", [("north_shield_round_small",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+["north_leather_shield", "Northern Leather Shield", [("shield_round_d",0)], itp_type_shield|itp_wooden_parry, itcf_carry_round_shield,  80 , weight(2.5)|hit_points(310)|body_armor(8)|spd_rtng(96)|shield_width(40),imodbits_shield ],
+
+["north_wiron_axe", "Northern Iron War Axe", [("one_handed_battle_axe_h",0)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_secondary|itp_bonus_against_shield|itp_wooden_parry, itc_scimitar|itcf_carry_axe_left_hip,
+ 560 , weight(1.75)|difficulty(9)|spd_rtng(97) | weapon_length(71)|swing_damage(40 , cut) | thrust_damage(0 ,  pierce),imodbits_axe ],
+["north_biron_axe", "Northern Battle Axe", [("one_handed_battle_axe_g",0)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_secondary|itp_bonus_against_shield|itp_wooden_parry, itc_scimitar|itcf_carry_axe_left_hip,
+ 250 , weight(1.65)|difficulty(9)|spd_rtng(97) | weapon_length(71)|swing_damage(35 , cut) | thrust_damage(0 ,  pierce),imodbits_axe ],
+["north_oh_axe", "Northern One Handed Axe", [("one_handed_war_axe_a",0)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_secondary|itp_bonus_against_shield|itp_wooden_parry, itc_scimitar|itcf_carry_axe_left_hip,
+ 87 , weight(1.5)|difficulty(9)|spd_rtng(98) | weapon_length(71)|swing_damage(30 , cut) | thrust_damage(0 ,  pierce),imodbits_axe ],
+
+
+#warden
+["north_warden_armor", "Northern Warden Armor", [("north_armor",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 23500 , weight(30)|abundance(10)|head_armor(8)|body_armor(85)|leg_armor(45)|difficulty(12) ,imodbits_armor , [], [fac_kingdom_1]],
+["north_warden_helmet", "Northern Clan Helmet", [("north_wolf_helmet",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 23200 , weight(5)|abundance(10)|head_armor(75)|body_armor(5)|leg_armor(0) ,imodbits_cloth ],
+["north_warden_boot", "Northern Steel Greaves", [("boot5",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature,0,
+ 1770 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(9) ,imodbits_armor ],
+["north_warden_glove_l","Northern Elite Mittens", [("steel_gauntlets_l",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(8)|difficulty(0),imodbits_armor, [], [fac_kingdom_1]],
+
+["north_gskald_axe", "The Great Skald",[("new_axe",0),("new_axe", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip,
+ 650 , weight(2.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(65 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high, [], [fac_kingdom_1] ],
+
+#champion
+["north_champ_armor", "Northern Champion Armor", [("north_armor_t4",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(56)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+["north_champ_helmet", "Northern Champion's Helmet", [("north_champion_helmet",0)], itp_merchandise| itp_type_head_armor ,0, 880 , 
+ weight(2.25)|abundance(100)|head_armor(52)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
+["north_champ_boot", "Northern Champion Boots", [("boot5",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(32)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_1]],
+["north_champ_glove_l","Northern Champion Gloves", [("mail_mittens_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(6)|difficulty(0),imodbits_armor, [], [fac_kingdom_1]],
+
+["north_skald_axe", "The Skald", [("first_axe",0),("first_axe", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip,
+  650 , weight(1.5)|abundance(20)|difficulty(8)|spd_rtng(100) | weapon_length(115)|swing_damage(48 , cut) | thrust_damage(35 ,  pierce),imodbits_sword_high, [], [fac_kingdom_1] ],
+
+
+#phalnax
+["northern_phalanx_armor", "Northern Phalanx Armor", [("north_armor_t4",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(56)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+["north_phalanx_helmet", "Northern Phalanx Helmet", [("north_helmet_spearman",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(1)|abundance(100)|head_armor(48)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["north_phalanx_boot", "Vallor Knight Boot", [("boot5",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(35)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_1]],
+["north_phalanx_glove_l","Vallor Knight Gloves", [("mail_mittens_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(8)|difficulty(0),imodbits_armor, [], [fac_kingdom_1]],
+
+["north_stinger_spear", "The North-Stinger", [("spear_i_2-3m",0)], itp_type_polearm|itp_offset_lance|itp_merchandise| itp_primary|itp_penalty_with_shield|itp_wooden_parry|itp_no_blur, itc_staff,
+ 2280 , weight(2.5)|difficulty(0)|spd_rtng(100) | weapon_length(160)|swing_damage(30 , pierce) | thrust_damage(30 ,  pierce),imodbits_polearm ],
+
+#sharpshooter
+["north_arb_armor", "Northern Shooter Hauberk", [("norman_hauberk_a",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 7600 , weight(23)|abundance(100)|head_armor(1)|body_armor(55)|leg_armor(30)|difficulty(10) ,imodbits_armor ],
+["north_arb_helm", "Northern Shooter Ironhat", [("kettlehat1",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(3)|abundance(100)|head_armor(49)|body_armor(2)|leg_armor(0)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_1]],
+["north_arb_boot", "Northern Arbalestier Boot", [("mail_boots_a",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(32)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_1]],
+["north_arb_glove_l","Northern Arbalestier Gloves", [("mail_mittens_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(6)|difficulty(0),imodbits_armor, [], [fac_kingdom_1]],
+
+["north_xbow5", "Northern Heavy Crossbow", [("crossbow_c",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback ,itcf_shoot_crossbow|itcf_carry_crossbow_back,
+10683 , weight(3)|difficulty(6)|spd_rtng(30) | shoot_speed(60) | thrust_damage(60 ,pierce)|max_ammo(1),imodbits_crossbow, [], [fac_kingdom_1]],
+
+
+#common t4
+["north_i_armor4", "Reinforced Mail Shirt", [("mailnormans",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+["north_xman_armor4", "Marksman Hauberk", [("hauberk_a_new",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+
+["north_i_helmet4", "Northern Nasal Helm", [("Helmet_C_vs2",0)], itp_merchandise| itp_type_head_armor ,0, 
+ 880, weight(2.25)|abundance(100)|head_armor(48)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
+["north_xman_helmet4", "Northern Nasal Helm", [("Helmet_B",0)], itp_merchandise| itp_type_head_armor ,0, 
+ 880, weight(2)|abundance(100)|head_armor(35)|body_armor(0)|leg_armor(0)|difficulty(6) ,imodbits_plate ],
+
+["north_i_boot4", "Northern Leather Boots", [("leather_greaves_a",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature,0,
+ 310 , weight(2)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(21)|difficulty(0) ,imodbits_armor ],
+["north_i_glove4","Northern Scale Gauntlets", [("scale_gauntlets_b_L",0)], itp_merchandise|itp_type_hand_armor,0, 
+ 710, weight(0.75)|abundance(100)|body_armor(5)|difficulty(0),imodbits_armor],
+
+
+["north_xbow4", "Northern Light Crossbow", [("crossbow_a",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback ,itcf_shoot_crossbow|itcf_carry_crossbow_back,
+10683 , weight(2)|difficulty(4)|spd_rtng(32) | shoot_speed(40) | thrust_damage(45 ,pierce)|max_ammo(1),imodbits_crossbow, [], [fac_kingdom_1]],
+
+#common t3 
+
+["north_i_armor3", "Northern Foorman Byrnie", [("byrnie_a_new",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 795 , weight(17)|abundance(100)|head_armor(0)|body_armor(39)|leg_armor(6)|difficulty(7) ,imodbits_armor ],
+["north_i_helmet3", "Northern Warrior Helm", [("Helmet_B",0)], itp_merchandise| itp_type_head_armor ,0, 
+ 880, weight(2.25)|abundance(100)|head_armor(48)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
+
+["north_xman_armor3", "Studded Leather Coat", [("leather_armor_a",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 690 , weight(14)|abundance(100)|head_armor(0)|body_armor(36)|leg_armor(10)|difficulty(7) ,imodbits_armor ],
+["north_xman_helmet3", "Northern Leather Helmet", [("Helmet_A_vs2",0)], itp_merchandise| itp_type_head_armor    ,0, 
+ 40 , weight(1.25)|abundance(100)|head_armor(14)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_plate ],
+
+["north_xbow3", "Northern Lightest Crossbow", [("light_crossbow",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback ,itcf_shoot_crossbow|itcf_carry_crossbow_back,
+10683 , weight(2)|difficulty(4)|spd_rtng(32) | shoot_speed(40) | thrust_damage(35 ,pierce)|max_ammo(1),imodbits_crossbow, [], [fac_kingdom_1]],
+
+#common t2
+["north_i_armor2", "Northern Leather Jerkin", [("ragged_leather_jerkin",0)], itp_merchandise| itp_type_body_armor |itp_civilian |itp_covers_legs ,0,
+ 321 , weight(6)|abundance(100)|head_armor(0)|body_armor(23)|leg_armor(6)|difficulty(0) ,imodbits_cloth ],
+["north_i_helmet2", "Northern Steppe Cap", [("steppe_cap_a_new",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(1)|abundance(100)|head_armor(14)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+
+#common t1
+["north_i_armor1", "Fur Coat", [("fur_coat",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs |itp_civilian,0, 
+ 117 , weight(6)|abundance(100)|head_armor(0)|body_armor(13)|leg_armor(6)|difficulty(0) ,imodbits_armor ],
+["north_i_helmet1", "Fur Hat", [("fur_hat_a_new",0)], itp_merchandise| itp_type_head_armor |itp_civilian  ,0, 
+ 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["north_i_boot1", "Hunter Boots", [("hunter_boots_a",0)], itp_merchandise| itp_type_foot_armor |itp_civilian | itp_attach_armature,0,
+ 19 , weight(1.25)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(9)|difficulty(0) ,imodbits_cloth ],
+
+["north_hatchet", "Hatchet", [("hatchet",0)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_secondary|itp_bonus_against_shield|itp_wooden_parry, itc_scimitar|itcf_carry_axe_left_hip,
+13 , weight(2)|difficulty(0)|spd_rtng(97) | weapon_length(60)|swing_damage(23 , cut) | thrust_damage(0 ,  pierce),imodbits_axe ],
+["north_shield1", "Fur Covered Shield", [("shield_kite_m", 0)], itp_type_shield|itp_wooden_parry, itcf_carry_kite_shield,  
+ 227 , weight(3.5)|hit_points(600)|body_armor(1)|spd_rtng(76)|shield_width(35)|shield_height(81),imodbits_cloth],
+
+
 ## Syndicate
 ## Kara-Thar
 ## Ashkar
@@ -1653,7 +1735,6 @@ custom_items = [
  534 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(15)|difficulty(0) ,imodbits_cloth ],
 
 # knight
-
 ["ashkar_voulge", "Ashkar Voulge", [("mackie_voulge",0)], itp_type_two_handed_wpn|itp_merchandise| itp_two_handed|itp_primary|itp_bonus_against_shield|itp_wooden_parry, itc_nodachi|itcf_carry_axe_back,
  3650 , weight(1.5)|difficulty(7)|spd_rtng(70) | weapon_length(220)|swing_damage(50 , cut) | thrust_damage(38 ,  pierce),imodbits_polearm ],
 ["ashkar_nodachi", "Ashkar Nodachi", [("mackie_nodachi",0)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip,
@@ -1723,15 +1804,143 @@ custom_items = [
 
 ## Vallor
 
-#Champion
+#champion
 ["vallor_champ_armor", "Vallor Champion Armor", [("vallor_champ_armor",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 5200 , weight(20)|abundance(100)|head_armor(5)|body_armor(65)|leg_armor(30)|difficulty(8) ,imodbits_armor ],
+ 5200 , weight(20)|abundance(100)|head_armor(5)|body_armor(65)|leg_armor(30)|difficulty(8) ,imodbits_armor, [], [fac_kingdom_7]],
 ["vallor_champ_helm", "vallor_champ_helm", [("vallor_champ_helm",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
- weight(3)|abundance(100)|head_armor(64)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+ weight(3)|abundance(100)|head_armor(64)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
 ["vallor_champ_boot", "vallor_champ_boot", [("vallor_champ_boot",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
- 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(10)|difficulty(0) ,imodbits_cloth ],
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(40)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
 ["vallor_champ_glove_l","vallor_champ_glove_L", [("vallor_champ_glove_L",0)], 
-  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(8)|difficulty(0),imodbits_armor, [], [fac_kingdom_7]],
+
+["vallor_shield", "Vallor Shield", [("vallor_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(670)|body_armor(30)|spd_rtng(82)|shield_width(90),imodbits_shield, [], [fac_kingdom_7]],
+["vallor_champ_lance", "Champion Lance", [("heavy_lance",0)], itp_couchable|itp_type_polearm|itp_merchandise| itp_primary|itp_penalty_with_shield|itp_wooden_parry, itc_greatlance,
+ 410 , weight(5)|difficulty(11)|spd_rtng(55) | weapon_length(240)|swing_damage(0 , cut) | thrust_damage(40 ,  pierce),imodbits_polearm, [], [fac_kingdom_7]],
+["vallor_champ_sword", "Long Champion Sword", [("sword_medieval_d_long",0),("sword_medieval_d_long_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 550 , weight(1.8)|difficulty(0)|spd_rtng(96) | weapon_length(105)|swing_damage(48 , cut) | thrust_damage(35 ,  pierce),imodbits_sword, [], [fac_kingdom_7]],
+["vallor_champ_horse","Champion Horse", [("horse7",0)], itp_merchandise|itp_type_horse, 0, 
+ 11811,abundance(40)|hit_points(270)|body_armor(58)|difficulty(8)|horse_speed(45)|horse_maneuver(46)|horse_charge(56)|horse_scale(112),imodbits_horse_basic|imodbit_champion, [], [fac_kingdom_7]],
+
+#templar
+["vallor_templar_armor", "Vallor Templar Armor", [("armor17",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(55)|leg_armor(25)|difficulty(8) ,imodbits_armor, [], [fac_kingdom_7]],
+["vallor_templar_helm", "Vallor Templar Helm", [("facemasck",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(3)|abundance(100)|head_armor(58)|body_armor(2)|leg_armor(0)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["vallor_templar_boot", "Vallor Templar Boot", [("steel_boots_01",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(32)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["vallor_templar_glove_l","Vallor Templar Gloves", [("glove2_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(6)|difficulty(0),imodbits_armor, [], [fac_kingdom_7]],
+
+["vallor_templar_lance", "Templar Lance", [("heavy_lance",0)], itp_couchable|itp_type_polearm|itp_merchandise| itp_primary|itp_penalty_with_shield|itp_wooden_parry, itc_greatlance,
+ 410 , weight(5)|difficulty(11)|spd_rtng(55) | weapon_length(240)|swing_damage(0 , cut) | thrust_damage(35 ,  pierce),imodbits_polearm, [], [fac_kingdom_7]],
+["vallor_templar_sword", "Long Templar Sword", [("sword_medieval_d_long",0),("sword_medieval_d_long_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 550 , weight(1.8)|difficulty(0)|spd_rtng(96) | weapon_length(105)|swing_damage(45 , cut) | thrust_damage(30 ,  pierce),imodbits_sword, [], [fac_kingdom_7]],
+["vallor_templar_horse","Templar Horse", [("horse5_4",0)], itp_merchandise|itp_type_horse, 0, 
+ 1811,abundance(40)|hit_points(210)|body_armor(45)|difficulty(6)|horse_speed(40)|horse_maneuver(44)|horse_charge(32)|horse_scale(112),imodbits_horse_basic|imodbit_champion, [], [fac_kingdom_7]],
+
+
+#knight
+["vallor_knight_armor", "Vallor Knight Armor", [("vallor_champ_armor",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(4)|body_armor(70)|leg_armor(30)|difficulty(8) ,imodbits_armor, [], [fac_kingdom_7]],
+["vallor_knight_helm", "Vallor Knight Helm", [("vallor_champ_helm",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(3)|abundance(100)|head_armor(65)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["vallor_knight_boot", "Vallor Knight Boot", [("vallor_champ_boot",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(35)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["vallor_knight_glove_l","Vallor Knight Gloves", [("vallor_champ_glove_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(8)|difficulty(0),imodbits_armor, [], [fac_kingdom_7]],
+
+["vallor_shield", "Vallor Shield", [("vallor_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(850)|body_armor(15)|spd_rtng(82)|shield_width(90),imodbits_shield, [], [fac_kingdom_7]],
+["vallor_knight_sword", "Long Knight Sword", [("sword_medieval_d_long",0),("sword_medieval_d_long_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 550 , weight(1.8)|difficulty(0)|spd_rtng(96) | weapon_length(105)|swing_damage(52 , cut) | thrust_damage(30 ,  pierce),imodbits_sword, [], [fac_kingdom_7]],
+
+#Arbalestier
+["vallor_arb_armor", "Vallor Arbalestier Armor", [("armor17",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(55)|leg_armor(25)|difficulty(8) ,imodbits_armor, [], [fac_kingdom_7]],
+["vallor_arb_helm", "Vallor Arbalestier Helm", [("normanfaceplate",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(3)|abundance(100)|head_armor(58)|body_armor(2)|leg_armor(0)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["vallor_arb_boot", "Vallor Arbalestier Boot", [("boot11",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(32)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["vallor_arb_glove_l","Vallor Arbalestier Gloves", [("glove2_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(6)|difficulty(0),imodbits_armor, [], [fac_kingdom_7]],
+
+["vallor_xbow5", "Vallor Sniper Crossbow", [("crossbow_c",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback ,itcf_shoot_crossbow|itcf_carry_crossbow_back,
+10683 , weight(3)|difficulty(6)|spd_rtng(32) | shoot_speed(90) | thrust_damage(65 ,pierce)|max_ammo(1),imodbits_crossbow, [], [fac_kingdom_7]],
+["vallor_short_voulge",         "Short Voulge", [("two_handed_battle_axe_c",0)], itp_type_two_handed_wpn|itp_merchandise| itp_two_handed|itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_unbalanced, itc_nodachi|itcf_carry_axe_back,
+ 828 , weight(4.5)|difficulty(10)|spd_rtng(50) | weapon_length(100)|swing_damage(45 , cut) | thrust_damage(0 ,  pierce),imodbits_axe ],
+
+
+#common t4
+["vallor_r_armor4", "Vallor Rider Armor", [("armor14",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 3000, weight(14)|abundance(100)|head_armor(0)|body_armor(52)|leg_armor(24)|difficulty(6) ,imodbits_armor, [], [fac_kingdom_7]],
+["vallor_r_helmet4", "vallor_rider_helm", [("helm21",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(1.8)|abundance(100)|head_armor(50)|body_armor(2)|leg_armor(0)|difficulty(4) ,imodbits_cloth, [], [fac_kingdom_7]],
+["vallor_r_boot4", "vallor_rider_boot", [("boot11",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 300 , weight(2)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(30)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["vallor_r_glove4","vallor_rider_glove_L", [("glove1_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.6)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor, [], [fac_kingdom_7]],
+
+["vallor_shield4", "Vallor Shield", [("vallor_shield_low",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.8)|hit_points(400)|body_armor(13)|spd_rtng(92)|shield_width(90),imodbits_shield, [], [fac_kingdom_7]],
+["vallor_r_lance4", "Vallor Heavy Lance", [("heavy_lance",0)], itp_couchable|itp_type_polearm|itp_merchandise| itp_primary|itp_penalty_with_shield|itp_wooden_parry, itc_greatlance,
+ 410 , weight(2.7)|difficulty(10)|spd_rtng(96) | weapon_length(240)|swing_damage(0 , cut) | thrust_damage(25 ,  pierce),imodbits_polearm, [], [fac_kingdom_7]],
+
+["vallor_xbow4", "Vallor Veteran Crossbow", [("crossbow_a",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback ,itcf_shoot_crossbow|itcf_carry_crossbow_back,
+10683 , weight(2)|difficulty(4)|spd_rtng(32) | shoot_speed(40) | thrust_damage(52 ,pierce)|max_ammo(1),imodbits_crossbow, [], [fac_kingdom_7]],
+
+["vallor_r_sword4", "Vallor Long Sword", [("sword_medieval_d_long",0),("sword_medieval_d_long_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 700 , weight(2.5)|difficulty(0)|spd_rtng(96) | weapon_length(105)|swing_damage(39 , cut) | thrust_damage(30 ,  pierce),imodbits_sword, [], [fac_kingdom_7]],
+["vallor_r_horse4","Vallor Rider Horse", [("WCourserLiverChestnut",0)], itp_merchandise|itp_type_horse, 0, 
+ 1811,abundance(100)|hit_points(165)|body_armor(30)|difficulty(4)|horse_speed(46)|horse_maneuver(44)|horse_charge(35)|horse_scale(112),imodbits_horse_basic|imodbit_champion, [], [fac_kingdom_7]],
+
+#common t3 
+
+["vallor_i_armor3", "Vallor Rider Armor", [("wei_xiadi_mail_shirt02",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 3000, weight(12)|abundance(100)|head_armor(0)|body_armor(46)|leg_armor(18)|difficulty(6) ,imodbits_armor, [], [fac_kingdom_7]],
+["vallor_i_helmet3", "vallor_rider_helm", [("saxon_conical_helmet_coif",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(2)|abundance(100)|head_armor(48)|body_armor(2)|leg_armor(0)|difficulty(4) ,imodbits_cloth, [], [fac_kingdom_7]],
+["vallor_i_boot3", "vallor_rider_boot", [("boot11",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 300 , weight(2)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(27)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["vallor_i_glove3","vallor_rider_glove_L", [("glove1_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.6)|abundance(100)|body_armor(3)|difficulty(0),imodbits_armor, [], [fac_kingdom_7]],
+
+["vallor_shield3", "Vallor Shield", [("vallor_shield_low",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.8)|hit_points(360)|body_armor(20)|spd_rtng(92)|shield_width(90),imodbits_shield, [], [fac_kingdom_7]],
+
+["vallor_i_sword3", "Vallor Long Sword", [("sword_medieval_d_long",0),("sword_medieval_d_long_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 700 , weight(2.5)|difficulty(0)|spd_rtng(96) | weapon_length(105)|swing_damage(35 , cut) | thrust_damage(30 ,  pierce),imodbits_sword, [], [fac_kingdom_7]],
+
+
+#common t2
+["vallor_i_armor2", "Vallor Rider Armor", [("saxon_leather_vest_red",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 3000, weight(12)|abundance(100)|head_armor(0)|body_armor(30)|leg_armor(6)|difficulty(6) ,imodbits_armor, [], [fac_kingdom_7]],
+["vallor_i_helmet2", "vallor_rider_helm", [("helm37",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(2)|abundance(100)|head_armor(25)|body_armor(2)|leg_armor(0)|difficulty(4) ,imodbits_cloth, [], [fac_kingdom_7]],
+["vallor_i_boot2", "vallor_rider_boot", [("boot13",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 300 , weight(2)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(22)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["vallor_i_glove2","vallor_rider_glove_L", [("glove4_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.6)|abundance(100)|body_armor(2)|difficulty(0),imodbits_armor, [], [fac_kingdom_7]],
+
+["vallor_shield2", "Vallor Shield", [("norman_shield_6",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.8)|hit_points(300)|body_armor(10)|spd_rtng(92)|shield_width(90),imodbits_shield, [], [fac_kingdom_7]],
+
+["vallor_i_sword2", "Vallor Long Sword", [("sword_medieval_a",0),("sword_medieval_d_long_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 700 , weight(2.5)|difficulty(0)|spd_rtng(96) | weapon_length(105)|swing_damage(32 , cut) | thrust_damage(25 ,  pierce),imodbits_sword, [], [fac_kingdom_7]],
+
+#common t1
+["vallor_i_armor1", "Red Tunic", [("rich_tunic_a",0)], itp_type_body_armor |itp_civilian |itp_covers_legs ,0,
+ 10 , weight(1)|abundance(100)|head_armor(0)|body_armor(18)|leg_armor(3)|difficulty(0) ,imodbits_cloth ],
+["vallor_i_helmet1", "Padded Coif", [("padded_coif_a_new",0)], itp_merchandise| itp_type_head_armor   ,0, 
+ 6 , weight(1)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["vallor_i_boot1", "Woolen Hose", [("woolen_hose_a",0)], itp_merchandise| itp_type_foot_armor |itp_civilian | itp_attach_armature ,0,
+ 6 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(10)|difficulty(0) ,imodbits_cloth ],
+["vallor_i_sword1", "Short Sword", [("sword_medieval_b_small",0),("sword_medieval_b_small_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 152 , weight(1)|difficulty(0)|spd_rtng(102) | weapon_length(85)|swing_damage(22, cut) | thrust_damage(15, pierce),imodbits_sword_high ],
+["vallor_shield1", "Leather Covered Vallor Shield", [("shield_round_d",0)], itp_type_shield|itp_wooden_parry, itcf_carry_round_shield,  
+ 80 , weight(1.5)|hit_points(180)|body_armor(5)|spd_rtng(96)|shield_width(40),imodbits_shield ],
+
 ]
 
 # 001 Items Main
@@ -2617,8 +2826,6 @@ items_main = [
 # ["bamboo_spear",         "Bamboo Spear", [("arabian_spear_a_3m",0)], itp_type_polearm|itp_offset_lance|itp_merchandise| itp_primary|itp_penalty_with_shield|itp_wooden_parry, itc_staff|itcf_carry_spear,
 #  80 , weight(2.0)|difficulty(0)|spd_rtng(88) | weapon_length(200)|swing_damage(15 , blunt) | thrust_damage(20 ,  pierce),imodbits_polearm ],
 
-["bamboo_spear",         "Bamboo Spear", [("arabian_spear_a_3m",0)], itp_type_polearm|itp_offset_lance|itp_merchandise| itp_primary|itp_penalty_with_shield|itp_wooden_parry|itp_no_blur, itc_staff,
- 80 , weight(2.5)|difficulty(0)|spd_rtng(100) | weapon_length(160)|swing_damage(30 , pierce) | thrust_damage(30 ,  pierce),imodbits_polearm ],
 
 
 
