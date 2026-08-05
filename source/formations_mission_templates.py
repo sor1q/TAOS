@@ -485,5 +485,3 @@ def modmerge_formations_mission_templates(orig_mission_templates):
 	#		orig_mission_templates[i][5].extend(formations_triggers)
 	find_i = find_object( orig_mission_templates, "lead_charge" )
 	orig_mission_templates[find_i][5].extend(formations_triggers)
-	find_i = find_object( orig_mission_templates, "quick_battle_battle" )
-	orig_mission_templates[find_i][5].extend(formations_triggers)

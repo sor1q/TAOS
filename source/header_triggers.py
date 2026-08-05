@@ -10,9 +10,6 @@
 ti_simulate_battle       = -5.0 #can only be used in module_simple_triggers
 ti_on_party_encounter    = -6.0 #can only be used in module_simple_triggers
 ti_question_answered     = -8
-ti_server_player_joined  = -15.0 #can only be used in module_mission_templates triggers
-# Used only by the server in multiplayer mode
-ti_on_multiplayer_mission_end = -16.0
 
 # Trigger Param 1: player_no
 ti_before_mission_start  = -19.0 #can only be used in module_mission_templates triggers

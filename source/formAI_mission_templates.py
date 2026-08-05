@@ -1,7 +1,7 @@
 # Formations AI for Warband by Motomataru
 # rel. 01/03/11
 
-# This function attaches AI_triggers only to missions "lead_charge" and "quick_battle_battle"
+# This function attaches AI_triggers only to missions "lead_charge" 
 # For other missions, add to end of triggers list like so: " ] + AI_triggers "
 
 
@@ -173,8 +173,6 @@ def modmerge_formAI_mission_templates(orig_mission_templates):
 	codeblock = trigger.GetConditionBlock()
 	codeblock.InsertBefore(0, [(neg|party_slot_eq, "p_main_party", slot_party_pref_formations, 1)]) ## PBOD - Formations AI NOT active
 	
-	find_i = find_object( orig_mission_templates, "quick_battle_battle" )
-	orig_mission_templates[find_i][5].extend(AI_triggers)
 
 	
 

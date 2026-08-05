@@ -1,5 +1,5 @@
 stringsfile version 1
-4586
+4551
 str_no_string NO_STRING!
 str_empty_string _
 str_yes Yes.
@@ -1649,41 +1649,6 @@ str_credits_9 This_game_has_been_supported_by_The_Scientific_and_Technological_R
 str_credits_10 Paradox_Interactive^^President_and_CEO:^Theodore_Bergqvist^^Executive_Vice_President:^Fredrik_Wester^^Chief_Financial_Officer:^Lena_Eriksson^^Finance_&_Accounting:^Annlouise_Larsson^^VP_Sales_&_Marketing_US:^Reena_M._Miranda^^VP_Sales_&_Marketing_EU:^Martin_Sirc^^Distribution_Manager_Nordic:^Erik_Helmfridsson^^Director_of_PR_&_Marketing:^Susana_Meza^^PR_&_Marketing:^Sofia_Forsgren^^Product_Manager:^Boel_Bermann
 str_credits_11 Logotype:^Jason_Brown^^Cover_Art:^Piotr_Fox_Wysocki^^Layout:^Christian_Sabe^Melina_Grundel^^Poster:^Piotr_Fox_Wysocki^^Map_&_Concept_Art:^Ganbat_Badamkhand^^Manual_Editing:^Digital_Wordsmithing:_Ryan_Newman,_Nick_Stewart^^Web:^Martin_Ericsson^^Marketing_Assets:^2Coats^^Localization:^S&H_Entertainment_Localization^^GamersGate:^Ulf_Hedblom^Andreas_Pousette^Martin_Ericson^Christoffer_Lindberg
 str_credits_12 Thanks_to_all_of_our_partners_worldwide,_in_particular_long-term_partners:^Koch_Media_(Germany_&_UK)^Blue_Label_(Italy_&_France)^Friendware_(Spain)^New_Era_Interactive_Media_Co._Ltd._(Asia)^Snowball_(Russia)^Pinnacle_(UK)^Porto_Editora_(Portugal)^Hell-Tech_(Greece)^CD_Projekt_(Poland,_Czech_Republic,_Slovakia_&_Hungary)^Paradox_Scandinavian_Distribution_(Scandinavia)
-str_multi_scene_1 Ruins
-str_multi_scene_2 Village
-str_multi_scene_3 Hailes_Castle
-str_multi_scene_4 Ruined_Fort
-str_multi_scene_5 Scene_5
-str_multi_scene_6 Scene_6
-str_multi_scene_7 Field_by_the_River
-str_multi_scene_8 Rudkhan_Castle
-str_multi_scene_9 Snowy_Village
-str_multi_scene_10 Turin_Castle
-str_multi_scene_11 Nord_Town
-str_multi_scene_16 Port_Assault
-str_multi_scene_17 Brunwud_Castle
-str_multi_scene_18 Battle_on_Ice
-str_multi_scene_19 Mahdaar_Castle
-str_multi_scene_20 Jameyyed_Castle
-str_multi_scene_21 The_Arena
-str_multi_scene_22 Forest_Hideout
-str_multi_scene_23 Canyon
-str_multi_scene_24 Desert_Town
-str_multi_scene_12 Random_Plains_(Medium)
-str_multi_scene_13 Random_Plains_(Large)
-str_multi_scene_14 Random_Steppe_(Medium)
-str_multi_scene_15 Random_Steppe_(Large)
-str_multi_scene_end multi_scene_end
-str_multi_game_type_1 Deathmatch
-str_multi_game_type_2 Team_Deathmatch
-str_multi_game_type_3 Battle
-str_multi_game_type_4 Fight_and_Destroy
-str_multi_game_type_5 Capture_the_Flag
-str_multi_game_type_6 Conquest
-str_multi_game_type_7 Siege
-str_multi_game_type_8 Duel
-str_multi_game_type_9 Invasion
-str_multi_game_types_end multi_game_types_end
 str_poll_kick_player_s1_by_s0 {s0}_started_a_poll_to_kick_player_{s1}.
 str_poll_ban_player_s1_by_s0 {s0}_started_a_poll_to_ban_player_{s1}.
 str_poll_change_map_to_s1_by_s0 {s0}_started_a_poll_to_change_map_to_{s1}.

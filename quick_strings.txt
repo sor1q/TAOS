@@ -1,4 +1,4 @@
-1748
+1760
 qstr_Breaking_camp... Breaking_camp...
 qstr_Removing_disguise... Removing_disguise...
 qstr_{s17}_has_{reg17}_de {s17}_has_{reg17}_denars
@@ -1747,3 +1747,15 @@ qstr_Void_Essence:_{reg6} Void_Essence:_{reg6}
 qstr_The_world_goes_silen The_world_goes_silent_for_a_moment,_and_then..._you_hear_them._____________________Countless_voices_calling_out_from_the_shadows,_welcoming_you._You_are_now_a_Whisperer.
 qstr_You_ve_lost_{reg7}_e You've_lost_{reg7}_essence
 qstr_You_ve_got_{reg7}_es You've_got_{reg7}_essence
+qstr_Working_for_{s1} Working_for_{s1}
+qstr_Close_fight Close_fight
+qstr_Go_back Go_back
+qstr_Rush_again Rush_again
+qstr_Equipping_lance... Equipping_lance...
+qstr_Flanking_strike Flanking_strike
+qstr_Random_target_set Random_target_set
+qstr_Min_dist:_{s2} Min_dist:_{s2}
+qstr_Min_dist:_{reg7} Min_dist:_{reg7}
+qstr_Agent_not_found_for Agent_not_found,_force_attack
+qstr_DEBUG:_Spear_AI_chec DEBUG:_Spear_AI_check...
+qstr_DEBUG:_Equipping_Lan DEBUG:_Equipping_Lance!

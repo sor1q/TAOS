@@ -12,6 +12,8 @@ from header_scenes import *
 
 
 
+
+
 ## Prebattle Orders & Deployment Begin
 init_player_global_variables = ( #in pbod_common_triggers and custom_camera_triggers
   0, 0, ti_once, [(get_player_agent_no, "$fplayer_agent_no"),(ge, "$fplayer_agent_no", 0)], [
@@ -228,7 +230,7 @@ pbod_common_triggers = [
   process_crouching,
  ] 
 
-fix_maintain_division_triggers = [    #Fix for setting divisions, duplicated in formations code, so disabled in mst_lead_charge, quick_battle_battle
+fix_maintain_division_triggers = [    #Fix for setting divisions, duplicated in formations code, so disabled in mst_lead_charge
   (ti_on_agent_spawn, 0, 0, [], [(store_trigger_param_1, ":agent"),(call_script, "script_prebattle_agent_fix_division", ":agent")]),
   (0.5, 0, 0, [(store_mission_timer_a, reg0),(gt, reg0, 4)], 
    [
@@ -875,7 +877,7 @@ caba_order_triggers = [
 			(neg|team_slot_eq, 2, slot_team_mv_gk_order, gk_order_2),
 			(neg|team_slot_eq, 2, slot_team_mv_gk_order, gk_order_3),
 			(team_set_slot, 2, slot_team_mv_gk_order, gk_order_2),
-			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),(eq, reg0, "mt_quick_battle_battle"),
+			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),
             (start_presentation, "prsnt_caba_order_display"),
 		(else_try),
 			(team_slot_eq, 2, slot_team_mv_gk_order, gk_order_1),	#FOLLOW
@@ -899,7 +901,7 @@ caba_order_triggers = [
 			(neg|team_slot_eq, 2, slot_team_mv_gk_order, gk_order_2),
 			(neg|team_slot_eq, 2, slot_team_mv_gk_order, gk_order_3),
 			(team_set_slot, 2, slot_team_mv_gk_order, gk_order_3),
-			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),(eq, reg0, "mt_quick_battle_battle"),
+			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),
             (start_presentation, "prsnt_caba_order_display"),
 		(else_try),
 			(team_slot_eq, 2, slot_team_mv_gk_order, gk_order_1),	#CHARGE
@@ -919,7 +921,7 @@ caba_order_triggers = [
 	(0, 0, 0, [(game_key_clicked, gk_order_4),(neg|main_hero_fallen)], [
 		(try_begin),
 			(team_slot_eq, 2, slot_team_mv_gk_order, 0),
-			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),(eq, reg0, "mt_quick_battle_battle"),
+			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),
 			(team_set_slot, 2, slot_team_mv_gk_order, gk_order_4),
             (start_presentation, "prsnt_caba_order_display"),
 		(else_try),
@@ -975,7 +977,7 @@ caba_order_triggers = [
 			(team_set_slot, 2, slot_team_mv_gk_order, 0),
 		(else_try),
 			(team_slot_eq, 2, slot_team_mv_gk_order, gk_order_3),	#Volley
-			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),(eq, reg0, "mt_quick_battle_battle"),
+			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),
 			(call_script, "script_order_set_display_text", "str_order_volley_start"),
 			(call_script, "script_order_volley_begin_end", "$fplayer_team_no", begin, volley_type_mass),
 			(team_set_slot, 2, slot_team_mv_gk_order, 0),  
@@ -1033,7 +1035,7 @@ caba_order_triggers = [
 			(team_set_slot, 2, slot_team_mv_gk_order, 0),
 		(else_try),
 			(team_slot_eq, 2, slot_team_mv_gk_order, gk_order_3),	#Volley by Rank
-			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),(eq, reg0, "mt_quick_battle_battle"),
+			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),
 			(call_script, "script_order_set_display_text", "str_order_volley_rank_start"),
 			(call_script, "script_order_volley_begin_end", "$fplayer_team_no", begin, volley_type_rank),
 			(team_set_slot, 2, slot_team_mv_gk_order, 0),  
@@ -1083,12 +1085,12 @@ caba_order_triggers = [
     (0, 0, 0, [(key_clicked, "$key_order_7"),(neg|main_hero_fallen)], [ #f7
 	    (try_begin),
 		    (team_slot_eq, 2, slot_team_mv_gk_order, 0), 
-			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),(eq, reg0, "mt_quick_battle_battle"),
+			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),
 		    (team_set_slot, 2, slot_team_mv_gk_order, "$key_order_7"),
             (start_presentation, "prsnt_caba_order_display"),
 		(else_try),
 			(team_slot_eq, 2, slot_team_mv_gk_order, gk_order_2), #Add Rank
-			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),(eq, reg0, "mt_quick_battle_battle"),
+			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),
 			(call_script, "script_order_set_display_text", "str_order_num_ranks_add"),			
 			(try_for_range, ":division", 0, 9),
 				(class_is_listening_order, "$fplayer_team_no", ":division"),
@@ -1099,7 +1101,7 @@ caba_order_triggers = [
 			(team_set_slot, 2, slot_team_mv_gk_order, 0), 
 		(else_try),
 			(team_slot_eq, 2, slot_team_mv_gk_order, gk_order_3),	#Volley by Platoon
-			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),(eq, reg0, "mt_quick_battle_battle"),
+			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),
 			(call_script, "script_order_set_display_text", "str_order_volley_platoon_start"),
 			(call_script, "script_order_volley_begin_end", "$fplayer_team_no", begin, volley_type_platoon),
 			(team_set_slot, 2, slot_team_mv_gk_order, 0),  			
@@ -1154,7 +1156,7 @@ caba_order_triggers = [
             (start_presentation, "prsnt_caba_order_display"),
 		(else_try),
 			(team_slot_eq, 2, slot_team_mv_gk_order, gk_order_2), #Remove Rank
-			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),(eq, reg0, "mt_quick_battle_battle"),
+			(store_cur_mission_template_no, reg0),(this_or_next|eq, reg0, "mt_lead_charge"),
 			(call_script, "script_order_set_display_text", "str_order_num_ranks_remove"),					
 			(try_for_range, ":division", 0, 9),
 				(class_is_listening_order, "$fplayer_team_no", ":division"),
@@ -1191,7 +1193,7 @@ field_ai_triggers = [
    # Check horse archers ammo, and if none left, switch to sword.
    # For mounted lancers and foot spears, affect their Decision on weapon use,
    # based on if closest 3 enemies are within 5 meters and if currently attacking/defending.
-   [  	   
+   [
     #New AI for spearmen by SORIQ
     (try_begin),
     	(is_between, "$g_encountered_party", walled_centers_begin, walled_centers_end),
@@ -1262,6 +1264,7 @@ field_ai_triggers = [
                     (call_script, "script_weapon_use_backup_weapon", ":agent", ":inc_two_handers"), # Then equip a close weapon
                 (else_try),
                     (neq, ":wielded", ":lance"), # Enemies farther than 5 meters and/or not fighting, and not using lance?
+                    (gt, ":avg_dist", 800),
                     (agent_set_wielded_item, ":agent", ":lance"), # Then equip it!
                 (try_end),
             (try_end),
@@ -1298,7 +1301,7 @@ field_ai_triggers = [
 		    (party_slot_eq, "p_main_party", slot_party_pref_wu_spear, 1),
 		    (agent_get_slot, ":spear", ":agent", slot_agent_spear),   
             (gt, ":spear", 0), # Spear-Unit?   
-
+            
 			(store_add, ":slot", slot_team_d0_formation, ":class"),
 			(team_slot_eq, ":team", ":slot", formation_none),			
 			(neq, ":shield_order", 1),
@@ -1326,6 +1329,7 @@ field_ai_triggers = [
                 (agent_set_wielded_item, ":agent", ":spear"), # Then equip it!                
             (try_end),
         (try_end),
+
     (try_end),
     ]),
 	

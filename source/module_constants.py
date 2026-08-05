@@ -30,6 +30,9 @@ slot_troop_is_whispering = 603 #Checks if a troop is whispering (0 or 1)
 slot_troop_essence = 604 #Stores a troop's essence
 slot_troop_whispering_influence = 605 
 
+#cavalry ai slots
+slot_agent_cavalry_state_ai = 610
+slot_agent_cavalry_timer_ai = 611
 
 # 004 - Custom constants
 north_debuff_value = 15
@@ -109,9 +112,6 @@ slot_item_tied_to_good_price       = 20 #ie, weapons and metal armor to tools, p
 slot_item_num_positions            = 22
 slot_item_positions_begin          = 23 #reserve around 5 slots after this
 
-
-slot_item_multiplayer_faction_price_multipliers_begin = 30 #reserve around 10 slots after this
-
 slot_item_primary_raw_material          = 50
 slot_item_is_raw_material_only_for      = 51
 slot_item_input_number                  = 52 #ie, how many items of inputs consumed per run
@@ -121,13 +121,6 @@ slot_item_output_per_run                = 55 #number of items produced per run
 slot_item_overhead_per_run              = 56 #labor and overhead per run
 slot_item_secondary_raw_material        = 57 #in this case, the amount used is only one
 slot_item_enterprise_building_cost      = 58 #enterprise building cost
-#INVASION MODE START
-slot_item_ccoop_has_ammo                = 59 #should be set to 1 for Invasion item drops that have an additional item for ammunition (e.g. Javelin Bow)
-#INVASION MODE END
-
-
-slot_item_multiplayer_item_class   = 60 #temporary, can be moved to higher values
-slot_item_multiplayer_availability_linked_list_begin = 61 #temporary, can be moved to higher values
 
 
 ########################################################
@@ -1640,80 +1633,10 @@ ransom_brokers_end   = tavern_travelers_begin
 mercenary_troops_begin = "trp_watchman"
 mercenary_troops_end = "trp_mercenaries_end"
 
-multiplayer_troops_begin = "trp_northern_marksman_multiplayer"
-multiplayer_troops_end = "trp_multiplayer_end"
 
-#INVASION MODE start
-ccoop_companion_sounds_start = "snd_ccoop_spawn_companion_0"
-ccoop_companion_sounds_end = "snd_ccoop_nobleman_taunt"
+quick_battle_troops_begin = "trp_watchman"
+quick_battle_troops_end = "trp_mercenaries_end"
 
-ccoop_noble_sounds_start = "snd_ccoop_nobleman_taunt"
-ccoop_noble_sounds_end = "snd_ccoop_looter_taunt_0"
-
-ccoop_looter_sounds_start = "snd_ccoop_looter_taunt_0"
-ccoop_looter_sounds_end = "snd_ccoop_bandit_taunt_0"
-
-ccoop_bandit_sounds_start = "snd_ccoop_bandit_taunt_0"
-ccoop_bandit_sounds_end = "snd_ccoop_sea_raider_taunt_0"
-
-ccoop_sea_raider_sounds_start = "snd_ccoop_sea_raider_taunt_0"
-ccoop_sea_raider_sounds_end = "snd_sounds_end"
-
-multiplayer_coop_class_templates_begin = "trp_northern_marksman_multiplayer_coop_tier_1"
-multiplayer_coop_class_templates_end = "trp_coop_faction_troop_templates_end"
-
-multiplayer_coop_companion_equipment_sets_begin = "trp_npc1_1"
-multiplayer_coop_companion_first_equipment_sets_end = "trp_npc1_2"
-multiplayer_coop_companion_equipment_sets_end = "trp_coop_companion_equipment_sets_end"
-
-multiplayer_coop_companion_description_strings_begin = "str_npc1_1"
-#INVASION MODE end
-multiplayer_ai_troops_begin = "trp_northern_marksman_multiplayer_ai"
-multiplayer_ai_troops_end = multiplayer_troops_begin
-
-#INVASION MODE START
-captain_multiplayer_troops_begin = "trp_farmer"
-captain_multiplayer_troops_end = "trp_northern_marksman"
-
-captain_multiplayer_new_troops_begin = "trp_northern_marksman"
-captain_multiplayer_new_troops_end = "trp_kthar_knight"
-
-captain_multiplayer_coop_new_troops_begin = "trp_kthar_knight"
-captain_multiplayer_coop_new_troops_end = "trp_slaver_chief"
-#INVASION MODE END
-multiplayer_scenes_begin = "scn_multi_scene_1"
-multiplayer_scenes_end = "scn_multiplayer_maps_end"
-
-multiplayer_scene_names_begin = "str_multi_scene_1"
-multiplayer_scene_names_end = "str_multi_scene_end"
-
-multiplayer_flag_projections_begin = "mesh_flag_project_sw"
-multiplayer_flag_projections_end = "mesh_flag_projects_end"
-
-multiplayer_flag_taken_projections_begin = "mesh_flag_project_sw_miss"
-multiplayer_flag_taken_projections_end = "mesh_flag_project_misses_end"
-
-multiplayer_game_type_names_begin = "str_multi_game_type_1"
-multiplayer_game_type_names_end = "str_poll_kick_player_s1_by_s0" #SB : unused but moved range anyway
-
-quick_battle_troops_begin = "trp_quick_battle_troop_1"
-quick_battle_troops_end = "trp_quick_battle_troops_end"
-
-quick_battle_troop_texts_begin = "str_quick_battle_troop_1"
-quick_battle_troop_texts_end = "str_quick_battle_troops_end"
-
-quick_battle_scenes_begin = "scn_quick_battle_scene_1"
-quick_battle_scenes_end = "scn_quick_battle_maps_end"
-
-quick_battle_scene_images_begin = "mesh_cb_ui_maps_scene_01"
-
-quick_battle_battle_scenes_begin = quick_battle_scenes_begin
-quick_battle_battle_scenes_end = "scn_quick_battle_scene_4"
-
-quick_battle_siege_scenes_begin = quick_battle_battle_scenes_end
-quick_battle_siege_scenes_end = quick_battle_scenes_end
-
-quick_battle_scene_names_begin = "str_quick_battle_scene_1"
 
 lord_quests_begin = "qst_deliver_message"
 lord_quests_end   = "qst_follow_army"
@@ -1844,7 +1767,7 @@ merchants_end = village_elders_end
 dplmc_employees_begin = "trp_dplmc_chamberlain" #Individual employees (chancellor, constable, chamberlain)
 dplmc_employees_end   = "trp_dplmc_messenger"   #The messenger is not included, since it's a generic figure rather than a specific person.
 
-dplmc_prev_employee = multiplayer_coop_class_templates_begin #SB : trp_dplmc_chamberlain = 930 now some invasion template, we need this id for old savegames
+dplmc_prev_employee = 400 #SB : trp_dplmc_chamberlain = 930 now some invasion template, we need this id for old savegames
 
 #SB : salaries
 dplmc_spouse_salary = 10
@@ -2431,16 +2354,6 @@ DPLMC_FACTION_STANDING_MEMBER = 10#includes mercenaries
 DPLMC_FACTION_STANDING_PETITIONER = 5
 DPLMC_FACTION_STANDING_UNAFFILIATED = 0
 
-##INVASION/CAPTAIN COOP
-
-captain_multiplayer_troops_begin = "trp_farmer"
-captain_multiplayer_troops_end = "trp_northern_marksman"
-
-captain_multiplayer_new_troops_begin = "trp_northern_marksman"
-captain_multiplayer_new_troops_end = "trp_kthar_knight"
-
-captain_multiplayer_coop_new_troops_begin = "trp_kthar_knight"
-captain_multiplayer_coop_new_troops_end = "trp_slaver_chief"
 
 
 

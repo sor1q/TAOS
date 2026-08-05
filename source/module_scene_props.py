@@ -17,129 +17,7 @@ import string
 #  5) Triggers: Simple triggers that are associated with the scene prop
 ####################################################################################################################
 
-check_item_use_trigger = (ti_on_scene_prop_use,
-    [
-      (store_trigger_param_1, ":agent_id"),
-      (store_trigger_param_2, ":instance_id"),
-      
-      #for only server itself-----------------------------------------------------------------------------------------------
-      (call_script, "script_use_item", ":instance_id", ":agent_id"),
-      #for only server itself-----------------------------------------------------------------------------------------------
-      (get_max_players, ":num_players"),                               
-      (try_for_range, ":player_no", 1, ":num_players"), #0 is server so starting from 1
-        (player_is_active, ":player_no"),
-        (multiplayer_send_2_int_to_player, ":player_no", multiplayer_event_use_item, ":instance_id", ":agent_id"),
-      (try_end),
-    ])
 
-check_sally_door_use_trigger_double = (ti_on_scene_prop_use,
-    [
-      (store_trigger_param_1, ":agent_id"),
-      (store_trigger_param_2, ":instance_id"),
-
-      (agent_get_position, pos1, ":agent_id"),
-      (prop_instance_get_starting_position, pos2, ":instance_id"),
-      
-      (scene_prop_get_slot, ":opened_or_closed", ":instance_id", scene_prop_open_or_close_slot),
-
-      (try_begin),
-        #out doors like castle sally door can be opened only from inside, if door coordinate is behind your coordinate. Also it can be closed from both sides.
-        
-        (prop_instance_get_scene_prop_kind, ":scene_prop_id", ":instance_id"),
-        
-        (assign, ":can_open_door", 0),
-        (try_begin),
-          (neg|eq, ":scene_prop_id", "spr_viking_keep_destroy_sally_door_right"),
-          (neg|eq, ":scene_prop_id", "spr_viking_keep_destroy_sally_door_left"),
-          (neg|eq, ":scene_prop_id", "spr_earth_sally_gate_right"),
-          (neg|eq, ":scene_prop_id", "spr_earth_sally_gate_left"),
-          
-          (position_is_behind_position, pos1, pos2),
-          (assign, ":can_open_door", 1),
-        (else_try),  
-          (this_or_next|eq, ":scene_prop_id", "spr_viking_keep_destroy_sally_door_right"),
-          (this_or_next|eq, ":scene_prop_id", "spr_viking_keep_destroy_sally_door_left"),
-          (this_or_next|eq, ":scene_prop_id", "spr_earth_sally_gate_right"),
-          (eq, ":scene_prop_id", "spr_earth_sally_gate_left"),
-
-          (neg|position_is_behind_position, pos1, pos2),
-          (assign, ":can_open_door", 1),
-        (try_end),
-        
-        (this_or_next|eq, ":can_open_door", 1),
-        (eq, ":opened_or_closed", 1),
-      
-        (try_begin),
-          #for only server itself-----------------------------------------------------------------------------------------------
-          (call_script, "script_use_item", ":instance_id", ":agent_id"),
-          #for only server itself-----------------------------------------------------------------------------------------------
-          (get_max_players, ":num_players"),                               
-          (try_for_range, ":player_no", 1, ":num_players"), #0 is server so starting from 1
-            (player_is_active, ":player_no"),
-            (multiplayer_send_2_int_to_player, ":player_no", multiplayer_event_use_item, ":instance_id", ":agent_id"),
-          (try_end),
-        (try_end),
-      (try_end),
-    ])
-
-check_sally_door_use_trigger = (ti_on_scene_prop_use,
-    [
-      (store_trigger_param_1, ":agent_id"),
-      (store_trigger_param_2, ":instance_id"),
-
-      (agent_get_position, pos1, ":agent_id"),
-      (prop_instance_get_starting_position, pos2, ":instance_id"),
-      
-      (scene_prop_get_slot, ":opened_or_closed", ":instance_id", scene_prop_open_or_close_slot),
-
-      (try_begin),
-        #out doors like castle sally door can be opened only from inside, if door coordinate is behind your coordinate. Also it can be closed from both sides.
-        (this_or_next|position_is_behind_position, pos1, pos2),
-        (eq, ":opened_or_closed", 1),
-      
-        (try_begin),
-          #for only server itself-----------------------------------------------------------------------------------------------
-          (call_script, "script_use_item", ":instance_id", ":agent_id"),
-          #for only server itself-----------------------------------------------------------------------------------------------
-          (get_max_players, ":num_players"),                               
-          (try_for_range, ":player_no", 1, ":num_players"), #0 is server so starting from 1
-            (player_is_active, ":player_no"),
-            (multiplayer_send_2_int_to_player, ":player_no", multiplayer_event_use_item, ":instance_id", ":agent_id"),
-          (try_end),
-        (try_end),
-      (try_end),
-    ])
-
-check_castle_door_use_trigger = (ti_on_scene_prop_use,
-    [
-      (store_trigger_param_1, ":agent_id"),
-      (store_trigger_param_2, ":instance_id"),
-
-      (agent_get_position, pos1, ":agent_id"),
-      (prop_instance_get_starting_position, pos2, ":instance_id"),
-      
-      (scene_prop_get_slot, ":opened_or_closed", ":instance_id", scene_prop_open_or_close_slot),
-
-      (try_begin),
-        (ge, ":agent_id", 0),
-        (agent_get_team, ":agent_team", ":agent_id"),
-
-        #in doors like castle room doors can be opened from both sides, but only defenders can open these doors. Also it can be closed from both sides.
-        (this_or_next|eq, ":agent_team", 0),
-        (eq, ":opened_or_closed", 1),
-      
-        (try_begin),
-          #for only server itself-----------------------------------------------------------------------------------------------
-          (call_script, "script_use_item", ":instance_id", ":agent_id"),
-          #for only server itself-----------------------------------------------------------------------------------------------
-          (get_max_players, ":num_players"),                               
-          (try_for_range, ":player_no", 1, ":num_players"), #0 is server so starting from 1
-            (player_is_active, ":player_no"),
-            (multiplayer_send_2_int_to_player, ":player_no", multiplayer_event_use_item, ":instance_id", ":agent_id"),
-          (try_end),
-        (try_end),
-      (try_end),
-    ])
 
 check_ladder_animate_trigger = (ti_on_scene_prop_is_animating,
     [      
@@ -359,172 +237,6 @@ scene_props = [
 
   ("catapult",0,"Catapult","bo_Catapult", []),
   
-  ("catapult_destructible",sokf_moveable|sokf_show_hit_point_bar|sokf_destructible,"Catapult","bo_Catapult", [
-   (ti_on_init_scene_prop,
-    [
-      (store_trigger_param_1, ":instance_no"),
-      (scene_prop_set_hit_points, ":instance_no", 1600),
-    ]),
-     
-   (ti_on_scene_prop_destroy,
-    [          
-      (play_sound, "snd_dummy_destroyed"),
-
-      (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
-
-
-        (store_trigger_param_1, ":instance_no"),      
-        (prop_instance_get_position, pos1, ":instance_no"),
-        (particle_system_burst, "psys_dummy_smoke_big", pos1, 100),
-        (particle_system_burst, "psys_dummy_straw_big", pos1, 100),      
-        (position_move_z, pos1, -500),
-        (position_rotate_x, pos1, 90),
-        (prop_instance_animate_to_position, ":instance_no", pos1, 300), #animate to 6 meters below in 6 second
-
-        (try_begin),
-          (eq, "$g_round_ended", 0),
-          (scene_prop_get_team, ":scene_prop_team_no", ":instance_no"),
-          (try_begin),
-            (eq, ":scene_prop_team_no", 0),
-            (assign, ":scene_prop_team_no_multiplier", -1), 
-          (else_try),
-            (assign, ":scene_prop_team_no_multiplier", 1), 
-          (try_end),
-
-          (try_begin),
-            (eq, "$g_number_of_targets_destroyed", 0),        
-            (store_mul, ":target_no_mul_scene_prop_team", ":scene_prop_team_no_multiplier", 1), #1 means destroyed object is a catapult
-            #for only server itself-----------------------------------------------------------------------------------------------                                                                                                      
-            (call_script, "script_show_multiplayer_message", multiplayer_message_type_target_destroyed, ":target_no_mul_scene_prop_team"), 
-            #for only server itself-----------------------------------------------------------------------------------------------     
-            (get_max_players, ":num_players"),                               
-            (try_for_range, ":player_no", 1, ":num_players"),
-              (player_is_active, ":player_no"),
-              (multiplayer_send_2_int_to_player, ":player_no", multiplayer_event_show_multiplayer_message, multiplayer_message_type_target_destroyed, ":target_no_mul_scene_prop_team"), 
-            (try_end),
-            (val_add, "$g_number_of_targets_destroyed", 1),
-          (else_try),
-            (store_mul, ":target_no_mul_scene_prop_team", ":scene_prop_team_no_multiplier", 9), #9 means attackers destroyed all targets
-            #for only server itself-----------------------------------------------------------------------------------------------      
-            (call_script, "script_show_multiplayer_message", multiplayer_message_type_target_destroyed, ":target_no_mul_scene_prop_team"), 
-            #for only server itself-----------------------------------------------------------------------------------------------     
-            (get_max_players, ":num_players"),                               
-            (try_for_range, ":player_no", 1, ":num_players"),
-              (player_is_active, ":player_no"),
-              (multiplayer_send_2_int_to_player, ":player_no", multiplayer_event_show_multiplayer_message, multiplayer_message_type_target_destroyed, ":target_no_mul_scene_prop_team"), 
-            (try_end),
-            (val_add, "$g_number_of_targets_destroyed", 1),
-          (try_end),
-        (try_end),
-
-        #giving gold for destroying target (for catapult)
-        #step-1 calculating total damage given to that scene prop
-        (assign, ":total_damage_given", 0),
-        (get_max_players, ":num_players"),                               
-        (try_for_range, ":player_no", 0, ":num_players"), 
-          (player_is_active, ":player_no"),
-          
-          (try_begin),
-            (eq, "spr_catapult_destructible", "$g_destructible_target_1"),
-            (player_get_slot, ":damage_given", ":player_no", slot_player_damage_given_to_target_1),
-          (else_try),
-            (player_get_slot, ":damage_given", ":player_no", slot_player_damage_given_to_target_2),
-          (try_end),
-
-          (val_add, ":total_damage_given", ":damage_given"),
-        (try_end),
-
-        #step-2 sharing 1000 gold (if num active players < 20 then 50 * num active players) to players which gave damage with the damage amounts.
-        (assign, ":destroy_money_addition", 0),
-        (get_max_players, ":num_players"),                               
-        (try_for_range, ":player_no", 0, ":num_players"), 
-          (player_is_active, ":player_no"),
-          (val_add, ":destroy_money_addition", 50),
-        (try_end),
-      
-        (try_begin),
-          (ge, ":destroy_money_addition", multi_destroy_target_money_add),
-          (assign, ":destroy_money_addition", multi_destroy_target_money_add),
-        (try_end),
-        (val_mul, ":destroy_money_addition", "$g_multiplayer_battle_earnings_multiplier"),
-        (val_div, ":destroy_money_addition", 100),
-      
-        (get_max_players, ":num_players"),                               
-        (try_for_range, ":player_no", 0, ":num_players"), 
-          (player_is_active, ":player_no"),
-          
-          (try_begin),
-            (eq, "spr_catapult_destructible", "$g_destructible_target_1"),
-            (player_get_slot, ":damage_given", ":player_no", slot_player_damage_given_to_target_1),
-          (else_try),
-            (player_get_slot, ":damage_given", ":player_no", slot_player_damage_given_to_target_2),
-          (try_end),
-
-          (player_get_gold, ":player_gold", ":player_no"), #give money to player which helped flag to be owned by new_flag_owner team
-
-          (val_mul, ":damage_given", ":destroy_money_addition"),
-
-          (try_begin),
-            (ge, ":total_damage_given", ":damage_given"),
-            (gt, ":damage_given", 0),
-            (store_div, ":gold_earned", ":damage_given", ":total_damage_given"),
-          (else_try),
-            (assign, ":gold_earned", 0),
-          (try_end),
-        
-          (val_add, ":player_gold", ":gold_earned"),
-          (player_set_gold, ":player_no", ":player_gold", multi_max_gold_that_can_be_stored),              
-        (try_end),
-      (try_end),
-    ]),     
-
-    (ti_on_scene_prop_hit,
-    [
-      (store_trigger_param_1, ":instance_no"),       
-      (store_trigger_param_2, ":damage"),
-      
-      (try_begin),
-        (scene_prop_get_hit_points, ":hit_points", ":instance_no"),
-        (val_sub, ":hit_points", ":damage"),
-        (gt, ":hit_points", 0),
-        (play_sound, "snd_dummy_hit"),
-      (else_try),
-        (neg|multiplayer_is_server),
-        (play_sound, "snd_dummy_destroyed"),
-      (try_end),
-
-      (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
-
-        (particle_system_burst, "psys_dummy_smoke", pos1, 3),
-        (particle_system_burst, "psys_dummy_straw", pos1, 10),
-        (set_fixed_point_multiplier, 1),
-        (position_get_x, ":attacker_agent_id", pos2),
-        (try_begin),
-          (ge, ":attacker_agent_id", 0),
-          (agent_is_alive, ":attacker_agent_id"),
-          (agent_is_human, ":attacker_agent_id"),
-          (neg|agent_is_non_player, ":attacker_agent_id"),
-          (agent_get_player_id, ":attacker_player_id", ":attacker_agent_id"),
-          (ge, ":attacker_player_id", 0),
-          (player_is_active, ":attacker_player_id"),        
-          (try_begin),
-            (eq, "spr_catapult_destructible", "$g_destructible_target_1"),
-            (player_get_slot, ":damage_given", ":attacker_player_id", slot_player_damage_given_to_target_1),
-            (val_add, ":damage_given", ":damage"),
-            (player_set_slot, ":attacker_player_id", slot_player_damage_given_to_target_1, ":damage_given"),
-          (else_try),
-            (player_get_slot, ":damage_given", ":attacker_player_id", slot_player_damage_given_to_target_2),
-            (val_add, ":damage_given", ":damage"),
-            (player_set_slot, ":attacker_player_id", slot_player_damage_given_to_target_2, ":damage_given"),
-          (try_end),
-        (try_end),
-      (try_end),
-    ]),
-  ]),
   
   ("broom",0,"broom","0", []),
   ("garlic",0,"garlic","0", []),
@@ -645,7 +357,6 @@ scene_props = [
   ("salt_a",0,"salt_a","bo_salt_a", []),
 
   ("door_destructible",sokf_moveable|sokf_show_hit_point_bar|sokf_destructible|spr_use_time(2),"tutorial_door_a","bo_tutorial_door_a", [
-    check_item_use_trigger,
 
    (ti_on_init_scene_prop,
     [
@@ -660,8 +371,8 @@ scene_props = [
       (assign, ":rotate_side", 86),
       
       (try_begin),
-        (this_or_next|multiplayer_is_server),
-        (neg|game_in_multiplayer_mode),
+        
+        
 
         (store_trigger_param_1, ":instance_no"),      
         (store_trigger_param_2, ":attacker_agent_no"),
@@ -875,7 +586,6 @@ scene_props = [
   ("castle_f_battlement_corner_c",0,"castle_f_battlement_corner_c","bo_castle_f_battlement_corner_c", []),
   
   ("castle_f_door_a",sokf_moveable|sokf_show_hit_point_bar|sokf_destructible|spr_use_time(0),"castle_f_door_a","bo_castle_f_door_a", [
-    check_castle_door_use_trigger,
 
    (ti_on_init_scene_prop,
     [
@@ -890,8 +600,7 @@ scene_props = [
       (assign, ":rotate_side", 86),
       
       (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
+        
 
         (store_trigger_param_1, ":instance_no"),      
         (store_trigger_param_2, ":attacker_agent_no"),
@@ -950,13 +659,12 @@ scene_props = [
         (gt, ":hit_points", 0),
         (play_sound, "snd_dummy_hit"),
       (else_try),
-        (neg|multiplayer_is_server),
+        
         (play_sound, "snd_dummy_destroyed"),
       (try_end),
 
       (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
+        
 
         (particle_system_burst, "psys_dummy_smoke", pos1, 3),
         (particle_system_burst, "psys_dummy_straw", pos1, 10),
@@ -967,7 +675,6 @@ scene_props = [
   ("castle_f_doors_top_a",0,"castle_f_doors_top_a","bo_castle_f_doors_top_a", []),
     
   ("castle_f_sally_door_a",sokf_moveable|sokf_show_hit_point_bar|sokf_destructible|spr_use_time(0),"castle_f_sally_door_a","bo_castle_f_sally_door_a", [
-    check_sally_door_use_trigger,
 
    (ti_on_init_scene_prop,
     [
@@ -982,8 +689,7 @@ scene_props = [
       (assign, ":rotate_side", 86),
       
       (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
+        
 
         (store_trigger_param_1, ":instance_no"),      
         (store_trigger_param_2, ":attacker_agent_no"),
@@ -1040,13 +746,12 @@ scene_props = [
         (gt, ":hit_points", 0),
         (play_sound, "snd_dummy_hit"),
       (else_try),
-        (neg|multiplayer_is_server),
+        
         (play_sound, "snd_dummy_destroyed"),
       (try_end),
 
       (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
+        
 
         (particle_system_burst, "psys_dummy_smoke", pos1, 3),
         (particle_system_burst, "psys_dummy_straw", pos1, 10),
@@ -1537,40 +1242,14 @@ scene_props = [
   ("castle_e_battlement_a_destroyed",0,"castle_e_battlement_a_destroyed","bo_castle_e_battlement_a_destroyed", []),
 
   ("castle_e_sally_door_a",sokf_moveable|sokf_show_hit_point_bar|sokf_destructible|spr_use_time(0),"castle_e_sally_door_a","bo_castle_e_sally_door_a", [
-    check_sally_door_use_trigger,
+    
 
    (ti_on_init_scene_prop,
     [
       (store_trigger_param_1, ":instance_no"),
       (scene_prop_set_hit_points, ":instance_no", 3000),
     ]),
-     
-##   (ti_on_scene_prop_destroy,
-##    [
-##      (play_sound, "snd_dummy_destroyed"),
-##      
-##      (try_begin),
-##        (multiplayer_is_server),
-##        (store_trigger_param_1, ":instance_no"),      
-##        (store_trigger_param_2, ":attacker_agent_no"),
-##
-##        (try_begin),
-##          (ge, ":attacker_agent_no", 0),
-##          (prop_instance_get_position, pos1, ":instance_no"),
-##          (agent_get_position, pos2, ":attacker_agent_no"),
-##          (assign, ":rotate_side", 80),
-##          (try_begin),
-##            (position_is_behind_position, pos2, pos1),
-##            (val_mul, ":rotate_side", -1),
-##          (try_end),
-##        (else_try),
-##          (assign, ":rotate_side", 80),
-##        (try_end),
-##      
-##        (position_rotate_x, pos1, ":rotate_side"),
-##        (prop_instance_animate_to_position, ":instance_no", pos1, 70), #animate to position 1 in 0.7 second
-##      (try_end),
-##    ]),     
+   
 
    (ti_on_scene_prop_destroy,
     [
@@ -1579,8 +1258,7 @@ scene_props = [
       (assign, ":rotate_side", 86),
       
       (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
+        
 		
         (store_trigger_param_1, ":instance_no"),      
         (store_trigger_param_2, ":attacker_agent_no"),
@@ -1639,13 +1317,12 @@ scene_props = [
         (gt, ":hit_points", 0),
         (play_sound, "snd_dummy_hit"),
       (else_try),
-        (neg|multiplayer_is_server),
+        
         (play_sound, "snd_dummy_destroyed"),
       (try_end),
 
       (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
+        
 
         (particle_system_burst, "psys_dummy_smoke", pos1, 3),
         (particle_system_burst, "psys_dummy_straw", pos1, 10),
@@ -1743,169 +1420,7 @@ scene_props = [
   ("trebuchet_old",0,"trebuchet_old","bo_trebuchet_old", []),
   ("trebuchet_new",0,"trebuchet_new","bo_trebuchet_old", []),
 
-  ("trebuchet_destructible",sokf_moveable|sokf_show_hit_point_bar|sokf_destructible,"trebuchet_new","bo_trebuchet_old", [
-   (ti_on_init_scene_prop,
-    [
-      (store_trigger_param_1, ":instance_no"),
-      (scene_prop_set_hit_points, ":instance_no", 2400),
-    ]),
-     
-   (ti_on_scene_prop_destroy,
-    [          
-      (play_sound, "snd_dummy_destroyed"),
-
-      (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
-
-        (store_trigger_param_1, ":instance_no"),      
-        (prop_instance_get_position, pos1, ":instance_no"),
-        (particle_system_burst, "psys_dummy_smoke_big", pos1, 100),
-        (particle_system_burst, "psys_dummy_straw_big", pos1, 100),      
-        (position_move_z, pos1, -500),
-        (position_rotate_x, pos1, 90),
-        (prop_instance_animate_to_position, ":instance_no", pos1, 300), #animate to 6 meters below in 6 second
-
-        (try_begin),
-          (eq, "$g_round_ended", 0),
-          (scene_prop_get_team, ":scene_prop_team_no", ":instance_no"),
-          (try_begin),
-            (eq, ":scene_prop_team_no", 0),
-            (assign, ":scene_prop_team_no_multiplier", -1), 
-          (else_try),
-            (assign, ":scene_prop_team_no_multiplier", 1), 
-          (try_end),
-
-          (try_begin),
-            (eq, "$g_number_of_targets_destroyed", 0),
-            
-            (store_mul, ":target_no_mul_scene_prop_team", ":scene_prop_team_no_multiplier", 2), #2 means destroyed object is a trebuchet
-
-            #for only server itself-----------------------------------------------------------------------------------------------                                                                                                      
-            (call_script, "script_show_multiplayer_message", multiplayer_message_type_target_destroyed, ":target_no_mul_scene_prop_team"), 
-            #for only server itself-----------------------------------------------------------------------------------------------     
-            (get_max_players, ":num_players"),                               
-            (try_for_range, ":player_no", 1, ":num_players"),
-              (player_is_active, ":player_no"),
-              (multiplayer_send_2_int_to_player, ":player_no", multiplayer_event_show_multiplayer_message, multiplayer_message_type_target_destroyed, ":target_no_mul_scene_prop_team"), 
-            (try_end),
-            (val_add, "$g_number_of_targets_destroyed", 1),
-          (else_try),
-            (store_mul, ":target_no_mul_scene_prop_team", ":scene_prop_team_no_multiplier", 9), #9 means attackers destroyed all targets
-
-            #for only server itself-----------------------------------------------------------------------------------------------      
-            (call_script, "script_show_multiplayer_message", multiplayer_message_type_target_destroyed, ":target_no_mul_scene_prop_team"), 
-            #for only server itself-----------------------------------------------------------------------------------------------     
-            (get_max_players, ":num_players"),                                
-            (try_for_range, ":player_no", 1, ":num_players"),
-              (player_is_active, ":player_no"),
-              (multiplayer_send_2_int_to_player, ":player_no", multiplayer_event_show_multiplayer_message, multiplayer_message_type_target_destroyed, ":target_no_mul_scene_prop_team"), 
-            (try_end),
-            (val_add, "$g_number_of_targets_destroyed", 1),
-          (try_end),
-        (try_end),
-
-        #giving gold for destroying target (for trebuchet)
-        #step-1 calculating total damage given to that scene prop
-        (assign, ":total_damage_given", 0),
-        (get_max_players, ":num_players"),                               
-        (try_for_range, ":player_no", 0, ":num_players"), 
-          (player_is_active, ":player_no"),
-          
-          (try_begin),
-            (eq, "spr_trebuchet_destructible", "$g_destructible_target_1"),
-            (player_get_slot, ":damage_given", ":player_no", slot_player_damage_given_to_target_1),
-          (else_try),
-            (player_get_slot, ":damage_given", ":player_no", slot_player_damage_given_to_target_2),
-          (try_end),
-
-          (val_add, ":total_damage_given", ":damage_given"),
-        (try_end),
-
-        #step-2 sharing 1000 gold (if num active players < 20 then 50 * num active players) to players which gave damage with the damage amounts.
-        #(scene_prop_get_max_hit_points, ":max_hit_points", ":instance_no"),
-        (assign, ":destroy_money_addition", 0),
-        (get_max_players, ":num_players"),                               
-        (try_for_range, ":player_no", 0, ":num_players"), 
-          (player_is_active, ":player_no"),
-          (val_add, ":destroy_money_addition", 50),
-        (try_end),
-      
-        (try_begin),
-          (ge, ":destroy_money_addition", multi_destroy_target_money_add),
-          (assign, ":destroy_money_addition", multi_destroy_target_money_add),
-        (try_end),
-        (val_mul, ":destroy_money_addition", "$g_multiplayer_battle_earnings_multiplier"),
-        (val_div, ":destroy_money_addition", 100),
-
-        (get_max_players, ":num_players"),                               
-        (try_for_range, ":player_no", 0, ":num_players"), 
-          (player_is_active, ":player_no"),
-          
-          (try_begin),
-            (eq, "spr_trebuchet_destructible", "$g_destructible_target_1"),
-            (player_get_slot, ":damage_given", ":player_no", slot_player_damage_given_to_target_1),
-          (else_try),
-            (player_get_slot, ":damage_given", ":player_no", slot_player_damage_given_to_target_2),
-          (try_end),
-
-          (player_get_gold, ":player_gold", ":player_no"), #give money to player which helped flag to be owned by new_flag_owner team
-
-          (val_mul, ":damage_given", ":destroy_money_addition"),
-          (store_div, ":gold_earned", ":damage_given", ":total_damage_given"),
-        
-          (val_add, ":player_gold", ":gold_earned"),
-          (player_set_gold, ":player_no", ":player_gold", multi_max_gold_that_can_be_stored),              
-        (try_end),      
-      (try_end),      
-    ]),     
-
-    (ti_on_scene_prop_hit,
-    [
-      (store_trigger_param_1, ":instance_no"),       
-      (store_trigger_param_2, ":damage"),
-      
-      (try_begin),
-        (scene_prop_get_hit_points, ":hit_points", ":instance_no"),
-        (val_sub, ":hit_points", ":damage"),
-        (gt, ":hit_points", 0),
-        (play_sound, "snd_dummy_hit"),
-      (else_try),
-        (neg|multiplayer_is_server),
-        (play_sound, "snd_dummy_destroyed"),
-      (try_end),
-
-      (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
-
-        (particle_system_burst, "psys_dummy_smoke", pos1, 3),
-        (particle_system_burst, "psys_dummy_straw", pos1, 10),
-
-        (set_fixed_point_multiplier, 1),
-        (position_get_x, ":attacker_agent_id", pos2),
-        (try_begin),
-          (ge, ":attacker_agent_id", 0),
-          (agent_is_alive, ":attacker_agent_id"),
-          (agent_is_human, ":attacker_agent_id"),
-          (neg|agent_is_non_player, ":attacker_agent_id"),
-          (agent_get_player_id, ":attacker_player_id", ":attacker_agent_id"),
-          (ge, ":attacker_player_id", 0),
-          (player_is_active, ":attacker_player_id"),
-          (try_begin),
-            (eq, "spr_trebuchet_destructible", "$g_destructible_target_1"),
-            (player_get_slot, ":damage_given", ":attacker_player_id", slot_player_damage_given_to_target_1),
-            (val_add, ":damage_given", ":damage"),
-            (player_set_slot, ":attacker_player_id", slot_player_damage_given_to_target_1, ":damage_given"),
-          (else_try),
-            (player_get_slot, ":damage_given", ":attacker_player_id", slot_player_damage_given_to_target_2),
-            (val_add, ":damage_given", ":damage"),
-            (player_set_slot, ":attacker_player_id", slot_player_damage_given_to_target_2, ":damage_given"),
-          (try_end),
-        (try_end),
-      (try_end),
-    ]),
-  ]),
+  
 
 
   ("stone_ball",0,"stone_ball","0", []),
@@ -1934,31 +1449,31 @@ scene_props = [
   ("siege_ladder_14m",sokf_type_ladder,"siege_ladder_14m","bo_siege_ladder_14m", []),
 
   ("siege_ladder_move_6m",sokf_type_ladder|sokf_moveable|spr_use_time(2),"siege_ladder_move_6m","bo_siege_ladder_move_6m", [    
-   check_item_use_trigger,
+   
    check_ladder_animate_trigger,
    check_ladder_animation_finish_trigger,
   ]),  
 
   ("siege_ladder_move_8m",sokf_type_ladder|sokf_moveable|spr_use_time(2),"siege_ladder_move_8m","bo_siege_ladder_move_8m", [    
-   check_item_use_trigger,
+   
    check_ladder_animate_trigger,
    check_ladder_animation_finish_trigger,
   ]),  
 
   ("siege_ladder_move_10m",sokf_type_ladder|sokf_moveable|spr_use_time(3),"siege_ladder_move_10m","bo_siege_ladder_move_10m", [    
-   check_item_use_trigger,
+   
    check_ladder_animate_trigger,
    check_ladder_animation_finish_trigger,
   ]),  
 
   ("siege_ladder_move_12m",sokf_type_ladder|sokf_moveable|spr_use_time(3),"siege_ladder_move_12m","bo_siege_ladder_move_12m", [    
-   check_item_use_trigger,
+   
    check_ladder_animate_trigger,
    check_ladder_animation_finish_trigger,
   ]),  
 
   ("siege_ladder_move_14m",sokf_type_ladder|sokf_moveable|spr_use_time(4),"siege_ladder_move_14m","bo_siege_ladder_move_14m", [    
-   check_item_use_trigger,
+   
    check_ladder_animate_trigger,
    check_ladder_animation_finish_trigger,
   ]),  
@@ -2088,22 +1603,6 @@ scene_props = [
 
   ("winch",sokf_moveable,"winch","bo_winch", []),
   
-  ("winch_b",sokf_moveable|spr_use_time(5),"winch_b","bo_winch", [
-   (ti_on_scene_prop_use,
-    [
-      (store_trigger_param_1, ":agent_id"),
-      (store_trigger_param_2, ":instance_id"),
-
-      #for only server itself-----------------------------------------------------------------------------------------------
-      (call_script, "script_use_item", ":instance_id", ":agent_id"),
-      #for only server itself-----------------------------------------------------------------------------------------------
-      (get_max_players, ":num_players"),                               
-      (try_for_range, ":player_no", 1, ":num_players"), #0 is server so starting from 1
-        (player_is_active, ":player_no"),
-        (multiplayer_send_2_int_to_player, ":player_no", multiplayer_event_use_item, ":instance_id", ":agent_id"),
-      (try_end),
-    ]),
-  ]),
   
   ("drawbridge",0,"drawbridge","bo_drawbridge", []),
   ("gatehouse_door_left",sokf_moveable,"gatehouse_door_left","bo_gatehouse_door_left", []),
@@ -2443,7 +1942,7 @@ scene_props = [
  ("earth_stairs_c",0,"earth_stairs_c","bo_earth_stairs_c", []),
  
   ("earth_sally_gate_left",sokf_moveable|sokf_show_hit_point_bar|sokf_destructible|spr_use_time(0),"earth_sally_gate_left","bo_earth_sally_gate_left", [
-    check_sally_door_use_trigger_double,
+    
 
    (ti_on_init_scene_prop,
     [
@@ -2458,8 +1957,7 @@ scene_props = [
       (assign, ":rotate_side", 86),
       
       (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
+        
 
         (store_trigger_param_1, ":instance_no"),      
         (store_trigger_param_2, ":attacker_agent_no"),
@@ -2516,13 +2014,12 @@ scene_props = [
         (gt, ":hit_points", 0),
         (play_sound, "snd_dummy_hit"),
       (else_try),
-        (neg|multiplayer_is_server),
+        
         (play_sound, "snd_dummy_destroyed"),
       (try_end),
 
       (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
+        
 
         (particle_system_burst, "psys_dummy_smoke", pos1, 3),
         (particle_system_burst, "psys_dummy_straw", pos1, 10),
@@ -2531,7 +2028,7 @@ scene_props = [
   ]),
 
   ("earth_sally_gate_right",sokf_moveable|sokf_show_hit_point_bar|sokf_destructible|spr_use_time(0),"earth_sally_gate_right","bo_earth_sally_gate_right", [
-    check_sally_door_use_trigger_double,
+    
 
    (ti_on_init_scene_prop,
     [
@@ -2546,8 +2043,7 @@ scene_props = [
       (assign, ":rotate_side", 86),
       
       (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
+        
 
         (store_trigger_param_1, ":instance_no"),      
         (store_trigger_param_2, ":attacker_agent_no"),
@@ -2604,13 +2100,12 @@ scene_props = [
         (gt, ":hit_points", 0),
         (play_sound, "snd_dummy_hit"),
       (else_try),
-        (neg|multiplayer_is_server),
+        
         (play_sound, "snd_dummy_destroyed"),
       (try_end),
 
       (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
+        
 
         (particle_system_burst, "psys_dummy_smoke", pos1, 3),
         (particle_system_burst, "psys_dummy_straw", pos1, 10),
@@ -2628,7 +2123,7 @@ scene_props = [
   ("barrier_sphere" ,sokf_invisible|sokf_type_barrier3d,"barrier_sphere" ,"bo_barrier_sphere" , []),
 
   ("viking_keep_destroy_sally_door_right",sokf_moveable|sokf_show_hit_point_bar|sokf_destructible|spr_use_time(0),"viking_keep_destroy_sally_door_right","bo_viking_keep_destroy_sally_door_right", [
-    check_sally_door_use_trigger_double,
+    
 
    (ti_on_init_scene_prop,
     [
@@ -2643,8 +2138,7 @@ scene_props = [
       (assign, ":rotate_side", 86),
       
       (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
+        
 
         (store_trigger_param_1, ":instance_no"),      
         (store_trigger_param_2, ":attacker_agent_no"),
@@ -2701,13 +2195,12 @@ scene_props = [
         (gt, ":hit_points", 0),
         (play_sound, "snd_dummy_hit"),
       (else_try),
-        (neg|multiplayer_is_server),
+        
         (play_sound, "snd_dummy_destroyed"),
       (try_end),
 
       (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
+        
 
         (particle_system_burst, "psys_dummy_smoke", pos1, 3),
         (particle_system_burst, "psys_dummy_straw", pos1, 10),
@@ -2716,7 +2209,7 @@ scene_props = [
   ]),
 
   ("viking_keep_destroy_sally_door_left",sokf_moveable|sokf_show_hit_point_bar|sokf_destructible|spr_use_time(0),"viking_keep_destroy_sally_door_left","bo_viking_keep_destroy_sally_door_left", [
-    check_sally_door_use_trigger_double,
+    
 
    (ti_on_init_scene_prop,
     [
@@ -2731,8 +2224,7 @@ scene_props = [
       (assign, ":rotate_side", 86),
       
       (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
+        
 
         (store_trigger_param_1, ":instance_no"),      
         (store_trigger_param_2, ":attacker_agent_no"),
@@ -2789,13 +2281,12 @@ scene_props = [
         (gt, ":hit_points", 0),
         (play_sound, "snd_dummy_hit"),
       (else_try),
-        (neg|multiplayer_is_server),
+        
         (play_sound, "snd_dummy_destroyed"),
       (try_end),
 
       (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
+        
 
         (particle_system_burst, "psys_dummy_smoke", pos1, 3),
         (particle_system_burst, "psys_dummy_straw", pos1, 10),
@@ -2804,7 +2295,6 @@ scene_props = [
   ]),
 
   ("castle_f_door_b",sokf_moveable|sokf_show_hit_point_bar|sokf_destructible|spr_use_time(0),"castle_e_sally_door_a","bo_castle_e_sally_door_a", [
-    check_castle_door_use_trigger,
 
    (ti_on_init_scene_prop,
     [
@@ -2819,8 +2309,7 @@ scene_props = [
       (assign, ":rotate_side", 86),
       
       (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
+        
 
         (store_trigger_param_1, ":instance_no"),      
         (store_trigger_param_2, ":attacker_agent_no"),
@@ -2879,13 +2368,12 @@ scene_props = [
         (gt, ":hit_points", 0),
         (play_sound, "snd_dummy_hit"),
       (else_try),
-        (neg|multiplayer_is_server),
+        
         (play_sound, "snd_dummy_destroyed"),
       (try_end),
 
       (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
+        
 
         (particle_system_burst, "psys_dummy_smoke", pos1, 3),
         (particle_system_burst, "psys_dummy_straw", pos1, 10),
@@ -3012,174 +2500,6 @@ scene_props = [
   ("snowy_destroy_tree_b",0,"snowy_destroy_tree_b","bo_snowy_destroy_tree_b", []),  
   ("snowy_destroy_bridge_a",0,"snowy_destroy_bridge_a","bo_snowy_destroy_bridge_a", []),  
   ("snowy_destroy_bridge_b",0,"snowy_destroy_bridge_b","bo_snowy_destroy_bridge_b", []),    
-
-#INVASION MODE START
-#MCA
-#prisoner cart
-("prison_cart", sokf_moveable,"prison_cart","bo_prison_cart", []),
-("prison_cart_door_right", sokf_show_hit_point_bar|sokf_destructible|sokf_moveable,"prison_cart_door_right","bo_prison_cart_door_right",
- [
-   (ti_on_init_scene_prop,
-    [
-      (store_trigger_param_1, ":instance_no"),
-      (scene_prop_set_hit_points, ":instance_no", 300),
-    ]),
-    
-     (ti_on_scene_prop_hit,
-    [
-      (store_trigger_param_1, ":instance_no"),       
-      (store_trigger_param_2, ":damage"),
-      
-      (try_begin),
-        (scene_prop_get_hit_points, ":hit_points", ":instance_no"),
-        (val_sub, ":hit_points", ":damage"),
-        (gt, ":hit_points", 0),
-        (play_sound, "snd_dummy_hit"),
-      (else_try),
-        (neg|multiplayer_is_server),
-        (play_sound, "snd_dummy_destroyed"),
-      (try_end),
-
-      (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
-
-        (particle_system_burst, "psys_dummy_smoke", pos1, 3),
-        (particle_system_burst, "psys_dummy_straw", pos1, 10),
-        (set_fixed_point_multiplier, 1),        
-      (try_end),        
-    ]),
- ]), # added blank prop_hit trigger so hit point bar is displayed
-  
-("prison_cart_door_left", sokf_show_hit_point_bar|sokf_destructible|sokf_moveable,"prison_cart_door_left","bo_prison_cart_door_left",
- [
-   (ti_on_init_scene_prop,
-    [
-      (store_trigger_param_1, ":instance_no"),
-      (scene_prop_set_hit_points, ":instance_no", 300),
-    ]),
-    
-     (ti_on_scene_prop_hit,
-    [
-      (store_trigger_param_1, ":instance_no"),       
-      (store_trigger_param_2, ":damage"),
-      
-      (try_begin),
-        (scene_prop_get_hit_points, ":hit_points", ":instance_no"),
-        (val_sub, ":hit_points", ":damage"),
-        (gt, ":hit_points", 0),
-        (play_sound, "snd_dummy_hit"),
-      (else_try),
-        (neg|multiplayer_is_server),
-        (play_sound, "snd_dummy_destroyed"),
-      (try_end),
-
-      (try_begin),
-        (this_or_next|multiplayer_is_server),
-		(neg|game_in_multiplayer_mode),
-
-        (particle_system_burst, "psys_dummy_smoke", pos1, 3),
-        (particle_system_burst, "psys_dummy_straw", pos1, 10),
-        (set_fixed_point_multiplier, 1),        
-      (try_end),        
-    ]),    
- ]), # added blank prop_hit trigger so hit point bar is displayed
-	
-  ("multiplayer_coop_item_drop", sokf_moveable|sokf_type_player_limiter|spr_use_time(1), "package", "bobaggage", [
-  
-   (ti_on_scene_prop_use,
-    [
-    ]),    
-   (ti_on_scene_prop_start_use,
-    [
-      (store_trigger_param_1, ":agent_id"),
-      (store_trigger_param_2, ":instance_id"),
-      (agent_get_player_id, ":player_no", ":agent_id"),
-
-      (player_is_active, ":player_no"),
-      
-      (assign, ":living_companion_1", -1),
-      (assign, ":living_companion_2", -1),
-      #(assign, reg1, ":agent_id"),
-      #(assign, reg2, ":instance_id"),
-      #(display_message, "@prop use trigger item: {reg0}   agent: {reg1}  instance: {reg2}  "),
-      (try_for_agents, ":agent_id"),
-        #(this_or_next|eq, ":living_companion_1", -1),
-        #(eq, ":living_companion_1", -1),
-        (agent_is_active, ":agent_id"),
-        (agent_is_alive, ":agent_id"),
-        (agent_is_human, ":agent_id"),
-        (agent_is_non_player, ":agent_id"),
-        (agent_get_team, ":team_id", ":agent_id"),
-        (eq, ":team_id", 0),
-        (agent_get_group, ":agent_group", ":agent_id"),
-        (eq, ":agent_group", ":player_no"),
-        (agent_get_troop_id, ":troop_id", ":agent_id"),
-        (this_or_next|player_slot_eq, ":player_no", slot_player_companion_ids_begin, ":troop_id"),
-        (player_slot_eq, ":player_no", slot_player_companion_ids_begin + 1, ":troop_id"),
-        (try_begin),
-          (eq, ":living_companion_1", -1),
-          (assign, ":living_companion_1", ":agent_id"),
-        (else_try),
-          (eq, ":living_companion_2", -1),
-          (assign, ":living_companion_2", ":agent_id"),
-        (try_end),
-      (try_end),
-      #(display_message, "@sending to player"),
-      
-      #(assign, reg1, ":living_companion_1"),
-      #(assign, reg2, ":living_companion_2"),
-      #(display_message,  "@living_companion_1: {reg1}  living_companion_2: {reg2}  "),
-      
-      (assign, ":new_chest", 1),
-      (assign, ":empty_slot", -1),
-      (try_for_range, ":cur_slot", slot_player_coop_opened_chests_begin, slot_player_coop_opened_chests_end),
-        (eq, ":new_chest", 1),
-        (player_get_slot, ":cur_instance", ":player_no", ":cur_slot"),
-        (try_begin),
-          (eq, ":cur_instance", ":instance_id"),
-          (assign, ":new_chest", 0),
-        (try_end),
-      (try_end),
-
-      (try_for_range, ":cur_slot", slot_player_coop_opened_chests_begin, slot_player_coop_opened_chests_end),
-        (eq, ":new_chest", 1),
-        (player_get_slot, ":cur_instance", ":player_no", ":cur_slot"),
-        (try_begin),
-          (eq, ":cur_instance", 0),
-          (eq, ":empty_slot", -1),
-          (assign, ":empty_slot", ":cur_slot"),
-        (try_end),
-      (try_end),
-
-      (try_begin),
-        (eq, ":new_chest", 1),
-        (call_script, "script_coop_generate_item_drop", ":player_no"),
-        (neq, ":empty_slot", -1),
-        (player_set_slot, ":player_no", ":empty_slot", ":instance_id"),
-        (multiplayer_send_2_int_to_player, ":player_no", multiplayer_event_coop_chest_opened, ":empty_slot", ":instance_id"),
-      (try_end),
-      
-      (assign, reg1, ":new_chest"),
-      #(display_message,  "@new chest: {reg1}"),
-      (try_begin),
-        (eq, ":new_chest", 1),
-        (try_begin),
-          (neq, ":player_no", 0),
-          (multiplayer_send_3_int_to_player, ":player_no", multiplayer_event_coop_drop_item, "$g_ccoop_currently_dropping_item", ":living_companion_1", ":living_companion_2"),
-          #(display_message, "@script called"), #debug
-          
-        (else_try),
-          (call_script, "script_coop_drop_item", "$g_ccoop_currently_dropping_item", ":living_companion_1", ":living_companion_2"),
-          #(assign, reg1, ":player_no"),
-          #(display_message,  "@sending to player no: {reg1} "),
-        (try_end),
-      
-      (try_end),
-      (assign, "$g_ccoop_currently_dropping_item", -1),
-    ]),
-  ]),
-#INVASION MODE END
 
 ]# modmerger_start version=201 type=2
 try:

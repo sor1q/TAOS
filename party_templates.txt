@@ -65,7 +65,7 @@ pt_mountain_bandit_lair Mountain_Bandit_Hideout 562949955519676 0 3 312 137 15 5
 pt_sea_raider_lair Sea_Raider_Landing 562949955519676 0 3 312 139 15 50 0 -1 -1 -1 -1 -1 
 pt_looter_lair Kidnappers'_Hideout 562949955519676 0 3 312 134 15 25 0 -1 -1 -1 -1 -1 
 pt_bandit_lair_templates_end {!}bandit_lair_templates_end 562949953422345 0 2 312 139 15 50 0 -1 -1 -1 -1 -1 
-pt_leaded_looters Band_of_robbers 2251799813947401 0 3 312 1108 1 1 0 134 3 3 0 -1 -1 -1 -1 
+pt_leaded_looters Band_of_robbers 2251799813947401 0 3 312 1071 1 1 0 134 3 3 0 -1 -1 -1 -1 
 pt_dplmc_spouse Your_spouse 71303179 0 3 7 -1 -1 -1 -1 -1 -1 
 pt_dplmc_gift_caravan Your_Caravan 7036874421960741 0 1 11 155 1 1 0 28 5 25 0 -1 -1 -1 -1 
-pt_dplmc_recruiter Recruiter 4194309 0 3 7 1259 1 1 0 -1 -1 -1 -1 -1 
+pt_dplmc_recruiter Recruiter 4194309 0 3 7 1222 1 1 0 -1 -1 -1 -1 -1 

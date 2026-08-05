@@ -89,13 +89,6 @@ mod_components3={
     "factions" :["factions","default_kingdom_relations"],
     "mission_templates": [
         "mission_templates",
-        "multiplayer_server_check_belfry_movement", 
-        "multiplayer_server_spawn_bots", 
-        "multiplayer_server_manage_bots", 
-        "multiplayer_server_check_polls", 
-        "multiplayer_server_check_end_map", 
-        "multiplayer_once_at_the_first_frame",
-        "multiplayer_battle_window_opened",
         "common_battle_mission_start",
         "common_battle_tab_press",
         "common_battle_init_banner",

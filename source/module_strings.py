@@ -2542,51 +2542,6 @@ We apologize sincerely if you contributed your suggestions and feedback but were
 "),
 
 #### Warband added texts
-
-#multiplayer scene names
-  ("multi_scene_1", "Ruins"),
-  ("multi_scene_2", "Village"),
-  ("multi_scene_3", "Hailes Castle"), #Castle 1
-  ("multi_scene_4", "Ruined Fort"),
-  ("multi_scene_5", "Scene 5"), #not ready yet
-  ("multi_scene_6", "Scene 6"), #not ready yet
-  ("multi_scene_7", "Field by the River"),
-  ("multi_scene_8", "Rudkhan Castle"), #Castle 2
-  ("multi_scene_9", "Snowy Village"),
-  ("multi_scene_10", "Turin Castle"), #Castle 3
-  ("multi_scene_11", "Nord Town"),
-  ("multi_scene_16", "Port Assault"),
-  ("multi_scene_17", "Brunwud Castle"), #Castle 4
-  ("multi_scene_18", "Battle on Ice"),
-  ("multi_scene_19", "Mahdaar Castle"), #Castle 5
-  ("multi_scene_20", "Jameyyed Castle"), #Castle 6
-  ("multi_scene_21", "The Arena"),
-  ("multi_scene_22", "Forest Hideout"),
-  ("multi_scene_23", "Canyon"),
-  ("multi_scene_24", "Desert Town"),
-  #INVASION MODE START
-  # ("multi_scene_25", "Cold Coast"),  
-  #INVASION MODE END
-  ("multi_scene_12", "Random Plains (Medium)"),
-  ("multi_scene_13", "Random Plains (Large)"),
-  ("multi_scene_14", "Random Steppe (Medium)"),
-  ("multi_scene_15", "Random Steppe (Large)"),
-  ("multi_scene_end", "multi_scene_end"),
-
-#multiplayer game type names
-  ("multi_game_type_1", "Deathmatch"),
-  ("multi_game_type_2", "Team Deathmatch"),
-  ("multi_game_type_3", "Battle"),
-  ("multi_game_type_4", "Fight and Destroy"),
-  ("multi_game_type_5", "Capture the Flag"),
-  ("multi_game_type_6", "Conquest"),
-  ("multi_game_type_7", "Siege"),
-  ("multi_game_type_8", "Duel"),
-  #INVASION MODE START
-  ("multi_game_type_9", "Invasion"),
-  #INVASION MODE END
-  ("multi_game_types_end", "multi_game_types_end"),
-
   ("poll_kick_player_s1_by_s0", "{s0} started a poll to kick player {s1}."),
   ("poll_ban_player_s1_by_s0", "{s0} started a poll to ban player {s1}."),
   ("poll_change_map_to_s1_by_s0", "{s0} started a poll to change map to {s1}."),

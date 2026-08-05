@@ -123,19 +123,6 @@ unlock_achievement                   = 372 # (unlock_achievement, <achievement_i
 
 send_message_to_url                  = 380 # (send_message_to_url, <string_id>, <encode_url>), #result will be returned to script_game_receive_url_response
 
-# multiplayer
-multiplayer_send_message_to_server   = 388 # (multiplayer_send_int_to_server, <message_type>),
-multiplayer_send_int_to_server       = 389 # (multiplayer_send_int_to_server, <message_type>, <value>),
-multiplayer_send_2_int_to_server     = 390 # (multiplayer_send_2_int_to_server, <message_type>, <value>, <value>),
-multiplayer_send_3_int_to_server     = 391 # (multiplayer_send_3_int_to_server, <message_type>, <value>, <value>, <value>),
-multiplayer_send_4_int_to_server     = 392 # (multiplayer_send_4_int_to_server, <message_type>, <value>, <value>, <value>, <value>),
-multiplayer_send_string_to_server    = 393 # (multiplayer_send_string_to_server, <message_type>, <string_id>),
-multiplayer_send_message_to_player   = 394 # (multiplayer_send_message_to_player, <player_id>, <message_type>),
-multiplayer_send_int_to_player       = 395 # (multiplayer_send_int_to_player, <player_id>, <message_type>, <value>),
-multiplayer_send_2_int_to_player     = 396 # (multiplayer_send_2_int_to_player, <player_id>, <message_type>, <value>, <value>),
-multiplayer_send_3_int_to_player     = 397 # (multiplayer_send_3_int_to_player, <player_id>, <message_type>, <value>, <value>, <value>),
-multiplayer_send_4_int_to_player     = 398 # (multiplayer_send_4_int_to_player, <player_id>, <message_type>, <value>, <value>, <value>, <value>),
-multiplayer_send_string_to_player    = 399 # (multiplayer_send_string_to_player, <player_id>, <message_type>, <string_id>),
 get_max_players                      = 400 # (get_max_players, <destination>),
 player_is_active                     = 401 # (player_is_active, <player_id>),
 player_get_team_no                   = 402 # (player_get_team_no,  <destination>, <player_id>),
@@ -147,21 +134,10 @@ player_get_gold                      = 407 # (player_get_gold, <destination>, <p
 player_set_gold                      = 408 # (player_set_gold, <player_id>, <value>, <max_value>), #set max_value to 0 if no limit is wanted
 player_spawn_new_agent               = 409 # (player_spawn_new_agent, <player_id>, <entry_point>),
 player_add_spawn_item                = 410 # (player_add_spawn_item, <player_id>, <item_slot_no>, <item_id>),
-multiplayer_get_my_team              = 411 # (multiplayer_get_my_team, <destination>),
-multiplayer_get_my_troop             = 412 # (multiplayer_get_my_troop, <destination>),
-multiplayer_set_my_troop             = 413 # (multiplayer_get_my_troop, <destination>),
-multiplayer_get_my_gold              = 414 # (multiplayer_get_my_gold, <destination>),
-multiplayer_get_my_player            = 415 # (multiplayer_get_my_player, <destination>),
-multiplayer_clear_scene              = 416 # (multiplayer_clear_scene),
-multiplayer_is_server                = 417 # (multiplayer_is_server),
-multiplayer_is_dedicated_server      = 418 # (multiplayer_is_dedicated_server),
-game_in_multiplayer_mode             = 419 # (game_in_multiplayer_mode),
-multiplayer_make_everyone_enemy      = 420 # (multiplayer_make_everyone_enemy),
 player_control_agent                 = 421 # (player_control_agent, <player_id>, <agent_id>),
 player_get_item_id                   = 422 # (player_get_item_id, <destination>, <player_id>, <item_slot_no>), #only for server
 player_get_banner_id                 = 423 # (player_get_banner_id, <destination>, <player_id>),
 game_get_reduce_campaign_ai          = 424 # (game_get_reduce_campaign_ai, <destination>), #depreciated, use options_get_campaign_ai instead
-multiplayer_find_spawn_point         = 425 # (multiplayer_find_spawn_point, <destination>, <team_no>, <examine_all_spawn_points>, <is_horseman>), 
 set_spawn_effector_scene_prop_kind   = 426 # (set_spawn_effector_scene_prop_kind <team_no> <scene_prop_kind_no>)
 set_spawn_effector_scene_prop_id     = 427 # (set_spawn_effector_scene_prop_id <scene_prop_id>)
 
@@ -197,10 +173,6 @@ kick_player                          = 465 # (kick_player, <player_id>),
 ban_player                           = 466 # (ban_player, <player_id>, <value>, <player_id>), #set value = 1 for banning temporarily, assign 2nd player id as the administrator player id if banning is permanent
 save_ban_info_of_player              = 467 # (save_ban_info_of_player, <player_id>),
 ban_player_using_saved_ban_info      = 468 # (ban_player_using_saved_ban_info),
-
-start_multiplayer_mission            = 470 # (start_multiplayer_mission, <mission_template_id>, <scene_id>, <started_manually>),
-
-server_add_message_to_log            = 473 # (server_add_message_to_log, <string_id>),
 
 server_get_renaming_server_allowed   = 475 # (server_get_renaming_server_allowed, <destination>), #0-1
 server_get_changing_game_type_allowed= 476 # (server_get_changing_game_type_allowed, <destination>), #0-1
@@ -1445,10 +1417,6 @@ lhs_operations = [try_for_range,
                   player_get_troop_id,
                   player_get_agent_id,
                   player_get_gold,
-                  multiplayer_get_my_team,
-                  multiplayer_get_my_troop,
-                  multiplayer_get_my_gold,
-                  multiplayer_get_my_player,
                   player_get_score,
                   player_get_kill_count,
                   player_get_death_count,
@@ -1459,7 +1427,6 @@ lhs_operations = [try_for_range,
                   player_get_item_id,
                   player_get_banner_id,
                   game_get_reduce_campaign_ai,
-                  multiplayer_find_spawn_point,
                   team_get_bot_kill_count,
                   team_get_bot_death_count,
                   team_get_kill_count,
@@ -1807,9 +1774,6 @@ can_fail_operations = [ge,
                        troop_is_guarantee_ranged,
                        troop_is_guarantee_horse,
                        player_is_active,
-                       multiplayer_is_server,
-                       multiplayer_is_dedicated_server,
-                       game_in_multiplayer_mode,
                        player_is_admin,
                        player_is_busy_with_menus,
                        player_item_slot_is_picked_up,
@@ -2030,44 +1994,6 @@ agent_get_current_vertical_speed                 = 3331 #(agent_get_current_vert
 agent_set_current_vertical_speed                 = 3332 #(agent_set_current_vertical_speed, <agent_no>, <value>), #Sets <agent_no>'s current vertical speed to <value> (in centimeters per second)
 agent_get_position_in_group                      = 3333 #(agent_get_position_in_group, <position_register>, <agent_no>), #Stores <agent_no>'s position in group into <position_register> (requires WSE2)
 agent_get_current_ai_mesh_face_group             = 3334 #(agent_get_current_ai_mesh_face_group, <destination>, <agent_no>), #Stores <agent_no>'s current ai mesh face group into <destination> (requires WSE2)
-agent_set_time_speed_multiplier                  = 3335 #(agent_set_time_speed_multiplier, <agent_no>, <value_fixed_point>), #Sets <agent_no>'s time speed multiplier to <value_fixed_point> (requires WSE2)
-agent_get_time_speed_multiplier                  = 3336 #(agent_get_time_speed_multiplier, <destination_fixed_point>, <agent_no>), #Stores <agent_no>'s time speed multiplier into <destination_fixed_point> (requires WSE2)
-
-multiplayer_send_chat_message_to_player      = 3400 #(multiplayer_send_chat_message_to_player, <player_no>, <sender_player_no>, <text>, [<type>]), #Sends <text> to <player_no> as a (native compatible) chat message by <sender_player_no>. Works only on servers. [<type>]: 0 = chat, 1 = team chat
-multiplayer_send_composite_message_to_player = 3401 #(multiplayer_send_composite_message_to_player, <player_no>, <message_type>, <message_register>), #Sends <message_register> with <message_type> to <player_no> (requires network_compatible = 0 in wse_settings.ini)
-multiplayer_send_composite_message_to_server = 3402 #(multiplayer_send_composite_message_to_server, <message_type>, <message_register>), #Sends <message_register> with <message_type> to the server (requires network_compatible = 0 in wse_settings.ini)
-multiplayer_get_cur_profile                  = 3403 #(multiplayer_get_cur_profile, <destination>), #Stores the current multiplayer profile into <destination>
-multiplayer_get_num_profiles                 = 3404 #(multiplayer_get_num_profiles, <destination>), #Stores the number of multiplayer profiles into <destination>
-multiplayer_message_init                     = 3405 #(multiplayer_message_init, <message_register>), #Initializes (empties) <message_register> (requires network_compatible = 0 in wse_settings.ini)
-multiplayer_message_put_string               = 3406 #(multiplayer_message_put_string, <message_register>, <string>), #Puts <string> into <message_register> (requires network_compatible = 0 in wse_settings.ini)
-multiplayer_message_put_int                  = 3407 #(multiplayer_message_put_int, <message_register>, <value>, [<num_bits>]), #Puts [<num_bits>] of <value> into <message_register> (requires network_compatible = 0 in wse_settings.ini)
-multiplayer_message_put_position             = 3408 #(multiplayer_message_put_position, <message_register>, <position_register>, [<local>]), #Puts <position_register> into <9>. Set [<local>] to non-zero for small, relative positions (default: scene positions) (requires network_compatible = 0 in wse_settings.ini)
-multiplayer_message_put_coordinate           = 3409 #(multiplayer_message_put_coordinate, <message_register>, <position_register>, [<local>]), #Puts x, y, z coordinates from <position_register> into <message_register>. Set [<local>] to non-zero for small, relative positions (default: scene positions) (requires network_compatible = 0 in wse_settings.ini)
-multiplayer_cur_message_get_string           = 3410 #(multiplayer_cur_message_get_string, <string_register>), #Stores a string from the current message register into <string_register> (requires network_compatible = 0 in wse_settings.ini)
-multiplayer_cur_message_get_int              = 3411 #(multiplayer_cur_message_get_int, <destination>, [<num_bits>]), #Stores [<num_bits>] of an int from the current message register into <destination>. [<num_bits>] MUST match the number of bits sent (requires network_compatible = 0 in wse_settings.ini)
-multiplayer_cur_message_get_position         = 3412 #(multiplayer_cur_message_get_position, <position_register>, [<local>]), #Stores a position from the current message register into <position_register>. [<local>] MUST match the type sent (requires network_compatible = 0 in wse_settings.ini)
-multiplayer_cur_message_get_coordinate       = 3413 #(multiplayer_cur_message_get_coordinate, <position_register>, [<local>]), #Stores x, y, z coordinates from the current message register into <position_register>. [<local>] MUST match the type sent (requires network_compatible = 0 in wse_settings.ini)
-multiplayer_cur_profile_get_skin             = 3414 #(multiplayer_cur_profile_get_skin, <destination>), #Stores current profile's skin into <destination>
-multiplayer_connect_to_server                = 3415 #(multiplayer_connect_to_server, <address>, <password>), #Connect to server with <address> and <password> (requires WSE2)
-
-server_set_password_admin      = 3500 #(server_set_password_admin, <password>), #Sets <password> as server administrator password
-server_set_password_private    = 3501 #(server_set_password_private, <password>), #Sets <password> as server private player password
-server_map_rotation_get_count  = 3502 #(server_map_rotation_get_count, <destination>), #Stores the number of maps in rotation into <destination>
-server_map_rotation_get_index  = 3503 #(server_map_rotation_get_index, <destination>), #Stores the current map rotation index into <destination>
-server_map_rotation_set_index  = 3504 #(server_map_rotation_set_index, <index>), #Sets the current rotation index to <index>
-server_map_rotation_get_map    = 3505 #(server_map_rotation_get_map, <destination>, <index>), #Stores the map at <index> into <destination>
-server_map_rotation_add_map    = 3506 #(server_map_rotation_add_map, <site_no>, [<index>]), #Adds <site_no> to the map rotation at [<index>]
-server_map_rotation_remove_map = 3507 #(server_map_rotation_remove_map, [<index>]), #Removes the map at [<index>] from the map rotation (does not work when only one left)
-server_get_horse_friendly_fire = 3508 #(server_get_horse_friendly_fire, <destination>), #Stores horse friendly fire status into <destination> (requires network_compatible = 0 in wse_settings.ini)
-server_set_horse_friendly_fire = 3509 #(server_set_horse_friendly_fire, <value>), #Enables or disables horse friendly fire (requires network_compatible = 0 in wse_settings.ini)
-server_get_show_crosshair      = 3510 #(server_get_show_crosshair, <destination>), #Stores crosshair visibility status into <destination> (requires network_compatible = 0 in wse_settings.ini)
-server_set_show_crosshair      = 3511 #(server_set_show_crosshair, <value>), #Enables or disables the crosshair (requires network_compatible = 0 in wse_settings.ini)
-get_server_option_at_connect   = 3512 #(get_server_option_at_connect, <destination>, [<index>]), #Stores option [<index>] into <destination>
-server_set_password_rcon       = 3513 #(server_set_password_rcon, <password>), #Sets <password> as server RCON password
-execute_server_console_command = 3514 #(execute_server_console_command, <string_register>, <command>), #Executes dedicated server console command <command> and stores result string into <string_register>
-add_anonymous_player           = 3515 #(add_anonymous_player, <unique_id>, <name>), #Sets <name> pseudonym for multiplayer player <unique_id> (requires WSE2)
-remove_anonymous_player        = 3516 #(remove_anonymous_player, <unique_id>), #Removes pseudonym for multiplayer player <unique_id> (requires WSE2)
-clear_anonymous_players        = 3517 #(clear_anonymous_players), #Clears pseudonyms for multiplayer players (requires WSE2)
 
 store_cur_mission_template_no        = 3600 #(store_cur_mission_template_no, <destination>), #Stores the current mission template into <destination>
 set_show_use_tooltip                 = 3601 #(set_show_use_tooltip, <tooltip_type>, [<value>]), #Enables or disables use tooltips. See header_common_addon.py for possible types
@@ -2154,25 +2080,18 @@ str_store_reverse                         = 4221 #(str_store_reverse, <string_re
 str_store_join                            = 4222 #(str_store_join, <string_register>, <start_string_register>, <count>, [<delimiter>]), #Joins <count> string registers starting from string register <start_string_register>, using [<delimiter>] (default = empty string) and stores them into <string_register>
 str_store_replace_spaces_with_underscores = 4223 #(str_store_replace_spaces_with_underscores, <string_register>, <string_1>), #Stores <string_1> into <string_register>, replacing all spaces with underscores
 str_store_replace_underscores_with_spaces = 4224 #(str_store_replace_underscores_with_spaces, <string_register>, <string_1>), #Stores <string_1> into <string_register>, replacing all underscores with spaces
-str_store_multiplayer_profile_name        = 4225 #(str_store_multiplayer_profile_name, <string_register>, <profile_no>), #Stores <profile_no>'s name into <string_register>
 str_store_module_setting                  = 4226 #(str_store_module_setting, <string_register>, <setting>), #Stores the string value (empty if not found) of <setting> in module.ini into <string_register>
-str_store_server_password_admin           = 4227 #(str_store_server_password_admin, <string_register>), #Stores the server administrator password into <string_register>
-str_store_server_password_private         = 4228 #(str_store_server_password_private, <string_register>), #Stores the server private player password into <string_register>
 str_store_overlay_text                    = 4229 #(str_store_overlay_text, <string_register>, <overlay_no>), #Stores <overlay_no>'s text into <string_register>
-str_store_player_ip                       = 4230 #(str_store_player_ip, <string_register>, <player_no>), #Stores <player_no>'s IP address into <string_register> (works only on servers)
 str_store_game_variable                   = 4231 #(str_store_game_variable, <string_register>, <variable>), #Stores the string value (empty if not found) of <variable> in game_variables.txt into <string_register>
 str_store_skill_name                      = 4232 #(str_store_skill_name, <string_register>, <skill_no>), #Stores the name of <skill_no> into <string_register>
 str_store_float                           = 4233 #(str_store_float, <string_register>, <fp_register>, [<precision>]), #Stores the string representation of <fp_register> into <string_register> showing [<precision>] decimal digits at most
 str_sanitize                              = 4234 #(str_sanitize, <string_register>), #Removes invalid characters from <string_register>
 str_store_item_id                         = 4235 #(str_store_item_id, <string_register>, <item_no>), #Stores the id of <item_no> into <string_register>
 str_is_integer                            = 4236 #(str_is_integer, <string_1>), #Fails if <string_1> isn't a valid integer
-str_store_multiplayer_profile_face_keys   = 4237 #(str_store_multiplayer_profile_face_keys, <string_register>, <profile_no>), #Stores <profile_no>'s face keys into <string_register>
-str_store_server_password_rcon            = 4238 #(str_store_server_password_rcon, <string_register>), #Stores the server RCON password into <string_register>
 str_store_item_mesh_name                  = 4239 #(str_store_item_mesh_name, <string_register>, <item_no>), #Stores the mesh name of <item_no> into <string_register>
 str_regex_match                           = 4240 #(str_regex_match, <string_1>, <string_regex>), #Fails if <string_1> does not match <string_regex>
 str_regex_search                          = 4241 #(str_regex_search, <string_1>, <string_regex>), #Fails if <string_1> does not contain <string_regex>
 str_regex_get_matches                     = 4242 #(str_regex_get_matches, <destination>, <string_register>, <string_1>, <string_regex>, [<max>]), #Stores all matches of <string_regex> that occur in <string_1> into a range of string registers, starting from <string_register>, storing [[<max>]] substrings at most (default = unlimited). Stores the amount of matches into <destination>
-str_store_regex_replace                   = 4243 #(str_store_regex_replace, <string_register>, <string_1>, <string_regex>, <string_2>), #Stores <string_1> into <string_register>, replacing occurrences of <string_regex> with <string_2>
 str_decode_url                            = 4244 #(str_decode_url, <string_register>, <string_1>), #Decode url encoded <string_1> and stores it into <string_register>. Note that it doesn't convert +'s to spaces(as per the spec)
 str_store_skill_desc                      = 4245 #(str_store_skill_desc, <string_register>, <skill_no>), #Stores the description of <skill_no> into <string_register>
 
@@ -2399,17 +2318,6 @@ lhs_operations += [
 	agent_get_horse_rotation_velocity,
 	agent_get_current_vertical_speed,
 	agent_get_current_ai_mesh_face_group,
-	agent_get_time_speed_multiplier,
-	multiplayer_get_cur_profile,
-	multiplayer_get_num_profiles,
-	multiplayer_cur_message_get_int,
-	multiplayer_cur_profile_get_skin,
-	server_map_rotation_get_count,
-	server_map_rotation_get_index,
-	server_map_rotation_get_map,
-	server_get_horse_friendly_fire,
-	server_get_show_crosshair,
-	get_server_option_at_connect,
 	store_cur_mission_template_no,
 	get_spectated_agent_no,
 	get_water_level,

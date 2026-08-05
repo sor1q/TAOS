@@ -3362,12 +3362,7 @@ presentations = [
 		  # (party_set_slot, "p_main_party", slot_party_prebattle_battle_size, ":battle_size"),
 		  
           (presentation_set_duration, 0),
-		  (try_begin),		  
-		  	(eq, "$g_is_quick_battle", 1),
-		    (assign, "$g_is_quick_battle", 0),
-			(start_presentation, "prsnt_game_custom_battle_designer"),
-		  (try_end),
-		(else_try),
+		(else_try),		  
 		  (store_add, ":overlay", "$g_presentation_obj_name_kingdom_2", 1),
 		  (eq, ":object", ":overlay"),
 		  (call_script, "script_prebattle_set_default_prefs"),
@@ -3885,7 +3880,7 @@ presentations = [
 			(team_slot_eq, 2, slot_team_mv_gk_order, 0),
 			(try_begin),
 				(store_cur_mission_template_no, reg0),
-				(this_or_next|eq, reg0, "mt_lead_charge"),(eq, reg0, "mt_quick_battle_battle"),
+				(this_or_next|eq, reg0, "mt_lead_charge"),
 				(str_store_string, s1, "@{s10} - Formation type orders"),
 				(str_store_string, s2, "@{s11} - Weapon orders"),
 				(str_store_string, s3, "@{s12} - Shield orders"),
@@ -4647,8 +4642,7 @@ def modmerge_presentations(orig_presentations):
 		print "Injecton 2 failed:", sys.exc_info()[1]
 		raise
 	try:
-		find_i = list_find_first_match_i( orig_presentations, "game_custom_battle_designer" )
-		battlep = PresentationWrapper(orig_presentations[find_i])
+
 		codeblock = battlep.FindTrigger(ti_on_presentation_load).GetOpBlock()
 		codeblock.Append([
 		    (create_game_button_overlay, "$g_presentation_credits_obj_12", "@Mod Options", 0),

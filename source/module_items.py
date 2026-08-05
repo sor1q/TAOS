@@ -1800,7 +1800,24 @@ custom_items = [
 #keeper
 ["eirven_keeper_chest", "Eirven Keeper Chest", [("eirven_keeper_chest",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(10)|abundance(100)|head_armor(0)|body_armor(50)|leg_armor(22)|difficulty(8) ,imodbits_armor ],
+["eirven_keeper_helm", "Eirven Keeper Helm", [("eirven_champ_helm",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(3)|abundance(100)|head_armor(64)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_keeper_boot", "Eirven Keeper Boot", [("eirven_champ_boot",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(40)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_keeper_glove_l","Eirven Keeper Glove", [("eirven_champ_glove_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(8)|difficulty(0),imodbits_armor, [], [fac_kingdom_7]],
 
+#heir
+["eirven_heir_chest", "Eirven Heir Chest", [("eirven_heir_chest",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(10)|abundance(100)|head_armor(0)|body_armor(50)|leg_armor(22)|difficulty(8) ,imodbits_armor ],
+["eirven_heir_helm", "Eirven Heir Helm", [("eirven_champ_helm",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(3)|abundance(100)|head_armor(64)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_heir_boot", "Eirven Heir Boot", [("eirven_champ_boot",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(40)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_heir_glove_l","Eirven Heir Glove", [("eirven_champ_glove_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(8)|difficulty(0),imodbits_armor, [], [fac_kingdom_7]],
+
+#common t4
 
 ## Vallor
 
