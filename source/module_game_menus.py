@@ -3244,8 +3244,8 @@ TOTAL:  {reg5}"),
        [
         #Whisp Debug
         (troop_set_slot, "trp_player", slot_troop_is_whispering, 1),
-        (call_script, "script_player_add_essence", 150),
-      
+        (call_script, "script_player_add_essence", 15000),
+
        ]),
       ("camp_cheat_weather",[], "Change weather..",
        [(jump_to_menu, "mnu_cheat_change_weather"),]

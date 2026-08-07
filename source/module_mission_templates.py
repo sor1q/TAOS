@@ -74,6 +74,68 @@ custom_battle_templates_everywhere = [
       (val_div, ":lvl", 100),
       (call_script, "script_player_add_essence", ":lvl"),
    ]),
+  
+  #COMBAT ABILITIES HELP MOD
+  (ti_after_mission_start, 0, 0, [],
+   [
+     (assign, "$g_temp_cost", 100),
+     (display_message, "@Press N for combat abilities help."),
+   ]),
+  
+  #help on
+  (0, 0, 0,[
+    (key_clicked, key_n),
+    (try_begin),
+      (eq, "$g_combat_abilities_help", 0),
+      (assign, reg7, "$g_temp_cost"),
+      (tutorial_message, "@Combat abilities ^^H : FIRST AID, treat your \
+        immediate wounds to recover full health, \
+          requires {reg7} Essence \
+                        ^^Press M to see several other important changes \
+                          ^^Press N to close help."),
+      (assign, "$g_combat_abilities_help", 1),
+    (else_try),
+      (eq, "$g_combat_abilities_help", 1),
+      (tutorial_message, "@ "),
+      (assign, "$g_combat_abilities_help", 0),
+    (try_end),
+    
+    ], []),
+    
+   # EGIII first aid
+
+     (0, 0, 1, [(key_clicked, key_h),(neg|main_hero_fallen)], [
+        
+        (try_begin),
+          (troop_get_slot, "$ebalance", "trp_player", slot_troop_essence),
+          (ge, "$ebalance", "$g_temp_cost"),
+          
+        
+          (play_sound,"snd_man_grunt_long"),
+                                    
+          (get_player_agent_no, ":player_agent"),
+          
+
+          (agent_set_hit_points,":player_agent", 100, 0),
+          (agent_set_animation, ":player_agent", "anim_strike_abdomen_front"),
+          
+          (assign, reg7, "$g_temp_cost"),
+          (display_message,"@You treat your wounds! You've spent {reg7} Essence.",0x6495ed),
+          
+          (val_sub, "$ebalance", "$g_temp_cost"),
+          (troop_set_slot, "trp_player", slot_troop_essence, "$ebalance"),
+          
+          (val_mul, "$g_temp_cost", 2),
+          (assign, reg7, "$g_temp_cost"),
+          (display_message, "@Next time it will cost {reg7} Essence.",0x6495ed),
+          
+          (assign, reg8, "$ebalance"),
+          (display_message, "@Your current essence: {reg8}.",0x6495ed),
+        (else_try),
+          (display_message, "@Not enough essence! Cost is {reg7} | Balance is {reg8}",0xde0202),
+        (try_end),
+        
+      ]),
 ]
 
 # 003 - Custom battle templates
