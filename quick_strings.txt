@@ -1,4 +1,4 @@
-1760
+1719
 qstr_Breaking_camp... Breaking_camp...
 qstr_Removing_disguise... Removing_disguise...
 qstr_{s17}_has_{reg17}_de {s17}_has_{reg17}_denars
@@ -225,6 +225,7 @@ qstr_{s9}_wants_you_to_fo {s9}_wants_you_to_follow_his_army_until_further_notice
 qstr_{s9}_asked_you_to_sc {s9}_asked_you_to_scout_{s13},_{s14}_and_{s15},_then_report_back.
 qstr_pupil pupil
 qstr_{!}_DEBUG___current_ {!}_DEBUG_-_current_kingdom_score_{reg0}_vs_player_kingdom_score_{reg1}
+qstr_The_world_goes_silen The_world_goes_silent_for_a_moment,_and_then..._you_hear_them._____________________Countless_voices_calling_out_from_the_shadows,_welcoming_you._You_are_now_a_Whisperer.
 qstr_{!}DEBUG_support_che {!}DEBUG_support_check,_{s4}_{s0},_Threshold_{s1}
 qstr_{!}DEBUG_support_chec {!}DEBUG_support_check,_{s3}_{s0},_Threshold_{s1}
 qstr_{!}_DEBUG____affilia {!}_DEBUG_--_affiliated_family_member,_overriding_logic_to_continue
@@ -330,10 +331,6 @@ qstr_{s1}:_cavalry_format {s1}:_cavalry_formation_disassembled.
 qstr_You_got_the_keys_to_ You_got_the_keys_to_the_dungeon.
 qstr_You_must_stay_behind You_must_stay_behind_the_line_on_the_ground!_Point_is_not_counted.
 qstr_Tutorial Tutorial
-qstr_{!}sending_prisoner_ {!}sending_prisoner_cart_6_feet_underground!
-qstr_{!}spawn_prison_cart {!}spawn_prison_cart_5_secs_initiated!
-qstr_{!}spawn_prison_cart! {!}spawn_prison_cart!
-qstr_{!}g_multiplayer_cco {!}g_multiplayer_ccoop_spawn_alive_player_squad:_{reg0}
 qstr_No_one No_one
 qstr_DEBUG__Weapon_AI_:_{ DEBUG_(Weapon_AI):_{s2}'s_closest_enemy_is_{s1}_at_a_distance_of_{reg0}.
 qstr_DEBUG__TPE_:_{s2}_is DEBUG_(TPE):_{s2}_is_wielding_a_spear_on_foot_and_discards_shield.
@@ -367,7 +364,6 @@ qstr_{!}DEBUG____initial_ {!}DEBUG_--_initial_war/peace_check_begins
 qstr_{!}DEBUG_:_Completed_ {!}DEBUG_:_Completed_political_events,_cheat_mode:_{reg3}
 qstr_{!}DEBUG_:_Assigned_ {!}DEBUG_:_Assigned_love_interests._Attraction_seed:_{reg3}
 qstr_{!}DEBUG_:_Located_k {!}DEBUG_:_Located_kingdom_ladies,_cheat_mode:_{reg3}
-qstr_{!}DEBUG_:_SYSTEM_ER {!}DEBUG_:_SYSTEM_ERROR!
 qstr__near_{s10} _near_{s10}
 qstr_Your_recruiter_who_wa Your_recruiter_who_was_commissioned_to_recruit_{reg10}_recruits_to_{s13}_has_been_defeated{s10}!
 qstr_Your_caravan_sending Your_caravan_sending_{s12}_to_{s13}_has_been_looted{s10}!
@@ -830,7 +826,6 @@ qstr_Ambassy_to_{s66} Ambassy_to_{s66}
 qstr_Minister Minister
 qstr_{s1}_{s2}^Reputatio {s1},_{s2}^Reputation:_{s42}^Born_at_{s43}^Contact_in_{s44}_of_the_{s45}.^^{reg48?Currently_prisoner_of_the_{s48}:}^Days_since_last_talked_to:_{reg49}^^Current_mission:^__{s50}{reg50?,_back_in_{reg50}_days.:}
 qstr_{s1}^ {s1}^
-qstr_Added_money_for_your Added_money_for_your_old_horse
 qstr_A_{s0}_is_being_buil A_{s0}_is_being_built._It_will_finish_in_{reg6}_days
 qstr_{s20}{reg2?Our_gover {s20}{reg2?Our_government:The_goverment_of_the_{s5}}_is_{s0}.{reg3?^:_}
 qstr_{s20}The_upper_class {s20}The_upper_class_society_is_{s0}.{reg3?^:_}
@@ -854,7 +849,6 @@ qstr_bookseller bookseller
 qstr_traveler traveler
 qstr_ransom_broker ransom_broker
 qstr_mercenary mercenary
-qstr_multiplayer_troop multiplayer_troop
 qstr_quick_battler quick_battler
 qstr_arena_master arena_master
 qstr_walker walker
@@ -873,7 +867,6 @@ qstr_court_chests court_chests
 qstr_chest_or_array chest_or_array
 qstr_log_array log_array
 qstr_quest_troop quest_troop
-qstr_coop_troop coop_troop
 qstr_court_member court_member
 qstr_fighter fighter
 qstr_tutorial_fighter tutorial_fighter
@@ -881,18 +874,6 @@ qstr_Acquired_{s0}_s_clot Acquired_{s0}'s_clothing
 qstr_adding_{s1}_to_entry adding_{s1}_to_entry
 qstr_# #
 qstr_{s0}{s1} {s0}{s1}
-qstr_{!}used_troop_no_is_ {!}used_troop_no_is_{reg0}
-qstr_{!}sending_message_t {!}sending_message_to_{reg0}_multiplayer_event_other_event_ccoop_count_down_invisible
-qstr_{!}spawn_required_is {!}spawn_required_is:_{reg0}
-qstr_{!}num_troops_for_wa {!}num_troops_for_wave_is_{reg0}
-qstr_{!}num_troops_for_wav {!}num_troops_for_wave_is_gt_spawn_required._reduced_spawn_amount_is_{reg0},_reduced_spawn_amount_mod_is_{reg1}
-qstr_{!}original_spawned_ {!}original_spawned_troop_count_is_{reg0}
-qstr_{!}reducing_spawn_am {!}reducing_spawn_amount_by_one
-qstr_{!}spawning_bot_grou {!}spawning_bot_group_{reg0}:_{reg2}_{s0}_from_entry_point_{reg1}
-qstr_{!}destroy_prison_ca {!}destroy_prison_cart
-qstr_{!}spawning_prison_c {!}spawning_prison_cart_at_point_{reg0}
-qstr_{!}prison_cart_spawn {!}prison_cart_spawn_at_point_{reg0}
-qstr_{!}multiplayer_upgra {!}multiplayer_upgrade_player_equipment:_{reg0}
 qstr_{!}_A_slot_had_an_un {!}_A_slot_had_an_unexpected_value:_{reg0}.__This_might_be_because_you_are_using_an_incompatible_troop_list,_or_are_using_a_non-native_strange_game.__This_message_will_repeat_daily.
 qstr_{!}_DEBUG___Detected {!}_DEBUG_-_Detected_a_new_version_of_diplomacy:_previous_version_was_{reg0},_and_current_version_is_{reg1}.__Performing_updates.
 qstr_{!}DEBUG___Fixed_slo {!}DEBUG_-_Fixed_slot_troop_mother_for_{s0}.
@@ -919,6 +900,8 @@ qstr_{s1}_stacks#{reg1}_o {s1}_stacks#{reg1}_offset#{reg2}_last-in-combat#{reg3}
 qstr_{s0}_size{reg1}_ehp{ {s0}_size{reg1}_ehp{reg2}_slot_{reg10}_p:{s1}
 qstr_{!}DEBUG_autoresolve {!}DEBUG_autoresolver:_{s1}_troop_{s2}_size_doesn't_match_{reg1}_-_{reg2}.
 qstr_{!}DEBUG_autoresolver {!}DEBUG_autoresolver:_{reg0}_troop_stacks_are_stored.
+qstr_You_ve_lost_{reg7}_e You've_lost_{reg7}_essence
+qstr_You_ve_got_{reg7}_es You've_got_{reg7}_essence
 qstr_Hold Hold
 qstr_Follow_Me Follow_Me
 qstr_Charge Charge
@@ -1076,11 +1059,6 @@ qstr_{!}DEBUG_:_chamberla {!}DEBUG_:_chamberlain:_{reg0}
 qstr_{!}DEBUG_:_constable {!}DEBUG_:_constable:_{reg0}
 qstr_{!}DEBUG_:_chancello {!}DEBUG_:_chancellor:_{reg0}
 qstr_Next_Page Next_Page
-qstr_Mod_Options Mod_Options
-qstr_Full_PBOD^Features Full_PBOD^Features
-qstr_Game_Rules:^ Game_Rules:^
-qstr_Lv._{reg0} Lv._{reg0}
-qstr_Show_game_rules Show_game_rules
 qstr_Kingdom_of_{s7} Kingdom_of_{s7}
 qstr_Red: Red:
 qstr_Green: Green:
@@ -1103,6 +1081,8 @@ qstr_Hold_Your_Fire Hold_Your_Fire
 qstr_Ready Ready
 qstr_Wounded Wounded
 qstr_Dead Dead
+qstr_Mod_Options Mod_Options
+qstr_Full_PBOD^Features Full_PBOD^Features
 qstr_Number_of_men_knocke Number_of_men_knocked_down:_{reg1}
 qstr_Number_of_men_left:_ Number_of_men_left:_{reg1}
 qstr_Opponents_Beaten:_{r Opponents_Beaten:_{reg1}
@@ -1722,12 +1702,8 @@ qstr_As_a_hunter_provisi As_a_hunter,_provisions_and_raw_goods_are_expected_as_w
 qstr_As_a_caravan_guard_ As_a_caravan_guard,_you_will_be_able_to_bear_weapons_but_bring_only_a_few_personal_belongings.
 qstr_As_a_merchant_you_w As_a_merchant,_you_will_be_able_to_bring_any_assortment_of_goods.
 qstr_As_a_bard_you_will_ As_a_bard,_you_will_be_allowed_some_personal_possessions_and_your_instrument.
-qstr_10_Wardens_of_the_No 10_Wardens_of_the_North_were_added_to_your_party.
-qstr_10_Syndicate_Recruit 10_Syndicate_Recruits_were_added_to_your_party.
-qstr_10_Northern_Recruits 10_Northern_Recruits_were_added_to_your_party.
-qstr_5_syndicate_shooter_ 5_syndicate_shooter_were_added_to_your_party.
-qstr_5_Syndicate_Praetori 5_Syndicate_Praetorians_were_added_to_your_party.
-qstr_5_Syndicate_Cavalry_ 5_Syndicate_Cavalry_were_added_to_your_party.
+qstr_Whispering_influence Whispering_influence:_{reg6}
+qstr_Void_Essence:_{reg6} Void_Essence:_{reg6}
 qstr_^You_are_currently_r ^You_are_currently_rank_{reg21}_of_{reg22}_participants.
 qstr_^_{s27}_ ^'{s27}'
 qstr_{s21}{s29} {s21}{s29}
@@ -1742,20 +1718,3 @@ qstr_DEBUG__TPE_:_{s1}_pla DEBUG_(TPE):_{s1}_placed_in_slot_#{reg1}_for_tourname
 qstr_DEBUG__TPE_:_Discove DEBUG_(TPE):_Discovered_invalid_troop.__Replaced_with_{s1}_in_slot_{reg0}.
 qstr_DEBUG__TPE_:_Entry_# DEBUG_(TPE):_Entry_#{reg2}_/_Team_#{reg1}_=_{s1}
 qstr_Quest_ended_due_to_t Quest_ended_due_to_tournament_system_quests_being_disabled.
-qstr_Whispering_influence Whispering_influence:_{reg6}
-qstr_Void_Essence:_{reg6} Void_Essence:_{reg6}
-qstr_The_world_goes_silen The_world_goes_silent_for_a_moment,_and_then..._you_hear_them._____________________Countless_voices_calling_out_from_the_shadows,_welcoming_you._You_are_now_a_Whisperer.
-qstr_You_ve_lost_{reg7}_e You've_lost_{reg7}_essence
-qstr_You_ve_got_{reg7}_es You've_got_{reg7}_essence
-qstr_Working_for_{s1} Working_for_{s1}
-qstr_Close_fight Close_fight
-qstr_Go_back Go_back
-qstr_Rush_again Rush_again
-qstr_Equipping_lance... Equipping_lance...
-qstr_Flanking_strike Flanking_strike
-qstr_Random_target_set Random_target_set
-qstr_Min_dist:_{s2} Min_dist:_{s2}
-qstr_Min_dist:_{reg7} Min_dist:_{reg7}
-qstr_Agent_not_found_for Agent_not_found,_force_attack
-qstr_DEBUG:_Spear_AI_chec DEBUG:_Spear_AI_check...
-qstr_DEBUG:_Equipping_Lan DEBUG:_Equipping_Lance!

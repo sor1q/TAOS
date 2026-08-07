@@ -425,13 +425,11 @@ custom_items = [
 
 ### Test XBows
 
-["kthar_xbow", "Cursed Siege Crossbow", [("crossbow_c",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback ,itcf_shoot_crossbow|itcf_carry_crossbow_back,
-7683 , weight(2.75)|difficulty(10)|spd_rtng(42) | shoot_speed(80) | thrust_damage(85 ,pierce)|max_ammo(3),imodbits_crossbow ],
 
 
 ### Test XBows end
 
-#Armor 
+#Armor
 
 ["armor_infantry_syndicate_5", "Black Plate T5", [("wei_xiadi_swa_mail_and_plate_black",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
@@ -452,11 +450,7 @@ custom_items = [
 ["kher_ragged_outfit_syndicate", "Syndicate Ragged Outfit", [("wei_xiadi_kher_ragged_outfit",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
 
-["kthar_cuir", "Kara-Thar Elite Cuirass", [("kthar_cuir",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 5200 , weight(20)|abundance(100)|head_armor(5)|body_armor(65)|leg_armor(30)|difficulty(8) ,imodbits_armor ],
 
-["eirven_chest", "eirven_chest", [("eirven_chest",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 5200 , weight(20)|abundance(100)|head_armor(5)|body_armor(65)|leg_armor(30)|difficulty(8) ,imodbits_armor ],
 
 
 ### Test Armor 
@@ -612,8 +606,6 @@ custom_items = [
 ["wei_xiadi_archers_vest03", "wei_xiadi_archers_vest03", [("wei_xiadi_archers_vest03",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
 
-["wei_xiadi_cataphract_armor", "wei_xiadi_cataphract_armor", [("wei_xiadi_cataphract_armor",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
 
 ["wei_xiadi_coat_of_plates_red", "wei_xiadi_coat_of_plates_red", [("wei_xiadi_coat_of_plates_red",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
@@ -648,8 +640,6 @@ custom_items = [
 ["wei_xiadi_mail_shirt02", "wei_xiadi_mail_shirt02", [("wei_xiadi_mail_shirt02",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
 
-["wei_xiadi_nord_cuir_bouilli", "wei_xiadi_nord_cuir_bouilli", [("wei_xiadi_nord_cuir_bouilli",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
 
 ["wei_xiadi_nord_lamellar_plain", "wei_xiadi_nord_lamellar_plain", [("wei_xiadi_nord_lamellar_plain",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
@@ -806,9 +796,6 @@ custom_items = [
 ["black_leather_boots_syndicate", "Khergit Leather Boots", [("khergit_leather_boots",0)], itp_merchandise| itp_type_foot_armor |itp_civilian | itp_attach_armature ,0,
  1770 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(9) ,imodbits_plate ],
 
-["wei_xiadi_rod_plate_boots", "Plate wei_xiadi_rod_plate_boots", [("wei_xiadi_rod_plate_boots",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature,0,
- 1770 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(9) ,imodbits_plate ],
-
 ["steel_boots_01", "steel_boots_01", [("steel_boots_01",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature,0,
  1770 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(9) ,imodbits_plate ],
 
@@ -839,7 +826,7 @@ custom_items = [
 ["glove3_l","glove3_l", [("glove3_L",0)], 
   itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
 
-["glove4_l","glove4_l", [("glove4_L",0)], 
+["glove4_L","glove4_L", [("glove4_L",0)], 
   itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
 
 ["glove5_l","glove5_l", [("glove5_L",0)], 
@@ -867,11 +854,6 @@ custom_items = [
 
 ["steppe_cap_syndicate", "Steppe Cap", [("steppe_cap_a_new",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 , weight(1)|abundance(100)|head_armor(14)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 
-["kthar_helmet", "Kthar Elite Sallet", [("kthar_helmet",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
- weight(3)|abundance(100)|head_armor(64)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
-
-["kthar_horn_helmet", "Kthar Horn Helmet", [("kthar_horn_helmet",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
- weight(3)|abundance(100)|head_armor(64)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 
 
 ### Test Helmets  
@@ -1252,8 +1234,6 @@ custom_items = [
 ["syndicate_leather_shield", "syndicate_leather_shield", [("syndicate_leather_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
 400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
 
-["eye_shield", "Eye Shield", [("eye_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_board_shield,
-400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
 
 
 
@@ -1714,6 +1694,131 @@ custom_items = [
 
 ## Syndicate
 ## Kara-Thar
+["kthar_eye_shield", "Eye Shield", [("eye_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_board_shield,
+ 400 , weight(2.5)|hit_points(600)|body_armor(10)|spd_rtng(82)|shield_width(90),imodbits_shield],
+["kthar_curved_axe", "Kara-Thar Curved Axe", [("mackie_pendulum_axe",0)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip,
+ 650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
+["kthar_bardiche", "Kthar Bardiche", [("mackie_pendulum",0)], itp_type_polearm|itp_merchandise| itp_two_handed|itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_unbalanced, itc_staff,
+1390 , weight(4.75)|difficulty(11)|spd_rtng(89) | weapon_length(140)|swing_damage(48 , cut) | thrust_damage(17 ,  pierce),imodbits_axe ],
+["kthar_medium_shield", "Kthar Kite Shield", [("norman_shield_8",0)], itp_type_shield|itp_wooden_parry, itcf_carry_kite_shield,  
+ 118 , weight(2.50)|hit_points(300)| body_armor(8)|spd_rtng(90)|shield_width(35)|shield_height(70),imodbits_shield],
+
+
+#eye of rift
+["kthar_horn_helmet", "Kthar Horn Helmet", [("kthar_horn_helmet",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 
+ 1411, weight(3)|abundance(100)|head_armor(64)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["kthar_elite_cuir", "Kara-Thar Elite Cuirass", [("kthar_cuir",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(5)|body_armor(65)|leg_armor(30)|difficulty(8) ,imodbits_armor ],
+["kthar_plate_boots", "Kara-Thar Plate Boots", [("wei_xiadi_rod_plate_boots",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature,0,
+ 1770 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(9) ,imodbits_plate ],
+["kthar_steel_gauntlets","Kara-Thar Steel Gauntlets", [("steel_gauntlets_L",0)], itp_merchandise|itp_type_hand_armor,0, 
+ 850, weight(0.5)|abundance(100)|body_armor(8)|difficulty(2),imodbits_armor],
+
+["kthar_cursed_xbow", "Cursed Siege Crossbow", [("crossbow_c",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback ,itcf_shoot_crossbow|itcf_carry_crossbow_back,
+27683 , weight(3)|difficulty(22)|spd_rtng(50) | shoot_speed(98) | thrust_damage(100 ,pierce)|max_ammo(3),imodbits_crossbow ],
+["kthar_bolts","Cursed Bolts", [("bolt",0),("flying_missile",ixmesh_flying_ammo),("bolt_bag_c", ixmesh_carry)], itp_type_bolts|itp_merchandise|itp_can_penetrate_shield, itcf_carry_quiver_right_vertical,
+  1210,weight(2.5)|abundance(20)|weapon_length(63)|thrust_damage(5,pierce)|max_ammo(36),imodbits_missile],
+
+
+#piercer
+["kthar_helmet", "Kara-Thar Elite Sallet", [("kthar_helmet",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 
+ 1433, weight(3)|abundance(100)|head_armor(64)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["kthar_cuir_bouilli", "Kara-Thar Cuirass", [("wei_xiadi_nord_cuir_bouilli",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+["kthar_plate_boots", "Kara-Thar Plate Boots", [("wei_xiadi_rod_plate_boots",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature,0,
+ 1770 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(9) ,imodbits_plate ],
+["kthar_steel_gauntlets","Kara-Thar Steel Gauntlets", [("steel_gauntlets_L",0)], itp_merchandise|itp_type_hand_armor,0, 
+ 850, weight(0.5)|abundance(100)|body_armor(8)|difficulty(2),imodbits_armor],
+
+["kthar_xbow", "Kara-Thar Siege Crossbow", [("heavy_crossbow",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback ,itcf_shoot_crossbow|itcf_carry_crossbow_back,
+27683 , weight(3)|difficulty(22)|spd_rtng(50) | shoot_speed(98) | thrust_damage(100 ,pierce)|max_ammo(3),imodbits_crossbow ],
+
+
+#fearless
+["kthar_fl_helmet", "Kara-Thar Elite Sallet", [("kthar_helmet",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 
+ 1433, weight(3)|abundance(100)|head_armor(64)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["kthar_fl_armor", "Kara-Thar Cuirass", [("wei_xiadi_nord_cuir_bouilli",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+["kthar_fl_boots", "Kara-Thar Black Boots", [("boot7",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature,0,
+ 1770 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(9) ,imodbits_plate ],
+["kthar_fl_gloves","Kara-Thar Steel Gauntlets", [("glove4_L",0)], itp_merchandise|itp_type_hand_armor,0, 
+ 850, weight(0.5)|abundance(100)|body_armor(8)|difficulty(2),imodbits_armor],
+
+
+#dread knight
+["kthar_dk_helmet", "Kara-Thar Elite Sallet", [("kthar_helmet",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 
+ 1433, weight(3)|abundance(100)|head_armor(64)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["kthar_dk_cuir", "Kara-Thar Cuirass", [("wei_xiadi_nord_cuir_bouilli",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+["kthar_dk_boots", "Kara-Thar Plate Boots", [("wei_xiadi_rod_plate_boots",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature,0,
+ 1770 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(9) ,imodbits_plate ],
+["kthar_dk_gauntlets","Kara-Thar Steel Gauntlets", [("steel_gauntlets_L",0)], itp_merchandise|itp_type_hand_armor,0, 
+ 850, weight(0.5)|abundance(100)|body_armor(8)|difficulty(2),imodbits_armor],
+
+["kthar_dk_lance", "Dread Knight Lance", [("heavy_lance",0)], itp_couchable|itp_type_polearm|itp_merchandise| itp_primary|itp_penalty_with_shield|itp_wooden_parry, itc_greatlance,
+ 410 , weight(5)|difficulty(11)|spd_rtng(55) | weapon_length(240)|swing_damage(0 , cut) | thrust_damage(21 ,  pierce),imodbits_polearm ],
+["kthar_dk_horse","Dread Knight Horse", [("WCourserDarkdapple",0)], itp_merchandise|itp_type_horse, 0, 
+ 1811,abundance(40)|hit_points(160)|body_armor(48)|difficulty(4)|horse_speed(40)|horse_maneuver(44)|horse_charge(32)|horse_scale(112),imodbits_horse_basic|imodbit_champion, [], [fac_kingdom_1, fac_kingdom_5]],
+["kthar_war_hammer", "Kara-Thar War Hammer", [("xeno_war_pick01",0)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip,
+ 650 , weight(1.5)|difficulty(10)|spd_rtng(100) | weapon_length(115)|swing_damage(54 , cut) | thrust_damage(42 ,  pierce),imodbits_sword_high ],
+
+#common t4
+["kthar_t4_helmet", "Kara-Thar Elite Sallet", [("kthar_helmet",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 
+ 1433, weight(3)|abundance(100)|head_armor(64)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["kthar_t4_armor", "Kara-Thar Medium Armor", [("wei_xiadi_cataphract_armor",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+["kthar_t4_boots", "Kara-Thar Black Boots", [("boot7",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature,0,
+ 1770 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(9) ,imodbits_plate ],
+["kthar_t4_gloves","Kara-Thar Steel Gauntlets", [("glove4_L",0)], itp_merchandise|itp_type_hand_armor,0, 
+ 850, weight(0.5)|abundance(100)|body_armor(8)|difficulty(2),imodbits_armor],
+
+["kthar_light_xbow", "Kara-Thar Light Crossbow", [("crossbow_a",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback ,itcf_shoot_crossbow|itcf_carry_crossbow_back,
+ 27683 , weight(3)|difficulty(22)|spd_rtng(50) | shoot_speed(98) | thrust_damage(45 ,pierce)|max_ammo(3),imodbits_crossbow ],
+
+#common t3
+["kthar_t3_helmet", "Footman's Helmet", [("barbuta2",0)], itp_merchandise| itp_type_head_armor   ,0, 
+ 95 , weight(1.5)|abundance(100)|head_armor(24)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_plate ],
+["kthar_t3_hauberk", "Kara-Thar Hauberk", [("saxon_hauberk_a",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+["kthar_t3_greaves", "Splinted Leather Greaves", [("leather_greaves_a",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature,0,
+ 310 , weight(2)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(21)|difficulty(0) ,imodbits_armor ],
+["kthar_t3_gloves","Kara-Thar Steel Gauntlets", [("glove4_L",0)], itp_merchandise|itp_type_hand_armor,0, 
+ 850, weight(0.5)|abundance(100)|body_armor(8)|difficulty(2),imodbits_armor],
+
+["kthar_cleaver", "Kara-Thar Cleaver", [("military_cleaver_b",0)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_scimitar|itcf_carry_sword_left_hip,
+ 193 , weight(1.5)|difficulty(0)|spd_rtng(96) | weapon_length(95)|swing_damage(31 , cut) | thrust_damage(0 ,  pierce),imodbits_sword_high ],
+
+
+#common t2
+["kthar_t2_coif", "Padded Coif", [("padded_coif_a_new",0)], itp_merchandise| itp_type_head_armor   ,0, 
+ 6 , weight(1)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["kthar_t2_gambeson", "Gambeson Beige", [("gambeson_beige",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+["kthar_t2_greaves", "Splinted Greaves", [("splinted_greaves_a",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature,0,
+ 853 , weight(2.75)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(28)|difficulty(7) ,imodbits_armor ],
+["kthar_t2_gloves","Kara-Thar Steel Gauntlets", [("glove4_L",0)], itp_merchandise|itp_type_hand_armor,0, 
+ 850, weight(0.5)|abundance(100)|body_armor(8)|difficulty(2),imodbits_armor],
+
+
+["kthar_throwing_axes", "Throwing Axes", [("throwing_axe_a",0)], itp_type_thrown |itp_merchandise|itp_primary|itp_next_item_as_melee,itcf_throw_axe,
+490, weight(5)|difficulty(3)|spd_rtng(98) | shoot_speed(18) | thrust_damage(39,cut)|max_ammo(4)|weapon_length(53),imodbits_thrown_minus_heavy ],
+["kthar_voulge", "Voulge", [("voulge",0)], itp_type_two_handed_wpn|itp_merchandise| itp_two_handed|itp_primary|itp_bonus_against_shield|itp_wooden_parry, itc_nodachi|itcf_carry_axe_back,
+129 , weight(4.5)|difficulty(8)|spd_rtng(87) | weapon_length(119)|swing_damage(35 , cut) | thrust_damage(0 ,  pierce),imodbits_axe ],
+
+
+#common t1
+["kthar_t1_hat", "Felt Hat", [("felt_hat_a_new",0)], itp_merchandise| itp_type_head_armor |itp_civilian,0, 
+ 4 , weight(1)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["kthar_t1_cape", "Kara-Thar Cape", [("common_cape2",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(48)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+["kthar_t1_boots", "Wrapping Boots", [("wrapping_boots_a",0)], itp_merchandise| itp_type_foot_armor |itp_civilian | itp_attach_armature ,0,
+ 3 , weight(1)|abundance(0)|head_armor(0)|body_armor(0)|leg_armor(3)|difficulty(0) ,imodbits_cloth ],
+
+["kthar_short_voulge",         "Short Voulge", [("two_handed_battle_axe_c",0)], itp_type_two_handed_wpn|itp_merchandise| itp_two_handed|itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_unbalanced, itc_nodachi|itcf_carry_axe_back,
+ 228 , weight(4.5)|difficulty(10)|spd_rtng(92) | weapon_length(100)|swing_damage(30 , cut) | thrust_damage(0 ,  pierce),imodbits_axe ],
+["kthar_light_throwing_axes", "Light Throwing Axes", [("francisca",0)], itp_type_thrown |itp_merchandise|itp_primary|itp_next_item_as_melee,itcf_throw_axe,
+360, weight(5)|difficulty(2)|spd_rtng(99) | shoot_speed(18) | thrust_damage(30,cut)|max_ammo(4)|weapon_length(53),imodbits_thrown_minus_heavy ],
+
 ## Ashkar
 
 # spearmen
@@ -1774,50 +1879,265 @@ custom_items = [
 
 ## Solmark
 
-#knight
-["solmark_bastard_sword", "Solmark Bastard Sword", [("mackie_bastard",0)], itp_type_two_handed_wpn|itp_merchandise|itp_two_handed|itp_primary, itc_greatsword|itcf_carry_sword_back,
- 1123 , weight(2.75)|difficulty(10)|spd_rtng(95) | weapon_length(120)|swing_damage(50 , cut) | thrust_damage(30 ,  pierce),imodbits_sword_high ],
-["solmark_dragon_shield", "Solmark Dragon Shield", [("solmark_dragon_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
-400 , weight(3)|hit_points(550)|body_armor(15)|spd_rtng(82)|shield_width(90),imodbits_shield],
 
 
-["solmark_knight_helmet", "Solmark Knight Helmet", [("teutonichelm_d",0)], itp_type_head_armor |itp_merchandise   ,0, 
- 1000 , weight(2)|abundance(100)|head_armor(47)|body_armor(5)|leg_armor(0) ,imodbits_plate ],
+#high justiciar
+["solmark_blessed_sword", "Solmark Blessed Sword", [("bastard_sword_b",0)], itp_type_two_handed_wpn|itp_merchandise|itp_two_handed|itp_primary, itc_greatsword|itcf_carry_sword_back,
+ 1123 , weight(2.75)|difficulty(10)|spd_rtng(95) | weapon_length(125)|swing_damage(50 , cut) | thrust_damage(30 ,  pierce),imodbits_sword_high ],
+
+["solmark_knight_helmet", "Solmark Knight Helmet", [("teutonichelm_d",0)], itp_type_head_armor |itp_merchandise   ,0,
+ 1000 , weight(2)|abundance(100)|head_armor(58)|body_armor(6)|leg_armor(0) ,imodbits_plate ],
 ["solmark_white_armor", "Solmark White Armor", [("armor10",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 5200 , weight(20)|abundance(100)|head_armor(0)|body_armor(54)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
+ 5200 , weight(20)|abundance(100)|head_armor(2)|body_armor(60)|leg_armor(20)|difficulty(8) ,imodbits_armor ],
 ["solmark_steel_boots", "Solmark Steel Boots", [("boot10",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
- 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(28)|difficulty(0) ,imodbits_plate ],
-["solmark_steel_gauntlets","Solmark Steel Gauntlets", [("steel_gauntlets_L",0)], itp_merchandise|itp_type_hand_armor,0, 
- 350, weight(0.5)|abundance(100)|body_armor(7)|difficulty(0),imodbits_armor],
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(35)|difficulty(0) ,imodbits_plate ],
+["solmark_steel_gauntlets","Solmark Steel Gauntlets", [("steel_gauntlets_L",0)], itp_merchandise|itp_type_hand_armor,0,
+ 350, weight(0.5)|abundance(100)|body_armor(5)|difficulty(0),imodbits_armor],
 
-["solmark_white_horse","Solmark White Horse", [("horse5_1",0)], itp_merchandise|itp_type_horse, 0, 
+["solmark_white_horse","Solmark White Horse", [("horse5_1",0)], itp_merchandise|itp_type_horse, 0,
  1811,abundance(40)|hit_points(165)|body_armor(50)|difficulty(4)|horse_speed(36)|horse_maneuver(40)|horse_charge(40)|horse_scale(112),imodbits_horse_basic|imodbit_champion, [], [fac_kingdom_1, fac_kingdom_5]],
 
+
+#justiciar
+["solmark_bastard_sword", "Solmark Bastard Sword", [("bastard_sword_a",0)], itp_type_two_handed_wpn|itp_merchandise|itp_two_handed|itp_primary, itc_greatsword|itcf_carry_sword_back,
+ 1123 , weight(2.75)|difficulty(10)|spd_rtng(95) | weapon_length(125)|swing_damage(50 , cut) | thrust_damage(30 ,  pierce),imodbits_sword_high ],
+
+["solmark_justiciar_helmet", "Solmark Justiciar Helmet", [("teutonichelm_d",0)], itp_type_head_armor |itp_merchandise   ,0,
+ 1000 , weight(2)|abundance(100)|head_armor(55)|body_armor(6)|leg_armor(0) ,imodbits_plate ],
+["solmark_justiciar_armor", "Solmark Justiciar Armor", [("armor10",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(2)|body_armor(58)|leg_armor(18)|difficulty(8) ,imodbits_armor ],
+["solmark_justiciar_boots", "Solmark Justiciar Boots", [("boot10",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(30)|difficulty(0) ,imodbits_plate ],
+["solmark_justiciar_gauntlets","Solmark Justiciar Gauntlets", [("steel_gauntlets_L",0)], itp_merchandise|itp_type_hand_armor,0,
+ 350, weight(0.5)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor],
+
+["solmark_justiciar_horse","Solmark White Horse", [("horse5_1",0)], itp_merchandise|itp_type_horse, 0,
+ 1811,abundance(40)|hit_points(165)|body_armor(50)|difficulty(4)|horse_speed(36)|horse_maneuver(40)|horse_charge(40)|horse_scale(112),imodbits_horse_basic|imodbit_champion, [], [fac_kingdom_1, fac_kingdom_5]],
+
+
+
+#grand purifier
+["solmark_spectrum_hammer", "Spectrum Hammer", [("stonemaul",0)], itp_crush_through|itp_type_two_handed_wpn|itp_merchandise|itp_can_knock_down|itp_primary|itp_two_handed|itp_wooden_parry|itp_wooden_attack|itp_unbalanced, itc_nodachi|itcf_carry_spear,
+12290 , weight(9)|difficulty(24)|spd_rtng(90) | weapon_length(100)|swing_damage(60 , blunt) | thrust_damage(0 ,  pierce),imodbits_mace ],
+
+["solmark_purifier_helmet", "Solmark Purifier Helmet", [("topfhelm4",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 1000 , weight(2)|abundance(100)|head_armor(82)|body_armor(6)|leg_armor(0) ,imodbits_plate ],
+["solmark_purifier_armor", "Solmark Purifier Armor", [("platemail_heraldic_03",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(4)|body_armor(84)|leg_armor(25)|difficulty(8) ,imodbits_armor ],
+["solmark_purifier_boots", "Solmark Purifier Boots", [("steel_boots_01",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(50)|difficulty(0) ,imodbits_plate ],
+["solmark_purifier_gauntlets","Solmark Purifier Gauntlets", [("steel_mittens_L",0)], itp_merchandise|itp_type_hand_armor,0, 
+ 350, weight(0.5)|abundance(100)|body_armor(9)|difficulty(0),imodbits_armor],
+
+
+#purifier
+["solmark_blessful_hammer", "Blessful Hammer", [("stonemaul",0)], itp_crush_through|itp_type_two_handed_wpn|itp_merchandise|itp_can_knock_down|itp_primary|itp_two_handed|itp_wooden_parry|itp_wooden_attack|itp_unbalanced, itc_nodachi|itcf_carry_spear,
+12290 , weight(9)|difficulty(24)|spd_rtng(80) | weapon_length(95)|swing_damage(50, blunt) | thrust_damage(0 ,  pierce),imodbits_mace ],
+
+["solmark_purifier_m_helmet", "Solmark Purifier Helmet", [("topfhelm3",0)], itp_type_head_armor |itp_merchandise   ,0, 
+ 1000 , weight(2)|abundance(100)|head_armor(65)|body_armor(6)|leg_armor(0) ,imodbits_plate ],
+["solmark_purifier_m_armor", "Solmark Purifier Armor", [("plate_heraldic",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(20)|abundance(100)|head_armor(4)|body_armor(63)|leg_armor(25)|difficulty(8) ,imodbits_armor ],
+["solmark_purifier_m_boots", "Solmark Purifier Boots", [("steel_boots_01",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(40)|difficulty(0) ,imodbits_plate ],
+["solmark_purifier_m_gauntlets","Solmark Purifier Gauntlets", [("steel_gauntlets_L",0)], itp_merchandise|itp_type_hand_armor,0, 
+ 350, weight(0.5)|abundance(100)|body_armor(8)|difficulty(0),imodbits_armor],
+
+#common t4
+["solmark_i_armor4", "Solmark Guard Armor", [("wei_xiadi_templar_surcoat_white",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 3000, weight(14)|abundance(100)|head_armor(0)|body_armor(52)|leg_armor(24)|difficulty(6) ,imodbits_armor, [], [fac_kingdom_5]],
+["solmark_i_helmet4", "Solmark Guard Helm", [("norman_faceplate_a",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(1.8)|abundance(100)|head_armor(50)|body_armor(2)|leg_armor(0)|difficulty(4) ,imodbits_cloth, [], [fac_kingdom_5]],
+["solmark_i_boot4", "Solmark Guard Boot", [("plate_boots",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 300 , weight(2)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(30)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_5]],
+["solmark_i_glove4","Solmark Guard Glove", [("glove1_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.6)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor, [], [fac_kingdom_5]],
+
+
+["solmark_shield4", "Solmark Senior Inquisitor Shield", [("tf_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.8)|hit_points(360)|body_armor(20)|spd_rtng(92)|shield_width(90),imodbits_shield, [], [fac_kingdom_5]],
+
+["solmark_i_sword4", "Solmark Senior Inquisitor Sword", [("sword_medieval_d_long",0),("sword_medieval_d_long_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 700 , weight(2.5)|difficulty(0)|spd_rtng(96) | weapon_length(105)|swing_damage(35 , cut) | thrust_damage(30 ,  pierce),imodbits_sword, [], [fac_kingdom_5]],
+["solmark_great_hammer", "Solmark Great Hammer", [("maul_d",0)], itp_crush_through|itp_type_two_handed_wpn|itp_merchandise|itp_can_knock_down|itp_primary|itp_two_handed|itp_wooden_parry|itp_wooden_attack|itp_unbalanced, itc_nodachi|itcf_carry_spear,
+12290 , weight(9)|difficulty(24)|spd_rtng(75) | weapon_length(90)|swing_damage(40, blunt) | thrust_damage(0 ,  pierce),imodbits_mace ],
+
+
+#common t3
+
+["solmark_i_armor3", "Solmark Senior Inquisitor Armor", [("wei_xiadi_rod_padded_cloth",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 3000, weight(12)|abundance(100)|head_armor(1)|body_armor(45)|leg_armor(14)|difficulty(6) ,imodbits_armor, [], [fac_kingdom_5]],
+["solmark_i_helmet3", "Solmark Senior Inquisitor Helm", [("helm10",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(2)|abundance(100)|head_armor(42)|body_armor(2)|leg_armor(0)|difficulty(4) ,imodbits_cloth, [], [fac_kingdom_5]],
+["solmark_i_boot3", "Solmark Senior Inquisitor Boot", [("boot11",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 300 , weight(2)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(26)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_5]],
+["solmark_i_glove3","Solmark Senior Inquisitor Glove", [("glove1_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.6)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor, [], [fac_kingdom_5]],
+
+["solmark_shield3", "Solmark Senior Inquisitor Shield", [("tf_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.8)|hit_points(360)|body_armor(20)|spd_rtng(92)|shield_width(90),imodbits_shield, [], [fac_kingdom_5]],
+["solmark_i_sword3", "Solmark Senior Inquisitor Sword", [("sword_medieval_d_long",0),("sword_medieval_d_long_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 700 , weight(2.5)|difficulty(0)|spd_rtng(96) | weapon_length(105)|swing_damage(35 , cut) | thrust_damage(30 ,  pierce),imodbits_sword, [], [fac_kingdom_5]],
+["solmark_hammer", "Solmark Hammer", [("maul_c",0)], itp_crush_through|itp_type_two_handed_wpn|itp_merchandise|itp_can_knock_down|itp_primary|itp_two_handed|itp_wooden_parry|itp_wooden_attack|itp_unbalanced, itc_nodachi|itcf_carry_spear,
+12290 , weight(9)|difficulty(24)|spd_rtng(75) | weapon_length(90)|swing_damage(40, blunt) | thrust_damage(0 ,  pierce),imodbits_mace ],
+
+#common t2
+["solmark_i_armor2", "Solmark Inquisitor Armor", [("wei_xiadi_rod_padded_cloth",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 3000, weight(12)|abundance(100)|head_armor(0)|body_armor(30)|leg_armor(6)|difficulty(6) ,imodbits_armor, [], [fac_kingdom_5]],
+["solmark_i_helmet2", "Solmark Inquisitor Helm", [("helm10",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(2)|abundance(100)|head_armor(25)|body_armor(2)|leg_armor(0)|difficulty(4) ,imodbits_cloth, [], [fac_kingdom_5]],
+["solmark_i_boot2", "Solmark Inquisitor Boot", [("boot13",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 300 , weight(2)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(22)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_5]],
+["solmark_i_glove2","Solmark Inquisitor Glove", [("glove4_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.6)|abundance(100)|body_armor(2)|difficulty(0),imodbits_armor, [], [fac_kingdom_5]],
+
+["solmark_shield2", "Solmark Inquisitor Shield", [("norman_shield_6",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.8)|hit_points(300)|body_armor(10)|spd_rtng(92)|shield_width(90),imodbits_shield, [], [fac_kingdom_5]],
+["solmark_i_sword2", "Solmark Long Sword", [("sword_medieval_a",0),("sword_medieval_d_long_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 700 , weight(2.5)|difficulty(0)|spd_rtng(96) | weapon_length(105)|swing_damage(32 , cut) | thrust_damage(25 ,  pierce),imodbits_sword, [], [fac_kingdom_5]],
+["solmark_light_lance", "Solmark Light Lance", [("lance_1",0)], itp_type_polearm|itp_merchandise|itp_primary|itp_two_handed, itcf_carry_spear,
+ 350 , weight(2.8)|difficulty(2)|spd_rtng(91) | weapon_length(180)|thrust_damage(28 , pierce),imodbits_polearm, [], [fac_kingdom_5]],
+
+#common t1
+["solmark_i_armor1", "Solmark Pursuer Tunic", [("rich_tunic_a",0)], itp_type_body_armor |itp_civilian |itp_covers_legs ,0,
+ 10 , weight(1)|abundance(100)|head_armor(0)|body_armor(18)|leg_armor(3)|difficulty(0) ,imodbits_cloth ],
+["solmark_i_helmet1", "Solmark Pursuer Coif", [("padded_coif_a_new",0)], itp_merchandise| itp_type_head_armor   ,0, 
+ 6 , weight(1)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["solmark_i_boot1", "Solmark Pursuer Hose", [("woolen_hose_a",0)], itp_merchandise| itp_type_foot_armor |itp_civilian | itp_attach_armature ,0,
+ 6 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(10)|difficulty(0) ,imodbits_cloth ],
+["solmark_i_sword1", "Solmark Short Sword", [("sword_medieval_b_small",0),("sword_medieval_b_small_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 152 , weight(1)|difficulty(0)|spd_rtng(102) | weapon_length(85)|swing_damage(22, cut) | thrust_damage(15, pierce),imodbits_sword_high ],
+["solmark_shield1", "Solmark Pursuer Shield", [("shield_round_d",0)], itp_type_shield|itp_wooden_parry, itcf_carry_round_shield,  
+ 80 , weight(1.5)|hit_points(180)|body_armor(5)|spd_rtng(96)|shield_width(40),imodbits_shield ],
 
 
 ## Eirven
 
 #keeper
-["eirven_keeper_chest", "Eirven Keeper Chest", [("eirven_keeper_chest",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 5200 , weight(10)|abundance(100)|head_armor(0)|body_armor(50)|leg_armor(22)|difficulty(8) ,imodbits_armor ],
-["eirven_keeper_helm", "Eirven Keeper Helm", [("eirven_champ_helm",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
- weight(3)|abundance(100)|head_armor(64)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
-["eirven_keeper_boot", "Eirven Keeper Boot", [("eirven_champ_boot",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
- 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(40)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
-["eirven_keeper_glove_l","Eirven Keeper Glove", [("eirven_champ_glove_L",0)], 
+["eirven_keeper_chest", "Eirven Keeper Chest", [("eirven_chest",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(12)|abundance(100)|head_armor(3)|body_armor(58)|leg_armor(22)|difficulty(9) ,imodbits_armor ],
+["eirven_keeper_helm", "Eirven Keeper Helm", [("eirven_helmet",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(3)|abundance(100)|head_armor(59)|body_armor(1)|leg_armor(0)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_keeper_boot", "Eirven Keeper Boot", [("boot8",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(35)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_keeper_glove_l","Eirven Keeper Glove", [("scale_gauntlets_a_L",0)], 
   itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(8)|difficulty(0),imodbits_armor, [], [fac_kingdom_7]],
+
+["eirven_keeper_bow", "Scarlet Tear", [("Duskfall",0), ("Duskfall_carry",ixmesh_carry)], itp_type_bow|itp_merchandise|itp_primary|itp_two_handed ,itcf_shoot_bow|itcf_carry_bow_back,
+17280 , weight(2)|difficulty(12)|accuracy(98)|spd_rtng(100) | shoot_speed(70) | thrust_damage(40, pierce), imodbits_bow ],
+
 
 #heir
-["eirven_heir_chest", "Eirven Heir Chest", [("eirven_heir_chest",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 5200 , weight(10)|abundance(100)|head_armor(0)|body_armor(50)|leg_armor(22)|difficulty(8) ,imodbits_armor ],
-["eirven_heir_helm", "Eirven Heir Helm", [("eirven_champ_helm",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
- weight(3)|abundance(100)|head_armor(64)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
-["eirven_heir_boot", "Eirven Heir Boot", [("eirven_champ_boot",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
- 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(40)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
-["eirven_heir_glove_l","Eirven Heir Glove", [("eirven_champ_glove_L",0)], 
-  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(8)|difficulty(0),imodbits_armor, [], [fac_kingdom_7]],
+["eirven_heir_chest", "Eirven Heir Chest", [("eirven_chest",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(10)|abundance(100)|head_armor(2)|body_armor(52)|leg_armor(18)|difficulty(8) ,imodbits_armor ],
+["eirven_heir_helm", "Eirven Heir Helm", [("eirven_helmet",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(3)|abundance(100)|head_armor(52)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_heir_boot", "Eirven Heir Boot", [("boot8",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_heir_glove_l","Eirven Heir Glove", [("scale_gauntlets_a_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(6)|difficulty(0),imodbits_armor, [], [fac_kingdom_7]],
+
+["eirven_heir_bow", "Heir's Bow", [("war_bow",0),("war_bow_carry",ixmesh_carry)],itp_type_bow|itp_merchandise|itp_primary|itp_two_handed ,itcf_shoot_bow|itcf_carry_bow_back,
+17280 , weight(1)|difficulty(10)|spd_rtng(99) | shoot_speed(72) | thrust_damage(34 ,pierce),imodbits_bow ],
+
+#eternal
+["eirven_eternal_chest", "Eirven Eternal Chest", [("eirven_chest",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(10)|abundance(100)|head_armor(2)|body_armor(52)|leg_armor(18)|difficulty(8) ,imodbits_armor ],
+["eirven_eternal_helm", "Eirven Eternal Helm", [("eirven_helmet",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(3)|abundance(100)|head_armor(52)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_eternal_boot", "Eirven Eternal Boot", [("boot8",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_eternal_glove_l","Eirven Eternal Glove", [("scale_gauntlets_a_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(6)|difficulty(0),imodbits_armor, [], [fac_kingdom_7]],
+
+["eirven_eternal_sword", "Eirven Eternal Sword", [("sword_medieval_d_long",0),("sword_medieval_d_long_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 550 , weight(1.8)|difficulty(0)|spd_rtng(96) | weapon_length(105)|swing_damage(45 , cut) | thrust_damage(30 ,  pierce),imodbits_sword, [], [fac_kingdom_7]],
+
+
+#master
+["eirven_master_chest", "Eirven Master Chest", [("eirven_chest",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 5200 , weight(10)|abundance(100)|head_armor(2)|body_armor(52)|leg_armor(18)|difficulty(8) ,imodbits_armor ],
+["eirven_master_helm", "Eirven Master Helm", [("eirven_helmet",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(3)|abundance(100)|head_armor(52)|body_armor(4)|leg_armor(0)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_master_boot", "Eirven Master Boot", [("boot8",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 34 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_master_glove_l","Eirven Master Glove", [("scale_gauntlets_a_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.5)|abundance(100)|body_armor(6)|difficulty(0),imodbits_armor, [], [fac_kingdom_7]],
+
+["eirven_master_sword", "Eirven Master Sword", [("sword_medieval_d_long",0),("sword_medieval_d_long_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 550 , weight(1.8)|difficulty(0)|spd_rtng(96) | weapon_length(105)|swing_damage(45 , cut) | thrust_damage(30 ,  pierce),imodbits_sword, [], [fac_kingdom_7]],
+
+
+#common t5
+["eirven_high_shield", "Eirven High Shield", [("eirven_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.5)|hit_points(850)|body_armor(15)|spd_rtng(82)|shield_width(90),imodbits_shield, [], [fac_kingdom_7]],
+
 
 #common t4
+["eirven_i_armor4", "Eirven Guard Armor", [("armor14",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 3000, weight(14)|abundance(100)|head_armor(0)|body_armor(52)|leg_armor(24)|difficulty(6) ,imodbits_armor, [], [fac_kingdom_7]],
+["eirven_i_helmet4", "Eirven Guard Helm", [("helm21",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(1.8)|abundance(100)|head_armor(50)|body_armor(2)|leg_armor(0)|difficulty(4) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_i_boot4", "Eirven Guard Boot", [("boot11",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 300 , weight(2)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(30)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_i_glove4","Eirven Guard Glove", [("glove1_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.6)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor, [], [fac_kingdom_7]],
+
+["eirven_i_shield4", "Eirven Guard Shield", [("hoplite_shield_b",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.8)|hit_points(400)|body_armor(13)|spd_rtng(92)|shield_width(90),imodbits_shield, [], [fac_kingdom_7]],
+["eirven_i_sword4", "Eirven Guard Sword", [("sword_medieval_d_long",0),("sword_medieval_d_long_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 700 , weight(2.5)|difficulty(0)|spd_rtng(96) | weapon_length(105)|swing_damage(39 , cut) | thrust_damage(30 ,  pierce),imodbits_sword, [], [fac_kingdom_7]],
+["eirven_strong_bow",         "Eirven Strong Bow", [("strong_bow",0),("strong_bow_case", ixmesh_carry)], itp_type_bow |itp_merchandise|itp_primary|itp_two_handed ,itcf_shoot_bow|itcf_carry_bowcase_left|itcf_show_holster_when_drawn,
+4371 , weight(1.25)|difficulty(6)|spd_rtng(96) | shoot_speed(68) | thrust_damage(32 ,pierce),imodbit_cracked | imodbit_bent | imodbit_masterwork ],
+
+
+#common t3 
+
+["eirven_i_armor3", "Eirven Scout Armor", [("wei_xiadi_rod_padded_cloth",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 3000, weight(12)|abundance(100)|head_armor(1)|body_armor(45)|leg_armor(14)|difficulty(6) ,imodbits_armor, [], [fac_kingdom_7]],
+["eirven_i_helmet3", "Eirven Scout Helm", [("helm10",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(2)|abundance(100)|head_armor(42)|body_armor(2)|leg_armor(0)|difficulty(4) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_i_boot3", "Eirven Scout Boot", [("boot11",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 300 , weight(2)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(26)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_i_glove3","Eirven Scout Glove", [("glove1_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.6)|abundance(100)|body_armor(4)|difficulty(0),imodbits_armor, [], [fac_kingdom_7]],
+
+["eirven_shield3", "Eirven Scout Shield", [("hoplite_shield_b",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.8)|hit_points(360)|body_armor(20)|spd_rtng(92)|shield_width(90),imodbits_shield, [], [fac_kingdom_7]],
+["eirven_i_sword3", "Eirven Scout Sword", [("sword_medieval_d_long",0),("sword_medieval_d_long_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 700 , weight(2.5)|difficulty(0)|spd_rtng(96) | weapon_length(105)|swing_damage(35 , cut) | thrust_damage(30 ,  pierce),imodbits_sword, [], [fac_kingdom_7]],
+["eirven_forest_bow",         "Eirven Forest Bow", [("nomad_bow",0),("nomad_bow_case", ixmesh_carry)], itp_type_bow |itp_merchandise|itp_primary|itp_two_handed ,itcf_shoot_bow|itcf_carry_bowcase_left|itcf_show_holster_when_drawn,
+1641 , weight(1.25)|difficulty(2)|spd_rtng(94) | shoot_speed(58) | thrust_damage(29 ,  pierce),imodbits_bow ],
+
+#common t2
+["eirven_i_armor2", "Eirven Rider Armor", [("wei_xiadi_rod_padded_cloth",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 3000, weight(12)|abundance(100)|head_armor(0)|body_armor(30)|leg_armor(6)|difficulty(6) ,imodbits_armor, [], [fac_kingdom_7]],
+["eirven_i_helmet2", "Eirven Rider Helm", [("helm10",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 ,
+ weight(2)|abundance(100)|head_armor(25)|body_armor(2)|leg_armor(0)|difficulty(4) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_i_boot2", "Eirven Rider Boot", [("boot13",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+ 300 , weight(2)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(22)|difficulty(0) ,imodbits_cloth, [], [fac_kingdom_7]],
+["eirven_i_glove2","Eirven Rider Glove", [("glove4_L",0)], 
+  itp_merchandise|itp_type_hand_armor,0, 350, weight(0.6)|abundance(100)|body_armor(2)|difficulty(0),imodbits_armor, [], [fac_kingdom_7]],
+
+["eirven_shield2", "Eirven Shield", [("norman_shield_6",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,
+400 , weight(2.8)|hit_points(300)|body_armor(10)|spd_rtng(92)|shield_width(90),imodbits_shield, [], [fac_kingdom_7]],
+["eirven_i_sword2", "Eirven Long Sword", [("sword_medieval_a",0),("sword_medieval_d_long_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 700 , weight(2.5)|difficulty(0)|spd_rtng(96) | weapon_length(105)|swing_damage(32 , cut) | thrust_damage(25 ,  pierce),imodbits_sword, [], [fac_kingdom_7]],
+["eirven_hunting_bow",         "Eirven Hunting Bow", [("hunting_bow",0),("hunting_bow_carry",ixmesh_carry)],itp_type_bow |itp_merchandise|itp_primary|itp_two_handed,itcf_shoot_bow|itcf_carry_bow_back,
+171 , weight(1)|difficulty(1)|spd_rtng(89) | shoot_speed(50) | thrust_damage(24 ,  pierce),imodbits_bow ],
+
+#common t1
+["eirven_i_armor1", "Eirven Tunic", [("rich_tunic_a",0)], itp_type_body_armor |itp_civilian |itp_covers_legs ,0,
+ 10 , weight(1)|abundance(100)|head_armor(0)|body_armor(18)|leg_armor(3)|difficulty(0) ,imodbits_cloth ],
+["eirven_i_helmet1", "Eirven Coif", [("padded_coif_a_new",0)], itp_merchandise| itp_type_head_armor   ,0, 
+ 6 , weight(1)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["eirven_i_boot1", "Eirven Hose", [("woolen_hose_a",0)], itp_merchandise| itp_type_foot_armor |itp_civilian | itp_attach_armature ,0,
+ 6 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(10)|difficulty(0) ,imodbits_cloth ],
+["eirven_i_sword1", "Eirven Short Sword", [("sword_medieval_b_small",0),("sword_medieval_b_small_scabbard", ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 152 , weight(1)|difficulty(0)|spd_rtng(102) | weapon_length(85)|swing_damage(22, cut) | thrust_damage(15, pierce),imodbits_sword_high ],
+["eirven_shield1", "Eirven Shield", [("shield_round_d",0)], itp_type_shield|itp_wooden_parry, itcf_carry_round_shield,  
+ 80 , weight(1.5)|hit_points(180)|body_armor(5)|spd_rtng(96)|shield_width(40),imodbits_shield ],
+
 
 ## Vallor
 
