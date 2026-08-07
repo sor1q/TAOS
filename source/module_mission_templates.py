@@ -53,7 +53,7 @@ af_castle_lord = af_override_horse | af_override_weapons| af_require_civilian
 # 004 - Custom battle templates everywhere
 
 # 004 - Custom battle templates everywhere
-custom_battle_templates_everywhere = [
+custom_battle_templates_anywhere = [
   (ti_on_agent_killed_or_wounded, 0,0,
    [
      (troop_slot_eq, "trp_player", slot_troop_is_whispering, 1),
@@ -78,16 +78,17 @@ custom_battle_templates_everywhere = [
   #COMBAT ABILITIES HELP MOD
   (ti_after_mission_start, 0, 0, [],
    [
-     (assign, "$g_temp_cost", 100),
+     (assign, "$g_temp_heal_cost", cfg_start_combat_heal_cost),
      (display_message, "@Press N for combat abilities help."),
    ]),
   
   #help on
   (0, 0, 0,[
     (key_clicked, key_n),
+    (troop_slot_eq, "trp_player", slot_troop_is_whispering, 1),
     (try_begin),
       (eq, "$g_combat_abilities_help", 0),
-      (assign, reg7, "$g_temp_cost"),
+      (assign, reg7, "$g_temp_heal_cost"),
       (tutorial_message, "@Combat abilities ^^H : FIRST AID, treat your \
         immediate wounds to recover full health, \
           requires {reg7} Essence \
@@ -102,31 +103,27 @@ custom_battle_templates_everywhere = [
     
     ], []),
     
-   # EGIII first aid
-
-     (0, 0, 1, [(key_clicked, key_h),(neg|main_hero_fallen)], [
+   #first aid
+     (0, 0, 1, [(key_clicked, key_h),(neg|main_hero_fallen), (troop_slot_eq, "trp_player", slot_troop_is_whispering, 1),], [
         
         (try_begin),
           (troop_get_slot, "$ebalance", "trp_player", slot_troop_essence),
-          (ge, "$ebalance", "$g_temp_cost"),
+          (ge, "$ebalance", "$g_temp_heal_cost"),
           
-        
           (play_sound,"snd_man_grunt_long"),
-                                    
           (get_player_agent_no, ":player_agent"),
           
-
           (agent_set_hit_points,":player_agent", 100, 0),
           (agent_set_animation, ":player_agent", "anim_strike_abdomen_front"),
           
-          (assign, reg7, "$g_temp_cost"),
+          (assign, reg7, "$g_temp_heal_cost"),
           (display_message,"@You treat your wounds! You've spent {reg7} Essence.",0x6495ed),
           
-          (val_sub, "$ebalance", "$g_temp_cost"),
+          (val_sub, "$ebalance", "$g_temp_heal_cost"),
           (troop_set_slot, "trp_player", slot_troop_essence, "$ebalance"),
           
-          (val_mul, "$g_temp_cost", 2),
-          (assign, reg7, "$g_temp_cost"),
+          (val_mul, "$g_temp_heal_cost", 2),
+          (assign, reg7, "$g_temp_heal_cost"),
           (display_message, "@Next time it will cost {reg7} Essence.",0x6495ed),
           
           (assign, reg8, "$ebalance"),
@@ -3476,7 +3473,7 @@ mission_templates = [
 
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers + dplmc_horse_cull + custom_battle_templates_field + custom_battle_templates_everywhere
+    + dplmc_battle_mode_triggers + dplmc_horse_cull + custom_battle_templates_field + custom_battle_templates_anywhere
     #SB : horse cull
     ##diplomacy end
   ),
@@ -3567,7 +3564,7 @@ mission_templates = [
 
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers + dplmc_horse_cull + custom_battle_templates_everywhere
+    + dplmc_battle_mode_triggers + dplmc_horse_cull + custom_battle_templates_anywhere
     #SB : horse cull
     ##diplomacy end
   ),
@@ -3723,7 +3720,7 @@ mission_templates = [
 
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers + dplmc_horse_cull + custom_battle_templates_everywhere
+    + dplmc_battle_mode_triggers + dplmc_horse_cull + custom_battle_templates_anywhere
     ##diplomacy end
   ),
 
@@ -3826,7 +3823,7 @@ mission_templates = [
       common_battle_inventory,
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers + custom_battle_templates_everywhere
+    + dplmc_battle_mode_triggers + custom_battle_templates_anywhere
     ##diplomacy end
   ),
 
@@ -3925,7 +3922,7 @@ mission_templates = [
       common_battle_inventory,
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers + custom_battle_templates_everywhere
+    + dplmc_battle_mode_triggers + custom_battle_templates_anywhere
     ##diplomacy end
   ),
 
@@ -4060,7 +4057,7 @@ mission_templates = [
       common_battle_inventory,
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers + custom_battle_templates_everywhere
+    + dplmc_battle_mode_triggers + custom_battle_templates_anywhere
     ##diplomacy end
   ),
 
@@ -4145,7 +4142,7 @@ mission_templates = [
       common_siege_assign_men_to_belfry,
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers + custom_battle_templates_everywhere
+    + dplmc_battle_mode_triggers + custom_battle_templates_anywhere
     ##diplomacy end
   ),
 
@@ -4263,7 +4260,7 @@ mission_templates = [
 ##       []),
     ]
     ##diplomacy begin
-    + dplmc_battle_mode_triggers + custom_battle_templates_everywhere
+    + dplmc_battle_mode_triggers + custom_battle_templates_anywhere
     ##diplomacy end
   ),
 
@@ -5139,7 +5136,7 @@ mission_templates = [
 
       (ti_inventory_key_pressed, 0, 0, [(display_message,"str_cant_use_inventory_arena")], []),
 
-    ] + custom_battle_templates_everywhere,
+    ] + custom_battle_templates_anywhere,
   ),
 
    (

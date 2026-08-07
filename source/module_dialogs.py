@@ -17431,6 +17431,63 @@ dialogs = [
             "close_window",
             [(call_script, "script_change_player_relation_with_troop", "$g_talk_troop", -7), (store_current_hours, ":protected_until"), (val_add, ":protected_until", 72), (party_set_slot, "$g_encountered_party", slot_party_ignore_player_until, ":protected_until"), (party_ignore_player, "$g_encountered_party", 72), (assign, "$g_leave_encounter", 1)],
         ],
+
+        #Soriq MOD BLURRING
+        [
+          anyone | plyr,
+          "party_encounter_lord_hostile_attacker_2",
+            [
+                (troop_slot_eq, "$g_talk_troop", slot_troop_is_whispering, 1),
+                (troop_slot_eq, "trp_player", slot_troop_is_whispering, 1)
+            ],
+            "Halt! Hear me out. We are not so different, you and I...",
+            "try_blurring_whispering_lord",
+            [],
+        ],
+
+        [
+          anyone,
+            "try_blurring_whispering_lord",[],
+            "You, serving the Whisperer? Rubbish! Prove it to me.",
+            "proving_blurring_lord",
+            [],
+        ],
+        [
+            anyone | plyr,
+            "proving_blurring_lord",
+            [
+                (assign, reg7, cfg_basic_lord_blurring_cost),
+                (troop_slot_ge, "trp_player", slot_troop_essence, reg7),
+                
+            ],
+            "Fine. I shall show you the power of the Whisper. ({reg7} essence)",
+            "blurring_successful",
+            [
+                (store_mul, ":essence_cost_neg", reg7, -1),
+                (call_script, "script_player_add_essence",  ":essence_cost_neg"),
+            ],
+        ],
+        [
+            anyone | plyr,
+            "proving_blurring_lord",
+            [],
+            "Never mind, I changed my mind.",
+            "close_window",
+            [],
+        ],
+        [
+            anyone,
+            "blurring_successful",
+            [],
+            "Well, I am impressed. I shall let you go.",
+            "close_window",
+            [
+                (call_script, "script_encounter_init_variables"),
+                (leave_encounter),
+                (change_screen_map),
+            ],
+        ],
+
         ##diplomacy begin
         [
             anyone,
@@ -20600,7 +20657,7 @@ dialogs = [
         [
             anyone | plyr,
             "lord_talk",
-            [ 
+            [
                 (troop_slot_eq, "trp_player", slot_troop_is_whispering, 0),
                 (troop_slot_eq, "$g_talk_troop", slot_troop_is_whispering, 1),
                 (troop_slot_ge, "$g_talk_troop", slot_troop_player_relation, 80),
@@ -46371,6 +46428,8 @@ dialogs = [
         ],
         [anyone | plyr, "bandit_talk", [], "I'll give you nothing but cold steel, you scum!", "close_window", [encounter_attack]],
         [anyone | plyr, "bandit_talk", [], "There's no need to fight. I can pay for free passage.", "bandit_barter", []],
+
+
     [anyone, "bandit_barter", [(store_relation, ":bandit_relation", "fac_player_faction", "$g_encountered_party_faction"), (ge, ":bandit_relation", -50), (store_troop_gold, ":total_value", "trp_player"), (troop_get_inventory_capacity, ":inv_size", "trp_player"), (try_for_range, ":i_slot", 0, ":inv_size"), (troop_get_inventory_slot, ":item_id", "trp_player", ":i_slot"), (ge, ":item_id", 0), (try_begin), (is_between, ":item_id", trade_goods_begin, trade_goods_end), (store_item_value, ":item_value", ":item_id"), (val_add, ":total_value", ":item_value"), (try_end), (try_end), (store_div, "$bandit_tribute", ":total_value", 10), (val_max, "$bandit_tribute", 10), (assign, reg5, "$bandit_tribute")], "Silver without blood, that's our favorite kind! Hmm, having a look at you, I reckon you could easily come up with {reg5} denars. Pay it, and we'll let you be on your way.", "bandit_barter_2", []],  # 10000 gold = excellent_target
         [
             anyone | plyr,

@@ -18,6 +18,7 @@ from ID_factions import *
 # 003 - Custom slots
 # 004 - Custom constants
 # 005 - Autoresolve const
+# CFG - Configuration constants
 
 
 # 003 - Custom slots
@@ -2482,6 +2483,13 @@ DPLMC_NUM_PREFERENCE_OPTIONS = 8#12 #for prsnt_adv_diplomacy_preferences
 # #during building.
 # _validate_constants(verbose=(__name__=="__main__"))
 # ##diplomacy end+
+
+
+# CFG - Configuration constants
+
+cfg_start_combat_heal_cost = 100 # Starting cost for combat healing
+cfg_basic_lord_blurring_cost = 150 # Starting cost for basic lord blurring
+
 # modmerger_start version=201 type=1
 try:
     from util_common import logger

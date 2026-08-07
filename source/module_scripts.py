@@ -3425,6 +3425,7 @@ scripts = [
       (call_script, "script_give_center_to_lord", "p_castle_5",  "trp_knight_1_5", 1),
       (call_script, "script_give_center_to_lord", "p_castle_6",  "trp_knight_1_6", 1),
       (call_script, "script_give_center_to_lord", "p_castle_7",  "trp_knight_1_7", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_51",  "trp_knight_1_8", 1),
 
       #Ost-Gart
       (call_script, "script_give_center_to_lord", "p_castle_8",  "trp_knight_2_1", 1),
@@ -3443,6 +3444,7 @@ scripts = [
       (call_script, "script_give_center_to_lord", "p_castle_19",  "trp_knight_3_5", 1),
       (call_script, "script_give_center_to_lord", "p_castle_20",  "trp_knight_3_6", 1),
       (call_script, "script_give_center_to_lord", "p_castle_21",  "trp_knight_3_7", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_53",  "trp_knight_3_8", 1),
       
       #Ashkar
       (call_script, "script_give_center_to_lord", "p_castle_22",  "trp_knight_4_1", 1),
@@ -3452,6 +3454,7 @@ scripts = [
       (call_script, "script_give_center_to_lord", "p_castle_26",  "trp_knight_4_5", 1),
       (call_script, "script_give_center_to_lord", "p_castle_27",  "trp_knight_4_6", 1),
       (call_script, "script_give_center_to_lord", "p_castle_28",  "trp_knight_4_7", 1),
+      (call_script, "script_give_center_to_lord", "p_castle_52",  "trp_knight_4_8", 1),
       
       #Solmark
       (call_script, "script_give_center_to_lord", "p_castle_29",  "trp_knight_5_1", 1),
@@ -3480,6 +3483,9 @@ scripts = [
       (call_script, "script_give_center_to_lord", "p_castle_48",  "trp_knight_7_6", 1),
       (call_script, "script_give_center_to_lord", "p_castle_49",  "trp_knight_7_7", 1),
       (call_script, "script_give_center_to_lord", "p_castle_50",  "trp_knight_7_7", 1),
+      
+      
+      #TEMP
       
       
       

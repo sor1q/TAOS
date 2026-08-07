@@ -3244,6 +3244,7 @@ TOTAL:  {reg5}"),
        [
         #Whisp Debug
         (troop_set_slot, "trp_player", slot_troop_is_whispering, 1),
+        (troop_set_slot, "trp_knight_2_10", slot_troop_is_whispering, 1),
         (call_script, "script_player_add_essence", 15000),
 
        ]),

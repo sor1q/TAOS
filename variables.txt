@@ -1414,3 +1414,4 @@ replay_battle_copy_party
 g_combat_abilities_help
 g_temp_cost
 ebalance
+g_temp_heal_cost
